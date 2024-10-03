@@ -1,0 +1,22 @@
+.dt-social-link {
+    margin: 0;
+    li {
+        display: inline-block;
+        color: #696969;
+        font-size: 14px;  
+        margin-right: 23px;
+       
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            color: #696969;
+            display: block;
+
+            &:hover {
+                color: $color__theme;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+
+@font-face {
+	font-family: "Mominul";
+	src: url("../fonts/Mominul.eot");
+	src: url("../fonts/Mominul.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/Mominul.woff2") format("woff2"),
+		url("../fonts/Mominul.woff") format("woff"),
+		url("../fonts/Mominul.ttf") format("truetype"),
+		url("../fonts/Mominul.svg#Mominul") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	@font-face {
+		font-family: "Mominul";
+		src: url("./Mominul.svg#Mominul") format("svg");
+	}
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+    font-family: 'Mominul';
+    font-style: normal;
+}
+.flaticon-ruler:before { content: "\f100"; }
+.flaticon-globe:before { content: "\f101"; }
+.flaticon-web-programming:before { content: "\f102"; }
+.flaticon-analysis:before { content: "\f103"; }
+.flaticon-analytics:before { content: "\f104"; }
+.flaticon-web-design:before { content: "\f105"; }
+.flaticon-account:before { content: "\f106"; }
+.flaticon-megaphone:before { content: "\f107"; }
+.flaticon-web-development:before { content: "\f108"; }
+.flaticon-magnifying-glass:before { content: "\f109"; }
+.flaticon-edit:before { content: "\f10a"; }
+.flaticon-clock:before { content: "\f10b"; }
+.flaticon-search:before { content: "\f10c"; }
+.flaticon-pin:before { content: "\f10d"; }
+.flaticon-phone-call:before { content: "\f10e"; }

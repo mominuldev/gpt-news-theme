@@ -1,0 +1,35 @@
+.mpt-contact {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	> div {
+		border-radius: 50px;
+		border: 1px solid rgba(255, 247, 220, 0.20);
+		//padding: 20px;
+	}
+
+	&__email {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		color: #FFF7DC;
+		font-size: 30px;
+		padding: 23px 30px;
+	}
+
+	&__icon {
+		svg {
+			width: 30px;
+			height: auto;
+		}
+	}
+
+	&__whatsapp {
+		display: flex;
+		align-items: center;
+		color: #FFF7DC;
+		justify-content: center;
+		height: 80px;
+		width: 80px;
+	}
+}

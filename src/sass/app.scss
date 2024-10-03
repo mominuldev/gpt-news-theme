@@ -1,0 +1,127 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Typography
+# Elements
+	## Social Profiles
+	## Top Bar Icon List
+	## Top Bar Menu
+	## Contact Methods
+	## Nav Search Form
+	## Nav Mini Cart
+# Forms
+# Navigation
+	## Links
+	## Primary Menu
+# Accessibility
+# Alignments
+# Clearings
+# Layout
+	## Topbar
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+@import "mixins/media-queries";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/layout";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+
+.woocommerce ul.products li.product .button {
+	display: inline-block;
+	margin-top: 1em;
+	border-radius: 30px;
+	font-weight: 600;
+	color: #0f183e;
+}
+
+
+.woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3 {
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.woocommerce ul.products li.product .price {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+	padding: 0;
+	
+	&:before {
+		border-color: rgba(255, 255, 255, 0.25);
+	}
+
+	li {
+		border: 0;
+		border-radius: 0;
+	}
+}
+
+
