@@ -4,8 +4,8 @@ var MOMIN = MOMIN || {};
 
     /*!----------------------------------------------
         # This beautiful code written with heart
-        # by Mominul Islam <hello@mominul.me>
-        # In Dhaka, BD at the MominulIslam workstation.
+        # by Gpt Islam <hello@mominul.me>
+        # In Dhaka, BD at the GptIslam workstation.
         ---------------------------------------------*/
 
     // USE STRICT
@@ -356,9 +356,9 @@ var MOMIN = MOMIN || {};
 
 
             // Back To Top
-            var mptScrollTop = document.querySelector(".mpt-scroll-top");
-            if (mptScrollTop != null) {
-                var scrollProgressPatch = document.querySelector(".mpt-scroll-top path");
+            var gptScrollTop = document.querySelector(".gpt-scroll-top");
+            if (gptScrollTop != null) {
+                var scrollProgressPatch = document.querySelector(".gpt-scroll-top path");
                 var pathLength = scrollProgressPatch.getTotalLength();
                 var offset = 50;
                 scrollProgressPatch.style.transition = scrollProgressPatch.style.WebkitTransition = "none";
@@ -374,12 +374,12 @@ var MOMIN = MOMIN || {};
                     scrollProgressPatch.style.strokeDashoffset = progress;
                     var scrollElementPos = document.body.scrollTop || document.documentElement.scrollTop;
                     if (scrollElementPos >= offset) {
-                        mptScrollTop.classList.add("progress-done");
+                        gptScrollTop.classList.add("progress-done");
                     } else {
-                        mptScrollTop.classList.remove("progress-done");
+                        gptScrollTop.classList.remove("progress-done");
                     }
                 });
-                mptScrollTop.addEventListener("click", function (e) {
+                gptScrollTop.addEventListener("click", function (e) {
                     e.preventDefault();
                     window.scroll({
                         top: 0,
@@ -409,7 +409,7 @@ var MOMIN = MOMIN || {};
             $("#page-open-main-menu").on('click', function (e) {
                 e.preventDefault();
                 $popup.addClass('open');
-                $(".mpt-hamburger").addClass('active');
+                $(".gpt-hamburger").addClass('active');
                 $body.addClass('page-popup-open');
                 $("html").addClass("no-scroll sidebar-open").height(window.innerHeight + "px");
             });
@@ -421,7 +421,7 @@ var MOMIN = MOMIN || {};
                 $popup.removeClass('open');
                 $('.sub-menu, .sub-menu-wide').removeAttr('style');
                 $("html").removeClass("no-scroll sidebar-open").height("auto");
-                $(".mpt-hamburger").removeClass('active');
+                $(".gpt-hamburger").removeClass('active');
                 $('.sub-menu, .sub-menu-wide').removeAttr('style');
                 $('.has-submenu .menu-link').removeClass('active');
             });

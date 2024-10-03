@@ -1,4 +1,4 @@
-.mpt-icon-box {
+.gpt-icon-box {
     position: relative;
     z-index: 0;
     transition: all 0.3s ease-in-out;
@@ -136,7 +136,7 @@
             font-size: 90%;
         }
 
-        &:not(.mpt-btn) {
+        &:not(.gpt-btn) {
             color: $color__heading;
             font-weight: 500;
 
@@ -146,7 +146,7 @@
         }
     }
 
-    .mpt-btn {
+    .gpt-btn {
         margin-top: 45px;
         &.btn-outline {
             border-color: #e0e3e8;
@@ -274,7 +274,7 @@
             color: rgba(14, 17, 51, 0.8);
         }
 
-        .mpt-btn-link {
+        .gpt-btn-link {
             margin-top: 20px;
             font-size: 18px;
             font-weight: 500;

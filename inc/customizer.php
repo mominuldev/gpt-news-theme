@@ -1,6 +1,6 @@
 <?php
 /**
- * Mominul Theme Customizer
+ * Gpt Theme Customizer
  *
  * @package WordPress
  * @subpackage mominul
@@ -12,25 +12,25 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function mominul_customize_register( $wp_customize ) {
+function gpt_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
 
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '.site-title a',
-		'render_callback' => 'mominul_customize_partial_blogname',
+		'render_callback' => 'gpt_customize_partial_blogname',
 	) );
 	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 		'selector' => '.site-description',
-		'render_callback' => 'mominul_customize_partial_blogdescription',
+		'render_callback' => 'gpt_customize_partial_blogdescription',
 	) );
 
 
 	/**
 	 * Header options.
 	 */
-	$wp_customize->add_section( 'mominul_header_options', array(
+	$wp_customize->add_section( 'gpt_header_options', array(
 		'title'    => esc_html__( 'Header Settings', 'mominul' ),
 		'priority' => 45, // After colors
 	) );
@@ -38,7 +38,7 @@ function mominul_customize_register( $wp_customize ) {
 	/**
 	 * Mailchimp.
 	 */
-	$wp_customize->add_panel( 'mominul_mailchimp_setting', array(
+	$wp_customize->add_panel( 'gpt_mailchimp_setting', array(
 		'title'    => esc_html__( 'Mailchimp Settings', 'mominul' ),
 		'priority' => 45, // After colors
 	) );
@@ -48,7 +48,7 @@ function mominul_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'header_menu_search', array(
 		'default'			=> true,
 		'transport'         => 'refresh',
-		'sanitize_callback'	=> 'mominul_sanitize_checkbox'
+		'sanitize_callback'	=> 'gpt_sanitize_checkbox'
 	) );
 
 	/**
@@ -68,7 +68,7 @@ function mominul_customize_register( $wp_customize ) {
 		'col-lg-11' => '11/12',
 		'col-lg-12' => '12/12'
 	);
-	$wp_customize->add_panel( 'mominul_footer_settings', array(
+	$wp_customize->add_panel( 'gpt_footer_settings', array(
 		'title' => esc_html__( 'Footer Settings', 'mominul' ),
 		'description' => esc_html__( 'Manage your footer widget position sizes and Copyright information.', 'mominul' ), // Include html tags such as <p>.
 		'priority' => 160, // Mixed with top-level-section hierarchy.
@@ -76,28 +76,28 @@ function mominul_customize_register( $wp_customize ) {
 
 	// Widget Settings
 	for ($i=1; $i < 6; $i++) {
-		$wp_customize->add_section( 'mominul_widget_area_' . $i , array(
+		$wp_customize->add_section( 'gpt_widget_area_' . $i , array(
 			'title' => 'Widget Area - '. $i,
-			'panel' => 'mominul_footer_settings',
+			'panel' => 'gpt_footer_settings',
 		) );
-		$wp_customize->add_setting( 'mominul_widget_area_' . $i . '_display', array(
+		$wp_customize->add_setting( 'gpt_widget_area_' . $i . '_display', array(
 			'default'			=> true,
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'mominul_sanitize_checkbox',
+			'sanitize_callback' => 'gpt_sanitize_checkbox',
 		) );
-		$wp_customize->add_control( 'mominul_widget_area_' . $i . '_display', array(
+		$wp_customize->add_control( 'gpt_widget_area_' . $i . '_display', array(
 			'label'       => esc_html__( 'Display on site', 'mominul' ),
-			'section'     => 'mominul_widget_area_'. $i,
+			'section'     => 'gpt_widget_area_'. $i,
 			'type'        => 'checkbox',
 		) );
-		$wp_customize->add_setting( 'mominul_widget_area_' . $i . '_column', array(
+		$wp_customize->add_setting( 'gpt_widget_area_' . $i . '_column', array(
 			'default'           => 'col-lg-3',
 			'transport' 		=> 'refress',
-			'sanitize_callback' => 'mominul_sanitize_widget_columns',
+			'sanitize_callback' => 'gpt_sanitize_widget_columns',
 		) );
-		$wp_customize->add_control( 'mominul_widget_area_' . $i . '_column' , array(
+		$wp_customize->add_control( 'gpt_widget_area_' . $i . '_column' , array(
 			'label'       => esc_html__( 'Header Style', 'mominul' ),
-			'section'     => 'mominul_widget_area_'. $i,
+			'section'     => 'gpt_widget_area_'. $i,
 			'type'        => 'select',
 			'choices'     => $column_classes
 		) );
@@ -106,43 +106,43 @@ function mominul_customize_register( $wp_customize ) {
 	/**
 	 * Mailchimp API
 	 */
-	$wp_customize->add_section( 'mominul_mchimp_api_settings', array(
+	$wp_customize->add_section( 'gpt_mchimp_api_settings', array(
 		'title' => esc_html__( 'MailChimp API', 'mominul' ),
-		'panel' => 'mominul_mailchimp_setting',
+		'panel' => 'gpt_mailchimp_setting',
 	) );
 
-	$wp_customize->add_setting( 'mominul_mailchimp_api_key', array(
+	$wp_customize->add_setting( 'gpt_mailchimp_api_key', array(
 		'transport'			=> 'postMessage',
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
-	$wp_customize->add_control( 'mominul_mailchimp_api_key', array(
+	$wp_customize->add_control( 'gpt_mailchimp_api_key', array(
 		'type'		=> 'text',
 		'label'		=> esc_html__( 'API Key', 'mominul' ),
 		'description'	=> esc_html__( 'Enter the mailchimp api key to use newsletter form. You can get the api here: http://bit.ly/2Vh4Opr', 'mominul' ),
-		'section'	=> 'mominul_mchimp_api_settings',
+		'section'	=> 'gpt_mchimp_api_settings',
 	) );
 
-	$wp_customize->add_setting( 'mominul_mailchimp_api_list', array(
+	$wp_customize->add_setting( 'gpt_mailchimp_api_list', array(
 		'transport'			=> 'postMessage',
 		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
-	$wp_customize->add_control( 'mominul_mailchimp_api_list', array(
+	$wp_customize->add_control( 'gpt_mailchimp_api_list', array(
 		'type'		=> 'text',
 		'label'		=> esc_html__( 'List ID', 'mominul' ),
 		'description'	=> esc_html__( 'Enter the mailchimp list id. You can found list here: http://bit.ly/2GzQMa7', 'mominul' ),
-		'section'	=> 'mominul_mchimp_api_settings',
+		'section'	=> 'gpt_mchimp_api_settings',
 	) );
 
 
 }
-add_action( 'customize_register', 'mominul_customize_register' );
+add_action( 'customize_register', 'gpt_customize_register' );
 
 
 
 /**
  * Sanitize the widget columns.
  */
-function mominul_sanitize_widget_columns( $input ) {
+function gpt_sanitize_widget_columns( $input ) {
 	$valid = array(
 		'col-lg-1',
 		'col-lg-2',
@@ -168,7 +168,7 @@ function mominul_sanitize_widget_columns( $input ) {
 /**
  * Sanitize the checkbox
  */
-function mominul_sanitize_checkbox( $input ) {
+function gpt_sanitize_checkbox( $input ) {
 	if ( $input == true ) {
 		return true;
 	}
@@ -178,7 +178,7 @@ function mominul_sanitize_checkbox( $input ) {
 /**
  * Sanitize the footer copyright text.
  */
-function mominul_sanitize_footer_copyright( $input ) {
+function gpt_sanitize_footer_copyright( $input ) {
 	$output = '';
 	if ( ! empty( $input ) ) {
 		$output = $input;
@@ -199,11 +199,11 @@ function mominul_sanitize_footer_copyright( $input ) {
  * Render the site title for the selective refresh partial.
  *
  * @since mominul 1.0
- * @see _mominul_customize_register()
+ * @see _gpt_customize_register()
  *
  * @return void
  */
-function mominul_customize_partial_blogname() {
+function gpt_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -211,18 +211,18 @@ function mominul_customize_partial_blogname() {
  * Render the site tagline for the selective refresh partial.
  *
  * @since mominul 1.0
- * @see mominul_customize_register()
+ * @see gpt_customize_register()
  *
  * @return void
  */
-function mominul_customize_partial_blogdescription() {
+function gpt_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Bind JS handlers to instantly live-preview changes.
  */
-function mominul_customize_preview_js() {
+function gpt_customize_preview_js() {
 	wp_enqueue_script( 'mominul-customize-preview', get_parent_theme_file_uri( '/assets/js/customizer.js' ), array( 'customize-preview' ), '1.0', true );
 }
-add_action( 'customize_preview_init', 'mominul_customize_preview_js' );
+add_action( 'customize_preview_init', 'gpt_customize_preview_js' );

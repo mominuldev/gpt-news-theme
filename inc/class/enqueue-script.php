@@ -4,12 +4,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * @class        Mominul_Enqueue_Script
+ * @class        Gpt_Enqueue_Script
  * @version      1.0
  * @category     Class
- * @author       MominulIslam
+ * @author       GptIslam
  */
-class Mominul_Enqueue_Script {
+class Gpt_Enqueue_Script {
 
 	public $settings;
 	protected static $instance = null;
@@ -26,7 +26,7 @@ class Mominul_Enqueue_Script {
 
 	public function register_script() {
 		$this->gtdu       = get_template_directory_uri();
-		$this->use_minify = mpt_option( 'use_minify' ) ? '.min' : '';
+		$this->use_minify = gpt_option( 'use_minify' ) ? '.min' : '';
 		// Register action
 		add_action( 'wp_enqueue_scripts', array( $this, 'css_reg' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'js_reg' ) );
@@ -54,7 +54,7 @@ class Mominul_Enqueue_Script {
 		wp_enqueue_style( 'mominul-style', $this->gtdu . '/assets/css/app.css' );
 
 		// Custom Css
-		$custom_css = mpt_option( 'custom-css' );
+		$custom_css = gpt_option( 'custom-css' );
 
 		if ( ! empty( $custom_css ) ) {
 			wp_add_inline_style( 'mominul-style', $custom_css );
@@ -66,8 +66,8 @@ class Mominul_Enqueue_Script {
 		}
 
 		// Preloader CSS
-		$preloader_opt       = mpt_option( 'preloader' );
-		$preloader_color_opt = mpt_option( 'preloader_color' );
+		$preloader_opt       = gpt_option( 'preloader' );
+		$preloader_color_opt = gpt_option( 'preloader_color' );
 
 
 		if ( ! empty( $preloader_opt ) ) {
@@ -98,7 +98,7 @@ class Mominul_Enqueue_Script {
 
 	/* Register JS */
 	public function js_reg() {
-		$smooth_scroll = mpt_option( 'smooth_scroll' );
+		$smooth_scroll = gpt_option( 'smooth_scroll' );
 
 		wp_enqueue_script( 'bootstrap', $this->gtdu . '/assets/js/bootstrap.min.js', array( 'jquery' ), '4.3.1', true );
 //		wp_enqueue_script( 'gsap', $this->gtdu . '/assets/js/gsap.min.js', array(), '1.0.0', true );
@@ -120,12 +120,12 @@ class Mominul_Enqueue_Script {
 			wp_enqueue_script( 'smoothscroll', $this->gtdu . '/assets/js/smoothscroll.min.js', array( 'jquery' ), '3.1.12', true );
 		}
 
-		$mominul_scripts_vars_array = array(
+		$gpt_scripts_vars_array = array(
 			'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
-			'nonce'   => wp_create_nonce( '_mominul_nonce' ),
+			'nonce'   => wp_create_nonce( '_gpt_nonce' ),
 		);
 
-		wp_localize_script( 'mominul-theme', 'mominul_scripts_vars', $mominul_scripts_vars_array );
+		wp_localize_script( 'mominul-theme', 'gpt_scripts_vars', $gpt_scripts_vars_array );
 
 		//Comment Reply
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -139,12 +139,12 @@ class Mominul_Enqueue_Script {
 
 }
 
-if ( ! function_exists( 'mominul_enqueue_script' ) ) {
-	function mominul_enqueue_script() {
-		return Mominul_Enqueue_Script::instance();
+if ( ! function_exists( 'gpt_enqueue_script' ) ) {
+	function gpt_enqueue_script() {
+		return Gpt_Enqueue_Script::instance();
 	}
 }
 
-mominul_enqueue_script()->register_script();
+gpt_enqueue_script()->register_script();
 
 

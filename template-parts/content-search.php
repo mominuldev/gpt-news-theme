@@ -11,14 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-post' ); ?>>
 
-	<?php Mominul_Theme_Helper::mominul_post_thumbnail(); ?>
+	<?php Gpt_Theme_Helper::gpt_post_thumbnail(); ?>
 
 	<div class="blog-content">
 		<header class="entry-header">
 			<ul class="post-meta">
-				<li><?php Mominul_Theme_Helper::mominul_posted_on(); ?></li>
-				<li><?php Mominul_Theme_Helper::mominul_posted_by(); ?></li>
-				<li><?php Mominul_Theme_Helper::mominul_entry_cat(); ?></li>
+				<li><?php Gpt_Theme_Helper::gpt_posted_on(); ?></li>
+				<li><?php Gpt_Theme_Helper::gpt_posted_by(); ?></li>
+				<li><?php Gpt_Theme_Helper::gpt_entry_cat(); ?></li>
 			</ul><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
@@ -26,7 +26,7 @@
 			<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
 			<p>
-				<?php echo Mominul_Theme_Helper::mominul_substring( get_the_content(), 25, '...' ); ?>
+				<?php echo Gpt_Theme_Helper::gpt_substring( get_the_content(), 25, '...' ); ?>
 			</p>
 
 			<footer class="blog-footer">

@@ -3,7 +3,7 @@
  * @see http://tgmpluginactivation.com/configuration/ for detailed documentation.
  *
  * @package    TGM-Plugin-Activation
- * @subpackage Mominul
+ * @subpackage Gpt
  * @version    2.6.1 for parent theme corid for publication on ThemeForest
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
@@ -17,12 +17,12 @@
 
 require get_parent_theme_file_path( '/inc/tgm/class-tgm-plugin-activation.php' );
 
-add_action( 'tgmpa_register', 'mominul_register_required_plugins' );
+add_action( 'tgmpa_register', 'gpt_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
  */
-function mominul_register_required_plugins() {
+function gpt_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -31,9 +31,9 @@ function mominul_register_required_plugins() {
 
 
 		array(
-			'name'     => __('MPT Core', 'mominul'),
-			'slug'     => 'mpt-core',
-			'source'   => 'https://demo.gptheme.com/plugins/mpt-core.zip',
+			'name'     => __('GPT News Core', 'mominul'),
+			'slug'     => 'gpt-news-core',
+			'source'   => 'https://demo.gptheme.com/plugins/gpt-news-core.zip',
             'version'  => '1.0.0',
 			'required' => true,
 		),

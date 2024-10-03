@@ -3,35 +3,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 /**
- * Mominul Theme Helper
- * @class        Mominul_Theme_Helper
+ * Gpt Theme Helper
+ * @class        Gpt_Theme_Helper
  * @version      1.0
  * @category     Class
- * @author       MominulIslam
+ * @author       GptIslam
  */
 
-if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
-	class Mominul_Theme_Helper {
+if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
+	class Gpt_Theme_Helper {
 
 		/**
 		 * Constructor
 		 */
 		function __construct() {
-//			add_action( 'mominul_after_body', array( $this, 'mominul_preloader_markup' ), 1 );
-			add_action( 'mpt_after_footer', [ $this, 'mpt_backtotop' ] );
+//			add_action( 'gpt_after_body', array( $this, 'gpt_preloader_markup' ), 1 );
+			add_action( 'gpt_after_footer', [ $this, 'gpt_backtotop' ] );
 		}
 
-		public function mpt_backtotop() {
-			$backtotop = mpt_option( 'back_to_top_switch' );
+		public function gpt_backtotop() {
+			$backtotop = gpt_option( 'back_to_top_switch' );
 			if ( $backtotop == '1' ) { ?>
-                <div class="mpt-scroll-top progress-done">
+                <div class="gpt-scroll-top progress-done">
                     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
                               style="transition: stroke-dashoffset 10ms linear 0s;
                         stroke-dasharray: 307.919px, 307.919px;
                         stroke-dashoffset: 71.1186px;"></path>
                     </svg>
-                    <div class="mpt-scroll-top-icon">
+                    <div class="gpt-scroll-top-icon">
                         <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true"
@@ -62,8 +62,8 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		 * @return void
 		 */
 		public static function options_compare( $name, $check_key = false, $check_value = false ) {
-			$option = mpt_option( $name );
-			$meta   = get_post_meta( get_the_ID(), 'mominul_page_options', true );
+			$option = gpt_option( $name );
+			$meta   = get_post_meta( get_the_ID(), 'gpt_page_options', true );
 
 			//Check if check_key exist
 			if ( $check_key ) {
@@ -73,7 +73,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 
 			} else {
 				$var    = $meta[ $name ];
-				$option = ! empty( $var ) ? $meta[ $name ] : mpt_option( $name );
+				$option = ! empty( $var ) ? $meta[ $name ] : gpt_option( $name );
 			}
 
 			return $option;
@@ -84,9 +84,9 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		 * ---------------
 		 */
 		//Add breadcrumbs
-		static function mominul_breadcrumb() {
+		static function gpt_breadcrumb() {
 			global $post;
-			$mominul_opt = get_option( 'mominul_opt' );
+			$gpt_opt = get_option( 'gpt_opt' );
 			$brseparator = '<span class="separator"></span>';
 			if ( ! is_home() ) {
 				echo '<div class="breadcrumbs">';
@@ -156,8 +156,8 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 				echo '">';
 				echo esc_html__( 'Home', 'mominul' );
 				echo '</a>' . $brseparator;
-				if ( isset( $mominul_opt['blog_header_text'] ) && $mominul_opt['blog_header_text'] != "" ) {
-					echo esc_html( $mominul_opt['blog_header_text'] );
+				if ( isset( $gpt_opt['blog_header_text'] ) && $gpt_opt['blog_header_text'] != "" ) {
+					echo esc_html( $gpt_opt['blog_header_text'] );
 				} else {
 					echo esc_html__( 'Blog', 'mominul' );
 				}
@@ -169,7 +169,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		 * Displays navigation to next/previous pages when applicable.
 		 * @since mominul 1.0
 		 */
-		static function mominul_content_nav( $html_id ) {
+		static function gpt_content_nav( $html_id ) {
 			global $wp_query;
 			$html_id = esc_attr( $html_id );
 			if ( $wp_query->max_num_pages > 1 ) : ?>
@@ -185,7 +185,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 
 		/* Pagination */
 
-		static function mominul_post_pagination( $nav_query = false ) {
+		static function gpt_post_pagination( $nav_query = false ) {
 
 			global $wp_query, $wp_rewrite;
 
@@ -219,11 +219,11 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		/**
 		 * Template for comments and pingbacks.
 		 * To override this walker in a child theme without modifying the comments template
-		 * simply create your own mominul_comment(), and that function will be used instead.
+		 * simply create your own gpt_comment(), and that function will be used instead.
 		 * Used as a callback by wp_list_comments() for displaying the comments.
 		 * @since mominul 1.0
 		 */
-		static function mominul_comment( $comment, $args, $depth ) {
+		static function gpt_comment( $comment, $args, $depth ) {
 			$GLOBALS['comment'] = $comment;
 			switch ( $comment->comment_type ) :
 				case 'pingback' :
@@ -281,10 +281,10 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		/**
 		 * Set up post entry meta.
 		 * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
-		 * Create your own mominul_entry_meta() to override in a child theme.
+		 * Create your own gpt_entry_meta() to override in a child theme.
 		 * @since mominul 1.0
 		 */
-		static function mominul_entry_meta() {
+		static function gpt_entry_meta() {
 			// Translators: used between list items, there is a space after the comma.
 			$tag_list       = get_the_tag_list( '', ', ' );
 			$num_comments   = (int) get_comments_number();
@@ -312,18 +312,18 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 			printf( $utility_text, $write_comments, $tag_list );
 		}
 
-		static function mominul_posted_author_avatar() {
+		static function gpt_posted_author_avatar() {
 			 printf( '<div class="blog-footer-meta">%2$s<div class="blog-footer-mata-content"><a class="url fn n post-author" href="%1$s">%3$s</a>%4$s %5$s</div></div>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				get_avatar( get_the_author_meta( 'ID' ), 45 ),
 				esc_html( get_the_author() ),
 				esc_html( get_the_date('M j Y') ),
-                '<span class="read-time">' . self::mominul_content_reading_time( get_the_content() ) . '</span>'
+                '<span class="read-time">' . self::gpt_content_reading_time( get_the_content() ) . '</span>'
 			);
 
 		}
 
-		static function mominul_posted_on() {
+		static function gpt_posted_on() {
 			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 				$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -341,7 +341,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		}
 
 		// Post reading time
-		public static function mominul_content_reading_time( $word ) {
+		public static function gpt_content_reading_time( $word ) {
 			$strip_content = strip_tags( (string) $word );
 			$word_count    = str_word_count( $strip_content );
 			$reading_minit = floor( $word_count / 200 );
@@ -351,7 +351,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 			return '<span class="reading-time">' . $label . '</span>';
 		}
 
-		static function mominul_entry_cat() {
+		static function gpt_entry_cat() {
 			// Hide category and tag text for pages.
 			if ( 'post' === get_post_type() ) {
 				/* translators: used between list items, there is a space after the comma */
@@ -365,7 +365,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 
 		}
 
-		static function mominul_posted_tag() {
+		static function gpt_posted_tag() {
 			// Hide category and tag text for pages.
 			if ( 'post' === get_post_type() ) {
 
@@ -382,7 +382,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		/**
 		 * Trim text
 		 */
-		static function mominul_substring( $string, $limit, $afterlimit = '[...]' ) {
+		static function gpt_substring( $string, $limit, $afterlimit = '[...]' ) {
 			if ( empty( $string ) ) {
 				return $string;
 			}
@@ -410,10 +410,10 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 			$output        = [];
 			$sidebar_style = '';
 
-			$layout        = mpt_option( $args . '_sidebar_layout' ) ? mpt_option( $args . '_sidebar_layout' ) : 'right';
+			$layout        = gpt_option( $args . '_sidebar_layout' ) ? gpt_option( $args . '_sidebar_layout' ) : 'right';
 			$sidebar       = 'sidebar_main-sidebar';
-			$sidebar_width = mpt_option( $args . '_sidebar_def_width', '8' );
-			$sidebar_gap   = mpt_option( $args . '_sidebar_gap', '45' );
+			$sidebar_width = gpt_option( $args . '_sidebar_def_width', '8' );
+			$sidebar_gap   = gpt_option( $args . '_sidebar_gap', '45' );
 			$sidebar_class = $sidebar_style = '';
 
 			if ( isset( $sidebar_gap ) && $sidebar_gap != 'def' && $layout != 'default' ) {
@@ -502,7 +502,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		/**
 		 * Display Post Thumbnail.
 		 */
-		static function mominul_post_thumbnail() {
+		static function gpt_post_thumbnail() {
 			if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 				return;
 			}
@@ -560,12 +560,12 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		 * @since mominul 1.0
 		 */
 
-		public function mominul_preloader_markup() {
-			$preloader_switch = mpt_option( 'preloader_switch' );
-			$preloader_opt    = mpt_option( 'preloader' );
-			$preloader_type   = mpt_option( 'preloader-type' );
-			$preloader_img    = mpt_option( 'preloader-images' );
-			$preloader_text   = mpt_option( 'preloader_text' );
+		public function gpt_preloader_markup() {
+			$preloader_switch = gpt_option( 'preloader_switch' );
+			$preloader_opt    = gpt_option( 'preloader' );
+			$preloader_type   = gpt_option( 'preloader-type' );
+			$preloader_img    = gpt_option( 'preloader-images' );
+			$preloader_text   = gpt_option( 'preloader_text' );
 
 			if ( $preloader_switch ) : ?>
                 <div id="preloader">
@@ -613,7 +613,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 			return isset( $args ) ? $args : '';
 		}
 
-		static function mominul_entry_comments( $post_id, $no_comments = 'No Comment' ) {
+		static function gpt_entry_comments( $post_id, $no_comments = 'No Comment' ) {
 
 			$comments_number = get_comments_number( $post_id );
 			if ( $comments_number == 0 ) {
@@ -639,13 +639,13 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		 */
 		public static function branding_logo() {
 
-			$logo_main        = mpt_option( 'main_logo' );
-			$sticky           = mpt_option( 'sticky_logo' );
-			$retina_logo      = mpt_option( 'retina_logo' );
-			$retina_sticky    = mpt_option( 'retina_logo_sticky' );
-			$is_sticky_header = mpt_option( 'header_sticky' );
-			$transparent_logo = mpt_option( 'transparent_main_logo' );
-			$transparent_menu = mpt_option( 'transparent_menu' );
+			$logo_main        = gpt_option( 'main_logo' );
+			$sticky           = gpt_option( 'sticky_logo' );
+			$retina_logo      = gpt_option( 'retina_logo' );
+			$retina_sticky    = gpt_option( 'retina_logo_sticky' );
+			$is_sticky_header = gpt_option( 'header_sticky' );
+			$transparent_logo = gpt_option( 'transparent_main_logo' );
+			$transparent_menu = gpt_option( 'transparent_menu' );
 
 			// Logo Callback
 			$logo               = ! empty( $logo_main['url'] ) ? $logo_main['url'] : '';
@@ -655,7 +655,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 			$retina_logo_sticky = ! empty( $retina_sticky ['url'] ) ? $retina_sticky ['url'] : '';
 
 			// Logo Meta Callback
-			$meta = get_post_meta( get_the_ID(), 'mominul_page_options', true );
+			$meta = get_post_meta( get_the_ID(), 'gpt_page_options', true );
 
 			$meta_true = isset( $meta['meta_header_type'] ) ? $meta['meta_header_type'] : '0';
 
@@ -742,7 +742,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 
 		static function related_post() { ?>
             <div class="related-post-wrapper">
-                <h2 class="related-title"><?php echo esc_html( mpt_option( 'related_title' ) ); ?></h2>
+                <h2 class="related-title"><?php echo esc_html( gpt_option( 'related_title' ) ); ?></h2>
                 <div class="row">
 					<?php
 					global $post;
@@ -779,7 +779,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 									endif; ?>
                                     <div class="blog-content">
                                         <ul class="post-meta">
-                                            <li><?php self::mominul_entry_cat(); ?></li>
+                                            <li><?php self::gpt_entry_cat(); ?></li>
                                         </ul><!-- .entry-meta -->
 
                                         <h3 class="post-title">
@@ -790,9 +790,9 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 
                                         <ul class="post-footer-meta">
                                             <li>
-												<?php Mominul_Theme_Helper::mominul_posted_author_avatar(); ?>
+												<?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
                                             </li>
-                                            <li><i class="feather-calendar"></i><?php Mominul_Theme_Helper::mominul_posted_on(); ?></li>
+                                            <li><i class="feather-calendar"></i><?php Gpt_Theme_Helper::gpt_posted_on(); ?></li>
 
                                         </ul><!-- .entry-meta -->
 
@@ -812,7 +812,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
             <!-- /.related-post-wrapper -->
 		<?php }
 
-		static function mominul_post_nav() {
+		static function gpt_post_nav() {
 			// Don't print empty markup if there's nowhere to navigate.
 			$pre_post  = $next_post = '';
 			$next_post = get_next_post();
@@ -873,7 +873,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 			echo '</div></div></div></div>';
 		}
 
-		static function mominul_portfolio_post_nav() {
+		static function gpt_portfolio_post_nav() {
 			// Don't print empty markup if there's nowhere to navigate.
 			$pre_post  = $next_post = '';
 			$next_post = get_next_post();
@@ -931,7 +931,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 		 *
 		 * @return array
 		 */
-		static function mominul_get_title_tag( $first_empty = false, $additional_elements = array() ) {
+		static function gpt_get_title_tag( $first_empty = false, $additional_elements = array() ) {
 			$title_tag = array();
 
 			if ( $first_empty ) {
@@ -957,7 +957,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 			$footers = get_posts(
 				[
 					'posts_per_page' => - 1,
-					'post_type'      => 'mominul_footer',
+					'post_type'      => 'gpt_footer',
 					'orderby'        => 'name',
 					'order'          => 'ASC'
 				]
@@ -969,13 +969,13 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 			return $footer;
 		}
 
-		public static function mominul_render_footer( $footer_style ) {
+		public static function gpt_render_footer( $footer_style ) {
 			$elementor_instance = Elementor\Plugin::instance();
 
 			return $elementor_instance->frontend->get_builder_content_for_display( $footer_style );
 		}
 
-		static public function mominul_excerpt( $limit ) {
+		static public function gpt_excerpt( $limit ) {
 			$excerpt = explode( ' ', get_the_excerpt(), $limit );
 			if ( count( $excerpt ) >= $limit ) {
 				array_pop( $excerpt );
@@ -990,7 +990,7 @@ if ( ! class_exists( 'Mominul_Theme_Helper' ) ) {
 	}
 
 	// Instantiate theme
-	new Mominul_Theme_Helper();
+	new Gpt_Theme_Helper();
 }
 
 

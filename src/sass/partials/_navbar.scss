@@ -51,7 +51,7 @@
 		}
 	}
 
-	.mpt-hamburger {
+	.gpt-hamburger {
 		width: 24px;
 		cursor: pointer;
 
@@ -112,7 +112,7 @@
 			}
 		}
 
-		.mpt-hamburger {
+		.gpt-hamburger {
 			.bar {
 				background: $heading-color;
 			}
@@ -127,7 +127,7 @@
 	}
 
 	&.header_dark {
-		.mpt-hamburger {
+		.gpt-hamburger {
 			.bar {
 				background: $heading-color;
 			}
@@ -321,7 +321,7 @@
 							}
 
 							&.current-menu-item {
-								a:not(.mpt-btn-link) {
+								a:not(.gpt-btn-link) {
 									color: $primary-color;
 								}
 							}
@@ -357,7 +357,7 @@
 							margin-right: 0;
 							line-height: 36px;
 
-							a:not(.mpt-btn-link) {
+							a:not(.gpt-btn-link) {
 								font-size: 14px;
 								padding: 7px 25px;
 								display: block;
@@ -439,7 +439,7 @@
 		.nav-right {
 			margin-left: 40px;
 
-			.mpt-btn {
+			.gpt-btn {
 				padding: 8px 26px;
 				min-width: auto;
 			}
@@ -526,14 +526,14 @@
 		display: inline-flex;
 	}
 
-	.mpt-btn {
+	.gpt-btn {
 		display: inline-block !important;
 		padding: 5px 35px;
 		font-family: $secondary-font-family;
 
 	}
 
-	.mominul__list {
+	.gpt__list {
 		li {
 			margin-bottom: 0;
 
@@ -665,7 +665,7 @@
 			}
 		}
 
-		.mpt-hamburger {
+		.gpt-hamburger {
 			display: block;
 		}
 
@@ -725,7 +725,7 @@
 				padding: 0 10px;
 				position: relative;
 
-				a:not(.mpt-btn-link) {
+				a:not(.gpt-btn-link) {
 					font-size: 14px;
 					color: $heading-color;
 					position: relative;
@@ -751,7 +751,7 @@
 					}
 				}
 
-				.mpt-btn-link {
+				.gpt-btn-link {
 					padding: 11px 35px;
 				}
 

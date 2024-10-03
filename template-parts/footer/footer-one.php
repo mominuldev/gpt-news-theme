@@ -8,12 +8,12 @@
  * @version 1.0
  */
 
-$meta               = get_post_meta( get_the_ID(), 'mominul_page_options', true );
-$footer_columns     = mpt_option( 'footer_widget_layout', '4' );
+$meta               = get_post_meta( get_the_ID(), 'gpt_page_options', true );
+$footer_columns     = gpt_option( 'footer_widget_layout', '4' );
 $meta_footer_option = isset( $meta['meta_footer_type'] ) ? $meta['meta_footer_type'] : '';
 $meta_footer_color  = isset( $meta['meta_footer_color'] ) ? $meta['meta_footer_color'] : '';
-$footer_color       = mpt_option( 'footer_color', 'footer_dark' );
-$grid_line       = mpt_option( 'body_bg_line' );
+$footer_color       = gpt_option( 'footer_color', 'footer_dark' );
+$grid_line       = gpt_option( 'body_bg_line' );
 
 if ( $footer_columns == 12 ) {
 	$footer_column = 1;
@@ -24,7 +24,7 @@ if ( $footer_columns == 12 ) {
 } elseif ( $footer_columns == 3 ) {
 	$footer_column = 4;
 }
-$overlay_bg = mpt_option( 'footer__overlay_bg' );
+$overlay_bg = gpt_option( 'footer__overlay_bg' );
 
 $footer_classes = '';
 
@@ -54,8 +54,8 @@ if ( $meta_footer_option == true || $meta_footer_option == 1 ) {
             <div class="container">
                 <aside class="row">
 					<?php for ( $i = 1; $i <= 5; $i ++ ):
-						$area_display[] = get_theme_mod( 'mominul_widget_area_' . $i . '_display', true );
-						$area_1_column = get_theme_mod( 'mominul_widget_area_' . $i . '_column', 'col-lg-3' );
+						$area_display[] = get_theme_mod( 'gpt_widget_area_' . $i . '_display', true );
+						$area_1_column = get_theme_mod( 'gpt_widget_area_' . $i . '_column', 'col-lg-3' );
 
 						?>
                         <div class="col-sm-6 <?php echo esc_attr( $area_1_column ) ?>">

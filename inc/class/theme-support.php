@@ -3,17 +3,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 /**
- * Mominul Theme Support
+ * Gpt Theme Support
  *
  *
- * @class        Mominul_Theme_Support
+ * @class        Gpt_Theme_Support
  * @version      1.0
  * @category     Class
- * @author       MominulIslam
+ * @author       GptIslam
  */
 
-if ( ! class_exists( 'Mominul_Theme_Support' ) ) {
-	class Mominul_Theme_Support {
+if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
+	class Gpt_Theme_Support {
 
 		private static $instance = null;
 
@@ -27,14 +27,14 @@ if ( ! class_exists( 'Mominul_Theme_Support' ) ) {
 
 		public function __construct() {
 			//Register Nav Menu
-			add_action( 'init', array( $this, 'mominul_register_nav_menus' ) );
+			add_action( 'init', array( $this, 'gpt_register_nav_menus' ) );
 			//Add translation file
-			add_action( 'init', array( $this, 'mominul_enqueue_translation_files' ) );
+			add_action( 'init', array( $this, 'gpt_enqueue_translation_files' ) );
 			//Add widget support
-			add_action( 'widgets_init', array( $this, 'mominul_sidebar_register' ) );
+			add_action( 'widgets_init', array( $this, 'gpt_sidebar_register' ) );
 
-			add_action( 'after_setup_theme', array( $this, 'mominul_setup' ) );
-			add_action( 'after_setup_theme', array( $this, 'mominul_content_width' ) );
+			add_action( 'after_setup_theme', array( $this, 'gpt_setup' ) );
+			add_action( 'after_setup_theme', array( $this, 'gpt_content_width' ) );
 
 			add_theme_support( 'align-wide' );
 			add_theme_support( 'wp-block-styles' );
@@ -44,7 +44,7 @@ if ( ! class_exists( 'Mominul_Theme_Support' ) ) {
 		}
 
 
-		function mominul_setup() {
+		function gpt_setup() {
 
 			if ( function_exists( 'add_theme_support' ) ) {
 				add_theme_support( 'post-thumbnails' );
@@ -64,7 +64,7 @@ if ( ! class_exists( 'Mominul_Theme_Support' ) ) {
 
 
 				// Set up the WordPress core custom background feature.
-				add_theme_support( 'custom-background', apply_filters( 'mominul_custom_background_args', array(
+				add_theme_support( 'custom-background', apply_filters( 'gpt_custom_background_args', array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
 				) ) );
@@ -83,12 +83,12 @@ if ( ! class_exists( 'Mominul_Theme_Support' ) ) {
 
 				//Image Size
                 add_image_size('mominul-team', 265, 300, true);
-                add_image_size('mominul_project_grid_625x385', 625, 385, true);
-                add_image_size('mominul_project_details_1300x600', 1300, 600, true);
-                add_image_size('mominul_project_slider', 600, 470, true);
-                add_image_size('mominul_blog_grid_410x290', 410, 290, true);
-                add_image_size('mominul_blog_grid_370x400', 370, 390, true);
-                add_image_size('mominul_blog_grid_400x182', 400, 182, true);
+                add_image_size('gpt_project_grid_625x385', 625, 385, true);
+                add_image_size('gpt_project_details_1300x600', 1300, 600, true);
+                add_image_size('gpt_project_slider', 600, 470, true);
+                add_image_size('gpt_blog_grid_410x290', 410, 290, true);
+                add_image_size('gpt_blog_grid_370x400', 370, 390, true);
+                add_image_size('gpt_blog_grid_400x182', 400, 182, true);
                 add_image_size('mominul-thumbnail_90_90', 90, 90, true);
                 add_image_size('mominul-service_740x275', 740, 275, true);
                 add_image_size('mominul-blog-list_300x185', 300, 185, true);
@@ -98,7 +98,7 @@ if ( ! class_exists( 'Mominul_Theme_Support' ) ) {
 		}
 
 
-		public function mominul_register_nav_menus() {
+		public function gpt_register_nav_menus() {
 			register_nav_menus(
 				array(
 					'primary' => esc_html__( 'Primary Menu', 'mominul' ),
@@ -107,14 +107,14 @@ if ( ! class_exists( 'Mominul_Theme_Support' ) ) {
 			);
 		}
 
-		public function mominul_enqueue_translation_files() {
+		public function gpt_enqueue_translation_files() {
 			load_theme_textdomain( 'mominul', get_template_directory() . '/languages/' );
 		}
 
-		public function mominul_sidebar_register() {
+		public function gpt_sidebar_register() {
 
 			// Default wrapper for widget and title
-			$wrapper_before = '<div id="%1$s" class="widget mominul_widget %2$s">';
+			$wrapper_before = '<div id="%1$s" class="widget gpt_widget %2$s">';
 			$wrapper_after  = '</div>';
 			$title_before   = '<h3 class="widget-title">';
 			$title_after    = '</h3>';
@@ -172,14 +172,14 @@ if ( ! class_exists( 'Mominul_Theme_Support' ) ) {
 		 *
 		 * @global int $content_width
 		 */
-		function mominul_content_width() {
+		function gpt_content_width() {
 			// This variable is intended to be overruled from themes.
 			// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-			$GLOBALS['content_width'] = apply_filters( 'mominul_content_width', 1170 );
+			$GLOBALS['content_width'] = apply_filters( 'gpt_content_width', 1170 );
 		}
 
 	}
 
-	new Mominul_Theme_Support();
+	new Gpt_Theme_Support();
 }

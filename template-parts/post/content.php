@@ -17,12 +17,12 @@ $category_list = get_the_category_list( ' ' );
 
 	<?php if ( has_post_thumbnail() ) : ?>
         <div class="post-thumbnail-wrapper">
-			<?php Mominul_Theme_Helper::mominul_post_thumbnail(); ?>
+			<?php Gpt_Theme_Helper::gpt_post_thumbnail(); ?>
         </div>
         <!-- /.post-thumbnail-wrapper -->
 	<?php endif; ?>
 
-    <div class="mpt-blog-content">
+    <div class="gpt-blog-content">
 		<?php if ( 'post' === get_post_type() ) : ?>
             <div class="mtp-post-meta-wrapper">
 				<?php if ( $category_list ) : ?>
@@ -34,7 +34,7 @@ $category_list = get_the_category_list( ' ' );
 		<?php endif; ?>
 
 		<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-		<?php Mominul_Theme_Helper::mominul_posted_author_avatar(); ?>
+		<?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
 
 		<?php if ( is_singular() ) {
 			wp_link_pages();

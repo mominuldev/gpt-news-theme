@@ -1,7 +1,7 @@
 <?php
 /**
  * Displays footer site info
- * @package Mominul
+ * @package Gpt
  * @subpackage mominul
  * @since 1.0
  * @version 1.0
@@ -14,7 +14,7 @@
             <div class="copyright">
                 <p>
 					<?php
-					$copy_text = mpt_option( 'copyright_text' );
+					$copy_text = gpt_option( 'copyright_text' );
 					if ( ! empty( $copy_text ) ) {
 						echo wp_kses_post( $copy_text );
 					} else {

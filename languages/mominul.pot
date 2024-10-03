@@ -1,8 +1,8 @@
-# Copyright (C) 2024 Mominul Islam
+# Copyright (C) 2024 Gpt Islam
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mominul 1.0.0\n"
+"Project-Id-Version: Gpt 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mominul\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Domain: mominul\n"
 
 #. Theme Name of the theme
-msgid "Mominul"
+msgid "Gpt"
 msgstr ""
 
 #. Theme URI of the theme
@@ -24,11 +24,11 @@ msgid "https://mominul.me/"
 msgstr ""
 
 #. Description of the theme
-msgid "Mominul is a simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. Mominul is a perfect choice for a blog, business, portfolio, or an online store. Mominul is fully compatible with Gutenberg editor. Mominul is a fully responsive theme that looks perfect on any device. Mominul is SEO friendly, speed optimized, translation ready and child theme ready. Mominul comes with a 1-click demo importer plugin that allows you to import demo content with just one click. Mominul is backed by world-class, one-on-one support, and a super active team of developers and designers ready to help!"
+msgid "Gpt is a simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. Gpt is a perfect choice for a blog, business, portfolio, or an online store. Gpt is fully compatible with Gutenberg editor. Gpt is a fully responsive theme that looks perfect on any device. Gpt is SEO friendly, speed optimized, translation ready and child theme ready. Gpt comes with a 1-click demo importer plugin that allows you to import demo content with just one click. Gpt is backed by world-class, one-on-one support, and a super active team of developers and designers ready to help!"
 msgstr ""
 
 #. Author of the theme
-msgid "Mominul Islam"
+msgid "Gpt Islam"
 msgstr ""
 
 #: 404.php:37
@@ -825,7 +825,7 @@ msgid "Enter your description"
 msgstr ""
 
 #: inc/options/admin-option.php:537
-msgid "Mominul is a experience Agency & our Team provide digital solution"
+msgid "Gpt is a experience Agency & our Team provide digital solution"
 msgstr ""
 
 #: inc/options/admin-option.php:544

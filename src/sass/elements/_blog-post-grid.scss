@@ -1,4 +1,4 @@
-.mominul__post-grid {
+.gpt__post-grid {
 	&__blog-meta-category {
 		color: #4d5afe;
 		text-transform: uppercase;
@@ -6,7 +6,7 @@
 		font-weight: 400;
 	}
 
-	.mominul__feature-image {
+	.gpt__feature-image {
 		margin-bottom: 24px;
 		transition: all 0.3s ease-in-out;
 
@@ -20,7 +20,7 @@
 		}
 	}
 
-	.mominul__entry-title {
+	.gpt__entry-title {
 		font-size: 20px;
 		line-height: 1.3;
 		margin-top: 0;
@@ -34,7 +34,7 @@
 		font-size: 16px;
 	}
 
-	.mominul__blog-meta-category {
+	.gpt__blog-meta-category {
 		color: $color__theme;
 		text-transform: uppercase;
 		font-size: 16px;
@@ -349,24 +349,24 @@
 	padding: 0 20px;
 }
 
-.mominul__post-slider {
+.gpt__post-slider {
 	background: #fff;
 	transition: all 0.3s ease-in-out;
 	border-radius: 10px;
 	overflow: hidden;
 
-	.mominul__entry-title {
+	.gpt__entry-title {
 		font-size: 20px;
 		line-height: 28px;
 		font-weight: 700;
 		margin-bottom: 12px;
 	}
 
-	.mominul__blog-content {
+	.gpt__blog-content {
 		padding: 25px 25px 30px;
 	}
 
-	.mominul__entry-content {
+	.gpt__entry-content {
 		margin: 0;
 		color: #626262;
 	}
@@ -399,7 +399,7 @@
 	}
 }
 
-.mominul__post-meta {
+.gpt__post-meta {
 	margin: 0 0 10px;
 	padding: 0;
 	list-style: none;
@@ -579,7 +579,7 @@
 	}
 }
 
-.mominul__post-list {
+.gpt__post-list {
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
@@ -595,17 +595,17 @@
 
 	&:not(:last-child) {
 		@media (min-width: 768px) {
-			.mominul__feature-image {
+			.gpt__feature-image {
 				border-bottom: 1px solid #2d3741;
 			}
 		}
 	}
 
-	.mominul__meta-category-wrapper {
+	.gpt__meta-category-wrapper {
 		margin-bottom: 18px;
 	}
 
-	.mominul__blog-meta-category {
+	.gpt__blog-meta-category {
 		padding: 10px 20px;
 		color: #fff;
 		display: inline-flex;
@@ -636,7 +636,7 @@
 		}
 	}
 
-	.mominul__post-list--meta {
+	.gpt__post-list--meta {
 		display: flex;
 		gap: 20px;
 	}
@@ -648,7 +648,7 @@
 		}
 	}
 
-	.mominul__post-list--meta {
+	.gpt__post-list--meta {
 		a {
 			color: #8c96af;
 			font-size: 14px;
@@ -667,7 +667,7 @@
 		margin-top: -1px;
 		align-items: stretch;
 
-		.mominul__post-list-title-wrapper {
+		.gpt__post-list-title-wrapper {
 			position: absolute;
 			top: 50%;
 			width: 100%;
@@ -676,7 +676,7 @@
 			z-index: 2;
 		}
 
-		.mominul__entry-title {
+		.gpt__entry-title {
 			font-family: $font__heading;
 			font-size: 22px;
 			line-height: 30px;
@@ -693,7 +693,7 @@
 			color: #4E566D;
 		}
 
-		.mominul__feature-image {
+		.gpt__feature-image {
 			max-width: 400px;
 			width: 100%;
 			position: relative;
@@ -727,7 +727,7 @@
 			}
 		}
 
-		.mominul__blog-content {
+		.gpt__blog-content {
 			flex: 2;
 			padding: 30px 9%;
 			border: 1px dashed #cbd3e1;
@@ -759,7 +759,7 @@
 			border-top: 1px solid #262522;
 		}
 
-		.mominul__image-contentwrapper {
+		.gpt__image-contentwrapper {
 			display: flex;
 			align-items: center;
 			gap: 75px;
@@ -776,7 +776,7 @@
 			}
 		}
 
-		.mominul__blog-content {
+		.gpt__blog-content {
 			max-width: 410px;
 		}
 
@@ -784,7 +784,7 @@
 			color: #B0B0B0;
 		}
 
-		.mominul__post-list__inner {
+		.gpt__post-list__inner {
 			display: flex;
 			gap: 75px;
 			align-items: center;
@@ -824,20 +824,20 @@
 			}
 		}
 
-		.mominul__feature-image {
+		.gpt__feature-image {
 			min-width: 300px;
 			border-bottom: 0 !important;
 			border-radius: 5px;
 			overflow: hidden;
 		}
 
-		.mominul__entry-title {
+		.gpt__entry-title {
 			a {
 				color: #fff;
 			}
 		}
 
-		.mominul__blog-meta-category {
+		.gpt__blog-meta-category {
 			background: transparent;
 			padding: 0;
 		}
@@ -863,7 +863,7 @@
 			margin-bottom: 0;
 		}
 
-		.mominul__feature-image {
+		.gpt__feature-image {
 			max-width: 300px;
 			border-radius: 5px;
 			overflow: hidden;
@@ -873,7 +873,7 @@
 			}
 		}
 
-		.mominul__blog-content {
+		.gpt__blog-content {
 			max-width: 420px;
 
 			@media(max-width: 1200px) {
@@ -912,7 +912,7 @@
 			text-transform: uppercase;
 		}
 
-		h3.mominul__entry-title {
+		h3.gpt__entry-title {
 			font-family: $font__heading;
 			color: #FFF;
 			font-size: 30px;
@@ -940,13 +940,13 @@
 	}
 
 	&:hover {
-		.mominul__feature-image {
+		.gpt__feature-image {
 			&:after {
 				opacity: 1;
 			}
 		}
 
-		.mominul__entry-title {
+		.gpt__entry-title {
 			a {
 				text-decoration: underline;
 			}

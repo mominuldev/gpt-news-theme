@@ -100,7 +100,7 @@
 		padding: 11px 35px;
 	}
 
-	.mpt-hamburger {
+	.gpt-hamburger {
 		width: 24px;
 		cursor: pointer;
 
@@ -129,7 +129,7 @@
 	}
 
 	&.header_light {
-		.mpt-hamburger {
+		.gpt-hamburger {
 			.bar {
 				background: #fff;
 			}
@@ -191,7 +191,7 @@
 			}
 		}
 
-		.mpt-hamburger {
+		.gpt-hamburger {
 			.bar {
 				background: $color__heading;
 			}
@@ -200,7 +200,7 @@
 	}
 
 	&.header_dark {
-		.mpt-hamburger {
+		.gpt-hamburger {
 			.bar {
 				background: $color__heading;
 			}
@@ -260,7 +260,7 @@
 			}
 		}
 
-		.mpt-btn {
+		.gpt-btn {
 			@media(min-width: 992px) and (max-width: 1200px) {
 				font-size: 14px;
 				padding: 14px 20px;

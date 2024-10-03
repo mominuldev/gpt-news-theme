@@ -3,7 +3,7 @@
 //
 // Add font-awesome 5.x icons array
 //
-function mominul_codstar_fontawesomefive_icons($icons)
+function gpt_codstar_fontawesomefive_icons($icons)
 {
 
     // add FA 5.x icons
@@ -1455,4 +1455,4 @@ function mominul_codstar_fontawesomefive_icons($icons)
 
 }
 
-add_filter('csf_field_icon_add_icons', 'mominul_codstar_fontawesomefive_icons');
+add_filter('csf_field_icon_add_icons', 'gpt_codstar_fontawesomefive_icons');

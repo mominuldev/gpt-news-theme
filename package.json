@@ -2,7 +2,7 @@
     "name": "mominul",
 	"projectname": "mominul",
     "version": "2.0.0",
-    "description": "Mominul wordpress theme",
+    "description": "Gpt wordpress theme",
     "main": "index.js",
     "scripts": {
         "dev": "gulp",
@@ -12,7 +12,7 @@
         "pot": "wp i18n make-pot . languages/mominul.pot",
         "zip": "wp i18n make-pot . languages/mominul.pot && gulp compress"
     },
-    "author": "MominulIslam",
+    "author": "GptIslam",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.2.2",

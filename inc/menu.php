@@ -2,7 +2,7 @@
 /*
 * Custom Walker to remove all the wp_nav_menu junk
 */
-class Mominul_Clean_Walker extends Walker_Nav_Menu {
+class Gpt_Clean_Walker extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 )	{
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -45,12 +45,12 @@ class Mominul_Clean_Walker extends Walker_Nav_Menu {
 /**
  *	Mega Menu
  */
-if ( ! defined( 'STOCKIE_MEGA_MENU_CLASS' ) ) define( 'STOCKIE_MEGA_MENU_CLASS', 'Mominul_Mega_Menu' );
-if ( ! defined( 'STOCKIE_EDIT_MENU_WALKER_CLASS' ) ) define( 'STOCKIE_EDIT_MENU_WALKER_CLASS', 'Mominul_Edit_Menu_Walker' );
-if ( ! defined( 'STOCKIE_NAV_MENU_WALKER_CLASS' ) ) define( 'STOCKIE_NAV_MENU_WALKER_CLASS', 'Mominul_Nav_Menu_Walker' );
-if ( ! function_exists( 'Mominul_Mega_Menu_init' ) ) {
+if ( ! defined( 'STOCKIE_MEGA_MENU_CLASS' ) ) define( 'STOCKIE_MEGA_MENU_CLASS', 'Gpt_Mega_Menu' );
+if ( ! defined( 'STOCKIE_EDIT_MENU_WALKER_CLASS' ) ) define( 'STOCKIE_EDIT_MENU_WALKER_CLASS', 'Gpt_Edit_Menu_Walker' );
+if ( ! defined( 'STOCKIE_NAV_MENU_WALKER_CLASS' ) ) define( 'STOCKIE_NAV_MENU_WALKER_CLASS', 'Gpt_Nav_Menu_Walker' );
+if ( ! function_exists( 'Gpt_Mega_Menu_init' ) ) {
 
-	function Mominul_Mega_Menu_init() {
+	function Gpt_Mega_Menu_init() {
 		require_once get_template_directory() . '/inc/menu/edit_mega_menu_walker.php';
 		require_once get_template_directory() . '/inc/menu/front_mega_menu_walker.php';
 		require_once get_template_directory() . '/inc/menu/mega_menu.php';
@@ -60,11 +60,11 @@ if ( ! function_exists( 'Mominul_Mega_Menu_init' ) ) {
 
 }
 
-add_action( 'after_setup_theme', 'Mominul_Mega_Menu_init' );
+add_action( 'after_setup_theme', 'Gpt_Mega_Menu_init' );
 
-if ( ! function_exists( 'Mominul_Mega_Menu_walker' ) ) {
+if ( ! function_exists( 'Gpt_Mega_Menu_walker' ) ) {
 
-	function Mominul_Mega_Menu_walker( $args = '' ) {
+	function Gpt_Mega_Menu_walker( $args = '' ) {
 		$metro_menu_walker['container'] = false;
 
 		if ( !$args['walker'] ) {
@@ -77,13 +77,13 @@ if ( ! function_exists( 'Mominul_Mega_Menu_walker' ) ) {
 
 }
 
-add_filter( 'wp_nav_menu_args', 'Mominul_Mega_Menu_walker' );
+add_filter( 'wp_nav_menu_args', 'Gpt_Mega_Menu_walker' );
 
-function mominul_megamenu_remove_hoverintent_delay( $array ) {
+function gpt_megamenu_remove_hoverintent_delay( $array ) {
 	$array['interval'] = 0;
 	$array['timeout'] = 0;
 
 	return $array;
 }
 
-add_filter( 'megamenu_javascript_localisation', 'mominul_megamenu_remove_hoverintent_delay', 10, 1 );
+add_filter( 'megamenu_javascript_localisation', 'gpt_megamenu_remove_hoverintent_delay', 10, 1 );

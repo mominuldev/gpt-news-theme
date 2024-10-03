@@ -5,24 +5,24 @@
  * @package mominul
  */
 
-$meta = get_post_meta( get_the_ID(), 'mominul_page_options', true );
+$meta = get_post_meta( get_the_ID(), 'gpt_page_options', true );
 
 $container            = $transparent = '';
-$is_fixed             = mpt_option( 'header_sticky' );
-$mobile_is_fixed      = mpt_option( 'header_sticky_mobile' );
-$mobile_menu          = mpt_option( 'mobile_resolution', '992' );
-$fixed_initial_offset = mpt_option( 'sticky_offset' );
-$header_color         = mpt_option( 'header_color' );
-$transparent_menu     = mpt_option( 'transparent_menu' );
-$sticky               = mpt_option( 'sticky_logo' );
+$is_fixed             = gpt_option( 'header_sticky' );
+$mobile_is_fixed      = gpt_option( 'header_sticky_mobile' );
+$mobile_menu          = gpt_option( 'mobile_resolution', '992' );
+$fixed_initial_offset = gpt_option( 'sticky_offset' );
+$header_color         = gpt_option( 'header_color' );
+$transparent_menu     = gpt_option( 'transparent_menu' );
+$sticky               = gpt_option( 'sticky_logo' );
 $meta_transparent     = ! empty( $meta['meta_transparent_menu'] ) ? $meta['meta_transparent_menu'] : '';
 $meta_header_color    = isset( $meta['meta_header_color'] ) ? $meta['meta_header_color'] : '';
 $logo_contrast        = ! empty( $sticky['url'] ) ? $sticky['url'] : '';
 $logo_contrast        = ! empty( $meta['meta_sticky_logo']['url'] ) ? $meta['meta_sticky_logo']['url'] : $logo_contrast;
 $header_type          = isset( $meta['meta_header_type'] ) ? $meta['meta_header_type'] : '';
-$mobile_logo          = mpt_option( 'mobile_logo' );
-$mobile_retina_logo   = mpt_option( 'mobile_retina_logo' );
-$nav_btn              = mpt_option( 'nav_btn' );
+$mobile_logo          = gpt_option( 'mobile_logo' );
+$mobile_retina_logo   = gpt_option( 'mobile_retina_logo' );
+$nav_btn              = gpt_option( 'nav_btn' );
 $meta_nav_btn         = isset( $meta['meta_nav_button'] ) ? $meta['meta_nav_button'] : '';
 
 if ( $meta_nav_btn == true || $meta_nav_btn == 1 ) {
@@ -32,12 +32,12 @@ if ( $meta_nav_btn == true || $meta_nav_btn == 1 ) {
 }
 
 // Top Bar Options
-$top_bar = mpt_option( 'topbar_enable' );
-$phone   = mpt_option( 'topbar_phone' );
-$email   = mpt_option( 'topbar_email' );
-$address = mpt_option( 'topbar_location' );
-$cart    = mpt_option( 'topbar_cart' );
-$login   = mpt_option( 'topbar_login' );
+$top_bar = gpt_option( 'topbar_enable' );
+$phone   = gpt_option( 'topbar_phone' );
+$email   = gpt_option( 'topbar_email' );
+$address = gpt_option( 'topbar_location' );
+$cart    = gpt_option( 'topbar_cart' );
+$login   = gpt_option( 'topbar_login' );
 
 $header_classes = '';
 
@@ -74,10 +74,10 @@ if ( $header_type == true || $header_type == 1 ) {
         <div class="header-inner">
             <nav id="site-navigation" class="main-nav">
                 <div class="site-logo">
-					<?php Mominul_Theme_Helper::branding_logo(); ?>
+					<?php Gpt_Theme_Helper::branding_logo(); ?>
                 </div>
 
-                <div class="mpt-hamburger" id="page-open-main-menu" tabindex="1">
+                <div class="gpt-hamburger" id="page-open-main-menu" tabindex="1">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -111,7 +111,7 @@ if ( $header_type == true || $header_type == 1 ) {
 									'menu_class'     => 'site-main-menu',
 									'fallback_cb'    => '',
 									'depth'          => 3,
-									'walker'         => new Mominul_Main_Nav_Walker(),
+									'walker'         => new Gpt_Main_Nav_Walker(),
 								)
 							);
 						} else {
@@ -125,11 +125,11 @@ if ( $header_type == true || $header_type == 1 ) {
                     <!-- /.main-menu -->
                 </div><!-- #menu-wrapper -->
 				<?php
-				$search_btn  = mpt_option( 'header_search' );
-				$nav_btn     = mpt_option( 'nav_btn' );
-				$btn_link    = mpt_option( 'button_link' );
-				$btn_text    = mpt_option( 'button_label' );
-				$canvas_menu = mpt_option( 'canvas_menu' );
+				$search_btn  = gpt_option( 'header_search' );
+				$nav_btn     = gpt_option( 'nav_btn' );
+				$btn_link    = gpt_option( 'button_link' );
+				$btn_text    = gpt_option( 'button_label' );
+				$canvas_menu = gpt_option( 'canvas_menu' );
 
 				if ( $search_btn == true || $nav_btn == true ): ?>
                     <div class="nav-right">
@@ -147,7 +147,7 @@ if ( $header_type == true || $header_type == 1 ) {
 						<?php endif;
 						if ( $nav_btn_show ) {
 							if ( $nav_btn && $btn_text ) :
-								echo '<a href="' . $btn_link . '" class="mpt-btn nav-btn btn-circle">' . $btn_text . '</a>';
+								echo '<a href="' . $btn_link . '" class="gpt-btn nav-btn btn-circle">' . $btn_text . '</a>';
 							endif;
 						}
 						?>
@@ -163,12 +163,12 @@ if ( $header_type == true || $header_type == 1 ) {
     <div class="offcanvas offcanvas-end mominul-offcanvas-sidebar" tabindex="-1" id="mominulSidebarOffCanvas"
          aria-labelledby="mominulSidebarOffCanvasLabel">
 		<?php
-		$canvas_logo               = mpt_option( 'offcanvas_sidebar_logo' );
-		$canvas_description        = mpt_option( 'offcanvas_sidebar_description' );
-		$canvas_contact_info_title = mpt_option( 'offcanvas_sidebar_contact_info_title' );
-		$canvas_contact_info       = mpt_option( 'offcanvas_sidebar_contact_info' );
-		$canvas_newsletter_is_on   = mpt_option( 'offcanvas_sidebar_newsletter_form_switcher' );
-		$canvas_newsletter_title   = mpt_option( 'offcanvas_sidebar_newsletter_info_title' );
+		$canvas_logo               = gpt_option( 'offcanvas_sidebar_logo' );
+		$canvas_description        = gpt_option( 'offcanvas_sidebar_description' );
+		$canvas_contact_info_title = gpt_option( 'offcanvas_sidebar_contact_info_title' );
+		$canvas_contact_info       = gpt_option( 'offcanvas_sidebar_contact_info' );
+		$canvas_newsletter_is_on   = gpt_option( 'offcanvas_sidebar_newsletter_form_switcher' );
+		$canvas_newsletter_title   = gpt_option( 'offcanvas_sidebar_newsletter_info_title' );
 		?>
 
         <div class="offcanvas-body">
@@ -222,13 +222,13 @@ if ( $header_type == true || $header_type == 1 ) {
 
                                 <div class="newsletter">
                                     <form class="newsletter-form">
-                                        <input type="hidden" name="action" value="mominul_mailchimp_subscribe">
+                                        <input type="hidden" name="action" value="gpt_mailchimp_subscribe">
                                         <div class="newsletter-inner">
                                             <div class="input-inner">
                                                 <input type="email" name="email" class="form-control" id="elementor-newsletter-form-email"
                                                        placeholder="Enter your emil" required>
                                             </div>
-                                            <button type="submit" name="submit" id="elementor-newsletter-submit" class="newsletter-submit mpt-btn">
+                                            <button type="submit" name="submit" id="elementor-newsletter-submit" class="newsletter-submit gpt-btn">
                                                 <i class="fas fa-paper-plane"></i>
                                                 <i class="fa fa-circle-o-notch fa-spin"></i>
                                             </button>

@@ -5,7 +5,7 @@ if ( class_exists( 'CSF' ) ) {
 
 	//
 	// Set a unique slug-like ID
-	$prefix = 'mominul_page_options';
+	$prefix = 'gpt_page_options';
 
 	//
 	// Create a metabox
@@ -349,7 +349,7 @@ if ( class_exists( 'CSF' ) ) {
                 'title'      => esc_html__( 'Color', 'mominul' ),
                 'des'        => esc_html__( 'Choose burger menu color', 'mominul' ),
                 'output'     => array(
-                    'background' => '.site-header .mpt-hamburger .bar',
+                    'background' => '.site-header .gpt-hamburger .bar',
                 ),
                 'dependency' => array( 'meta_header_type', '==', 'true' ),
             ),
@@ -441,7 +441,7 @@ if ( class_exists( 'CSF' ) ) {
 				'id'         => 'meta_footer_style',
 				'type'       => 'select',
 				'title'      => __( 'Select Footer Style', 'mominul' ),
-				'options'    => Mominul_Theme_Helper::get_footers_types(),
+				'options'    => Gpt_Theme_Helper::get_footers_types(),
 				'dependency' => array( 'meta_footer_type', '==', 'true' ),
 			),
 

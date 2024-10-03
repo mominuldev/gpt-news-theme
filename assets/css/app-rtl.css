@@ -76,14 +76,14 @@ body {
 }
 
 /* List */
-.mpt-btn .mpt-btn-content-wrapper .elementor-align-icon-right,
-.mpt-btn .mpt-btn-content-wrapper .mpt-btn__align-icon-right {
+.gpt-btn .gpt-btn-content-wrapper .elementor-align-icon-right,
+.gpt-btn .gpt-btn-content-wrapper .gpt-btn__align-icon-right {
   order: 1;
   margin-left: 0;
   margin-right: 8px;
 }
 
-.mominul__list li i {
+.gpt__list li i {
   margin-right: 0;
   margin-left: 10px;
 }
@@ -268,11 +268,11 @@ ul, ol {
   margin-left: 5px;
 }
 
-.blog-footer .mpt-btn i {
+.blog-footer .gpt-btn i {
   margin-left: 0;
   margin-right: 7px;
 }
-.blog-footer .mpt-btn i:before {
+.blog-footer .gpt-btn i:before {
   content: "\f060";
 }
 

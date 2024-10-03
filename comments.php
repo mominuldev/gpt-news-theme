@@ -8,7 +8,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Mominul
+ * @subpackage Gpt
  * @since 1.0
  * @version 1.0
  */
@@ -52,7 +52,7 @@ if (have_comments()) : ?>
 
 		<ol class="comment-list">
 			<?php wp_list_comments(array(
-				'walker' => new Mominul_Walker_Comment(),
+				'walker' => new Gpt_Walker_Comment(),
 				'avatar_size' => 60,
 				'short_ping' => true
 			));	?>

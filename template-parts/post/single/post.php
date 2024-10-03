@@ -6,7 +6,7 @@ $category_list = get_the_category_list( ' ' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-single single-layout-two' ); ?>>
-	<?php Mominul_Theme_Helper::mominul_post_thumbnail( 'full' ); ?>
+	<?php Gpt_Theme_Helper::gpt_post_thumbnail( 'full' ); ?>
 
     <div class="meta-wrapper">
 	    <?php if ( 'post' === get_post_type() ) : ?>
@@ -33,20 +33,20 @@ $category_list = get_the_category_list( ' ' );
 
 		<?php if(get_the_tag_list() ) : ?>
 		<div class="entry-footer">
-			<?php Mominul_Theme_Helper::mominul_posted_tag(); ?>
+			<?php Gpt_Theme_Helper::gpt_posted_tag(); ?>
 		</div>
 		<!-- /.entry-footer -->
 		<?php endif; ?>
 
-		<?php if ( mpt_option( 'author_info' ) ) {
-			Mominul_Theme_Helper::render_author_info();
+		<?php if ( gpt_option( 'author_info' ) ) {
+			Gpt_Theme_Helper::render_author_info();
 		} ?>
 	</div>
 	<!-- /.entry-content -->
 
-	<?php if ( mpt_option( 'share_post' ) ) {
+	<?php if ( gpt_option( 'share_post' ) ) {
 		echo '<div class="share-link-wrapper">';
-		    Mominul_Theme_Helper::render_post_list_share();
+		    Gpt_Theme_Helper::render_post_list_share();
 		echo '</div>';
 	} ?>
 </article><!-- #post-<?php the_ID(); ?> -->

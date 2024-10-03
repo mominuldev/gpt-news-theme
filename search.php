@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Mominul
+ * @package Gpt
  */
 
 get_header();
 
-$sidebar = Mominul_Theme_Helper::render_sidebars();
+$sidebar = Gpt_Theme_Helper::render_sidebars();
 $row_class = $sidebar['row_class'];
 $column = $sidebar['column'];
 
@@ -17,8 +17,8 @@ $column = $sidebar['column'];
 
 <div class="content-area search-page">
     <div class="container">
-       <div class="row<?php echo apply_filters('mominul_row_class', $row_class); ?>">
-            <div id='main-content' class="col-md-<?php echo apply_filters('mominul_column_class', $column); ?>">
+       <div class="row<?php echo apply_filters('gpt_row_class', $row_class); ?>">
+            <div id='main-content' class="col-md-<?php echo apply_filters('gpt_column_class', $column); ?>">
 
                 <?php
                  if ( have_posts() ) : ?>
@@ -43,8 +43,8 @@ $column = $sidebar['column'];
                                 <div class="search_result_form text-center">
                                     <?php get_search_form(); ?>
                                 </div>
-                                <div class="mominul_home_button">
-                                    <a class="mpt-btn" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Take me home', 'mominul'); ?></a>
+                                <div class="gpt_home_button">
+                                    <a class="gpt-btn" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Take me home', 'mominul'); ?></a>
                                 </div>
                             <?php else : ?>
                                 <p class="banner_404_text">
@@ -54,8 +54,8 @@ $column = $sidebar['column'];
                                     <?php get_search_form(); ?>
                                 </div>
 
-                                <div class="mominul_404_button ">
-                                    <a class="mpt-btn" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Take me home', 'mominul'); ?></a>
+                                <div class="gpt_404_button ">
+                                    <a class="gpt-btn" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Take me home', 'mominul'); ?></a>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -65,7 +65,7 @@ $column = $sidebar['column'];
                 endif;
                 ?>
 
-                <?php Mominul_Theme_Helper::mominul_post_pagination(); ?>
+                <?php Gpt_Theme_Helper::gpt_post_pagination(); ?>
             </div>
             <?php echo (isset($sidebar['content']) && !empty($sidebar['content']) ) ? $sidebar['content'] : ''; ?>
         </div>

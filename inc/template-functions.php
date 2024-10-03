@@ -11,7 +11,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function mominul_body_classes( $classes ) {
+function gpt_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -23,8 +23,8 @@ function mominul_body_classes( $classes ) {
 	}
 
 	// Canvas Header Layout
-	$header_layout = mpt_option( 'header_layout', 'default' );
-	$meta  = get_post_meta( get_the_ID(), 'mominul_page_options',  true );
+	$header_layout = gpt_option( 'header_layout', 'default' );
+	$meta  = get_post_meta( get_the_ID(), 'gpt_page_options',  true );
 
 	$meta_header_type = isset( $meta['meta_header_type'] ) ? $meta['meta_header_type'] : '';
 
@@ -41,7 +41,7 @@ function mominul_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'mominul_body_classes' );
+add_filter( 'body_class', 'gpt_body_classes' );
 
 
 /**
@@ -55,7 +55,7 @@ function mominulo_pingback_header() {
 add_action( 'wp_head', 'mominulo_pingback_header' );
 
 
-if ( ! function_exists( 'mominul_get_title_tag' ) ) {
+if ( ! function_exists( 'gpt_get_title_tag' ) ) {
 	/**
 	 * Returns array of title tags
 	 *
@@ -64,7 +64,7 @@ if ( ! function_exists( 'mominul_get_title_tag' ) ) {
 	 *
 	 * @return array
 	 */
-	function mominul_get_title_tag( $first_empty = false, $additional_elements = array() ) {
+	function gpt_get_title_tag( $first_empty = false, $additional_elements = array() ) {
 		$title_tag = array();
 
 		if ( $first_empty ) {
@@ -86,7 +86,7 @@ if ( ! function_exists( 'mominul_get_title_tag' ) ) {
 	}
 }
 
-function mominul_get_elementor_templates() {
+function gpt_get_elementor_templates() {
 	$elementor_templates = array();
 
 	if ( in_array( 'elementor/elementor.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
@@ -96,4 +96,4 @@ function mominul_get_elementor_templates() {
 	return $elementor_templates;
 }
 
-add_action('mominul_after_footer', 'mominul_get_elementor_templates');
+add_action('gpt_after_footer', 'gpt_get_elementor_templates');

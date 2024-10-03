@@ -1,17 +1,17 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
-* Mominul Theme Autoload
+* Gpt Theme Autoload
 *
 *
-* @class        Mominul_Theme_Autoload
+* @class        Gpt_Theme_Autoload
 * @version      1.0
 * @category     Class
-* @author       MominulIslam
+* @author       GptIslam
 */
 
-if (!class_exists('Mominul_Theme_Autoload')) {
-    class Mominul_Theme_Autoload{
+if (!class_exists('Gpt_Theme_Autoload')) {
+    class Gpt_Theme_Autoload{
 
         private static $instance = null;
         public static function get_instance( ) {
@@ -80,5 +80,5 @@ if (!class_exists('Mominul_Theme_Autoload')) {
         }
 
     }
-    new Mominul_Theme_Autoload();
+    new Gpt_Theme_Autoload();
 }

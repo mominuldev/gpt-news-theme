@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register theme menus
  */
 
-class Mominul_Main_Nav_Walker extends Walker_Nav_Menu {
+class Gpt_Main_Nav_Walker extends Walker_Nav_Menu {
 	private $current_Item;
 
 	function start_lvl( &$output, $depth = 0, $args = array() ) {

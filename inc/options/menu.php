@@ -4,7 +4,7 @@ if( class_exists( 'CSF' ) ) {
 
 	//
 	// Set a unique slug-like ID
-	$prefix = '_mominul_menu_options';
+	$prefix = '_gpt_menu_options';
 
 	//
 	// Create profile options

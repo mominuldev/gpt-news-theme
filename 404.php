@@ -3,13 +3,13 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package mominul
- * by MominulIslam
+ * by GptIslam
  */
 get_header();
 
-$image = mpt_option('error_image');
-$error_title = mpt_option('error_title');
-$error_content = mpt_option('error_description');
+$image = gpt_option('error_image');
+$error_title = gpt_option('error_title');
+$error_content = gpt_option('error_description');
 
 $default_image = get_template_directory_uri() . '/assets/images/404.png';
 

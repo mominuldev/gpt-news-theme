@@ -3,14 +3,14 @@
  * The template for displaying the footer
  * Contains the closing of the #content div and all content after.
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- * @package Mominul
+ * @package Gpt
  */
 
 
-$meta               = get_post_meta( get_the_ID(), 'mominul_page_options', true );
+$meta               = get_post_meta( get_the_ID(), 'gpt_page_options', true );
 $meta_footer_option = isset( $meta['meta_footer_type'] ) ? $meta['meta_footer_type'] : '';
 
-$f_style      = mpt_option( 'footer_style' );
+$f_style      = gpt_option( 'footer_style' );
 $footer_style = '';
 
 $meta_footer = isset( $meta['meta_footer_style'] ) ? $meta['meta_footer_style'] : '';
@@ -31,13 +31,13 @@ if ( $footer_style && ( get_post( $footer_style ) ) && in_array( 'elementor/elem
 
 	<?php $elementor_instance = Elementor\Plugin::instance(); ?>
     <footer id="mominul-footer" class="mominul-footer <?php echo esc_attr( get_post( $footer_style )->post_name ); ?>">
-		<?php echo Mominul_Theme_Helper::mominul_render_footer( $footer_style ); ?>
+		<?php echo Gpt_Theme_Helper::gpt_render_footer( $footer_style ); ?>
     </footer>
 <?php } else {
 	get_template_part( 'template-parts/footer/footer-one' );
 }
 
-do_action( 'mpt_after_footer' );
+do_action( 'gpt_after_footer' );
 
 wp_footer(); ?>
 

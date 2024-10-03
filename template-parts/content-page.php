@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php Mominul_Theme_Helper::mominul_post_thumbnail(); ?>
+	<?php Gpt_Theme_Helper::gpt_post_thumbnail(); ?>
 
     <div class="entry-content">
 		<?php

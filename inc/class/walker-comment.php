@@ -1,17 +1,17 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 /**
-* Mominul Walker Comment
+* Gpt Walker Comment
 *
 *
-* @class        Mominul_Walker_Comment
+* @class        Gpt_Walker_Comment
 * @version      1.0
 * @category     Class
-* @author       MominulIslam
+* @author       GptIslam
 */
 
-if (!class_exists('Mominul_Walker_Comment')) {
-    class Mominul_Walker_Comment extends Walker_Comment {
+if (!class_exists('Gpt_Walker_Comment')) {
+    class Gpt_Walker_Comment extends Walker_Comment {
         public function start_el( &$output, $comment, $depth = 0, $args = array(), $id = 0 ) {
             $depth++;
             $GLOBALS['comment_depth'] = $depth;
@@ -37,7 +37,7 @@ if (!class_exists('Mominul_Walker_Comment')) {
         protected function ping( $comment, $depth, $args ) {
             $tag = ( 'div' == $args['style'] ) ? 'div' : 'li'; ?>
 
-            <<?php echo Mominul_Theme_Helper::render_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( '', $comment ); ?>>
+            <<?php echo Gpt_Theme_Helper::render_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( '', $comment ); ?>>
                 <div class="comment-body stand_comment">
                     <?php esc_html_e( 'Pingback:', 'mominul' ); ?> <?php comment_author_link( $comment ); ?> <?php edit_comment_link( esc_html__( '(Edit)', 'mominul' ), '<span class="edit-link">', '</span>' ); ?>
                 </div>

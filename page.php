@@ -10,7 +10,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Mominul
+ * @subpackage Gpt
  * @since 1.0
  * @version 1.0
  */
@@ -18,15 +18,15 @@
 get_header();
 the_post();
 
-$sidebar = Mominul_Theme_Helper::render_sidebars('page');
+$sidebar = Gpt_Theme_Helper::render_sidebars('page');
 $row_class = $sidebar['row_class'];
 $column = $sidebar['column'];
 
 ?>
 <div class="content-area">
     <div class="container">
-        <div class="row <?php echo apply_filters( 'mominul_row_class', $row_class ); ?>">
-            <div id='main-content' class="col-lg-<?php echo apply_filters('mominul_column_class', $column); ?>">
+        <div class="row <?php echo apply_filters( 'gpt_row_class', $row_class ); ?>">
+            <div id='main-content' class="col-lg-<?php echo apply_filters('gpt_column_class', $column); ?>">
                 <?php
 				the_content(esc_html__( 'Read more!', 'mominul' ));
                 wp_link_pages(array('before' => '<div class="page-links">' . esc_html__( 'Pages', 'mominul' ) . ': ', 'after' => '</div>'));

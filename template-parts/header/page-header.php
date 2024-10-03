@@ -4,11 +4,11 @@
  */
 
 
-$page_header = mpt_option( 'page_header', true );
-$page_header_img = mpt_option( 'page_header_image' );
-$page_header_title = mpt_option( 'page_header_default_title' );
-$page_header_crumb = mpt_option( 'page_breadcrumbs', true );
-$support_signle_title = mpt_option( 'support_single_title', true );
+$page_header = gpt_option( 'page_header', true );
+$page_header_img = gpt_option( 'page_header_image' );
+$page_header_title = gpt_option( 'page_header_default_title' );
+$page_header_crumb = gpt_option( 'page_breadcrumbs', true );
+$support_signle_title = gpt_option( 'support_single_title', true );
 
 $banner_disp = true;
 $banner_image = '';
@@ -46,7 +46,7 @@ if ( is_singular() ) {
 			$banner_title = esc_html__( 'Blog', 'mominul' );
 		}
 
-	} elseif ( is_singular( 'mominul_support' ) ) {
+	} elseif ( is_singular( 'gpt_support' ) ) {
 		if ( !empty ( $support_signle_title ) ) {
 			$banner_title = $support_signle_title;
 		} else {
@@ -56,7 +56,7 @@ if ( is_singular() ) {
 
 		global $post;
 
-		$meta = get_post_meta( $post->ID, 'mominul_page_options', true );
+		$meta = get_post_meta( $post->ID, 'gpt_page_options', true );
 
 		if ( is_array( $meta ) ) {
 
@@ -107,7 +107,7 @@ if ( is_singular() ) {
 	$banner_title = esc_html__( 'Blog', 'mominul' );
 
 	if ( !empty( $postId ) ) {
-		$meta = get_post_meta( $postId, 'mominul_page_options', true );
+		$meta = get_post_meta( $postId, 'gpt_page_options', true );
 		if ( !empty( $meta['custom_title'] ) ) {
 			$banner_title = $meta['custom_title'];
 		} else {
@@ -133,7 +133,7 @@ if ( $banner_disp == false ) {
 			<?php if ( $banner_crumb == true ) { ?>
                 <div class="breadcrumb-wrapper">
                     <div class="breadcrumb-inner">
-						<?php echo Mominul_Theme_Helper::mominul_breadcrumb(); ?>
+						<?php echo Gpt_Theme_Helper::gpt_breadcrumb(); ?>
                     </div><!-- /.breadcrumb-wrapper -->
                 </div>
 			<?php } ?>

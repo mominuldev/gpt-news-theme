@@ -9,12 +9,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Mominul
+ * @package Gpt
  */
 
 get_header();
 
-$sidebar = Mominul_Theme_Helper::render_sidebars('blog');
+$sidebar = Gpt_Theme_Helper::render_sidebars('blog');
 $row_class = $sidebar['row_class'];
 $column = $sidebar['column'];
 
@@ -22,8 +22,8 @@ $column = $sidebar['column'];
 <div class="blog-content-area">
     <div class="container">
         <div class="blog-archive-wrapper">
-            <div class="row<?php echo apply_filters('mominul_row_class', $row_class); ?>">
-                <div id='main-content' class="col-lg-<?php echo apply_filters('mominul_column_class', $column); ?>">
+            <div class="row<?php echo apply_filters('gpt_row_class', $row_class); ?>">
+                <div id='main-content' class="col-lg-<?php echo apply_filters('gpt_column_class', $column); ?>">
                     <?php  if ( have_posts() ) :
                         echo '<div class="row">';
                         get_template_part( 'template-parts/post/posts-grid');
@@ -32,7 +32,7 @@ $column = $sidebar['column'];
                         get_template_part( 'template-parts/content', 'none' );
                     endif;  ?>
 
-                    <?php Mominul_Theme_Helper::mominul_post_pagination(); ?>
+                    <?php Gpt_Theme_Helper::gpt_post_pagination(); ?>
 
                 </div>
                 <?php

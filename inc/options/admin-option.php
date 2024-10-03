@@ -285,7 +285,7 @@ if ( class_exists( 'CSF' ) ) {
 				'title'  => esc_html__( 'Button Color', 'mominul' ),
 				'des'    => esc_html__( 'Choose button color', 'mominul' ),
 				'output' => array(
-					'color' => '.site-header .mpt-btn',
+					'color' => '.site-header .gpt-btn',
 				)
 			),
 
@@ -295,7 +295,7 @@ if ( class_exists( 'CSF' ) ) {
 				'title'  => esc_html__( 'Button BG Color', 'mominul' ),
 				'des'    => esc_html__( 'Choose button background color', 'mominul' ),
 				'output' => array(
-					'background-color' => '.site-header .mpt-btn',
+					'background-color' => '.site-header .gpt-btn',
 				)
 			),
 
@@ -303,7 +303,7 @@ if ( class_exists( 'CSF' ) ) {
 				'id'     => 'button_border',
 				'type'   => 'border',
 				'title'  => __( 'Button Border', 'mominul' ),
-				'output' => array( '.site-header .mpt-btn' ),
+				'output' => array( '.site-header .gpt-btn' ),
 			),
 
 			array(
@@ -312,7 +312,7 @@ if ( class_exists( 'CSF' ) ) {
 				'title'  => __( 'Button Border Radius', 'mominul' ),
 				'unit'   => 'px',
 				'output' => [
-					'border-radius' => '.site-header .mpt-btn',
+					'border-radius' => '.site-header .gpt-btn',
 				],
 			),
 
@@ -322,7 +322,7 @@ if ( class_exists( 'CSF' ) ) {
 				'title'  => esc_html__( 'Button Hover Color', 'mominul' ),
 				'des'    => esc_html__( 'Choose button color', 'mominul' ),
 				'output' => array(
-					'color' => '.site-header .mpt-btn:hover',
+					'color' => '.site-header .gpt-btn:hover',
 				)
 			),
 
@@ -332,7 +332,7 @@ if ( class_exists( 'CSF' ) ) {
 				'title'  => esc_html__( 'Button Hover BG Color', 'mominul' ),
 				'des'    => esc_html__( 'Choose button background color', 'mominul' ),
 				'output' => array(
-					'background-color' => '.site-header .mpt-btn:hover',
+					'background-color' => '.site-header .gpt-btn:hover',
 				)
 			),
 
@@ -340,7 +340,7 @@ if ( class_exists( 'CSF' ) ) {
 				'id'     => 'button_button_hover',
 				'type'   => 'border',
 				'title'  => __( 'Button Hover Border', 'mominul' ),
-				'output' => array( '.site-header .mpt-btn:hover' ),
+				'output' => array( '.site-header .gpt-btn:hover' ),
 			),
 
 			// Header Nav menu style
@@ -377,7 +377,7 @@ if ( class_exists( 'CSF' ) ) {
 				'type'   => 'color',
 				'title'  => esc_html__( 'Menu Dropdown Text Color', 'mominul' ),
 				'desc'   => esc_html__( 'You can change menu text color.', 'mominul' ),
-				'output' => '.site-header:not(.mobile-header) .site-main-menu li.menu-item-has-children .sub-menu li a:not(.mpt-btn-link)'
+				'output' => '.site-header:not(.mobile-header) .site-main-menu li.menu-item-has-children .sub-menu li a:not(.gpt-btn-link)'
 			),
 
 			array(
@@ -386,7 +386,7 @@ if ( class_exists( 'CSF' ) ) {
 				'title'            => esc_html__( 'Menu Dropdown Text Hover Color', 'mominul' ),
 				'desc'             => esc_html__( 'You can change menu text hover color.', 'mominul' ),
 				'output'           => array(
-					'color' => '.site-header:not(.mobile-header) .site-main-menu li.menu-item-has-children .sub-menu li a:not(.mpt-btn-link):hover',
+					'color' => '.site-header:not(.mobile-header) .site-main-menu li.menu-item-has-children .sub-menu li a:not(.gpt-btn-link):hover',
 				),
 				'output_important' => true
 			),
@@ -422,7 +422,7 @@ if ( class_exists( 'CSF' ) ) {
                 'title'      => esc_html__( 'Color', 'mominul' ),
                 'des'        => esc_html__( 'Choose burger menu color', 'mominul' ),
                 'output'     => array(
-                    'background' => '.site-header .mpt-hamburger .bar',
+                    'background' => '.site-header .gpt-hamburger .bar',
                 ),
                 'dependency' => array( 'meta_header_type', '==', 'true' ),
             ),
@@ -534,7 +534,7 @@ if ( class_exists( 'CSF' ) ) {
 				'type'  => 'textarea',
 				'title' => esc_html__( 'Description Textarea', 'mominul' ),
 				'desc'  => esc_html__( 'Enter your description', 'mominul' ),
-				'default' => esc_html__( 'Mominul is a experience Agency & our Team provide digital solution', 'mominul' ),
+				'default' => esc_html__( 'Gpt is a experience Agency & our Team provide digital solution', 'mominul' ),
 			),
 
 			// Contact Info Title
@@ -607,7 +607,7 @@ if ( class_exists( 'CSF' ) ) {
 				'id'      => 'footer_style',
 				'type'    => 'select',
 				'title'   => __( 'Select Footer Style', 'mominul' ),
-				'options' => Mominul_Theme_Helper::get_footers_types(),
+				'options' => Gpt_Theme_Helper::get_footers_types(),
 			),
 
 			array(
@@ -1370,17 +1370,17 @@ if ( class_exists( 'CSF' ) ) {
 				'title'  => esc_html__( 'Primary Color', 'mominul' ),
 				'desc'   => esc_html__( 'Main Color Scheme', 'mominul' ),
 				'output' => array(
-					'color' => 'a:hover, a:focus, a:active, .section-heading .section-title span, .mpt-testimonial__designation, .mpt-testimonial__avatar:before, .mpt-scroll-top-icon,
-					.mpt-btn.btn-outline, .banner__social-links li a, .mpt-btn:hover',
+					'color' => 'a:hover, a:focus, a:active, .section-heading .section-title span, .gpt-testimonial__designation, .gpt-testimonial__avatar:before, .gpt-scroll-top-icon,
+					.gpt-btn.btn-outline, .banner__social-links li a, .gpt-btn:hover',
 
-					'background-color' => '.mpt-contact-info__icon, .mpt-service:hover .mpt-service__btn',
+					'background-color' => '.gpt-contact-info__icon, .gpt-service:hover .gpt-service__btn',
 
-					'border-color' => '.mpt-btn, .mpt-btn.btn-outline, .mpt-btn.btn-outline:hover, .mpt-testimonial__control--prev:hover, .mpt-testimonial__control--next:hover, .mpt-service:hover,
-					.mpt-service:hover .mpt-service__btn, .mpt-skill.mpt-skill--1:hover, .mpt-btn.btn-outline, .banner__social-links li a',
+					'border-color' => '.gpt-btn, .gpt-btn.btn-outline, .gpt-btn.btn-outline:hover, .gpt-testimonial__control--prev:hover, .gpt-testimonial__control--next:hover, .gpt-service:hover,
+					.gpt-service:hover .gpt-service__btn, .gpt-skill.gpt-skill--1:hover, .gpt-btn.btn-outline, .banner__social-links li a',
 
-					'background' => '.mpt-testimonial__control--prev:hover, .mpt-testimonial__control--next:hover, .mpt-testimonial:hover .mpt-testimonial__avatar:before, .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
-					.mpt-skill.mpt-skill--1:hover .mpt-skill__percent, .mpt-btn:before, .banner__social-links li a:hover',
-					'stroke'            => '.mpt-scroll-top > svg.progress-circle path'
+					'background' => '.gpt-testimonial__control--prev:hover, .gpt-testimonial__control--next:hover, .gpt-testimonial:hover .gpt-testimonial__avatar:before, .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
+					.gpt-skill.gpt-skill--1:hover .gpt-skill__percent, .gpt-btn:before, .banner__social-links li a:hover',
+					'stroke'            => '.gpt-scroll-top > svg.progress-circle path'
 				),
 			),
 

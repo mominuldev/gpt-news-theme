@@ -1,4 +1,4 @@
-.mpt-btn {
+.gpt-btn {
 	position: relative;
 	padding: 14px 35px;
 	background-color: transparent;
@@ -44,11 +44,11 @@
 		border-radius: 15px;
 	}
 
-	.mpt-btn-content-wrapper {
+	.gpt-btn-content-wrapper {
 		display: flex;
 		align-items: center;
 
-		.elementor-align-icon-right, .mpt-btn__align-icon-right {
+		.elementor-align-icon-right, .gpt-btn__align-icon-right {
 			order: 2;
 		}
 	}
@@ -150,16 +150,16 @@
 		margin-left: 5px;
 	}
 
-	.mpt-btn-icon {
+	.gpt-btn-icon {
 		font-size: 14px;
 	}
 
-	.mpt-btn__icon {
+	.gpt-btn__icon {
 		line-height: 1;
 	}
 }
 
-.mpt-button {
+.gpt-button {
 	font-family: $font__heading;
 	color: rgba(255, 255, 255, 0.40);
 	font-size: 18px;
@@ -172,7 +172,7 @@
 	position: relative;
 	transition: all 0.3s ease-in-out;
 
-	.mpt-button--icon {
+	.gpt-button--icon {
 		position: relative;
 		height: 80px;
 		width: 80px;
@@ -222,7 +222,7 @@
 
 	&:hover {
 		color: #fff;
-		.mpt-button--icon {
+		.gpt-button--icon {
 			//background: $color__theme;
 			color: rgba(255, 255, 255, 0.4);
 			border-color: $color__theme;
@@ -244,7 +244,7 @@
 	}
 }
 
-.mpt-btn__icon {
+.gpt-btn__icon {
 	line-height: 1;
 }
 
@@ -253,7 +253,7 @@
 	font-weight: 500;
 	position: relative;
 
-	.mpt-btn__text {
+	.gpt-btn__text {
 		position: relative;
 		z-index: 1;
 
@@ -269,7 +269,7 @@
 		}
 	}
 
-	.mpt-btn__icon {
+	.gpt-btn__icon {
 		height: 30px;
 		width: 30px;
 		line-height: 30px;
@@ -288,7 +288,7 @@
 }
 
 
-.mpt-scroll-top-icon {
+.gpt-scroll-top-icon {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -301,18 +301,18 @@
 	color: $color__theme;
 }
 
-.mpt-scroll-top.progress-done {
+.gpt-scroll-top.progress-done {
 	opacity: 1;
 }
 
-.mpt-scroll-top > svg.progress-circle path {
+.gpt-scroll-top > svg.progress-circle path {
 	stroke: $color__theme;
 	stroke-width: 4;
 	box-sizing: border-box;
 	transition: all 200ms linear;
 }
 
-.mpt-scroll-top-icon {
+.gpt-scroll-top-icon {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -325,16 +325,16 @@
 	color: $color__theme;
 }
 
-.mpt-scroll-top > svg path {
+.gpt-scroll-top > svg path {
 	fill: none;
 }
 
-.mpt-scroll-top.progress-done {
+.gpt-scroll-top.progress-done {
 	visibility: visible;
 	transform: translateY(0);
 }
 
-.mpt-scroll-top {
+.gpt-scroll-top {
 	position: fixed;
 	right: 30px;
 	bottom: 25px;
@@ -585,7 +585,7 @@
 }
 
 
-a.mpt-btn-circle {
+a.gpt-btn-circle {
 	font-family: $font__heading-3;
 	display: flex;
 	align-items: center;

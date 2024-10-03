@@ -5,9 +5,9 @@ if( class_exists( 'CSF' ) ) {
 	//
 	// Create a widget 1
 	//
-	CSF::createWidget( 'mpt_contact_info', array(
+	CSF::createWidget( 'gpt_contact_info', array(
 		'title'       => 'MPT Contact Info',
-		'classname'   => 'mpt_contact_info',
+		'classname'   => 'gpt_contact_info',
 		'description' => 'A widget for footer contact info.',
 		'fields'      => array(
 
@@ -21,28 +21,28 @@ if( class_exists( 'CSF' ) ) {
 			array(
 				'id'     => 'contact_info',
 				'type'   => 'repeater',
-				'title'  => __('Contact Info', 'mpt-core'),
+				'title'  => __('Contact Info', 'gpt-core'),
 				'fields' => array(
 
 					// Icon Field
 					array(
 						'id'    => 'contact_icon',
 						'type'  => 'icon',
-						'title' => __('Icon', 'mpt-core'),
+						'title' => __('Icon', 'gpt-core'),
 					),
 
 
 					array(
 						'id'    => 'contact_text',
 						'type'  => 'text',
-						'title' => __('Contact Info', 'mpt-core'),
+						'title' => __('Contact Info', 'gpt-core'),
 					),
 
 					// Link Field
 					array(
 						'id'    => 'contact_link',
 						'type'  => 'text',
-						'title' => __('Link', 'mpt-core'),
+						'title' => __('Link', 'gpt-core'),
 					),
 
 				),
@@ -54,8 +54,8 @@ if( class_exists( 'CSF' ) ) {
 	// Front-end display of widget example 1
 	// Attention: This function named considering above widget base id.
 	//
-	if( ! function_exists( 'mpt_contact_info' ) ) {
-		function mpt_contact_info( $args, $instance ) {
+	if( ! function_exists( 'gpt_contact_info' ) ) {
+		function gpt_contact_info( $args, $instance ) {
 
 			echo $args['before_widget'];
 
