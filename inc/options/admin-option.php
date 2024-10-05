@@ -187,16 +187,16 @@ if ( class_exists( 'CSF' ) ) {
 		'fields' => array(
 
 			// Header Style
-			array(
-				'id'      => 'header_layout',
-				'type'    => 'select',
-				'title'   => esc_html__( 'Header Style', 'mominul' ),
-				'desc'    => esc_html__( 'Select header style', 'mominul' ),
-				'options' => array(
-					'default' => __('Header Default', 'mominul'),
-					'canvas' => __('Header Canvas', 'mominul')
-				)
-			),
+//			array(
+//				'id'      => 'header_layout',
+//				'type'    => 'select',
+//				'title'   => esc_html__( 'Header Style', 'mominul' ),
+//				'desc'    => esc_html__( 'Select header style', 'mominul' ),
+//				'options' => array(
+//					'default' => __('Header Default', 'mominul'),
+//					'canvas' => __('Header Canvas', 'mominul')
+//				)
+//			),
 
 			array(
 				'id'      => 'header_sticky',
@@ -205,35 +205,53 @@ if ( class_exists( 'CSF' ) ) {
 				'default' => false,
 			),
 
+//			array(
+//				'id'      => 'transparent_menu',
+//				'type'    => 'switcher',
+//				'title'   => esc_html__( 'Transparent Menu', 'mominul' ),
+//				'default' => false,
+//				'desc'    => esc_html__( 'Enable transparent menu', 'mominul' ),
+//				'dependency' => array( 'header_layout', '==', 'default' ),
+//			),
+
+//			array(
+//				'id'         => 'header_color',
+//				'type'       => 'button_set',
+//				'title'      => __( 'Transparent Header Color', 'mominul' ),
+//				'options'    => array(
+//					'header_dark'  => __( 'Dark (For light background)', 'mominul' ),
+//					'header_light' => __( 'Light (For dark Background)', 'mominul' ),
+//				),
+//				'default'    => 'header_light',
+//				'dependency' => array( 'transparent_menu', '==', 'true' ),
+//			),
+
+//			array(
+//				'type'    => 'text',
+//				'title'   => esc_html__( 'Responsive Menu', 'mominul' ),
+//				'id'      => 'mobile_resolution',
+//				'default' => '992',
+//				'desc'    => esc_html__( 'Responsive Menu Resolution', 'mominul' ),
+//				'dependency' => array( 'header_layout', '==', 'default' ),
+//			),
+
+		// Ad
 			array(
-				'id'      => 'transparent_menu',
+				'id'      => 'header_ad',
 				'type'    => 'switcher',
-				'title'   => esc_html__( 'Transparent Menu', 'mominul' ),
+				'title'   => esc_html__( 'Header Ad On/Off', 'mominul' ),
 				'default' => false,
-				'desc'    => esc_html__( 'Enable transparent menu', 'mominul' ),
-				'dependency' => array( 'header_layout', '==', 'default' ),
 			),
 
+			// Google Add
 			array(
-				'id'         => 'header_color',
-				'type'       => 'button_set',
-				'title'      => __( 'Transparent Header Color', 'mominul' ),
-				'options'    => array(
-					'header_dark'  => __( 'Dark (For light background)', 'mominul' ),
-					'header_light' => __( 'Light (For dark Background)', 'mominul' ),
-				),
-				'default'    => 'header_light',
-				'dependency' => array( 'transparent_menu', '==', 'true' ),
+				'id'       => 'header_google_ad',
+				'type'     => 'code_editor',
+				'title'    => 'HTML Editor',
+				'sanitize' => false,
+				'dependency' => array( 'header_ad', '==', 'true' ),
 			),
 
-			array(
-				'type'    => 'text',
-				'title'   => esc_html__( 'Responsive Menu', 'mominul' ),
-				'id'      => 'mobile_resolution',
-				'default' => '992',
-				'desc'    => esc_html__( 'Responsive Menu Resolution', 'mominul' ),
-				'dependency' => array( 'header_layout', '==', 'default' ),
-			),
 
 			array(
 				'type'    => 'heading',

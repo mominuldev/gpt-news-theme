@@ -3,16 +3,10 @@
 	overflow: hidden;
 	background-color: #121316;
 
-
 	.description, p {
 		color: rgba(255, 255, 255, 0.8);
 		font-size: 15px;
 	}
-
-	.logo-dark {
-		display: none;
-	}
-
 
 	.widget {
 		position: relative;
@@ -49,23 +43,6 @@
 			}
 		}
 
-		// Footer Contact Info
-		ul.contact-info {
-			li {
-				display: flex;
-				align-items: center;
-				gap: 10px;
-				font-size: 16px;
-
-				a {
-					font-size: 18px;
-				}
-
-				i {
-					color: $color__theme;
-				}
-			}
-		}
 	}
 
 
@@ -94,7 +71,7 @@
 		}
 
 		.copyright {
-			padding: 33px 0 45px;
+			padding: 33px 0;
 			text-align: center;
 
 			@media(max-width: 767px) {
@@ -129,80 +106,6 @@
 	}
 }
 
-.footer-newsletter {
-	display: flex;
-	align-items: center;
-	gap: 20px;
-
-	.newsletter-input {
-		position: relative;
-		flex: 2;
-
-		i {
-			position: absolute;
-			left: 15px;
-			top: 50%;
-			transform: translateY(-50%);
-			color: $color__theme;
-		}
-
-		input {
-			margin-bottom: 0 !important;
-			padding: 10px 14px 10px 40px !important;
-
-			//-webkit-background-clip: text !important;
-			//background-clip: text !important;
-			//-webkit-text-fill-color: transparent !important;
-			//color: #fff;
-
-			&::placeholder {
-				color: #fff !important;
-			}
-		}
-	}
-
-	input {
-		height: 60px;
-
-		// Auto fill color
-		//&:-webkit-autofill {
-		//    -webkit-box-shadow: 0 0 0 30px #fff inset;
-		//}
-		//
-		//// Auto fill Background color
-		//&:-webkit-autofill {
-		//    -webkit-text-fill-color: #000 !important;
-		//}
-
-
-	}
-}
-
-
-.footer-menu-enable {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
-
-	@media(max-width: 767px) {
-		display: block;
-		text-align: center;
-
-		.footer-social-wrapper {
-			margin-bottom: 20px;
-		}
-
-		.copyright {
-			padding: 15px 0 5px;
-		}
-	}
-}
-
-.wp-widget-block-newsletter {
-	max-width: 400px;
-}
-
 .site-footer-menu {
 	margin: 0;
 	padding: 0;
@@ -233,59 +136,5 @@
 			font-weight: 400;
 		}
 	}
-}
-
-
-.noxfolio-grid-lines {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-
-	span {
-		position: absolute;
-		width: 1px;
-		height: 100%;
-		background-color: rgba(255, 255, 255, .05);
-
-		&:nth-child(1) {
-			left: 10%;
-		}
-
-		&:nth-child(2) {
-			left: 20%;
-		}
-
-		&:nth-child(3) {
-			left: 30%;
-		}
-
-		&:nth-child(4) {
-			left: 40%;
-		}
-
-		&:nth-child(5) {
-			left: 50%;
-		}
-
-		&:nth-child(6) {
-			left: 60%;
-		}
-
-		&:nth-child(7) {
-			left: 70%;
-		}
-
-		&:nth-child(8) {
-			left: 80%;
-		}
-
-		&:nth-child(9) {
-			left: 90%;
-		}
-	}
-
 }
 
