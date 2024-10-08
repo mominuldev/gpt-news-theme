@@ -2,29 +2,29 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gpt 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/mominul\n"
+"Project-Id-Version: GPT News 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gpt-news\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-25T18:48:13+00:00\n"
+"POT-Creation-Date: 2024-10-07T08:30:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: mominul\n"
 
 #. Theme Name of the theme
-msgid "Gpt"
+msgid "GPT News"
 msgstr ""
 
 #. Theme URI of the theme
 #. Author URI of the theme
-msgid "https://mominul.me/"
+msgid "https://gptheme.com/"
 msgstr ""
 
 #. Description of the theme
-msgid "Gpt is a simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. Gpt is a perfect choice for a blog, business, portfolio, or an online store. Gpt is fully compatible with Gutenberg editor. Gpt is a fully responsive theme that looks perfect on any device. Gpt is SEO friendly, speed optimized, translation ready and child theme ready. Gpt comes with a 1-click demo importer plugin that allows you to import demo content with just one click. Gpt is backed by world-class, one-on-one support, and a super active team of developers and designers ready to help!"
+msgid "GPT News is a clean, modern, user-friendly, fast-loading, customizable, flexible, functional, fully responsive and excellent for a news, newspaper, magazine, publishing, review, blog or other editorial websites. This theme is fully responsive, fits any size of display from lower to higher resolutions and supports all modern browsers. It also supports YouTube and Vimeo videos. This theme has multiple homepage and header variations and easy to use admin back-end. The flexible and powerful options allow you to customize the theme easily and the drag & drop page builder makes it easy to create unique and creative homepages. This theme is SEO-ready and provides a great platform to achieve super high search engine rankings for your website. This theme is translation ready."
 msgstr ""
 
 #. Author of the theme
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Your Comment"
 msgstr ""
 
-#: header.php:70
+#: header.php:48
 msgid "Skip to content"
 msgstr ""
 
@@ -110,7 +110,7 @@ msgid "Events"
 msgstr ""
 
 #: inc/class/theme-helper.php:162
-#: inc/options/admin-option.php:819
+#: inc/options/admin-option.php:837
 #: template-parts/header/page-header.php:46
 #: template-parts/header/page-header.php:67
 #: template-parts/header/page-header.php:107
@@ -297,7 +297,6 @@ msgid "Display on site"
 msgstr ""
 
 #: inc/customizer.php:99
-#: inc/options/admin-option.php:193
 #: inc/options/meta-option.php:29
 #: inc/options/meta-option.php:38
 msgid "Header Style"
@@ -512,13 +511,13 @@ msgid "Show Back To Top"
 msgstr ""
 
 #: inc/options/admin-option.php:126
-#: inc/options/admin-option.php:285
+#: inc/options/admin-option.php:303
 msgid "Button Color"
 msgstr ""
 
 #: inc/options/admin-option.php:127
-#: inc/options/admin-option.php:286
-#: inc/options/admin-option.php:323
+#: inc/options/admin-option.php:304
+#: inc/options/admin-option.php:341
 #: inc/options/meta-option.php:206
 #: inc/options/meta-option.php:246
 #: inc/options/meta-option.php:281
@@ -527,13 +526,13 @@ msgid "Choose button color"
 msgstr ""
 
 #: inc/options/admin-option.php:136
-#: inc/options/admin-option.php:295
+#: inc/options/admin-option.php:313
 msgid "Button BG Color"
 msgstr ""
 
 #: inc/options/admin-option.php:137
-#: inc/options/admin-option.php:296
-#: inc/options/admin-option.php:333
+#: inc/options/admin-option.php:314
+#: inc/options/admin-option.php:351
 #: inc/options/meta-option.php:217
 #: inc/options/meta-option.php:257
 #: inc/options/meta-option.php:292
@@ -542,7 +541,7 @@ msgid "Choose button background color"
 msgstr ""
 
 #: inc/options/admin-option.php:146
-#: inc/options/admin-option.php:332
+#: inc/options/admin-option.php:350
 msgid "Button Hover BG Color"
 msgstr ""
 
@@ -563,162 +562,119 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: inc/options/admin-option.php:194
-#: inc/options/meta-option.php:39
-msgid "Select header style"
-msgstr ""
-
-#: inc/options/admin-option.php:196
-#: inc/options/meta-option.php:41
-msgid "Header Default"
-msgstr ""
-
-#: inc/options/admin-option.php:197
-#: inc/options/meta-option.php:42
-msgid "Header Canvas"
-msgstr ""
-
 #: inc/options/admin-option.php:204
 msgid "Enable Header Sticky"
 msgstr ""
 
-#: inc/options/admin-option.php:211
-#: inc/options/meta-option.php:50
-msgid "Transparent Menu"
+#: inc/options/admin-option.php:242
+msgid "Header Ad On/Off"
 msgstr ""
 
-#: inc/options/admin-option.php:213
-msgid "Enable transparent menu"
-msgstr ""
-
-#: inc/options/admin-option.php:220
-#: inc/options/meta-option.php:58
-msgid "Transparent Header Color"
-msgstr ""
-
-#: inc/options/admin-option.php:222
-#: inc/options/meta-option.php:60
-msgid "Dark (For light background)"
-msgstr ""
-
-#: inc/options/admin-option.php:223
-#: inc/options/meta-option.php:61
-msgid "Light (For dark Background)"
-msgstr ""
-
-#: inc/options/admin-option.php:231
-msgid "Responsive Menu"
-msgstr ""
-
-#: inc/options/admin-option.php:234
-msgid "Responsive Menu Resolution"
-msgstr ""
-
-#: inc/options/admin-option.php:240
+#: inc/options/admin-option.php:258
 msgid "Header Nav Right"
 msgstr ""
 
-#: inc/options/admin-option.php:246
+#: inc/options/admin-option.php:264
 msgid "Search On/Off"
 msgstr ""
 
-#: inc/options/admin-option.php:254
+#: inc/options/admin-option.php:272
 msgid "Canvas Menu On/Off"
 msgstr ""
 
-#: inc/options/admin-option.php:261
+#: inc/options/admin-option.php:279
 msgid "Button On/Off"
 msgstr ""
 
-#: inc/options/admin-option.php:268
+#: inc/options/admin-option.php:286
 msgid "Button Label"
 msgstr ""
 
-#: inc/options/admin-option.php:269
+#: inc/options/admin-option.php:287
 msgid "Let’s Talk"
 msgstr ""
 
-#: inc/options/admin-option.php:276
+#: inc/options/admin-option.php:294
 msgid "Button Link"
 msgstr ""
 
-#: inc/options/admin-option.php:305
+#: inc/options/admin-option.php:323
 msgid "Button Border"
 msgstr ""
 
-#: inc/options/admin-option.php:312
+#: inc/options/admin-option.php:330
 msgid "Button Border Radius"
 msgstr ""
 
-#: inc/options/admin-option.php:322
+#: inc/options/admin-option.php:340
 msgid "Button Hover Color"
 msgstr ""
 
-#: inc/options/admin-option.php:342
+#: inc/options/admin-option.php:360
 msgid "Button Hover Border"
 msgstr ""
 
-#: inc/options/admin-option.php:349
+#: inc/options/admin-option.php:367
 #: inc/options/meta-option.php:105
 msgid "Header Menu Style"
 msgstr ""
 
-#: inc/options/admin-option.php:355
-#: inc/options/admin-option.php:402
+#: inc/options/admin-option.php:373
+#: inc/options/admin-option.php:420
 #: inc/options/meta-option.php:112
 #: inc/options/meta-option.php:167
 msgid "Menu Text Color"
 msgstr ""
 
-#: inc/options/admin-option.php:356
-#: inc/options/admin-option.php:379
-#: inc/options/admin-option.php:403
+#: inc/options/admin-option.php:374
+#: inc/options/admin-option.php:397
+#: inc/options/admin-option.php:421
 #: inc/options/meta-option.php:113
 #: inc/options/meta-option.php:133
 #: inc/options/meta-option.php:168
 msgid "You can change menu text color."
 msgstr ""
 
-#: inc/options/admin-option.php:367
-#: inc/options/admin-option.php:410
+#: inc/options/admin-option.php:385
+#: inc/options/admin-option.php:428
 #: inc/options/meta-option.php:122
 #: inc/options/meta-option.php:179
 msgid "Menu Text Hover Color"
 msgstr ""
 
-#: inc/options/admin-option.php:368
-#: inc/options/admin-option.php:387
-#: inc/options/admin-option.php:411
+#: inc/options/admin-option.php:386
+#: inc/options/admin-option.php:405
+#: inc/options/admin-option.php:429
 #: inc/options/meta-option.php:123
 #: inc/options/meta-option.php:141
 #: inc/options/meta-option.php:180
 msgid "You can change menu text hover color."
 msgstr ""
 
-#: inc/options/admin-option.php:378
+#: inc/options/admin-option.php:396
 msgid "Menu Dropdown Text Color"
 msgstr ""
 
-#: inc/options/admin-option.php:386
+#: inc/options/admin-option.php:404
 msgid "Menu Dropdown Text Hover Color"
 msgstr ""
 
-#: inc/options/admin-option.php:396
+#: inc/options/admin-option.php:414
 #: inc/options/meta-option.php:161
 msgid "Header Sticky Menu Style"
 msgstr ""
 
-#: inc/options/admin-option.php:412
-#: inc/options/admin-option.php:442
-#: inc/options/admin-option.php:450
-#: inc/options/admin-option.php:458
-#: inc/options/admin-option.php:467
-#: inc/options/admin-option.php:474
-#: inc/options/admin-option.php:488
-#: inc/options/admin-option.php:502
-#: inc/options/admin-option.php:509
-#: inc/options/admin-option.php:526
-#: inc/options/admin-option.php:1173
+#: inc/options/admin-option.php:430
+#: inc/options/admin-option.php:460
+#: inc/options/admin-option.php:468
+#: inc/options/admin-option.php:476
+#: inc/options/admin-option.php:485
+#: inc/options/admin-option.php:492
+#: inc/options/admin-option.php:506
+#: inc/options/admin-option.php:520
+#: inc/options/admin-option.php:527
+#: inc/options/admin-option.php:544
+#: inc/options/admin-option.php:1191
 #: inc/options/meta-option.php:71
 #: inc/options/meta-option.php:80
 #: inc/options/meta-option.php:90
@@ -728,7 +684,7 @@ msgstr ""
 msgid "Upload"
 msgstr ""
 
-#: inc/options/admin-option.php:422
+#: inc/options/admin-option.php:440
 #: inc/options/meta-option.php:205
 #: inc/options/meta-option.php:245
 #: inc/options/meta-option.php:280
@@ -736,527 +692,527 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: inc/options/admin-option.php:423
+#: inc/options/admin-option.php:441
 #: inc/options/meta-option.php:350
 msgid "Choose burger menu color"
 msgstr ""
 
-#: inc/options/admin-option.php:435
-#: inc/options/admin-option.php:441
-#: inc/options/admin-option.php:525
+#: inc/options/admin-option.php:453
+#: inc/options/admin-option.php:459
+#: inc/options/admin-option.php:543
 msgid "Logo"
 msgstr ""
 
-#: inc/options/admin-option.php:443
-#: inc/options/admin-option.php:451
+#: inc/options/admin-option.php:461
+#: inc/options/admin-option.php:469
 msgid "Upload your Logo for the header"
 msgstr ""
 
-#: inc/options/admin-option.php:449
+#: inc/options/admin-option.php:467
 msgid "Transparent Header Logo"
 msgstr ""
 
-#: inc/options/admin-option.php:457
+#: inc/options/admin-option.php:475
 #: inc/options/meta-option.php:79
 msgid "Retina Logo Upload @2x"
 msgstr ""
 
-#: inc/options/admin-option.php:459
+#: inc/options/admin-option.php:477
 #: inc/options/meta-option.php:81
 msgid "Upload your Retina Logo. This should be your Logo in double size (If your logo is 100 x 20px, it should be 200 x 40px)"
 msgstr ""
 
-#: inc/options/admin-option.php:465
+#: inc/options/admin-option.php:483
 #: inc/options/meta-option.php:88
 msgid "Sticky Logo"
 msgstr ""
 
-#: inc/options/admin-option.php:466
+#: inc/options/admin-option.php:484
 #: inc/options/meta-option.php:89
 msgid "Upload logo for Header Sticky and Inner Page."
 msgstr ""
 
-#: inc/options/admin-option.php:473
+#: inc/options/admin-option.php:491
 #: inc/options/meta-option.php:97
 msgid "Sticky Retina Logo @2x"
 msgstr ""
 
-#: inc/options/admin-option.php:475
+#: inc/options/admin-option.php:493
 msgid "Upload Retina logo for sticky header. This should be your Logo in double size (If your logo is 100 x 20px, it should be 200 x 40px)"
 msgstr ""
 
-#: inc/options/admin-option.php:480
-#: inc/options/admin-option.php:486
+#: inc/options/admin-option.php:498
+#: inc/options/admin-option.php:504
 msgid "Sidebar Menu Logo"
 msgstr ""
 
-#: inc/options/admin-option.php:487
-#: inc/options/admin-option.php:501
+#: inc/options/admin-option.php:505
+#: inc/options/admin-option.php:519
 msgid "Upload logo for mobile menu."
 msgstr ""
 
-#: inc/options/admin-option.php:494
-#: inc/options/admin-option.php:500
+#: inc/options/admin-option.php:512
+#: inc/options/admin-option.php:518
 msgid "Mobile Logo"
 msgstr ""
 
-#: inc/options/admin-option.php:508
+#: inc/options/admin-option.php:526
 msgid "Mobile Retina Logo @2x"
 msgstr ""
 
-#: inc/options/admin-option.php:510
+#: inc/options/admin-option.php:528
 msgid "Upload Retina logo for  mobile menu. This should be your Logo in double size (If your logo is 100 x 20px, it should be 200 x 40px)"
 msgstr ""
 
-#: inc/options/admin-option.php:519
+#: inc/options/admin-option.php:537
 msgid "Offcanvas Sidebar"
 msgstr ""
 
-#: inc/options/admin-option.php:527
+#: inc/options/admin-option.php:545
 msgid "Upload your Logo for the off canvas sidebar"
 msgstr ""
 
-#: inc/options/admin-option.php:535
+#: inc/options/admin-option.php:553
 msgid "Description Textarea"
 msgstr ""
 
-#: inc/options/admin-option.php:536
+#: inc/options/admin-option.php:554
 msgid "Enter your description"
 msgstr ""
 
-#: inc/options/admin-option.php:537
+#: inc/options/admin-option.php:555
 msgid "Gpt is a experience Agency & our Team provide digital solution"
 msgstr ""
 
-#: inc/options/admin-option.php:544
+#: inc/options/admin-option.php:562
 msgid "Contact Info Title"
 msgstr ""
 
-#: inc/options/admin-option.php:545
+#: inc/options/admin-option.php:563
 msgid "Enter your contact info title"
 msgstr ""
 
-#: inc/options/admin-option.php:546
+#: inc/options/admin-option.php:564
 msgid "Contact us"
 msgstr ""
 
-#: inc/options/admin-option.php:553
+#: inc/options/admin-option.php:571
 msgid "Contact Info"
 msgstr ""
 
-#: inc/options/admin-option.php:554
-#: inc/options/admin-option.php:1113
+#: inc/options/admin-option.php:572
+#: inc/options/admin-option.php:1131
 msgid "Add New"
 msgstr ""
 
-#: inc/options/admin-option.php:555
+#: inc/options/admin-option.php:573
 msgid "Add New Contact Info"
 msgstr ""
 
-#: inc/options/admin-option.php:560
+#: inc/options/admin-option.php:578
 msgid "Text"
 msgstr ""
 
-#: inc/options/admin-option.php:565
+#: inc/options/admin-option.php:583
 msgid "Melbone st, Australia, Ny 12099"
 msgstr ""
 
-#: inc/options/admin-option.php:568
+#: inc/options/admin-option.php:586
 msgid "+01 800 123 400 55"
 msgstr ""
 
-#: inc/options/admin-option.php:571
+#: inc/options/admin-option.php:589
 msgid "pollexmail@gmail.com"
 msgstr ""
 
-#: inc/options/admin-option.php:582
+#: inc/options/admin-option.php:600
 msgid "Newsletter Form"
 msgstr ""
 
-#: inc/options/admin-option.php:590
+#: inc/options/admin-option.php:608
 msgid "Newsletter Title"
 msgstr ""
 
-#: inc/options/admin-option.php:591
+#: inc/options/admin-option.php:609
 msgid "Enter your newsletter info title"
 msgstr ""
 
-#: inc/options/admin-option.php:592
+#: inc/options/admin-option.php:610
 msgid "Get Update"
 msgstr ""
 
-#: inc/options/admin-option.php:602
+#: inc/options/admin-option.php:620
 #: inc/options/meta-option.php:426
 msgid "Footer"
 msgstr ""
 
-#: inc/options/admin-option.php:609
+#: inc/options/admin-option.php:627
 #: inc/options/meta-option.php:443
 msgid "Select Footer Style"
 msgstr ""
 
-#: inc/options/admin-option.php:616
+#: inc/options/admin-option.php:634
 #: inc/options/meta-option.php:451
 msgid "Switch Footer Dark or Light"
 msgstr ""
 
-#: inc/options/admin-option.php:618
+#: inc/options/admin-option.php:636
 #: inc/options/meta-option.php:453
 msgid "Dark"
 msgstr ""
 
-#: inc/options/admin-option.php:619
+#: inc/options/admin-option.php:637
 #: inc/options/meta-option.php:454
 msgid "Light"
 msgstr ""
 
-#: inc/options/admin-option.php:627
+#: inc/options/admin-option.php:645
 msgid "Footer Social Show/Hide"
 msgstr ""
 
-#: inc/options/admin-option.php:634
+#: inc/options/admin-option.php:652
 msgid "Padding Top/Bottom"
 msgstr ""
 
-#: inc/options/admin-option.php:647
+#: inc/options/admin-option.php:665
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/options/admin-option.php:652
+#: inc/options/admin-option.php:670
 msgid " Footer Style"
 msgstr ""
 
-#: inc/options/admin-option.php:658
+#: inc/options/admin-option.php:676
 msgid "Footer Background Color"
 msgstr ""
 
-#: inc/options/admin-option.php:666
+#: inc/options/admin-option.php:684
 msgid "Widget Title Color"
 msgstr ""
 
-#: inc/options/admin-option.php:673
-#: inc/options/admin-option.php:799
-#: inc/options/admin-option.php:1198
+#: inc/options/admin-option.php:691
+#: inc/options/admin-option.php:817
+#: inc/options/admin-option.php:1216
 msgid "Header Background"
 msgstr ""
 
-#: inc/options/admin-option.php:674
-#: inc/options/admin-option.php:800
-#: inc/options/admin-option.php:1199
+#: inc/options/admin-option.php:692
+#: inc/options/admin-option.php:818
+#: inc/options/admin-option.php:1217
 #: inc/options/meta-option.php:384
 msgid "Default: Featured image, if fail will get image from global settings."
 msgstr ""
 
-#: inc/options/admin-option.php:691
+#: inc/options/admin-option.php:709
 msgid "Link Color"
 msgstr ""
 
-#: inc/options/admin-option.php:697
+#: inc/options/admin-option.php:715
 msgid "Link Color Hover"
 msgstr ""
 
-#: inc/options/admin-option.php:706
+#: inc/options/admin-option.php:724
 msgid " Social Link"
 msgstr ""
 
-#: inc/options/admin-option.php:712
+#: inc/options/admin-option.php:730
 msgid "Icon Color"
 msgstr ""
 
-#: inc/options/admin-option.php:718
+#: inc/options/admin-option.php:736
 #: inc/options/meta-option.php:302
 msgid "Border Color"
 msgstr ""
 
-#: inc/options/admin-option.php:726
+#: inc/options/admin-option.php:744
 msgid "Hover Background Color"
 msgstr ""
 
-#: inc/options/admin-option.php:735
+#: inc/options/admin-option.php:753
 msgid "Hover Icon Color"
 msgstr ""
 
-#: inc/options/admin-option.php:744
-#: inc/options/admin-option.php:1058
+#: inc/options/admin-option.php:762
+#: inc/options/admin-option.php:1076
 msgid "Page Header"
 msgstr ""
 
-#: inc/options/admin-option.php:750
+#: inc/options/admin-option.php:768
 msgid " Page Header Settings"
 msgstr ""
 
-#: inc/options/admin-option.php:755
+#: inc/options/admin-option.php:773
 msgid "Page Header Enable"
 msgstr ""
 
-#: inc/options/admin-option.php:771
+#: inc/options/admin-option.php:789
 msgid "Banner Height"
 msgstr ""
 
-#: inc/options/admin-option.php:785
+#: inc/options/admin-option.php:803
 msgid "Default Title"
 msgstr ""
 
-#: inc/options/admin-option.php:786
+#: inc/options/admin-option.php:804
 msgid "Set the default title for the page header"
 msgstr ""
 
-#: inc/options/admin-option.php:791
+#: inc/options/admin-option.php:809
 #: inc/options/meta-option.php:400
 msgid "Title Typography"
 msgstr ""
 
-#: inc/options/admin-option.php:825
+#: inc/options/admin-option.php:843
 msgid "Archive"
 msgstr ""
 
-#: inc/options/admin-option.php:832
+#: inc/options/admin-option.php:850
 msgid "Columns"
 msgstr ""
 
-#: inc/options/admin-option.php:833
+#: inc/options/admin-option.php:851
 msgid "Display number of post per row"
 msgstr ""
 
-#: inc/options/admin-option.php:846
-#: inc/options/admin-option.php:930
-#: inc/options/admin-option.php:1038
+#: inc/options/admin-option.php:864
+#: inc/options/admin-option.php:948
+#: inc/options/admin-option.php:1056
 msgid "Layout"
 msgstr ""
 
-#: inc/options/admin-option.php:859
+#: inc/options/admin-option.php:877
 msgid "Blog Archive Sidebar Width"
 msgstr ""
 
-#: inc/options/admin-option.php:871
+#: inc/options/admin-option.php:889
 msgid "Blog Archive Sidebar Side Gap"
 msgstr ""
 
-#: inc/options/admin-option.php:892
-#: inc/options/admin-option.php:989
+#: inc/options/admin-option.php:910
+#: inc/options/admin-option.php:1007
 msgid "Hide post-meta author?"
 msgstr ""
 
-#: inc/options/admin-option.php:899
-#: inc/options/admin-option.php:995
+#: inc/options/admin-option.php:917
+#: inc/options/admin-option.php:1013
 msgid "Hide post-meta comments?"
 msgstr ""
 
-#: inc/options/admin-option.php:905
-#: inc/options/admin-option.php:1001
+#: inc/options/admin-option.php:923
+#: inc/options/admin-option.php:1019
 msgid "Hide post-meta categories?"
 msgstr ""
 
-#: inc/options/admin-option.php:911
+#: inc/options/admin-option.php:929
 msgid "Hide post-meta date?"
 msgstr ""
 
-#: inc/options/admin-option.php:922
+#: inc/options/admin-option.php:940
 #: inc/options/menu.php:25
 msgid "Single"
 msgstr ""
 
-#: inc/options/admin-option.php:943
+#: inc/options/admin-option.php:961
 msgid "Sidebar Width"
 msgstr ""
 
-#: inc/options/admin-option.php:955
+#: inc/options/admin-option.php:973
 msgid "Blog Sidebar Side Gap"
 msgstr ""
 
-#: inc/options/admin-option.php:975
+#: inc/options/admin-option.php:993
 msgid "Display Author Bio Box"
 msgstr ""
 
-#: inc/options/admin-option.php:982
+#: inc/options/admin-option.php:1000
 msgid "Share On Post"
 msgstr ""
 
-#: inc/options/admin-option.php:1008
+#: inc/options/admin-option.php:1026
 msgid "Hide Post Navigation?"
 msgstr ""
 
-#: inc/options/admin-option.php:1015
+#: inc/options/admin-option.php:1033
 msgid "Hide Related Post?"
 msgstr ""
 
-#: inc/options/admin-option.php:1022
+#: inc/options/admin-option.php:1040
 msgid "Related Post Title"
 msgstr ""
 
-#: inc/options/admin-option.php:1023
+#: inc/options/admin-option.php:1041
 msgid "Related Posts"
 msgstr ""
 
-#: inc/options/admin-option.php:1031
+#: inc/options/admin-option.php:1049
 msgid "Page"
 msgstr ""
 
-#: inc/options/admin-option.php:1052
+#: inc/options/admin-option.php:1070
 msgid "Project"
 msgstr ""
 
-#: inc/options/admin-option.php:1064
+#: inc/options/admin-option.php:1082
 msgid "Enable Page Header"
 msgstr ""
 
-#: inc/options/admin-option.php:1070
+#: inc/options/admin-option.php:1088
 msgid "Page Title"
 msgstr ""
 
-#: inc/options/admin-option.php:1072
+#: inc/options/admin-option.php:1090
 msgid "Case Details"
 msgstr ""
 
-#: inc/options/admin-option.php:1078
-#: inc/options/admin-option.php:1084
+#: inc/options/admin-option.php:1096
+#: inc/options/admin-option.php:1102
 msgid "Page Header Background"
 msgstr ""
 
-#: inc/options/admin-option.php:1103
+#: inc/options/admin-option.php:1121
 msgid "Social Link"
 msgstr ""
 
-#: inc/options/admin-option.php:1105
-#: inc/options/admin-option.php:1112
-#: inc/options/admin-option.php:1157
+#: inc/options/admin-option.php:1123
+#: inc/options/admin-option.php:1130
+#: inc/options/admin-option.php:1175
 msgid "This social profiles will display in your whole site."
 msgstr ""
 
-#: inc/options/admin-option.php:1111
+#: inc/options/admin-option.php:1129
 msgid "Social links"
 msgstr ""
 
-#: inc/options/admin-option.php:1119
+#: inc/options/admin-option.php:1137
 msgid "Name"
 msgstr ""
 
-#: inc/options/admin-option.php:1124
+#: inc/options/admin-option.php:1142
 msgid "Url"
 msgstr ""
 
-#: inc/options/admin-option.php:1129
+#: inc/options/admin-option.php:1147
 msgid "Icon"
 msgstr ""
 
-#: inc/options/admin-option.php:1136
+#: inc/options/admin-option.php:1154
 msgid "Facebook"
 msgstr ""
 
-#: inc/options/admin-option.php:1142
+#: inc/options/admin-option.php:1160
 msgid "Twitter"
 msgstr ""
 
-#: inc/options/admin-option.php:1148
+#: inc/options/admin-option.php:1166
 msgid "Dribbble"
 msgstr ""
 
-#: inc/options/admin-option.php:1165
+#: inc/options/admin-option.php:1183
 msgid "404 Page"
 msgstr ""
 
-#: inc/options/admin-option.php:1172
+#: inc/options/admin-option.php:1190
 msgid "Image"
 msgstr ""
 
-#: inc/options/admin-option.php:1178
+#: inc/options/admin-option.php:1196
 msgid "Error Title"
 msgstr ""
 
-#: inc/options/admin-option.php:1180
+#: inc/options/admin-option.php:1198
 msgid "The page you’ re looking for fly away"
 msgstr ""
 
-#: inc/options/admin-option.php:1185
+#: inc/options/admin-option.php:1203
 msgid "Description"
 msgstr ""
 
-#: inc/options/admin-option.php:1187
+#: inc/options/admin-option.php:1205
 msgid "Tell us what you are looking for:"
 msgstr ""
 
-#: inc/options/admin-option.php:1192
+#: inc/options/admin-option.php:1210
 msgid " Style"
 msgstr ""
 
-#: inc/options/admin-option.php:1216
+#: inc/options/admin-option.php:1234
 msgid "Error Text Color"
 msgstr ""
 
-#: inc/options/admin-option.php:1223
-#: inc/options/admin-option.php:1363
+#: inc/options/admin-option.php:1241
+#: inc/options/admin-option.php:1381
 msgid "Heading Color"
 msgstr ""
 
-#: inc/options/admin-option.php:1230
+#: inc/options/admin-option.php:1248
 msgid "Content Color"
 msgstr ""
 
-#: inc/options/admin-option.php:1239
+#: inc/options/admin-option.php:1257
 msgid "Typography"
 msgstr ""
 
-#: inc/options/admin-option.php:1244
+#: inc/options/admin-option.php:1262
 msgid "Body Font Settings"
 msgstr ""
 
-#: inc/options/admin-option.php:1250
+#: inc/options/admin-option.php:1268
 msgid "Body"
 msgstr ""
 
-#: inc/options/admin-option.php:1259
+#: inc/options/admin-option.php:1277
 msgid "Heading Font Settings"
 msgstr ""
 
-#: inc/options/admin-option.php:1264
+#: inc/options/admin-option.php:1282
 msgid "Heading H1"
 msgstr ""
 
-#: inc/options/admin-option.php:1275
+#: inc/options/admin-option.php:1293
 msgid "Heading H2"
 msgstr ""
 
-#: inc/options/admin-option.php:1286
+#: inc/options/admin-option.php:1304
 msgid "Heading H3"
 msgstr ""
 
-#: inc/options/admin-option.php:1297
+#: inc/options/admin-option.php:1315
 msgid "Heading H4"
 msgstr ""
 
-#: inc/options/admin-option.php:1308
+#: inc/options/admin-option.php:1326
 msgid "Heading H5"
 msgstr ""
 
-#: inc/options/admin-option.php:1320
+#: inc/options/admin-option.php:1338
 msgid "Heading H6"
 msgstr ""
 
-#: inc/options/admin-option.php:1334
+#: inc/options/admin-option.php:1352
 msgid "Color Scheme"
 msgstr ""
 
-#: inc/options/admin-option.php:1341
+#: inc/options/admin-option.php:1359
 msgid "General Color"
 msgstr ""
 
-#: inc/options/admin-option.php:1347
+#: inc/options/admin-option.php:1365
 msgid "Body Color"
 msgstr ""
 
-#: inc/options/admin-option.php:1355
+#: inc/options/admin-option.php:1373
 msgid "Body Background Color"
 msgstr ""
 
-#: inc/options/admin-option.php:1370
+#: inc/options/admin-option.php:1388
 msgid "Primary Color"
 msgstr ""
 
-#: inc/options/admin-option.php:1371
+#: inc/options/admin-option.php:1389
 msgid "Main Color Scheme"
 msgstr ""
 
-#: inc/options/admin-option.php:1392
+#: inc/options/admin-option.php:1410
 msgid "Backup"
 msgstr ""
 
@@ -1292,6 +1248,34 @@ msgstr ""
 #: inc/options/meta-option.php:31
 #: inc/options/meta-option.php:435
 msgid "No"
+msgstr ""
+
+#: inc/options/meta-option.php:39
+msgid "Select header style"
+msgstr ""
+
+#: inc/options/meta-option.php:41
+msgid "Header Default"
+msgstr ""
+
+#: inc/options/meta-option.php:42
+msgid "Header Canvas"
+msgstr ""
+
+#: inc/options/meta-option.php:50
+msgid "Transparent Menu"
+msgstr ""
+
+#: inc/options/meta-option.php:58
+msgid "Transparent Header Color"
+msgstr ""
+
+#: inc/options/meta-option.php:60
+msgid "Dark (For light background)"
+msgstr ""
+
+#: inc/options/meta-option.php:61
+msgid "Light (For dark Background)"
 msgstr ""
 
 #: inc/options/meta-option.php:70
@@ -1426,7 +1410,7 @@ msgid "Choose footer background color"
 msgstr ""
 
 #: inc/tgm/init.php:34
-msgid "MPT Core"
+msgid "GPT News Core"
 msgstr ""
 
 #: inc/tgm/init.php:42
@@ -1506,7 +1490,7 @@ msgstr ""
 msgid "&copy; %1$s %2$s - All Rights Reserved. Coded with ❤️️"
 msgstr ""
 
-#: template-parts/header/header-default.php:118
+#: template-parts/header/header-default.php:184
 msgid "Add Menu"
 msgstr ""
 

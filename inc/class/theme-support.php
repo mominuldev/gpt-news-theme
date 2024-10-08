@@ -83,17 +83,10 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 
 				//Image Size
                 add_image_size('mominul-team', 265, 300, true);
-                add_image_size('gpt_project_grid_625x385', 625, 385, true);
-                add_image_size('gpt_project_details_1300x600', 1300, 600, true);
-                add_image_size('gpt_project_slider', 600, 470, true);
-                add_image_size('gpt_blog_grid_410x290', 410, 290, true);
-                add_image_size('gpt_blog_grid_370x400', 370, 390, true);
-                add_image_size('gpt_blog_grid_400x182', 400, 182, true);
-                add_image_size('mominul-thumbnail_90_90', 90, 90, true);
-                add_image_size('mominul-service_740x275', 740, 275, true);
+                add_image_size('gpt_hero_large_960x520', 960, 520, true);
+                add_image_size('gpt_hero_thumbnail_220x175', 220, 175, true);
                 add_image_size('mominul-blog-list_300x185', 300, 185, true);
-                add_image_size('mominul-creative-slider_510x540', 510, 540, true);
-                add_image_size('mominul-portfolio', 415, 480, true);
+
 			}
 		}
 

@@ -58,7 +58,7 @@ if ( $meta_footer_option == true || $meta_footer_option == 1 ) {
 						$area_1_column = get_theme_mod( 'gpt_widget_area_' . $i . '_column', 'col-lg-3' );
 
 						?>
-                        <div class="col-sm-6 <?php echo esc_attr( $area_1_column ) ?>">
+                        <div class="col-lg-6 <?php echo esc_attr( $area_1_column ) ?>">
 							<?php
 							if ( is_active_sidebar( 'footer_column_' . $i ) && $area_1_column == true ):
 								dynamic_sidebar( 'footer_column_' . $i );

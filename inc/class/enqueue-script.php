@@ -61,7 +61,7 @@ class Gpt_Enqueue_Script {
 		}
 
 		// WooCommerce CSS
-		if ( MPT_WOOCOMMERCE_IS_ACTIVE ) {
+		if ( GPT_WOOCOMMERCE_IS_ACTIVE ) {
 			wp_enqueue_style( 'mominul-woocommerce', $this->gtdu . '/assets/css/woocommerce.css' );
 		}
 

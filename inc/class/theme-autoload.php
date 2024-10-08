@@ -61,10 +61,8 @@ if (!class_exists('Gpt_Theme_Autoload')) {
         public function theme_option() {
 	        require_once MP_THEME_DIR . '/inc/options/admin-option.php';
 	        require_once MP_THEME_DIR . '/inc/options/meta-option.php';
-	        require_once MP_THEME_DIR . '/inc/options/projects.php';
-//	        require_once MP_THEME_DIR . '/inc/options/menu.php';
 	        // Widgets
-			 require_once MP_THEME_DIR . '/inc/options/widgets/widget-contact-info.php';
+			 require_once MP_THEME_DIR . '/inc/options/widgets/widget-social-links.php';
         }
 
         public function walker_comment(){

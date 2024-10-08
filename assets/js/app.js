@@ -11,7 +11,7 @@ var MOMIN = MOMIN || {};
     // USE STRICT
     "use strict";
 
-    window.MPT = {
+    window.GPT = {
         init: function () {
             // Header
             this.header = $('.header-fixed');
@@ -46,7 +46,7 @@ var MOMIN = MOMIN || {};
             this.isDesktop = $(window).width() >= 991;
             this.isMobile = $(window).width() <= 991;
             this.isPad = $(window).width() <= 1024;
-            this.isMobileMenu = $(window).width() <= MPT.mobileMenu
+            this.isMobileMenu = $(window).width() <= GPT.mobileMenu
         }
     };
 
@@ -555,17 +555,17 @@ var MOMIN = MOMIN || {};
 
         handleMobileHeader: function () {
 
-            if (MPT.header && MPT.header.length) {
+            if (GPT.header && GPT.header.length) {
 
-                if (MPT.isMobileMenu) {
-                    MPT.header.addClass('mobile-header');
-                    MPT.body.addClass('is-mobile-menu');
+                if (GPT.isMobileMenu) {
+                    GPT.header.addClass('mobile-header');
+                    GPT.body.addClass('is-mobile-menu');
                     setTimeout(function () {
                         $('.main-nav').addClass('unhidden');
                     }, 300);
                 } else {
-                    MPT.header.removeClass('mobile-header');
-                    MPT.body.removeClass('is-mobile-menu');
+                    GPT.header.removeClass('mobile-header');
+                    GPT.body.removeClass('is-mobile-menu');
                     $('.main-nav').addClass('visible');
                 }
             }
@@ -577,20 +577,20 @@ var MOMIN = MOMIN || {};
 
         handleFixedHeader: function () {
 
-            MPT.init();
-            var fixed = MPT.headerFixed;
+            GPT.init();
+            var fixed = GPT.headerFixed;
 
             if ($(document).scrollTop() > fixed.initialOffset) {
 
-                if ((!MPT.isMobileMenu && fixed.enabled && !fixed.value) ||
-                    (MPT.isMobileMenu && fixed.mobileEnabled && !fixed.mobileValue)) {
+                if ((!GPT.isMobileMenu && fixed.enabled && !fixed.value) ||
+                    (GPT.isMobileMenu && fixed.mobileEnabled && !fixed.mobileValue)) {
 
-                    if (MPT.isMobileMenu) {
+                    if (GPT.isMobileMenu) {
                         fixed.mobileValue = true;
                     } else {
                         fixed.value = true;
                     }
-                    MPT.header.addClass('header-fixed no-transition');
+                    GPT.header.addClass('header-fixed no-transition');
                 }
 
             } else if (fixed.value || fixed.mobileValue) {
@@ -598,15 +598,15 @@ var MOMIN = MOMIN || {};
                 fixed.value = false;
                 fixed.mobileValue = false;
 
-                MPT.header.removeClass('header-fixed');
+                GPT.header.removeClass('header-fixed');
 
             }
 
             // Effect appearance
             if ($(document).scrollTop() > fixed.initialOffset + 50) {
-                MPT.header.removeClass('no-transition').addClass('showed');
+                GPT.header.removeClass('no-transition').addClass('showed');
             } else {
-                MPT.header.removeClass('showed').addClass('no-transition');
+                GPT.header.removeClass('showed').addClass('no-transition');
             }
         },
 
@@ -749,7 +749,7 @@ var MOMIN = MOMIN || {};
 
     MOMIN.documentOnLoad = {
         init: function () {
-            MPT.init();
+            GPT.init();
             MOMIN.initialize.handleMobileHeader();
             $("#preloader").fadeOut("slow");
         },
@@ -763,7 +763,7 @@ var MOMIN = MOMIN || {};
                     top: "0"
                 })
             }
-            MPT.resize();
+            GPT.resize();
             MOMIN.initialize.handleMobileHeader();
             MOMIN.initialize.handleFixedHeader();
         },

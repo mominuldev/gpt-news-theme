@@ -104,3 +104,47 @@
     line-height: normal;
     margin-bottom: 70px;
 }
+
+.gpt-section-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    .gpt-section-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: $color__heading;
+        margin: 0;
+    }
+
+    span.title-border {
+        border: 1px solid #e5e5e5;
+        flex-grow: 1;
+        height: 6px;
+        transition: all ease 0.31s;
+        display: block;
+        border-radius: 10px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -13px;
+            transform: translateY(-50%);
+            width: 9px;
+            height: 9px;
+            background-color: $color__theme;
+            border-radius: 10px;
+        }
+    }
+
+    a {
+        .gpt-section-title {
+
+            &:hover {
+                color: $color__theme;
+            }
+        }
+    }
+}

@@ -14,7 +14,7 @@
 define( 'MP_THEME_DIR', get_template_directory() );
 define( 'MP_THEME_URI', get_template_directory_uri() );
 // Is WooCommerce active?
-define( 'MPT_WOOCOMMERCE_IS_ACTIVE', class_exists( 	'WooCommerce' ) );
+define( 'GPT_WOOCOMMERCE_IS_ACTIVE', class_exists( 	'WooCommerce' ) );
 
 // A Custom function for get an option
 if ( ! function_exists( 'gpt_option' ) ) {

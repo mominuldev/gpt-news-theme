@@ -1,6 +1,6 @@
 .gpt-btn {
 	position: relative;
-	padding: 14px 35px;
+	padding: 12px 35px;
 	background-color: transparent;
 	border: 1px solid $color__theme;
 	z-index: 1;
@@ -41,7 +41,7 @@
 	}
 
 	&.btn-round {
-		border-radius: 15px;
+		border-radius: 5px;
 	}
 
 	.gpt-btn-content-wrapper {
@@ -70,6 +70,12 @@
 
 	&.btn-small {
 		padding: 5px 30px;
+	}
+
+	&.btn-sm {
+		padding: 10px 15px;
+		font-size: 14px;
+		line-height: 1;
 	}
 
 	&.btn-lg {
@@ -131,13 +137,13 @@
 	}
 
 	&.btn-dark:not(.btn-outline) {
-		background-color: $color__heading;
+		//background-color: $color__heading;
 		color: #fff;
-		border-color: $color__heading;
 
 		&:hover {
 			color: $color__heading;
 			background: transparent;
+			border-color: $color__heading;
 		}
 	}
 

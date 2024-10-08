@@ -1,6 +1,6 @@
 {
-    "name": "mominul",
-	"projectname": "mominul",
+    "name": "gpt-news",
+	"projectname": "gpt-news",
     "version": "2.0.0",
     "description": "Gpt wordpress theme",
     "main": "index.js",
