@@ -8,18 +8,18 @@
         display: flex;
         flex-wrap: wrap;
 
-        .mominul-icon-box__icon-container {
+        .gpt-icon-box__icon-container {
             margin-bottom: 0;
         }
 
-        .mominul-icon-box__content  {
+        .gpt-icon-box__content  {
             flex: 2;
         }
     }
 
     &.icon--left {
         text-align: left;
-        .mominul-icon-box__icon-container {
+        .gpt-icon-box__icon-container {
             margin-right: 20px;
         }
     }
@@ -27,7 +27,7 @@
     &.icon--right {
         text-align: right;
 
-        .mominul-icon-box__icon-container {
+        .gpt-icon-box__icon-container {
             order: 2;
             margin-left: 20px;
         }
@@ -68,7 +68,7 @@
     }
 
     &--icon-shape {
-        .mominul-icon-box__icon-container {
+        .gpt-icon-box__icon-container {
             min-height: 100px;
             position: relative;
             margin-bottom: 25px;
@@ -182,14 +182,14 @@
         padding: 45px 40px 35px;
         margin-bottom: 30px;
 
-        .mominul-icon-box__title {
+        .gpt-icon-box__title {
             margin-bottom: 10px;
         }
 
         //&:hover {
         //    background-color: $color__theme;
         //
-        //    .mominul-icon-box__icon-container, .mominul-icon-box__title, .mominul-icon-box__title a, .mominul-icon-box__description {
+        //    .gpt-icon-box__icon-container, .gpt-icon-box__title, .gpt-icon-box__title a, .gpt-icon-box__description {
         //        color: #fff;
         //    }
         //}
@@ -201,7 +201,7 @@
         border-radius: 6px;
         padding: 42px 55px;
 
-        .mominul-icon-box__icon-container {
+        .gpt-icon-box__icon-container {
             height: 65px;
             width: 65px;
             line-height: 65px;
@@ -218,7 +218,7 @@
             }
         }
 
-        .mominul-icon-box__title {
+        .gpt-icon-box__title {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 8px;
@@ -232,12 +232,12 @@
                 opacity: 0;
             }
 
-            .mominul-icon-box__icon-container {
+            .gpt-icon-box__icon-container {
                 background: #fff;
                 color: $color__theme;
             }
 
-            .mominul-icon-box__title {
+            .gpt-icon-box__title {
                 color: #fff;
             }
 
@@ -254,7 +254,7 @@
         box-shadow: 0 1px 2px 0 rgba(8, 2, 51, 0.1);
         padding: 50px 35px 40px 35px;
 
-        .mominul-icon-box__icon-container {
+        .gpt-icon-box__icon-container {
             font-size: 36px;
             color: $color__theme;
             margin-bottom: 29px;
@@ -264,13 +264,13 @@
             }
         }
 
-        .mominul-icon-box__title {
+        .gpt-icon-box__title {
             font-size: 24px;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .mominul-icon-box__description {
+        .gpt-icon-box__description {
             color: rgba(14, 17, 51, 0.8);
         }
 
@@ -307,7 +307,7 @@
         justify-content: center;
         align-items: center;
 
-        .mominul-button-icon {
+        .gpt-button-icon {
             line-height: 1;
         }
 
@@ -317,42 +317,42 @@
             order: 1;
         }
 
-        .mominul-align-icon-right {
+        .gpt-align-icon-right {
             order: 2;
         }
     }
 
 }
 
-.mominul-shape-circle {
-    .mominul-icon-box__icon-container {
+.gpt-shape-circle {
+    .gpt-icon-box__icon-container {
         border-radius: 50%;
     }
 }
 
-.mominul-view-stacked, .mominul-view-framed {
-    .mominul-icon-box__icon-container {
+.gpt-view-stacked, .gpt-view-framed {
+    .gpt-icon-box__icon-container {
         padding: .5em;
         text-align: center;
     }
 }
 
-.mominul-view-stacked {
-    .mominul-icon-box__icon-container {
+.gpt-view-stacked {
+    .gpt-icon-box__icon-container {
         background-color: $color__theme;
         color: #fff;
     }
 }
 
-.mominul-view-framed {
-    .mominul-icon-box__icon-container {
+.gpt-view-framed {
+    .gpt-icon-box__icon-container {
         border: 2px solid $color__theme;
         color: $color__theme;
     }
 }
 
-.mominul-shape-rounded {
-    .mominul-icon-box__icon-container {
+.gpt-shape-rounded {
+    .gpt-icon-box__icon-container {
         border-radius: 6px;
     }
 }

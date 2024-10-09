@@ -105,14 +105,18 @@ add_filter( 'comment_form_fields', 'gpt_reorder_comment_fields' );
 add_filter( 'csf_welcome_page', '__return_false' );
 
 
+function custom_remove_archive_title( $title ) {
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	}
 
-add_action('gpt_cursor', 'gpt_cursor');
-
-function gpt_cursor() {
-	?>
-	<div class="cursor__inner">
-		<div class="cursor__circle cursor__circle--outer"></div>
-		<div class="cursor__circle cursor__circle--inner"></div>
-	</div>
-	<?php
+	return $title;
 }
+add_filter( 'get_the_archive_title', 'custom_remove_archive_title' );
+
+
+

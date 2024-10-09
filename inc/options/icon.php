@@ -8,7 +8,7 @@ function gpt_codstar_fontawesomefive_icons($icons)
 
     // add FA 5.x icons
     $icons[] = array(
-        'title' => __('Fontawesome Five (Free)', 'mominul'),
+        'title' => __('Fontawesome Five (Free)', 'gpt-news'),
         'icons' => array(
             'fab fa-500px',
             'fab fa-accessible-icon',

@@ -24,7 +24,7 @@ $column = $sidebar['column'];
                  if ( have_posts() ) : ?>
 
                     <header class="search-header">
-                        <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'mominul' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'gpt-news' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                     </header>
 
                     <?php get_template_part( 'template-parts/post/posts-list'); ?>
@@ -32,30 +32,30 @@ $column = $sidebar['column'];
                     <?php else : ?>
                     <div class="search_page_404_wrapper">
                         <header class="search-header-404">
-                            <h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'mominul' ); ?></h2>
+                            <h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'gpt-news' ); ?></h2>
                         </header>
 
-                        <div class="mominul-page-content">
+                        <div class="gpt-page-content">
                             <?php if ( is_search() ) : ?>
                                 <p class="banner_404_text">
-                                    <?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'mominul' ); ?>
+                                    <?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'gpt-news' ); ?>
                                 </p>
                                 <div class="search_result_form text-center">
                                     <?php get_search_form(); ?>
                                 </div>
                                 <div class="gpt_home_button">
-                                    <a class="gpt-btn" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Take me home', 'mominul'); ?></a>
+                                    <a class="gpt-btn btn-round" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Take me home', 'gpt-news'); ?></a>
                                 </div>
                             <?php else : ?>
                                 <p class="banner_404_text">
-                                    <?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'mominul' ); ?>
+                                    <?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'gpt-news' ); ?>
                                 </p>
                                 <div class="search_result_form text-center">
                                     <?php get_search_form(); ?>
                                 </div>
 
                                 <div class="gpt_404_button ">
-                                    <a class="gpt-btn" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Take me home', 'mominul'); ?></a>
+                                    <a class="gpt-btn btn-round" href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('Take me home', 'gpt-news'); ?></a>
                                 </div>
                             <?php endif; ?>
                         </div>

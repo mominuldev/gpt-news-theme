@@ -36,7 +36,7 @@ class Gpt_Enqueue_Script {
 	/* Register CSS */
 	public function css_reg() {
 
-		wp_enqueue_style( 'mominul-style_main', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'gpt-style_main', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
 		/* Bootstrap CSS */
 		wp_enqueue_style( 'bootstrap', $this->gtdu . '/assets/css/bootstrap.min.css' );
@@ -51,18 +51,18 @@ class Gpt_Enqueue_Script {
 
 
 		// Main CSS
-		wp_enqueue_style( 'mominul-style', $this->gtdu . '/assets/css/app.css' );
+		wp_enqueue_style( 'gpt-style', $this->gtdu . '/assets/css/app.css' );
 
 		// Custom Css
 		$custom_css = gpt_option( 'custom-css' );
 
 		if ( ! empty( $custom_css ) ) {
-			wp_add_inline_style( 'mominul-style', $custom_css );
+			wp_add_inline_style( 'gpt-style', $custom_css );
 		}
 
 		// WooCommerce CSS
 		if ( GPT_WOOCOMMERCE_IS_ACTIVE ) {
-			wp_enqueue_style( 'mominul-woocommerce', $this->gtdu . '/assets/css/woocommerce.css' );
+			wp_enqueue_style( 'gpt-woocommerce', $this->gtdu . '/assets/css/woocommerce.css' );
 		}
 
 		// Preloader CSS
@@ -91,7 +91,7 @@ class Gpt_Enqueue_Script {
                 transform: translate(-50%, -50%);
             }';
 
-			wp_add_inline_style( 'mominul-style', $preloader_css );
+			wp_add_inline_style( 'gpt-style', $preloader_css );
 		}
 
 	}
@@ -114,7 +114,7 @@ class Gpt_Enqueue_Script {
 		wp_enqueue_script('lenis', 'https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js', array(), '1.0.0', true);
 		// Page Loader Animation
 //		wp_enqueue_script('barba', 'https://unpkg.com/@barba/core', array(), '1.0.0', true);
-		wp_enqueue_script( 'mominul-theme', $this->gtdu . '/assets/js/app.js', array( 'jquery' ), false, true );
+		wp_enqueue_script( 'gpt-theme', $this->gtdu . '/assets/js/app.js', array( 'jquery' ), false, true );
 
 		if ( $smooth_scroll ) {
 			wp_enqueue_script( 'smoothscroll', $this->gtdu . '/assets/js/smoothscroll.min.js', array( 'jquery' ), '3.1.12', true );
@@ -125,7 +125,7 @@ class Gpt_Enqueue_Script {
 			'nonce'   => wp_create_nonce( '_gpt_nonce' ),
 		);
 
-		wp_localize_script( 'mominul-theme', 'gpt_scripts_vars', $gpt_scripts_vars_array );
+		wp_localize_script( 'gpt-theme', 'gpt_scripts_vars', $gpt_scripts_vars_array );
 
 		//Comment Reply
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

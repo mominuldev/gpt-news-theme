@@ -182,7 +182,7 @@ if ( $header_type == true || $header_type == 1 ) {
                                 );
                             } else {
                                 echo '<ul class="add-menu clearfix"><li><a target="_blank" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_html__( 'Add Menu',
-                                        'mominul' ) . '</a></li></ul>';
+                                        'gpt-news' ) . '</a></li></ul>';
                             }
 
                             ?>
@@ -212,7 +212,7 @@ if ( $header_type == true || $header_type == 1 ) {
 
 <?php if ( $canvas_menu == true ) : ?>
 
-    <div class="offcanvas offcanvas-end mominul-offcanvas-sidebar" tabindex="-1" id="mominulSidebarOffCanvas"
+    <div class="offcanvas offcanvas-end gpt-offcanvas-sidebar" tabindex="-1" id="mominulSidebarOffCanvas"
          aria-labelledby="mominulSidebarOffCanvasLabel">
 		<?php
 		$canvas_logo               = gpt_option( 'offcanvas_sidebar_logo' );

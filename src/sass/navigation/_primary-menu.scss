@@ -377,10 +377,10 @@
 
 			&.current-menu-item {
 				> a {
-					color: rgba(255, 255, 255, 0.40);
+					//color: rgba(255, 255, 255, 0.40);
 
 					&:after {
-						width: 120%;
+						width: 100%;
 					}
 				}
 			}
@@ -588,9 +588,9 @@
 						color: #fff;
 					}
 
-					&.current-menu-item > a {
-						color: rgba(255, 255, 255, 0.4);
-					}
+					//&.current-menu-item > a {
+					//	color: rgba(255, 255, 255, 0.4);
+					//}
 				}
 			}
 
@@ -1780,7 +1780,7 @@
 	z-index: 99991;
 }
 
-.mominul-offcanvas-sidebar {
+.gpt-offcanvas-sidebar {
 	background: $color__heading;
 	width: 690px !important;
 	padding: 100px;

@@ -23,12 +23,14 @@ $column = $sidebar['column'];
     <div class="container">
         <div class="blog-archive-wrapper">
             <div class="row<?php echo apply_filters('gpt_row_class', $row_class); ?>">
-                <div id='main-content' class="col-md-<?php echo apply_filters('gpt_column_class', $column); ?>">
+                <div id='main-content' class="col-lg-<?php echo apply_filters('gpt_column_class', $column); ?>">
                     <?php  if ( have_posts() ) :
                     get_template_part( 'template-parts/post/posts-list');
                     else :
                         get_template_part( 'template-parts/content', 'none' );
                     endif;  ?>
+
+                    <?php Gpt_Theme_Helper::gpt_post_pagination(); ?>
                 </div>
                 <?php
                 echo (isset($sidebar['content']) && !empty($sidebar['content']) ) ? $sidebar['content'] : '';
@@ -38,7 +40,7 @@ $column = $sidebar['column'];
         <!-- /.blog-archive-wrapper -->
     </div><!-- /.container -->
 
-    <?php Gpt_Theme_Helper::gpt_post_pagination(); ?>
+
 
 </div><!-- .content-area -->
 

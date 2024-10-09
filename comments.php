@@ -33,7 +33,7 @@ if (have_comments()) : ?>
 				$comments_number = get_comments_number();
 				if ('1' === $comments_number) {
 					/* translators: %s: post title */
-					printf(_x('<span class="number-comments">1</span> Comment', 'comments title', 'mominul'));
+					printf(_x('<span class="number-comments">1</span> Comment', 'comments title', 'gpt-news'));
 				} else {
 					$comments_number = (int)$comments_number < 10 ? $comments_number : $comments_number;
 					printf(
@@ -42,7 +42,7 @@ if (have_comments()) : ?>
 							'<span class="number-comments">%1$s</span> Comments',
 							$comments_number,
 							'comments title',
-							'mominul'
+							'gpt-news'
 						),
 						$comments_number
 					);
@@ -68,10 +68,10 @@ if (have_comments()) : ?>
 		<?php
 			$args = array();
 			$args['fields'] = array(
-				'author' => '<div class="comment-form-author"><label for="author" class="label-name"></label><input type="text" placeholder="' . esc_attr__('Name *', 'mominul') . '" title="' . esc_attr__('Name *', 'mominul') . '" id="author" name="author" class="form_field"></div>',
-				'email' => '<div class="comment-form-email"><label for="email" class="label-email"></label><input type="text" placeholder="' . esc_attr__('Email *', 'mominul') . '" title="' . esc_attr__('Email *', 'mominul') . '" id="email" name="email" class="form_field"></div>'
+				'author' => '<div class="comment-form-author"><label for="author" class="label-name"></label><input type="text" placeholder="' . esc_attr__('Name *', 'gpt-news') . '" title="' . esc_attr__('Name *', 'gpt-news') . '" id="author" name="author" class="form_field"></div>',
+				'email' => '<div class="comment-form-email"><label for="email" class="label-email"></label><input type="text" placeholder="' . esc_attr__('Email *', 'gpt-news') . '" title="' . esc_attr__('Email *', 'gpt-news') . '" id="email" name="email" class="form_field"></div>'
 			);
-			$args['comment_field'] = '<div class="comment-form-comment"><label for="comment" class="label-message" ></label><textarea name="comment" cols="45" rows="5" placeholder="' . esc_attr__('Your Comment', 'mominul') . '" id="comment" class="form_field"></textarea></div>';
+			$args['comment_field'] = '<div class="comment-form-comment"><label for="comment" class="label-message" ></label><textarea name="comment" cols="45" rows="5" placeholder="' . esc_attr__('Your Comment', 'gpt-news') . '" id="comment" class="form_field"></textarea></div>';
 
 			ob_start();
 			comment_form($args);

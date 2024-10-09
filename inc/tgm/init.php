@@ -31,7 +31,7 @@ function gpt_register_required_plugins() {
 
 
 		array(
-			'name'     => __('GPT News Core', 'mominul'),
+			'name'     => __('GPT News Core', 'gpt-news'),
 			'slug'     => 'gpt-news-core',
 			'source'   => 'https://demo.gptheme.com/plugins/gpt-news-core.zip',
             'version'  => '1.0.0',
@@ -39,19 +39,19 @@ function gpt_register_required_plugins() {
 		),
 
 		array(
-			'name'     => esc_attr__( 'Elementor', 'mominul' ),
+			'name'     => esc_attr__( 'Elementor', 'gpt-news' ),
 			'slug'     => 'elementor',
 			'required' => true,
 		),
 
 		array(
-			'name'     => __('Contact Form 7', 'mominul'),
+			'name'     => __('Contact Form 7', 'gpt-news'),
 			'slug'     => 'contact-form-7',
 			'required' => false,
 		),
 
         array(
-            'name'     => esc_attr__( 'Codestar Framework', 'mominul' ),
+            'name'     => esc_attr__( 'Codestar Framework', 'gpt-news' ),
             'slug'     => 'codestar-framework',
             'source'   => ( 'https://demo.gptheme.com/plugins/codestar-framework.zip' ),
             'required' => true,
@@ -63,9 +63,9 @@ function gpt_register_required_plugins() {
 	 * Config for TGMPA
 	 */
 	$config = array(
-		'id'           => 'mominul',
+		'id'           => 'gpt-news',
 		'default_path' => '',
-		'menu'         => 'mominul-install-plugins',
+		'menu'         => 'gpt-install-plugins',
 		'has_notices'  => true,
 		'dismissable'  => true,
 		'dismiss_msg'  => '',

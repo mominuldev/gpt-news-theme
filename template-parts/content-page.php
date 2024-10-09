@@ -18,7 +18,7 @@
 			the_content();
 
 			wp_link_pages(array(
-				'before' => '<div class="page-links">' . esc_html__('Pages:', 'mominul'),
+				'before' => '<div class="page-links">' . esc_html__('Pages:', 'gpt-news'),
 				'after' => '</div>',
 			));
 		?>

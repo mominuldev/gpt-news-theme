@@ -310,16 +310,18 @@ pre.wp-block-preformatted {
 	}
 
 	.wp-block-search__button {
-		height: 60px;
+		height: 43px;
 		border: 0;
 		padding: 0 20px;
 		font-weight: 500;
 		background: $color__theme;
 		color: #fff;
 		margin-left: 0;
+		border-radius: 4px;
+		transition: all 0.3s ease-in-out;
 
 		&:hover {
-			background: $color__theme;
+			background: darken($color__theme, 10%);
 			color: #fff;
 		}
 	}

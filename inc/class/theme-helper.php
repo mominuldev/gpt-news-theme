@@ -93,7 +93,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				echo '<a href="';
 				echo esc_url( home_url( '/' ) );
 				echo '">';
-				echo esc_html__( 'Home', 'mominul' );
+				echo esc_html__( 'Home', 'gpt-news' );
 				echo '</a>' . $brseparator;
 				if ( is_category() || is_single() ) {
 					$categories = get_the_category();
@@ -129,24 +129,24 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				} elseif ( is_tag() ) {
 					single_tag_title();
 				} elseif ( is_day() ) {
-					printf( esc_html__( 'Archive for: %s', 'mominul' ), '<span>' . get_the_date() . '</span>' );
+					printf( esc_html__( 'Archive for: %s', 'gpt-news' ), '<span>' . get_the_date() . '</span>' );
 				} elseif ( is_month() ) {
-					printf( esc_html__( 'Archive for: %s', 'mominul' ),
-						'<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mominul' ) ) . '</span>' );
+					printf( esc_html__( 'Archive for: %s', 'gpt-news' ),
+						'<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'gpt-news' ) ) . '</span>' );
 				} elseif ( is_year() ) {
-					printf( esc_html__( 'Archive for: %s', 'mominul' ),
-						'<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mominul' ) ) . '</span>' );
+					printf( esc_html__( 'Archive for: %s', 'gpt-news' ),
+						'<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'gpt-news' ) ) . '</span>' );
 				} elseif ( is_author() ) {
-					echo "<span>" . esc_html__( 'Archive for', 'mominul' );
+					echo "<span>" . esc_html__( 'Archive for', 'gpt-news' );
 					echo '</span>';
 				} elseif ( isset( $_GET['paged'] ) && ! empty( $_GET['paged'] ) ) {
-					echo "<span>" . esc_html__( 'Blog Archives', 'mominul' );
+					echo "<span>" . esc_html__( 'Blog Archives', 'gpt-news' );
 					echo '</span>';
 				} elseif ( is_search() ) {
-					echo "<span>" . esc_html__( 'Search Results', 'mominul' );
+					echo "<span>" . esc_html__( 'Search Results', 'gpt-news' );
 					echo '</span>';
 				} elseif ( is_post_type_archive( 'tribe_events' ) ) {
-					echo "<span>" . esc_html__( 'Events', 'mominul' );
+					echo "<span>" . esc_html__( 'Events', 'gpt-news' );
 				}
 				echo '</div>';
 			} else {
@@ -154,12 +154,12 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				echo '<a href="';
 				echo esc_url( home_url( '/' ) );
 				echo '">';
-				echo esc_html__( 'Home', 'mominul' );
+				echo esc_html__( 'Home', 'gpt-news' );
 				echo '</a>' . $brseparator;
 				if ( isset( $gpt_opt['blog_header_text'] ) && $gpt_opt['blog_header_text'] != "" ) {
 					echo esc_html( $gpt_opt['blog_header_text'] );
 				} else {
-					echo esc_html__( 'Blog', 'mominul' );
+					echo esc_html__( 'Blog', 'gpt-news' );
 				}
 				echo '</div>';
 			}
@@ -167,17 +167,17 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 		/**
 		 * Displays navigation to next/previous pages when applicable.
-		 * @since mominul 1.0
+		 * @since gpt-news 1.0
 		 */
 		static function gpt_content_nav( $html_id ) {
 			global $wp_query;
 			$html_id = esc_attr( $html_id );
 			if ( $wp_query->max_num_pages > 1 ) : ?>
                 <nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation" role="navigation">
-                    <h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'mominul' ); ?></h3>
-                    <div class="nav-previous"><?php next_posts_link( wp_kses( __( '<span class="meta-nav">&larr;</span> Older posts', 'mominul' ),
+                    <h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'gpt-news' ); ?></h3>
+                    <div class="nav-previous"><?php next_posts_link( wp_kses( __( '<span class="meta-nav">&larr;</span> Older posts', 'gpt-news' ),
 							array( 'span' => array( 'class' => array() ) ) ) ); ?></div>
-                    <div class="nav-next"><?php previous_posts_link( wp_kses( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'mominul' ),
+                    <div class="nav-next"><?php previous_posts_link( wp_kses( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'gpt-news' ),
 							array( 'span' => array( 'class' => array() ) ) ) ); ?></div>
                 </nav>
 			<?php endif;
@@ -221,7 +221,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		 * To override this walker in a child theme without modifying the comments template
 		 * simply create your own gpt_comment(), and that function will be used instead.
 		 * Used as a callback by wp_list_comments() for displaying the comments.
-		 * @since mominul 1.0
+		 * @since gpt-news 1.0
 		 */
 		static function gpt_comment( $comment, $args, $depth ) {
 			$GLOBALS['comment'] = $comment;
@@ -231,8 +231,8 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 					// Display trackbacks differently than normal comments.
 					?>
                     <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-                    <p><?php esc_html_e( 'Pingback:', 'mominul' ); ?><?php comment_author_link(); ?><?php edit_comment_link( esc_html__( '(Edit)',
-							'mominul' ), '<span class="edit-link">', '</span>' ); ?></p>
+                    <p><?php esc_html_e( 'Pingback:', 'gpt-news' ); ?><?php comment_author_link(); ?><?php edit_comment_link( esc_html__( '(Edit)',
+							'gpt-news' ), '<span class="edit-link">', '</span>' ); ?></p>
 					<?php
 					break;
 				default :
@@ -250,14 +250,14 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 								printf( '<cite><b class="fn">%1$s</b> %2$s</cite>', get_comment_author_link(),
 									// If current post author is also comment author, make it known visually.
 									( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author',
-											'mominul' ) . '</span>' : '' );
+											'gpt-news' ) . '</span>' : '' );
 								printf( '<time datetime="%1$s">%2$s</time>', get_comment_time( 'c' ),
-									/* translators: 1: date, 2: time */ sprintf( esc_html__( '%1$s at %2$s', 'mominul' ), get_comment_date(),
+									/* translators: 1: date, 2: time */ sprintf( esc_html__( '%1$s at %2$s', 'gpt-news' ), get_comment_date(),
 										get_comment_time() ) );
 								?>
                                 <div class="reply">
 									<?php comment_reply_link( array_merge( $args, array(
-										'reply_text' => esc_html__( 'Reply', 'mominul' ),
+										'reply_text' => esc_html__( 'Reply', 'gpt-news' ),
 										'after'      => '',
 										'depth'      => $depth,
 										'max_depth'  => $args['max_depth']
@@ -265,11 +265,11 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                                 </div><!-- .reply -->
                             </header><!-- .comment-meta -->
 							<?php if ( '0' == $comment->comment_approved ) : ?>
-                                <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'mominul' ); ?></p>
+                                <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'gpt-news' ); ?></p>
 							<?php endif; ?>
                             <section class="comment-content comment">
 								<?php comment_text(); ?>
-								<?php edit_comment_link( esc_html__( 'Edit', 'mominul' ), '<p class="edit-link">', '</p>' ); ?>
+								<?php edit_comment_link( esc_html__( 'Edit', 'gpt-news' ), '<p class="edit-link">', '</p>' ); ?>
                             </section><!-- .comment-content -->
                         </div>
                     </article><!-- #comment-## -->
@@ -282,7 +282,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		 * Set up post entry meta.
 		 * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
 		 * Create your own gpt_entry_meta() to override in a child theme.
-		 * @since mominul 1.0
+		 * @since gpt-news 1.0
 		 */
 		static function gpt_entry_meta() {
 			// Translators: used between list items, there is a space after the comma.
@@ -291,23 +291,23 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			$write_comments = '';
 			if ( comments_open() ) {
 				if ( $num_comments == 0 ) {
-					$comments = esc_html__( '0 comments', 'mominul' );
+					$comments = esc_html__( '0 comments', 'gpt-news' );
 				} elseif ( $num_comments > 1 ) {
-					$comments = $num_comments . esc_html__( ' comments', 'mominul' );
+					$comments = $num_comments . esc_html__( ' comments', 'gpt-news' );
 				} else {
-					$comments = esc_html__( '1 comment', 'mominul' );
+					$comments = esc_html__( '1 comment', 'gpt-news' );
 				}
 				$write_comments = '<a href="' . get_comments_link() . '">' . $comments . '</a>';
 			}
 			$utility_text = null;
 			if ( ( post_password_required() || ! comments_open() ) && ( $tag_list != false && isset( $tag_list ) ) ) {
-				$utility_text = esc_html__( 'Tags: %2$s', 'mominul' );
+				$utility_text = esc_html__( 'Tags: %2$s', 'gpt-news' );
 			} elseif ( $tag_list != false && isset( $tag_list ) && $num_comments != 0 ) {
-				$utility_text = esc_html__( '%1$s / Tags: %2$s', 'mominul' );
+				$utility_text = esc_html__( '%1$s / Tags: %2$s', 'gpt-news' );
 			} elseif ( ( $num_comments == 0 || ! isset( $num_comments ) ) && $tag_list == true ) {
-				$utility_text = esc_html__( 'Tags: %2$s', 'mominul' );
+				$utility_text = esc_html__( 'Tags: %2$s', 'gpt-news' );
 			} else {
-				$utility_text = esc_html__( '%1$s', 'mominul' );
+				$utility_text = esc_html__( '%1$s', 'gpt-news' );
 			}
 			printf( $utility_text, $write_comments, $tag_list );
 		}
@@ -332,9 +332,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			$time_string = sprintf( $time_string, esc_attr( get_the_date( DATE_W3C ) ), esc_html( get_the_date() ),
 				esc_attr( get_the_modified_date( DATE_W3C ) ), esc_html( get_the_modified_date() ) );
 
-			$posted_on = sprintf(
-
-				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>' );
+			$posted_on = $time_string;
 
 			echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
@@ -355,10 +353,10 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			// Hide category and tag text for pages.
 			if ( 'post' === get_post_type() ) {
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( esc_html__( ' ', 'mominul' ) );
+				$categories_list = get_the_category_list( esc_html__( ' ', 'gpt-news' ) );
 				if ( $categories_list ) {
 					/* translators: 1: list of categories. */
-					printf( esc_html__( ' %1$s', 'mominul' ), $categories_list ); // WPCS: XSS OK.
+					printf( esc_html__( ' %1$s', 'gpt-news' ), $categories_list ); // WPCS: XSS OK.
 				}
 
 			}
@@ -370,11 +368,11 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			if ( 'post' === get_post_type() ) {
 
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'mominul' ) );
+				$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'gpt-news' ) );
 				if ( $tags_list ) {
 					/* translators: 1: list of tags. */
-					printf( '<div class="single-tagcloud"><span class="tag-title">' . esc_html( 'Tags:', 'mominul' ) . '</span>' . esc_html__( '%1$s',
-							'mominul' ) . '</div>', $tags_list ); // WPCS: XSS OK.
+					printf( '<div class="single-tagcloud"><h3 class="post-share-title">' . esc_html( 'Tags:', 'gpt-news' ) . '</h3>' . esc_html__( '%1$s',
+							'gpt-news' ) . '</div>', $tags_list ); // WPCS: XSS OK.
 				}
 			}
 		}
@@ -403,7 +401,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		/**
 		 * Render sidebars.
 		 * All Page Sidebar Control.
-		 * @since mominul 1.0
+		 * @since gpt-news 1.0
 		 */
 
 		public static function render_sidebars( $args = 'blog' ) {
@@ -429,9 +427,6 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				$sidebar = '';
 			}
 
-			if ( is_singular( 'job_listing' ) ) {
-				$sidebar = '';
-			}
 
 			if ( ! is_active_sidebar( $sidebar ) ) {
 				$column  = 12;
@@ -439,15 +434,6 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				$layout  = 'none';
 			}
 
-            // Sidebar for woocommerce
-//            if ( is_woocommerce() ) {
-//                $sidebar = 'sidebar_woocommerce';
-//            }
-
-            // If product single sidebar none
-//            if ( is_product() ) {
-//                $sidebar = '';
-//            }
 
 			$output['column']    = $column;
 			$output['row_class'] = $layout != 'none' ? ' sidebar_' . esc_attr( $layout ) : '';
@@ -478,8 +464,19 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			}
 
 			return '<span class="post_author">' . esc_html__( "by",
-					'mominul' ) . ' <a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a></span>';
+					'gpt-news' ) . ' <a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a></span>';
 		}
+
+        // Post Author By
+        public static function post_author_by( ) {
+
+            $author = get_the_author();
+            $author_id = get_the_author_meta('ID');
+            $author_url = get_author_posts_url($author_id);
+            $author_name = get_the_author_meta('display_name');
+            $author_link = '<a href="' . esc_url($author_url) . '">' . esc_html($author_name) . '</a>';
+            echo '<span class="post_author">' . esc_html__( "by", 'gpt-news' ) . ' ' . $author_link . '</span>';
+        }
 
 		// Post view count
 		public static function post_view_count( $id ) {
@@ -495,7 +492,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				update_post_meta( $post_id, $count_key, $count );
 			}
 
-			return '<p class="post_view_count">' . esc_html( $count ) . '<span>' . esc_html__( " Views", 'mominul' ) . '</span></p>';
+			return '<p class="post_view_count">' . esc_html( $count ) . '<span>' . esc_html__( " Views", 'gpt-news' ) . '</span></p>';
 
 		}
 
@@ -548,7 +545,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			$social_html = ! empty( $social_html ) ? '<div class="author-info_social-wrapper">' . $social_html . '</div>' : '';
 
 			if ( (bool) $name_html || (bool) $description || (bool) $social_html ) {
-				echo '<h3 class="author-info_title">' . esc_html__( 'About Author', 'mominul' ) . '</h3>';
+				echo '<h3 class="author-info_title">' . esc_html__( 'About Author', 'gpt-news' ) . '</h3>';
 				echo '<div class="author-info_wrapper">' . $avatar_html . '<div class="author-info">' . $name_html . $social_html . '</div><div class="author-info_content">' . $description . '</div></div>';
 			}
 
@@ -557,7 +554,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		/**
 		 * Preloader.
 		 * Preloader Init.
-		 * @since mominul 1.0
+		 * @since gpt-news 1.0
 		 */
 
 		public function gpt_preloader_markup() {
@@ -619,9 +616,9 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			if ( $comments_number == 0 ) {
 				$comment_text = $no_comments;
 			} elseif ( $comments_number == 1 ) {
-				$comment_text = esc_html__( '1 Comment', 'mominul' );
+				$comment_text = esc_html__( '1 Comment', 'gpt-news' );
 			} elseif ( $comments_number > 1 ) {
-				$comment_text = $comments_number . '<span class="comment-text">' . esc_html__( ' Comments', 'mominul' ) . '</span>';
+				$comment_text = $comments_number . '<span class="comment-text">' . esc_html__( ' Comments', 'gpt-news' ) . '</span>';
 			}
 
 			$allowed_html = array(
@@ -704,6 +701,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		static function render_post_list_share() { ?>
 
             <div class="share_social-wpapper">
+                <h3 class="post-share-title"><?php echo esc_html__('Share This Post:', 'gpt-news') ?></h3>
 
                 <ul class="social-share-link">
                     <li>
@@ -714,8 +712,8 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                     </li>
                     <li>
                         <a class="share_post share_twitter" target="_blank"
-                           href="<?php echo esc_url( 'https://twitter.com/intent/tweet?text=' . get_the_title() . '&amp;url=' . get_permalink() ); ?>">
-                            <i class="fab fa-twitter"></i>
+                           href="<?php echo esc_url( 'https://x.com/intent/tweet?text=' . get_the_title() . '&amp;url=' . get_permalink() ); ?>">
+                            <i class="fa-brands fa-x-twitter"></i>
                         </a>
                     </li>
 					<?php
@@ -788,12 +786,14 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                                             </a>
                                         </h3>
 
-                                        <ul class="post-footer-meta">
+                                        <ul class="entry-meta">
                                             <li>
-												<?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
+			                                    <?php Gpt_Theme_Helper::post_author_by(); ?>
                                             </li>
-                                            <li><i class="feather-calendar"></i><?php Gpt_Theme_Helper::gpt_posted_on(); ?></li>
-
+                                            <li>
+                                                <i class="ri-calendar-2-line"></i>
+			                                    <?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+                                            </li>
                                         </ul><!-- .entry-meta -->
 
                                     </div>
@@ -841,7 +841,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 					<?php endif; ?>
 
                     <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Older Post', 'mominul' ) ?></p>
+                        <p class="post-nav-title"><?php esc_html_e( 'Older Post', 'gpt-news' ) ?></p>
                         <h4 class="post-title"><?php echo get_the_title( $pre_post->ID ) ?></h4>
                     </div>
 
@@ -856,7 +856,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                 <a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="single-post-nav">
 
                     <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Next Post', 'mominul' ) ?></p>
+                        <p class="post-nav-title"><?php esc_html_e( 'Next Post', 'gpt-news' ) ?></p>
                         <h4 class="post-title"><?php echo get_the_title( $next_post->ID ) ?></h4>
                     </div>
 
@@ -896,7 +896,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                 <a href="<?php echo get_the_permalink( $pre_post->ID ); ?>" class="single-post-nav">
                     <i class="fas fa-chevron-left"></i>
                     <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Older Post', 'mominul' ) ?></p>
+                        <p class="post-nav-title"><?php esc_html_e( 'Older Post', 'gpt-news' ) ?></p>
                         <h4 class="post-title"><?php echo get_the_title( $pre_post->ID ) ?></h4>
                     </div>
 
@@ -911,7 +911,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                 <a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="single-post-nav">
 
                     <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Next Post', 'mominul' ) ?></p>
+                        <p class="post-nav-title"><?php esc_html_e( 'Next Post', 'gpt-news' ) ?></p>
                         <h4 class="post-title"><?php echo get_the_title( $next_post->ID ) ?></h4>
                     </div>
 
@@ -935,7 +935,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			$title_tag = array();
 
 			if ( $first_empty ) {
-				$title_tag[''] = esc_html__( 'Default', 'mominul' );
+				$title_tag[''] = esc_html__( 'Default', 'gpt-news' );
 			}
 
 			$title_tag['h1'] = 'h1';
@@ -953,7 +953,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		}
 
 		public static function get_footers_types() {
-			$footer  = [ '' => esc_html__( 'Default', 'mominul' ) ];
+			$footer  = [ '' => esc_html__( 'Default', 'gpt-news' ) ];
 			$footers = get_posts(
 				[
 					'posts_per_page' => - 1,

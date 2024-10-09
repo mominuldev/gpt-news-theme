@@ -45,7 +45,7 @@ do_action( 'gpt_after_body' ); ?>
 
 <div id="site-content" class="site">
     <a class="skip-link screen-reader-text"
-       href="#content"><?php esc_html_e( 'Skip to content', 'mominul' ); ?></a>
+       href="#content"><?php esc_html_e( 'Skip to content', 'gpt-news' ); ?></a>
 	<?php
 
 	get_template_part( 'template-parts/popup-search' );

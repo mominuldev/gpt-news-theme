@@ -530,7 +530,7 @@ var MOMIN = MOMIN || {};
                 }
             });
 
-            $('[data-type="section-switch"], .gp-btn, .mominul-main-menu li a, .site-main-menu > li > a').on('click', function () {
+            $('[data-type="section-switch"], .gp-btn, .gpt-main-menu li a, .site-main-menu > li > a').on('click', function () {
                 if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     if (target.length > 0) {
@@ -579,7 +579,7 @@ var MOMIN = MOMIN || {};
         /*=           Contact Form         =*/
         /*=================================*/
         contactFrom: function () {
-            $('[data-mominul-form]').each(function () {
+            $('[data-gpt-form]').each(function () {
                 var $this = $(this);
                 $('.form-result', $this).css('display', 'none');
 
@@ -587,7 +587,7 @@ var MOMIN = MOMIN || {};
                     $('button[type="submit"]', $this).addClass('clicked');
                     // Create a object and assign all fields name and value.
                     var values = {};
-                    const security = $('.mominul-newsletter-security').data('security');
+                    const security = $('.gpt-newsletter-security').data('security');
                     values["nonce"] = security;
 
                     $('[name]', $this).each(function () {

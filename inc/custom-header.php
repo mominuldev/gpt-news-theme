@@ -68,6 +68,6 @@ if ( ! function_exists( 'gpt_header_style' ) ) :
 			}';
 		 endif;
 
-		wp_add_inline_style( 'mominul-style', $css );
+		wp_add_inline_style( 'gpt-style', $css );
 	}
 endif;

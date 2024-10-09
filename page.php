@@ -28,8 +28,8 @@ $column = $sidebar['column'];
         <div class="row <?php echo apply_filters( 'gpt_row_class', $row_class ); ?>">
             <div id='main-content' class="col-lg-<?php echo apply_filters('gpt_column_class', $column); ?>">
                 <?php
-				the_content(esc_html__( 'Read more!', 'mominul' ));
-                wp_link_pages(array('before' => '<div class="page-links">' . esc_html__( 'Pages', 'mominul' ) . ': ', 'after' => '</div>'));
+				the_content(esc_html__( 'Read more!', 'gpt-news' ));
+                wp_link_pages(array('before' => '<div class="page-links">' . esc_html__( 'Pages', 'gpt-news' ) . ': ', 'after' => '</div>'));
 
                 // If comments are open or we have at least one comment, load up the comment template.
                 if ( comments_open() || get_comments_number() ) : ?>

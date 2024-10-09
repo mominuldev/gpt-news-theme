@@ -12,7 +12,7 @@ $category_list = get_the_category_list( ' ' );
 	    <?php if ( 'post' === get_post_type() ) : ?>
             <div class="mtp-post-meta-wrapper">
 			    <?php if ( $category_list ) : ?>
-                    <div class="mtp-post-category">
+                    <div class="gpt-post-category">
 					    <?php echo wp_kses_post( $category_list ); ?>
                     </div>
 			    <?php endif; ?>
@@ -27,13 +27,19 @@ $category_list = get_the_category_list( ' ' );
 		<?php the_content();
 		// Page Break
 		wp_link_pages( array(
-		   'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mominul' ),
+		   'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'gpt-news' ),
 		   'after'  => '</div>',
 	    ) ); ?>
 
 		<?php if(get_the_tag_list() ) : ?>
 		<div class="entry-footer">
 			<?php Gpt_Theme_Helper::gpt_posted_tag(); ?>
+
+			<?php if ( gpt_option( 'share_post' ) ) {
+				echo '<div class="share-link-wrapper">';
+				Gpt_Theme_Helper::render_post_list_share();
+				echo '</div>';
+			} ?>
 		</div>
 		<!-- /.entry-footer -->
 		<?php endif; ?>
@@ -44,9 +50,5 @@ $category_list = get_the_category_list( ' ' );
 	</div>
 	<!-- /.entry-content -->
 
-	<?php if ( gpt_option( 'share_post' ) ) {
-		echo '<div class="share-link-wrapper">';
-		    Gpt_Theme_Helper::render_post_list_share();
-		echo '</div>';
-	} ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->

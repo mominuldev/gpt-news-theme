@@ -19,12 +19,12 @@ if( class_exists( 'CSF' ) ) {
 			array(
 				'id'          => 'class',
 				'type'        => 'select',
-				'title'       => __('Mega Menu Width', 'mominul'),
-				'placeholder' => __('Select an option', 'mominul'),
+				'title'       => __('Mega Menu Width', 'gpt-news'),
+				'placeholder' => __('Select an option', 'gpt-news'),
 				'options'     => array(
-					'single_width'  => __('Single', 'mominul'),
-					'menu_half_width'  => __('Half Width', 'mominul'),
-					'menu_full_width'  => __('Full Width', 'mominul'),
+					'single_width'  => __('Single', 'gpt-news'),
+					'menu_half_width'  => __('Half Width', 'gpt-news'),
+					'menu_full_width'  => __('Full Width', 'gpt-news'),
 				),
 				'default'     => 'option-2'
 			),

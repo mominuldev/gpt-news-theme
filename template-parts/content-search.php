@@ -31,7 +31,7 @@
 
 			<footer class="blog-footer">
 				<a href="<?php the_permalink(); ?>" class="read-more">
-					<?php echo esc_html__( 'Read More', 'mominul' ); ?>
+					<?php echo esc_html__( 'Read More', 'gpt-news' ); ?>
 				</a>
 			</footer>
 

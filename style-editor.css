@@ -1261,21 +1261,21 @@ table.mce-item-table thead ~ tbody > tr > th {
 }
 
 /* Social Icons */
-.mominul-block-social-link {
+.gpt-block-social-link {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.mominul-block-social-link li {
+.gpt-block-social-link li {
     display: inline-block;
 }
 
-.mominul-block-social-link li:not(:last-child) {
+.gpt-block-social-link li:not(:last-child) {
     margin-right: 10px;
 }
 
-.mominul-block-social-link li a {
+.gpt-block-social-link li a {
     height: 40px;
     width: 40px;
     line-height: 39px;
@@ -1288,7 +1288,7 @@ table.mce-item-table thead ~ tbody > tr > th {
     transition: all 0.3s ease-in-out;
 }
 
-.mominul-block-social-link li a:hover {
+.gpt-block-social-link li a:hover {
     background: #ff6344;
     border-color: #ff6344;
     box-shadow: 0 20px 30px 0 rgba(255, 99, 68, 0.34);
@@ -1402,21 +1402,21 @@ a:hover {
 
 
 
-.mominul-block-contact-info {
+.gpt-block-contact-info {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.mominul-block-contact-info li {
+.gpt-block-contact-info li {
     margin-bottom: 10px;
     position: relative;
 }
 
-.mominul-block-contact-info li svg {
+.gpt-block-contact-info li svg {
     margin-right: 10px;
 }
 
-.mominul-block-contact-info li svg path {
+.gpt-block-contact-info li svg path {
     stroke: #111921;
 }

@@ -4,7 +4,7 @@
 	background-color: transparent;
 	border: 1px solid $color__theme;
 	z-index: 1;
-	color: #131313;
+	color: #fff;
 	overflow: hidden;
 	font-size: 16px;
 	display: inline-flex;
@@ -398,20 +398,20 @@
 //	}
 //}
 
-.mominul-inline {
+.gpt-inline {
 	> div {
 		display: inline-block;
 	}
 
 	@media(max-width: 420px) {
-		.mominul-button-primary {
+		.gpt-button-primary {
 			margin-bottom: 15px;
 			margin-right: 0 !important;
 		}
 	}
 }
 
-.mominul-block {
+.gpt-block {
 	> div {
 		display: block;
 	}
@@ -557,7 +557,7 @@
 //}
 
 
-.mominul-back-btn {
+.gpt-back-btn {
 	position: relative;
 	font-family: $font__heading;
 	display: inline-flex;

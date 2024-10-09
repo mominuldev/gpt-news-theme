@@ -30,7 +30,7 @@ $d1->getTimestamp();
 if ( $footer_style && ( get_post( $footer_style ) ) && in_array( 'elementor/elementor.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { ?>
 
 	<?php $elementor_instance = Elementor\Plugin::instance(); ?>
-    <footer id="mominul-footer" class="mominul-footer <?php echo esc_attr( get_post( $footer_style )->post_name ); ?>">
+    <footer id="gpt-footer" class="gpt-footer <?php echo esc_attr( get_post( $footer_style )->post_name ); ?>">
 		<?php echo Gpt_Theme_Helper::gpt_render_footer( $footer_style ); ?>
     </footer>
 <?php } else {

@@ -31,7 +31,7 @@ function gpt_customize_register( $wp_customize ) {
 	 * Header options.
 	 */
 	$wp_customize->add_section( 'gpt_header_options', array(
-		'title'    => esc_html__( 'Header Settings', 'mominul' ),
+		'title'    => esc_html__( 'Header Settings', 'gpt-news' ),
 		'priority' => 45, // After colors
 	) );
 
@@ -39,7 +39,7 @@ function gpt_customize_register( $wp_customize ) {
 	 * Mailchimp.
 	 */
 	$wp_customize->add_panel( 'gpt_mailchimp_setting', array(
-		'title'    => esc_html__( 'Mailchimp Settings', 'mominul' ),
+		'title'    => esc_html__( 'Mailchimp Settings', 'gpt-news' ),
 		'priority' => 45, // After colors
 	) );
 
@@ -69,8 +69,8 @@ function gpt_customize_register( $wp_customize ) {
 		'col-lg-12' => '12/12'
 	);
 	$wp_customize->add_panel( 'gpt_footer_settings', array(
-		'title' => esc_html__( 'Footer Settings', 'mominul' ),
-		'description' => esc_html__( 'Manage your footer widget position sizes and Copyright information.', 'mominul' ), // Include html tags such as <p>.
+		'title' => esc_html__( 'Footer Settings', 'gpt-news' ),
+		'description' => esc_html__( 'Manage your footer widget position sizes and Copyright information.', 'gpt-news' ), // Include html tags such as <p>.
 		'priority' => 160, // Mixed with top-level-section hierarchy.
 	) );
 
@@ -86,7 +86,7 @@ function gpt_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'gpt_sanitize_checkbox',
 		) );
 		$wp_customize->add_control( 'gpt_widget_area_' . $i . '_display', array(
-			'label'       => esc_html__( 'Display on site', 'mominul' ),
+			'label'       => esc_html__( 'Display on site', 'gpt-news' ),
 			'section'     => 'gpt_widget_area_'. $i,
 			'type'        => 'checkbox',
 		) );
@@ -96,7 +96,7 @@ function gpt_customize_register( $wp_customize ) {
 			'sanitize_callback' => 'gpt_sanitize_widget_columns',
 		) );
 		$wp_customize->add_control( 'gpt_widget_area_' . $i . '_column' , array(
-			'label'       => esc_html__( 'Header Style', 'mominul' ),
+			'label'       => esc_html__( 'Header Style', 'gpt-news' ),
 			'section'     => 'gpt_widget_area_'. $i,
 			'type'        => 'select',
 			'choices'     => $column_classes
@@ -107,7 +107,7 @@ function gpt_customize_register( $wp_customize ) {
 	 * Mailchimp API
 	 */
 	$wp_customize->add_section( 'gpt_mchimp_api_settings', array(
-		'title' => esc_html__( 'MailChimp API', 'mominul' ),
+		'title' => esc_html__( 'MailChimp API', 'gpt-news' ),
 		'panel' => 'gpt_mailchimp_setting',
 	) );
 
@@ -117,8 +117,8 @@ function gpt_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( 'gpt_mailchimp_api_key', array(
 		'type'		=> 'text',
-		'label'		=> esc_html__( 'API Key', 'mominul' ),
-		'description'	=> esc_html__( 'Enter the mailchimp api key to use newsletter form. You can get the api here: http://bit.ly/2Vh4Opr', 'mominul' ),
+		'label'		=> esc_html__( 'API Key', 'gpt-news' ),
+		'description'	=> esc_html__( 'Enter the mailchimp api key to use newsletter form. You can get the api here: http://bit.ly/2Vh4Opr', 'gpt-news' ),
 		'section'	=> 'gpt_mchimp_api_settings',
 	) );
 
@@ -128,8 +128,8 @@ function gpt_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( 'gpt_mailchimp_api_list', array(
 		'type'		=> 'text',
-		'label'		=> esc_html__( 'List ID', 'mominul' ),
-		'description'	=> esc_html__( 'Enter the mailchimp list id. You can found list here: http://bit.ly/2GzQMa7', 'mominul' ),
+		'label'		=> esc_html__( 'List ID', 'gpt-news' ),
+		'description'	=> esc_html__( 'Enter the mailchimp list id. You can found list here: http://bit.ly/2GzQMa7', 'gpt-news' ),
 		'section'	=> 'gpt_mchimp_api_settings',
 	) );
 
@@ -184,10 +184,10 @@ function gpt_sanitize_footer_copyright( $input ) {
 		$output = $input;
 	} else {
 		$output = sprintf(
-				esc_html__( '&copy; %1$s %2$s - Designed by %3$s', 'mominul' ),
+				esc_html__( '&copy; %1$s %2$s - Designed by %3$s', 'gpt-news' ),
 				date( 'Y' ),
 				get_bloginfo( 'name' ),
-				'<a href="' . esc_url( 'https://www.pixelsigns.art/' ) . '">' . esc_html__( 'PixelSigns', 'mominul' ) . '</a>'
+				'<a href="' . esc_url( 'https://www.pixelsigns.art/' ) . '">' . esc_html__( 'PixelSigns', 'gpt-news' ) . '</a>'
 			);
 	}
 
@@ -223,6 +223,6 @@ function gpt_customize_partial_blogdescription() {
  * Bind JS handlers to instantly live-preview changes.
  */
 function gpt_customize_preview_js() {
-	wp_enqueue_script( 'mominul-customize-preview', get_parent_theme_file_uri( '/assets/js/customizer.js' ), array( 'customize-preview' ), '1.0', true );
+	wp_enqueue_script( 'gpt-customize-preview', get_parent_theme_file_uri( '/assets/js/customizer.js' ), array( 'customize-preview' ), '1.0', true );
 }
 add_action( 'customize_preview_init', 'gpt_customize_preview_js' );

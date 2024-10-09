@@ -18,7 +18,7 @@
 					if ( ! empty( $copy_text ) ) {
 						echo wp_kses_post( $copy_text );
 					} else {
-						echo sprintf( esc_html__( '&copy; %1$s %2$s - All Rights Reserved. Develop By %3$s', 'mominul' ), date( 'Y' ), get_bloginfo(
+						echo sprintf( esc_html__( '&copy; %1$s %2$s - All Rights Reserved. Develop By %3$s', 'gpt-news' ), date( 'Y' ), get_bloginfo(
 							'name' ), '<a href="https://mominul.me" target="_blank">' . esc_html__('Mominul', 'gpt-news') . '</a>' );
 					}
 					?>

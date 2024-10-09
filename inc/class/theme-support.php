@@ -82,10 +82,11 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 				) );
 
 				//Image Size
-                add_image_size('mominul-team', 265, 300, true);
+                add_image_size('gpt_hero_grid_800x550', 900, 520, true);
                 add_image_size('gpt_hero_large_960x520', 960, 520, true);
                 add_image_size('gpt_hero_thumbnail_220x175', 220, 175, true);
-                add_image_size('mominul-blog-list_300x185', 300, 185, true);
+                add_image_size('gpt_hero_thumbnail_420x270', 420, 270, true);
+                add_image_size('gpt-blog-list_300x185', 300, 185, true);
 
 			}
 		}
@@ -94,14 +95,14 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 		public function gpt_register_nav_menus() {
 			register_nav_menus(
 				array(
-					'primary' => esc_html__( 'Primary Menu', 'mominul' ),
-                    'footer_menu'  => esc_html__( 'Footer Menu', 'mominul' ),
+					'primary' => esc_html__( 'Primary Menu', 'gpt-news' ),
+                    'footer_menu'  => esc_html__( 'Footer Menu', 'gpt-news' ),
 				)
 			);
 		}
 
 		public function gpt_enqueue_translation_files() {
-			load_theme_textdomain( 'mominul', get_template_directory() . '/languages/' );
+			load_theme_textdomain( 'gpt-news', get_template_directory() . '/languages/' );
 		}
 
 		public function gpt_sidebar_register() {
@@ -113,9 +114,9 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 			$title_after    = '</h3>';
 
 			register_sidebar( array(
-				'name'          => esc_html( 'Sidebar Main', 'mominul' ),
+				'name'          => esc_html( 'Sidebar Main', 'gpt-news' ),
 				'id'            => "sidebar_main-sidebar",
-				'description'   => esc_html__( 'Add widget here to appear it in sidebar.', 'mominul' ),
+				'description'   => esc_html__( 'Add widget here to appear it in sidebar.', 'gpt-news' ),
 				'before_widget' => $wrapper_before,
 				'after_widget'  => $wrapper_after,
 				'before_title'  => $title_before,
@@ -126,19 +127,19 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 			// Register Footer Sidebar
 			$footer_columns = array(
 				array(
-					'name' => esc_html__( 'Footer Column 1', 'mominul' ),
+					'name' => esc_html__( 'Footer Column 1', 'gpt-news' ),
 					'id'   => 'footer_column_1'
 				),
 				array(
-					'name' => esc_html__( 'Footer Column 2', 'mominul' ),
+					'name' => esc_html__( 'Footer Column 2', 'gpt-news' ),
 					'id'   => 'footer_column_2'
 				),
 				array(
-					'name' => esc_html__( 'Footer Column 3', 'mominul' ),
+					'name' => esc_html__( 'Footer Column 3', 'gpt-news' ),
 					'id'   => 'footer_column_3'
 				),
 				array(
-					'name' => esc_html__( 'Footer Column 4', 'mominul' ),
+					'name' => esc_html__( 'Footer Column 4', 'gpt-news' ),
 					'id'   => 'footer_column_4'
 				),
 			);
@@ -148,7 +149,7 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 				register_sidebar( array(
 					'name'          => $footer_column['name'],
 					'id'            => $footer_column['id'],
-					'description'   => esc_html__( 'This area will display in footer like a column. Add widget here to appear it in footer column.', 'mominul' ),
+					'description'   => esc_html__( 'This area will display in footer like a column. Add widget here to appear it in footer column.', 'gpt-news' ),
 					'before_widget' => $wrapper_before,
 					'after_widget'  => $wrapper_after,
 					'before_title'  => $title_before,

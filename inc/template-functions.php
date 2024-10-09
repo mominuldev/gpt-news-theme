@@ -68,7 +68,7 @@ if ( ! function_exists( 'gpt_get_title_tag' ) ) {
 		$title_tag = array();
 
 		if ( $first_empty ) {
-			$title_tag[''] = esc_html__( 'Default', 'mominul' );
+			$title_tag[''] = esc_html__( 'Default', 'gpt-news' );
 		}
 
 		$title_tag['h1'] = 'h1';
