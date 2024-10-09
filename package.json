@@ -2,17 +2,17 @@
     "name": "gpt-news",
 	"projectname": "gpt-news",
     "version": "2.0.0",
-    "description": "Gpt wordpress theme",
+    "description": "Gpt News wordpress theme",
     "main": "index.js",
     "scripts": {
         "dev": "gulp",
         "build": "gulp build --prod",
         "bundle": "gulp bundle --prod --nosours",
         "prod": "gulp prod --prod",
-        "pot": "wp i18n make-pot . languages/gpt-news.pot",
-        "zip": "wp i18n make-pot . languages/gpt-news.pot && gulp compress"
+        "pot": "wp i18n make-pot . languages/gotox.pot",
+        "zip": "wp i18n make-pot . languages/gotox.pot && gulp compress"
     },
-    "author": "GptIslam",
+    "author": "RobustTheme",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.2.2",

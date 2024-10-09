@@ -3452,7 +3452,7 @@ input[type=submit] {
 input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
-  background: #10396f;
+  background: rgb(16.4101123596, 57.0786516854, 110.5898876404);
 }
 
 .return-to-top {
@@ -8413,7 +8413,7 @@ pre.wp-block-preformatted {
   transition: all 0.3s ease-in-out;
 }
 .wp-block-search .wp-block-search__button:hover {
-  background: #10396f;
+  background: rgb(16.4101123596, 57.0786516854, 110.5898876404);
   color: #fff;
 }
 

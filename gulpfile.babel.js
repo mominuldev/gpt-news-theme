@@ -23,12 +23,16 @@ const server = browserSync.create();
 
 const paths = {
     styles: {
-        src: ['src/sass/app.scss'],
+        src: 'src/sass/app.scss',
         dest: 'assets/css'
     },
     images: {
         src: 'assets/images/**/*.{jpg,jpeg,png,svg,gif}',
         // dest: 'assets/images'
+    },
+    scripts: {
+        src: ['src/js/*.js'],
+        dest: 'assets/js'
     },
     other: {
         src: ['assets/fonts/*'],
@@ -53,7 +57,7 @@ export const reload = (done) => {
     done();
 }
 
-export const clean =  () => del(['assets/css/app.css', 'assets/css/app.css.map']);
+export const clean =  () => del(['assets/csss']);
 
 export const styles = () => {
     return gulp.src(paths.styles.src)
@@ -67,40 +71,40 @@ export const styles = () => {
 
 export const watch = () => {
     gulp.watch('src/sass/**/*.scss', styles);
-    // gulp.watch('src/js/**/*.js', gulp.series(reload));
+    gulp.watch('src/js/**/*.js', gulp.series(scripts, reload));
     gulp.watch('**/*.php', reload);
 }
 
-// export const scripts = () => {
-//     return gulp.src(paths.scripts.src)
-//         .pipe(named())
-//         .pipe(webpack({
-//             mode: 'development',
-//
-//             module: {
-//                 rules: [
-//                     {
-//                         test: /\.js$/,
-//                         use: {
-//                             loader: 'babel-loader',
-//                             options: {
-//                                 presets: ['@babel/preset-env']
-//                             }
-//                         }
-//                     }
-//                 ]
-//             },
-//             output: {
-//                 filename: '[name].js'
-//             },
-//             externals: {
-//                 jquery: 'jQuery'
-//             },
-//             devtool: !PRODUCTION ? 'inline-source-map' : false
-//         }))
-//         .pipe(gulpif(PRODUCTION, uglify()))
-//         .pipe(gulp.dest(paths.scripts.dest));
-// }
+export const scripts = () => {
+    return gulp.src(paths.scripts.src)
+        .pipe(named())
+        .pipe(webpack({
+            mode: 'development',
+
+            module: {
+                rules: [
+                    {
+                        test: /\.js$/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/preset-env']
+                            }
+                        }
+                    }
+                ]
+            },
+            output: {
+                filename: '[name].js'
+            },
+            externals: {
+                jquery: 'jQuery'
+            },
+            devtool: !PRODUCTION ? 'inline-source-map' : false
+        }))
+        .pipe(gulpif(PRODUCTION, uglify()))
+        .pipe(gulp.dest(paths.scripts.dest));
+}
 
 export const compress = () => {
     return gulp.src(paths.package.src)
@@ -109,7 +113,7 @@ export const compress = () => {
         .pipe(gulp.dest(paths.package.dest));
 }
 
-export const dev = gulp.series(clean, gulp.parallel(styles), serve, watch);
-export const build = gulp.series(clean, gulp.parallel(styles));
+export const dev = gulp.series(clean, gulp.parallel(styles,scripts), serve, watch);
+export const build = gulp.series(clean, gulp.parallel(styles,scripts));
 export const bundle = gulp.series(build, compress);
 export default dev;
