@@ -10,7 +10,7 @@
 ?>
 <div id="search-menu-wrapper">	
 	<div class="container pr pts-18">
-		<span class="close-search"><i class="feather-x"></i></span>
+		<span class="close-search"><i class="ri-close-line"></i></span>
 		<?php get_search_form(); ?>
 	</div>
 </div>

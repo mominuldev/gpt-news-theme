@@ -120,3 +120,81 @@ add_filter( 'get_the_archive_title', 'custom_remove_archive_title' );
 
 
 
+
+
+
+
+
+// Register a meta box to track post views count
+function register_post_views_count_meta_box() {
+	add_meta_box(
+		'post_views_count', // ID of the meta box
+		'Post Views Count', // Title of the meta box
+		'post_views_count_meta_box_callback', // Callback function
+		'post', // Screen (post type)
+		'side', // Context (where to show the meta box)
+		'high' // Priority (priority of the meta box)
+	);
+}
+add_action('add_meta_boxes', 'register_post_views_count_meta_box');
+
+// Callback function to display the meta box content
+function post_views_count_meta_box_callback($post) {
+	// Use nonce for verification
+	wp_nonce_field('post_views_count_nonce', 'post_views_count_nonce_field');
+
+	// Get the current view count
+	$views_count = get_post_meta($post->ID, 'post_views_count', true);
+
+	echo '<label for="post_views_count">Views Count:</label>';
+	echo '<input type="number" id="post_views_count" name="post_views_count" value="' . esc_attr($views_count) . '" style="width: 100%;"/>';
+}
+
+
+
+// Save the meta box data
+function save_post_views_count_meta_box($post_id) {
+	// Check if nonce is set
+	if (!isset($_POST['post_views_count_nonce_field'])) {
+		return;
+	}
+
+	// Verify the nonce
+	if (!wp_verify_nonce($_POST['post_views_count_nonce_field'], 'post_views_count_nonce')) {
+		return;
+	}
+
+	// Check if the user has permission to save the data
+	if (!current_user_can('edit_post', $post_id)) {
+		return;
+	}
+
+	// Save the views count
+	if (isset($_POST['post_views_count'])) {
+		update_post_meta($post_id, 'post_views_count', sanitize_text_field($_POST['post_views_count']));
+	}
+}
+add_action('save_post', 'save_post_views_count_meta_box');
+
+
+
+function increment_post_views($post_id) {
+	// Get the current views count
+	$views_count = get_post_meta($post_id, 'post_views_count', true);
+	$views_count = $views_count ? intval($views_count) : 0; // Ensure it's an integer
+
+	// Increment the views count
+	$views_count++;
+
+	// Update the views count in the database
+	update_post_meta($post_id, 'post_views_count', $views_count);
+}
+
+// Hook into the 'wp' action to increment views count on post view
+add_action('wp', function() {
+	if (is_single()) {
+		global $post;
+		increment_post_views($post->ID);
+	}
+});
+

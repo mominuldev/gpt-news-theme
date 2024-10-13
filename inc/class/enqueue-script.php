@@ -42,9 +42,11 @@ class Gpt_Enqueue_Script {
 		wp_enqueue_style( 'bootstrap', $this->gtdu . '/assets/css/bootstrap.min.css' );
 		wp_enqueue_style( 'font-awesome-six', $this->gtdu . '/assets/css/all.min.css', array(), '5.15.4' );
 		wp_enqueue_style( 'remixicon', $this->gtdu . '/assets/css/remixicon.css' );
-		wp_enqueue_style( 'preloder', $this->gtdu . '/assets/css/loader.min.css' );
-		wp_enqueue_style( 'magnific-popup', $this->gtdu . '/assets/css/magnific-popup.css' );
-		wp_enqueue_style( 'odometer', $this->gtdu . '/assets/css/odometer.min.css' );
+		// Swiper CSS
+		wp_enqueue_style( 'news-swiper', $this->gtdu . '/assets/css/swiper.min.css' );
+
+		// Remove swiper css
+		wp_dequeue_style( 'e-swiper' );
 
 		// Font Include
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&display=swap', [], '1.0.0' );
@@ -101,19 +103,12 @@ class Gpt_Enqueue_Script {
 		$smooth_scroll = gpt_option( 'smooth_scroll' );
 
 		wp_enqueue_script( 'bootstrap', $this->gtdu . '/assets/js/bootstrap.min.js', array( 'jquery' ), '4.3.1', true );
-//		wp_enqueue_script( 'gsap', $this->gtdu . '/assets/js/gsap.min.js', array(), '1.0.0', true );
-		wp_enqueue_script( 'appear', $this->gtdu . '/assets/js/jquery.appear.js', array( 'jquery' ), '3.1.12', true );
+//
+
 		wp_enqueue_script( 'swiper', $this->gtdu . '/assets/js/swiper.min.js', array( 'jquery' ), '3.1.12', true );
-		wp_enqueue_script( 'magnefic-popup', $this->gtdu . '/assets/js/jquery.magnific-popup.min.js', array( 'jquery' ), '3.1.12', true );
+//		wp_enqueue_script( 'magnefic-popup', $this->gtdu . '/assets/js/jquery.magnific-popup.min.js', array( 'jquery' ), '3.1.12', true );
 		wp_enqueue_script( 'header', $this->gtdu . '/assets/js/header.js', array( 'jquery' ), '3.1.12', true );
-		wp_enqueue_script('odometer', $this->gtdu . '/assets/js/odometer.min.js', array('jquery' ), '1.0.0', true);
 
-
-
-		// Lenis JS for Smooth Scroll
-		wp_enqueue_script('lenis', 'https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js', array(), '1.0.0', true);
-		// Page Loader Animation
-//		wp_enqueue_script('barba', 'https://unpkg.com/@barba/core', array(), '1.0.0', true);
 		wp_enqueue_script( 'gpt-theme', $this->gtdu . '/assets/js/app.js', array( 'jquery' ), false, true );
 
 		if ( $smooth_scroll ) {

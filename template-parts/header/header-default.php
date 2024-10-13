@@ -62,8 +62,7 @@ if ( $header_type == true || $header_type == 1 ) {
 
 ?>
 
-<header id="masthead"
-        class="site-header header-1 header-width <?php echo esc_attr( $header_classes ); ?>" <?php if ( $is_fixed && ! empty( $logo_contrast ) ) {
+<header id="masthead" class="site-header header-1 header-width <?php echo esc_attr( $header_classes ); ?>" <?php if ( $is_fixed && ! empty( $logo_contrast ) ) {
 	echo ' data-header-fixed="true"';
 } ?> <?php if ( $mobile_is_fixed ) {
 	echo ' data-mobile-header-fixed="true"';
@@ -87,9 +86,8 @@ if ( $header_type == true || $header_type == 1 ) {
                                 <span class="trending-text">Trending</span>
                             </div>
 
-                            <div class="top-bar-text">
-                                <p>Get 50% off on all products. Use code <span>WINTER50</span></p>
-                            </div>
+<!--                            Trending News-->
+                            <?php Gpt_Theme_Helper::trending_news(); ?>
                         </div>
                     </div>
                 </div>

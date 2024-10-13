@@ -2587,10 +2587,12 @@ span.progress-shape {
 .blog-list__small-list {
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
   border: 1px solid #E5E5E5;
   overflow: hidden;
   border-radius: 5px;
+}
+.blog-list__small-list:not(:last-child) {
+  margin-bottom: 24px;
 }
 .blog-list__small-list .blog-list__image {
   min-width: 150px;
@@ -2756,6 +2758,77 @@ span.progress-shape {
 }
 .gpt-blog-metro__small:hover .gpt-blog-metro__image img {
   transform: scale(1.07);
+}
+
+.blog-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.blog-list .blog-list__image {
+  min-width: 80px;
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+@media (max-width: 991px) and (min-width: 575px) {
+  .blog-list .blog-list__image {
+    min-width: 200px;
+    width: 200px;
+    height: 200px;
+  }
+}
+.blog-list .blog-list__image img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.blog-list .blog-list__title {
+  font-size: 16px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 5px;
+}
+@media (max-width: 991px) and (min-width: 575px) {
+  .blog-list .blog-list__title {
+    font-size: 20px;
+  }
+}
+.blog-list .blog-list__title a {
+  color: #161616;
+  background-image: linear-gradient(to bottom, #161616 0%, #161616 98%);
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  background-position: left 100%;
+  transition: all 0.7s;
+}
+.blog-list .blog-list__title a:hover {
+  background-size: 100% 1px;
+  color: #161616;
+}
+
+.meta-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.gpt-blog__meta-view-count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #A5A6AA;
+  font-size: 14px;
+}
+
+.blog-post-items .blog-list:not(:last-child) {
+  margin-bottom: 24px;
 }
 
 /*--------------------------------------------------------------
@@ -3541,7 +3614,6 @@ textarea {
   font-size: 16px;
   line-height: 1.3;
   padding: 10px 15px;
-  border-radius: 14px;
   background: #1f1f1f;
   border: 1px solid #1f1f1f;
 }
@@ -3760,7 +3832,9 @@ a:hover, a:active {
 .site-header .top-bar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+.site-header .top-bar-left {
+  max-width: 80%;
 }
 .site-header .trending-icon svg {
   width: 20px;
@@ -3773,6 +3847,7 @@ a:hover, a:active {
 .site-header .top-bar-content-left {
   display: flex;
   align-items: center;
+  flex: 1;
 }
 .site-header .top-bar-content {
   display: flex;
@@ -3788,9 +3863,11 @@ a:hover, a:active {
   font-weight: 600;
 }
 .site-header .trending-text-wrapper {
-  padding-right: 10px;
+  display: flex;
+  align-items: center;
   margin-right: 10px;
   position: relative;
+  padding-right: 10px;
 }
 .site-header .trending-text-wrapper:after {
   content: "";
@@ -3814,7 +3891,7 @@ a:hover, a:active {
   margin: 0;
 }
 .site-header .site-logo img {
-  max-width: 175px;
+  max-width: 250px;
 }
 .site-header .site-logo a {
   font-size: 30px;
@@ -4899,6 +4976,12 @@ a:hover, a:active {
 }
 .gpt-offcanvas-sidebar .btn-close:focus {
   box-shadow: none;
+}
+
+h3.trending-post-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 /*--------------------------------------------------------------
@@ -6574,6 +6657,7 @@ h3.post-share-title {
   margin: 0;
   padding: 0;
   list-style: none;
+  min-width: 190px;
 }
 .social-share-link li {
   display: inline-block;
@@ -7490,7 +7574,7 @@ blockquote cite, .wp-block-quote cite {
 #search-menu-wrapper .close-search {
   height: 60px;
   width: 60px;
-  line-height: 65px;
+  line-height: 60px;
   border-radius: 50%;
   background-color: #17509B;
   color: #fff;

@@ -11,10 +11,11 @@ $videothumb    = ! empty( $meta['video-thumbnail'] ) ? $meta['video-thumbnail'] 
 $meta_gallery  = get_post_meta( get_the_ID(), 'gpt-post-gallery', true );
 $category_list = get_the_category_list( ' ' );
 $blog_word_limit = gpt_option('blog_word_limit');
+$column= gpt_option('blog-masonry-column');
 ?>
 
-
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-list entry-post' ); ?>>
+<div class="col-md-<?php echo esc_attr($column); ?> col-sm-6 col-xs-12">
+    <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-list entry-post' ); ?>>
 
 		<?php if ( has_post_thumbnail() ) : ?>
             <div class="post-thumbnail-wrapper">
@@ -72,4 +73,4 @@ $blog_word_limit = gpt_option('blog_word_limit');
 			} ?>
         </div><!-- /.entry-content -->
     </article><!-- #post-<?php the_ID(); ?> -->
-
+</div>

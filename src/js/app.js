@@ -53,8 +53,6 @@ var MOMIN = MOMIN || {};
     MOMIN.initialize = {
         init: function () {
             MOMIN.initialize.general();
-            MOMIN.initialize.sectionSwitch();
-            MOMIN.initialize.contactFrom();
             MOMIN.initialize.handleMobileHeader();
         },
 
@@ -64,179 +62,24 @@ var MOMIN = MOMIN || {};
 
         general: function () {
 
-            // object-fit polyfill run
-            // objectFitImages();
-            // /* init Jarallax */
-            // jarallax(document.querySelectorAll('.jarallax'));
-            // jarallax(document.querySelectorAll('.jarallax-keep-img'), {
-            //     keepImg: true,
-            // });
+            //Popup Search
+            $('#search-menu-wrapper').removeClass('toggled');
 
-            // Gsap Register Plugin
-            gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-
-            // PRELOADER
-            let settings = {
-                progressSize: 320,
-                progressColor: '#ffffff',
-                lineWidth: 2,
-                lineCap: 'round',
-                preloaderAnimationDuration: 800,
-                startDegree: -90,
-                finalDegree: 270
-            }
-
-            function setAttributes(elem, attrs) {
-
-                for (let key in attrs) {
-                    elem.setAttribute(key, attrs[key]);
-                }
-
-            }
-
-            let preloader = document.createElement('div'),
-                canvas = document.createElement('canvas'),
-                size;
-
-            (function () {
-
-                let width = window.innerWidth,
-                    height = window.innerHeight;
-
-                if (width > height) {
-
-                    size = Math.min(settings.progressSize, height / 2);
-
-                } else {
-
-                    size = Math.min(settings.progressSize, width - 50);
-
-                }
-
-            })();
-
-            setAttributes(preloader, {
-                class: "preloader",
-                id: 'preloader',
-                style: 'transition: opacity ' + settings.preloaderAnimationDuration / 1000 + 's'
+            $('#search-icon').on('click', function (e) {
+                e.stopPropagation();
+                $('#search-menu-wrapper').toggleClass('toggled');
+                $("#popup-search").focus();
             });
-            setAttributes(canvas, {
-                class: 'progress-bar',
-                id: 'progress-bar',
-                width: settings.progressSize,
-                height: settings.progressSize
+
+            $('#search-menu-wrapper input').on('click', function (e) {
+                e.stopPropagation();
+            });
+
+            $('#search-menu-wrapper, body').on('click', function () {
+                $('#search-menu-wrapper').removeClass('toggled');
             });
 
 
-            preloader = document.getElementById('preloader');
-
-            let progressBar = document.getElementById('progress-bar'),
-                images = document.images,
-                imagesAmount = images.length,
-                imagesLoaded = 0,
-                barCtx = progressBar.getContext('2d'),
-                circleCenterX = progressBar.width / 2,
-                circleCenterY = progressBar.height / 2,
-                circleRadius = circleCenterX - settings.lineWidth,
-                degreesPerPercent = 3.6,
-                currentProgress = 0,
-                showedProgress = 0,
-                progressStep = 0,
-                progressDelta = 0,
-                startTime = null,
-                running;
-
-            (function () {
-
-                return requestAnimationFrame
-                    || mozRequestAnimationFrame
-                    || webkitRequestAnimationFrame
-                    || oRequestAnimationFrame
-                    || msRequestAnimationFrame
-                    || function (callback) {
-                        setTimeout(callback, 1000 / 60);
-                    };
-
-            })();
-
-            Math.radians = function (degrees) {
-                return degrees * Math.PI / 180;
-            };
-
-
-            progressBar.style.opacity = settings.progressOpacity;
-            barCtx.strokeStyle = settings.progressColor;
-            barCtx.lineWidth = settings.lineWidth;
-            barCtx.lineCap = settings.lineCap;
-            let angleMultiplier = (Math.abs(settings.startDegree) + Math.abs(settings.finalDegree)) / 360;
-            let startAngle = Math.radians(settings.startDegree);
-            document.body.style.overflowY = 'hidden';
-            preloader.style.backgroundColor = settings.preloaderBackground;
-
-
-            for (let i = 0; i < imagesAmount; i++) {
-
-                let imageClone = new Image();
-                imageClone.onload = onImageLoad;
-                imageClone.onerror = onImageLoad;
-                imageClone.src = images[i].src;
-
-            }
-
-            function onImageLoad() {
-
-                if (running === true) running = false;
-
-                imagesLoaded++;
-
-                if (imagesLoaded >= imagesAmount) hidePreloader();
-
-                progressStep = showedProgress;
-                currentProgress = ((100 / imagesAmount) * imagesLoaded) << 0;
-                progressDelta = currentProgress - showedProgress;
-
-                setTimeout(function () {
-
-                    if (startTime === null) startTime = performance.now();
-                    running = true;
-                    animate();
-
-                }, 10);
-
-            }
-
-            function animate() {
-
-                if (running === false) {
-                    startTime = null;
-                    return;
-                }
-
-                let timeDelta = Math.min(1, (performance.now() - startTime) / settings.preloaderAnimationDuration);
-                showedProgress = progressStep + (progressDelta * timeDelta);
-
-                if (timeDelta <= 1) {
-
-                    barCtx.clearRect(0, 0, progressBar.width, progressBar.height);
-                    barCtx.beginPath();
-                    barCtx.arc(circleCenterX, circleCenterY, circleRadius, startAngle, (Math.radians(showedProgress * degreesPerPercent) * angleMultiplier) + startAngle);
-                    barCtx.stroke();
-                    requestAnimationFrame(animate);
-
-                } else {
-                    startTime = null;
-                }
-
-            }
-
-            function hidePreloader() {
-                setTimeout(function () {
-                    $("body").addClass("page-loaded");
-                    document.body.style.overflowY = '';
-                }, settings.preloaderAnimationDuration + 100);
-            }
-            var resizeTimer;
 
 
             // Back To Top
@@ -272,15 +115,6 @@ var MOMIN = MOMIN || {};
                     });
                 });
             }
-
-            // Counter
-            $(".odometer").appear(function (e) {
-                var odo = $(".odometer");
-                odo.each(function () {
-                    var countNumber = $(this).attr("data-count");
-                    $(this).html(countNumber);
-                });
-            });
 
 
             if ($('body').hasClass("admin-bar")) {
@@ -353,78 +187,20 @@ var MOMIN = MOMIN || {};
             });
 
 
-            // Gsap Smooth Scroll
-            // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-            //
-            // // Scroll to Top
-            // let smoother = ScrollSmoother.create({
-            //     wrapper: '#site-content',
-            //     content: '#main',
-            //     smooth: 2,
-            //     effect: true
-            // });
-
-            const lenis = new Lenis({
-                duration: 1.2,
-                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-                direction: 'vertical', // vertical, horizontal
-                gestureDirection: 'vertical', // vertical, horizontal, both
-                smooth: true,
-                mouseMultiplier: 2,
-                smoothTouch: false,
-                touchMultiplier: 2,
-                infinite: false,
-            })
-
-            //get scroll value
-            lenis.on('scroll', ({scroll, limit, velocity, direction, progress}) => {
-                // console.log({ scroll, limit, velocity, direction, progress })
-            })
-
-            function raf(time) {
-                lenis.raf(time)
-                requestAnimationFrame(raf)
-            }
-
-            requestAnimationFrame(raf)
-
-            // Cursor
-            const cursor = document.querySelector('.cursor');
-            const cursorFollower = document.querySelector('.cursor-follower');
-
-
-
-            document.addEventListener('mousemove', e => {
-
-                gsap.to('.cursor', {
-                    duration: 1,
-                    x: e.pageX * 2 - 50 + "%",
-                    y: e.pageY * 2 - 50 + "%",
-                    ease: "power3.out",
-                })
-
-                cursorFollower.style.top = e.pageY + 'px';
-                cursorFollower.style.left = e.pageX + 'px';
+            //trending-news-slider swiper
+            var swiper = new Swiper('.trending-news-slider', {
+                slidesPerView: 1,
+                speed: 1000,
+                loop: true,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                allowTouchMove: false,
+                autoplay: {
+                    delay: 2000,
+                }
             });
-
-            // Mouse Leave
-            document.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursorBlock');
-                cursor.classList.add('cursorNone');
-
-                cursorFollower.classList.remove('cursorBlock');
-                cursorFollower.classList.add('cursorNone');
-            });
-
-            // Mouse Enter
-            document.addEventListener('mouseenter', () => {
-                cursor.classList.remove('cursorNone');
-                cursor.classList.add('cursorBlock');
-
-                cursorFollower.classList.remove('cursorNone');
-                cursorFollower.classList.add('cursorBlock');
-            });
-
 
 
 
@@ -494,135 +270,7 @@ var MOMIN = MOMIN || {};
             }
         },
 
-        /*==================================*/
-        /*=           Progressbar          =*/
-        /*==================================*/
-        progressBar: function () {
-            if ($('.skill-wrapper').length) {
-                $('.skills').not('.active').each(function () {
-                    if ($(window).scrollTop() >= $(this).offset().top - $(window).height() * 1) {
-                        $(this).addClass('active');
-                        $(this).find('.skill').each(function () {
-                            var procent = $(this).attr('data-value');
-                            $(this).find('.active-line').css('width', procent + '%');
-                        });
-                    }
-                });
-            }
-        },
 
-        /*=====================================*/
-        /*=           Section Switch          =*/
-        /*=====================================*/
-
-        sectionSwitch: function () {
-            $('.page-scroll, .site-header .menu li a, .canvas-nav .site-main-menu li a').on('click', function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    if (target.length > 0) {
-
-                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                        $('html,body').animate({
-                            scrollTop: target.offset().top - 130
-                        }, 1000);
-                        return false;
-                    }
-                }
-            });
-
-            $('[data-type="section-switch"], .gp-btn, .gpt-main-menu li a, .site-main-menu > li > a').on('click', function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    if (target.length > 0) {
-
-                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                        $('html,body').animate({
-                            scrollTop: target.offset().top
-                        }, 1000);
-                        return false;
-                    }
-                }
-            });
-        },
-
-        /*==============================*/
-        /*=           Countup          =*/
-        /*==============================*/
-
-        countUp: function () {
-            var options = {
-                useEasing: true,
-                useGrouping: true,
-                separator: ',',
-                decimal: '.',
-                prefix: '',
-                suffix: ''
-            };
-
-            var counteEl = $('[data-counter]');
-
-            if (counteEl) {
-                counteEl.each(function () {
-                    var val = $(this).data('counter');
-
-                    var countup = new CountUp(this, 0, val, 0, 2.5, options);
-                    $(this).appear(function () {
-                        countup.start();
-                    }, {
-                        accX: 0,
-                        accY: 0
-                    })
-                });
-            }
-        },
-        /*=================================*/
-        /*=           Contact Form         =*/
-        /*=================================*/
-        contactFrom: function () {
-            $('[data-gpt-form]').each(function () {
-                var $this = $(this);
-                $('.form-result', $this).css('display', 'none');
-
-                $this.submit(function () {
-                    $('button[type="submit"]', $this).addClass('clicked');
-                    // Create a object and assign all fields name and value.
-                    var values = {};
-                    const security = $('.gpt-newsletter-security').data('security');
-                    values["nonce"] = security;
-
-                    $('[name]', $this).each(function () {
-                        var $this = $(this),
-                            $name = $this.attr('name'),
-                            $value = $this.val();
-                        values[$name] = $value;
-                    });
-
-                    // Make Request
-                    $.ajax({
-                        url: $this.attr('action'),
-                        type: 'POST',
-                        data: values,
-                        success: function success(data) {
-
-                            if (data.error == true) {
-                                $('.form-result', $this).addClass('alert-warning').removeClass('alert-success alert-danger').css('display', 'block');
-                            } else {
-                                $('.form-result', $this).addClass('alert-success').removeClass('alert-warning alert-danger').css('display', 'block');
-                            }
-                            $('.form-result > .content', $this).html(data.message);
-                            $('button[type="submit"]', $this).removeClass('clicked');
-                        },
-                        error: function error() {
-                            $('.form-result', $this).addClass('alert-danger').removeClass('alert-warning alert-success').css('display', 'block');
-                            $('.form-result > .content', $this).html('Sorry, an error occurred.');
-                            $('button[type="submit"]', $this).removeClass('clicked');
-                        }
-                    });
-                    return false;
-                });
-
-            });
-        }
     };
 
     MOMIN.documentOnReady = {

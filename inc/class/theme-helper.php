@@ -812,6 +812,39 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
             <!-- /.related-post-wrapper -->
 		<?php }
 
+		/**
+		 * @return void
+         * Trending News
+		 */
+        static function trending_news() {
+            $trending_news = new WP_Query( array(
+                'posts_per_page' => 5,
+                'meta_key'       => 'post_views_count',
+                'orderby'        => 'meta_value_num',
+                'order'          => 'DESC',
+            ) );
+
+            if ( $trending_news->have_posts() ) : ?>
+                <div class="trending-news-wrapper">
+                    <div class=" swiper-container trending-news-slider">
+                        <div class="swiper-wrapper">
+                            <?php while ( $trending_news->have_posts() ) : $trending_news->the_post(); ?>
+                                <div class="swiper-slide">
+                                    <div class="trending-post-item">
+                                        <h3 class="trending-post-title">
+                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif;
+            wp_reset_postdata();
+
+        }
+
 		static function gpt_post_nav() {
 			// Don't print empty markup if there's nowhere to navigate.
 			$pre_post  = $next_post = '';

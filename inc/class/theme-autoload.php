@@ -63,6 +63,7 @@ if (!class_exists('Gpt_Theme_Autoload')) {
 	        require_once MP_THEME_DIR . '/inc/options/meta-option.php';
 	        // Widgets
 			 require_once MP_THEME_DIR . '/inc/options/widgets/widget-social-links.php';
+			 require_once MP_THEME_DIR . '/inc/options/widgets/widget-recent-posts.php';
         }
 
         public function walker_comment(){

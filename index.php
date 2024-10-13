@@ -25,9 +25,13 @@ $column = $sidebar['column'];
             <div class="row<?php echo apply_filters('gpt_row_class', $row_class); ?>">
                 <div id='main-content' class="col-lg-<?php echo apply_filters('gpt_column_class', $column); ?>">
                     <?php  if ( have_posts() ) :
-                        echo '<div class="row">';
-                        get_template_part( 'template-parts/post/posts-grid');
-                        echo '</div>';
+
+                        if( gpt_option('blog_style') == 'grid' ) {
+                            get_template_part( 'template-parts/post/posts-grid');
+                        } else {
+                            get_template_part( 'template-parts/post/posts-list');
+                        }
+
                     else :
                         get_template_part( 'template-parts/content', 'none' );
                     endif;  ?>

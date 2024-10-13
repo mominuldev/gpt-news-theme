@@ -844,6 +844,20 @@ if ( class_exists( 'CSF' ) ) {
 		'parent' => 'blog_section',
 		'fields' => array(
 
+			// Blog Style
+			array(
+				'id'      => 'blog_style',
+				'type'    => 'select',
+				'title'   => esc_html__( 'Blog Style', 'gpt-news' ),
+				'desc'    => esc_html__( 'Select blog style', 'gpt-news' ),
+				'options' => array(
+					'grid' => __('Grid', 'gpt-news'),
+					'list' => __('List', 'gpt-news'),
+//					'masonry' => __('Masonry', 'gpt-news'),
+				),
+				'default' => 'grid',
+			),
+
 			array(
 				'id'         => 'blog-masonry-column',
 				'type'       => 'image_select',
@@ -855,7 +869,7 @@ if ( class_exists( 'CSF' ) ) {
 					'4' => MP_THEME_URI . '/assets/images/layout/3cols.png',
 				),
 				'default'    => '6',
-				'dependency' => array( 'blog-style_masonry', '==', true ),
+//				'dependency' => array( 'blog-style_masonry', '==', true ),
 			),
 
 			array(
@@ -901,6 +915,14 @@ if ( class_exists( 'CSF' ) ) {
 				),
 				'default'  => '15',
 				'required' => array( 'blog_sidebar_layout', '!=', 'none' ),
+			),
+
+			// Word Limit
+			array(
+				'id'      => 'blog_word_limit',
+				'type'    => 'text',
+				'title'   => esc_html__( 'Word Limit', 'gpt-news' ),
+				'default' => '20',
 			),
 
 
