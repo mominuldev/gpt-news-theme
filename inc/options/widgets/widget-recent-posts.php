@@ -202,7 +202,7 @@ if( class_exists( 'CSF' ) ) {
 								<?php if( $instance['show_post_view_count']) : ?>
 									<span class="gpt-blog__meta-view-count">
 										<i class="ri-eye-line"></i>
-										<span><?php echo get_post_meta(get_the_ID(), 'post_views_count', true); ?></span>
+										<span><?php echo get_post_meta(get_the_ID(), 'post_views_count', true); ?> Views</span>
 									</span>
 								<?php endif; ?>
 							</div>

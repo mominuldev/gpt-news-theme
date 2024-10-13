@@ -189,8 +189,7 @@ var MOMIN = MOMIN || {};
 
             //trending-news-slider swiper
             var swiper = new Swiper('.trending-news-slider', {
-                slidesPerView: 1,
-                speed: 1000,
+                speed: 700,
                 loop: true,
                 effect: 'fade',
                 fadeEffect: {

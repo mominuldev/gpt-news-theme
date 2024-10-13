@@ -85,7 +85,7 @@ if ( class_exists( 'CSF' ) ) {
 				'id'         => 'preloader_text',
 				'type'       => 'text',
 				'title'      => esc_html__( 'Preloader Text', 'gpt-news' ),
-				'default'    => esc_html__( 'POLLIX', 'gpt-news' ),
+				'default'    => esc_html__( 'ALL RESULT BD', 'gpt-news' ),
 				'dependency' => array( 'preloader_switch|preloader-type', '==', 'true|text' ),
 			),
 
@@ -150,14 +150,6 @@ if ( class_exists( 'CSF' ) ) {
 				)
 			),
 
-			// Enable Body Background and line
-			array(
-				'id'      => 'body_bg_line',
-				'type'    => 'switcher',
-				'title'   => esc_html__( 'Enable Body Background and Line', 'gpt-news' ),
-				'default' => false,
-			),
-
 			array(
 				'id'       => 'custom-css',
 				'type'     => 'code_editor',
@@ -186,17 +178,6 @@ if ( class_exists( 'CSF' ) ) {
 		'title'  => __( 'Settings', 'gpt-news' ),
 		'fields' => array(
 
-			// Header Style
-//			array(
-//				'id'      => 'header_layout',
-//				'type'    => 'select',
-//				'title'   => esc_html__( 'Header Style', 'gpt-news' ),
-//				'desc'    => esc_html__( 'Select header style', 'gpt-news' ),
-//				'options' => array(
-//					'default' => __('Header Default', 'gpt-news'),
-//					'canvas' => __('Header Canvas', 'gpt-news')
-//				)
-//			),
 
 			array(
 				'id'      => 'header_sticky',
@@ -205,37 +186,7 @@ if ( class_exists( 'CSF' ) ) {
 				'default' => false,
 			),
 
-//			array(
-//				'id'      => 'transparent_menu',
-//				'type'    => 'switcher',
-//				'title'   => esc_html__( 'Transparent Menu', 'gpt-news' ),
-//				'default' => false,
-//				'desc'    => esc_html__( 'Enable transparent menu', 'gpt-news' ),
-//				'dependency' => array( 'header_layout', '==', 'default' ),
-//			),
-
-//			array(
-//				'id'         => 'header_color',
-//				'type'       => 'button_set',
-//				'title'      => __( 'Transparent Header Color', 'gpt-news' ),
-//				'options'    => array(
-//					'header_dark'  => __( 'Dark (For light background)', 'gpt-news' ),
-//					'header_light' => __( 'Light (For dark Background)', 'gpt-news' ),
-//				),
-//				'default'    => 'header_light',
-//				'dependency' => array( 'transparent_menu', '==', 'true' ),
-//			),
-
-//			array(
-//				'type'    => 'text',
-//				'title'   => esc_html__( 'Responsive Menu', 'gpt-news' ),
-//				'id'      => 'mobile_resolution',
-//				'default' => '992',
-//				'desc'    => esc_html__( 'Responsive Menu Resolution', 'gpt-news' ),
-//				'dependency' => array( 'header_layout', '==', 'default' ),
-//			),
-
-		// Ad
+			// Topbar Ad
 			array(
 				'id'      => 'header_ad',
 				'type'    => 'switcher',
@@ -263,102 +214,6 @@ if ( class_exists( 'CSF' ) ) {
 				'type'    => 'switcher',
 				'title'   => esc_html__( 'Search On/Off', 'gpt-news' ),
 				'default' => false,
-			),
-
-			// Canvas Menu
-			array(
-				'id'      => 'canvas_menu',
-				'type'    => 'switcher',
-				'title'   => esc_html__( 'Canvas Menu On/Off', 'gpt-news' ),
-				'default' => false,
-			),
-
-			array(
-				'id'      => 'nav_btn',
-				'type'    => 'switcher',
-				'title'   => esc_html__( 'Button On/Off', 'gpt-news' ),
-				'default' => false,
-			),
-
-			array(
-				'id'      => 'button_label',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Button Label', 'gpt-news' ),
-				'default' => __( 'Let’s Talk', 'gpt-news' ),
-				'dependency' => array( 'nav_btn', '==', 'true' ),
-			),
-
-			array(
-				'id'      => 'button_link',
-				'type'    => 'text',
-				'title'   => esc_html__( 'Button Link', 'gpt-news' ),
-				'default' => '#',
-				'dependency' => array( 'nav_btn', '==', 'true' ),
-			),
-
-			// Button Style
-			array(
-				'id'     => 'button_color',
-				'type'   => 'color',
-				'title'  => esc_html__( 'Button Color', 'gpt-news' ),
-				'des'    => esc_html__( 'Choose button color', 'gpt-news' ),
-				'output' => array(
-					'color' => '.site-header .gpt-btn',
-				)
-			),
-
-			array(
-				'id'     => 'button_bg_color',
-				'type'   => 'color',
-				'title'  => esc_html__( 'Button BG Color', 'gpt-news' ),
-				'des'    => esc_html__( 'Choose button background color', 'gpt-news' ),
-				'output' => array(
-					'background-color' => '.site-header .gpt-btn',
-				)
-			),
-
-			array(
-				'id'     => 'button_border',
-				'type'   => 'border',
-				'title'  => __( 'Button Border', 'gpt-news' ),
-				'output' => array( '.site-header .gpt-btn' ),
-			),
-
-			array(
-				'id'     => 'btn-border-radius',
-				'type'   => 'number',
-				'title'  => __( 'Button Border Radius', 'gpt-news' ),
-				'unit'   => 'px',
-				'output' => [
-					'border-radius' => '.site-header .gpt-btn',
-				],
-			),
-
-			array(
-				'id'     => 'button_hover_color',
-				'type'   => 'color',
-				'title'  => esc_html__( 'Button Hover Color', 'gpt-news' ),
-				'des'    => esc_html__( 'Choose button color', 'gpt-news' ),
-				'output' => array(
-					'color' => '.site-header .gpt-btn:hover',
-				)
-			),
-
-			array(
-				'id'     => 'button_hover_bg_color',
-				'type'   => 'color',
-				'title'  => esc_html__( 'Button Hover BG Color', 'gpt-news' ),
-				'des'    => esc_html__( 'Choose button background color', 'gpt-news' ),
-				'output' => array(
-					'background-color' => '.site-header .gpt-btn:hover',
-				)
-			),
-
-			array(
-				'id'     => 'button_button_hover',
-				'type'   => 'border',
-				'title'  => __( 'Button Hover Border', 'gpt-news' ),
-				'output' => array( '.site-header .gpt-btn:hover' ),
 			),
 
 			// Header Nav menu style
@@ -461,13 +316,13 @@ if ( class_exists( 'CSF' ) ) {
 				'desc'      => esc_html__( 'Upload your Logo for the header', 'gpt-news' ),
 			),
 
-			array(
-				'id'        => 'transparent_main_logo',
-				'type'      => 'media',
-				'title'     => esc_html__( 'Transparent Header Logo', 'gpt-news' ),
-				'add_title' => esc_html__( 'Upload', 'gpt-news' ),
-				'desc'      => esc_html__( 'Upload your Logo for the header', 'gpt-news' ),
-			),
+//			array(
+//				'id'        => 'transparent_main_logo',
+//				'type'      => 'media',
+//				'title'     => esc_html__( 'Transparent Header Logo', 'gpt-news' ),
+//				'add_title' => esc_html__( 'Upload', 'gpt-news' ),
+//				'desc'      => esc_html__( 'Upload your Logo for the header', 'gpt-news' ),
+//			),
 
 			array(
 				'id'        => 'retina_logo',
@@ -493,18 +348,18 @@ if ( class_exists( 'CSF' ) ) {
 				'desc'      => esc_html__( 'Upload Retina logo for sticky header. This should be your Logo in double size (If your logo is 100 x 20px, it should be 200 x 40px)', 'gpt-news' ),
 			),
 
-			array(
-				'type'    => 'heading',
-				'content' => esc_html__( 'Sidebar Menu Logo', 'gpt-news' ),
-			),
-
-			array(
-				'id'        => 'sidebar_logo',
-				'type'      => 'media',
-				'title'     => esc_html__( 'Sidebar Menu Logo', 'gpt-news' ),
-				'desc'      => esc_html__( 'Upload logo for mobile menu.', 'gpt-news' ),
-				'add_title' => esc_html__( 'Upload', 'gpt-news' ),
-			),
+//			array(
+//				'type'    => 'heading',
+//				'content' => esc_html__( 'Sidebar Menu Logo', 'gpt-news' ),
+//			),
+//
+//			array(
+//				'id'        => 'sidebar_logo',
+//				'type'      => 'media',
+//				'title'     => esc_html__( 'Sidebar Menu Logo', 'gpt-news' ),
+//				'desc'      => esc_html__( 'Upload logo for mobile menu.', 'gpt-news' ),
+//				'add_title' => esc_html__( 'Upload', 'gpt-news' ),
+//			),
 
 
 			array(
@@ -531,89 +386,6 @@ if ( class_exists( 'CSF' ) ) {
 
 	) );
 
-	// Offcanvas Sidebar
-	CSF::createSection( $prefix, array(
-		'parent' => 'header_section', // The slug id of the parent section
-		'title'  => __( 'Offcanvas Sidebar', 'gpt-news' ),
-		'fields' => array(
-
-			array(
-				'id'        => 'offcanvas_sidebar_logo',
-				'type'      => 'media',
-				'title'     => esc_html__( 'Logo', 'gpt-news' ),
-				'add_title' => esc_html__( 'Upload', 'gpt-news' ),
-				'desc'      => esc_html__( 'Upload your Logo for the off canvas sidebar', 'gpt-news' ),
-			),
-
-
-			// Description textarea field
-			array(
-				'id'    => 'offcanvas_sidebar_description',
-				'type'  => 'textarea',
-				'title' => esc_html__( 'Description Textarea', 'gpt-news' ),
-				'desc'  => esc_html__( 'Enter your description', 'gpt-news' ),
-				'default' => esc_html__( 'Gpt is a experience Agency & our Team provide digital solution', 'gpt-news' ),
-			),
-
-			// Contact Info Title
-			array(
-				'id'    => 'offcanvas_sidebar_contact_info_title',
-				'type'  => 'text',
-				'title' => esc_html__( 'Contact Info Title', 'gpt-news' ),
-				'desc'  => esc_html__( 'Enter your contact info title', 'gpt-news' ),
-				'default' => esc_html__( 'Contact us', 'gpt-news' ),
-			),
-
-			// Repeatable field groups for contact info
-			array(
-				'id'          => 'offcanvas_sidebar_contact_info',
-				'type'        => 'group',
-				'title'       => esc_html__( 'Contact Info', 'gpt-news' ),
-				'button_title'=> esc_html__( 'Add New', 'gpt-news' ),
-				'accordion_title'=> esc_html__( 'Add New Contact Info', 'gpt-news' ),
-				'fields'      => array(
-					array(
-						'id'    => 'contact_info_text',
-						'type'  => 'text',
-						'title' => esc_html__( 'Text', 'gpt-news' ),
-					),
-				),
-				'default'     => array(
-					array(
-						'contact_info_text' => esc_html__( 'Melbone st, Australia, Ny 12099', 'gpt-news' ),
-					),
-					array(
-						'contact_info_text' => esc_html__( '+01 800 123 400 55', 'gpt-news' ),
-					),
-					array(
-						'contact_info_text' => esc_html__( 'pollexmail@gmail.com', 'gpt-news' ),
-					),
-
-				),
-			),
-
-			// Newsletter Form in on offcanvas sidebar switcher field
-
-			array(
-				'id'      => 'offcanvas_sidebar_newsletter_form_switcher',
-				'type'    => 'switcher',
-				'title'   => esc_html__( 'Newsletter Form', 'gpt-news' ),
-				'default' => true,
-			),
-
-			// Newsletter Title
-			array(
-				'id'    => 'offcanvas_sidebar_newsletter_info_title',
-				'type'  => 'text',
-				'title' => esc_html__( 'Newsletter Title', 'gpt-news' ),
-				'desc'  => esc_html__( 'Enter your newsletter info title', 'gpt-news' ),
-				'default' => esc_html__( 'Get Update', 'gpt-news' ),
-				'dependency' => array( 'offcanvas_sidebar_newsletter_form_switcher', '==', 'true' ),
-			),
-
-		)
-
-	) );
 
 	//Footer Setting
 	CSF::createSection( $prefix, array(
@@ -853,7 +625,7 @@ if ( class_exists( 'CSF' ) ) {
 				'options' => array(
 					'grid' => __('Grid', 'gpt-news'),
 					'list' => __('List', 'gpt-news'),
-//					'masonry' => __('Masonry', 'gpt-news'),
+					'masonry' => __('Masonry', 'gpt-news'),
 				),
 				'default' => 'grid',
 			),

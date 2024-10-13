@@ -86,6 +86,7 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
                 add_image_size('gpt_hero_large_960x520', 960, 520, true);
                 add_image_size('gpt_hero_thumbnail_220x175', 220, 175, true);
                 add_image_size('gpt_hero_thumbnail_420x270', 420, 270, true);
+                add_image_size('gpt_hero_grid_two_436x300', 436, 300, true);
                 add_image_size('gpt-blog-list_300x185', 300, 185, true);
 
 			}

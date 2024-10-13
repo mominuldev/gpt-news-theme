@@ -50,11 +50,11 @@ do_action( 'gpt_after_body' ); ?>
 
 	get_template_part( 'template-parts/popup-search' );
 	//Site Header
-    get_template_part( 'template-parts/header/header', 'default' );
+    get_template_part( 'template-parts/header/header', 'menu' );
 
-    if( ! is_single()) {
+
 	    get_template_part( 'template-parts/header/page-header' );
-    }
+
 
 	?>
 

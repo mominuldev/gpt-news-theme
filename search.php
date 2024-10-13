@@ -27,7 +27,13 @@ $column = $sidebar['column'];
                         <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'gpt-news' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                     </header>
 
-                    <?php get_template_part( 'template-parts/post/posts-list'); ?>
+                    <?php
+	                 if( gpt_option('blog_style') == 'grid' ) {
+		                 get_template_part( 'template-parts/post/posts-grid');
+	                 } else {
+		                 get_template_part( 'template-parts/post/posts-list');
+	                 }
+                     ?>
 
                     <?php else : ?>
                     <div class="search_page_404_wrapper">

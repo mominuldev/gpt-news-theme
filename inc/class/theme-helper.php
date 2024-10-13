@@ -776,9 +776,9 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 									<?php
 									endif; ?>
                                     <div class="blog-content">
-                                        <ul class="post-meta">
-                                            <li><?php self::gpt_entry_cat(); ?></li>
-                                        </ul><!-- .entry-meta -->
+                                        <div class="gpt-post-category">
+                                            <?php self::gpt_entry_cat(); ?>
+                                        </div><!-- .entry-meta -->
 
                                         <h3 class="post-title">
                                             <a href="<?php the_permalink(); ?>">
@@ -874,7 +874,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 					<?php endif; ?>
 
                     <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Older Post', 'gpt-news' ) ?></p>
+                        <p class="post-nav-title"><i class="ri-arrow-left-s-line"></i><?php esc_html_e( 'Previous', 'gpt-news' ) ?></p>
                         <h4 class="post-title"><?php echo get_the_title( $pre_post->ID ) ?></h4>
                     </div>
 
@@ -889,7 +889,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                 <a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="single-post-nav">
 
                     <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Next Post', 'gpt-news' ) ?></p>
+                        <p class="post-nav-title"><?php esc_html_e( 'Next', 'gpt-news' ) ?><i class="ri-arrow-right-s-line"></i></p>
                         <h4 class="post-title"><?php echo get_the_title( $next_post->ID ) ?></h4>
                     </div>
 

@@ -25,7 +25,7 @@ if ( $page_header_crumb == true ) {
 	$banner_crumb = true;
 }
 
-if ( is_404() || is_singular( 'project' )) {
+if ( is_404() || is_search() || is_single() ) {
 	$banner_disp = false;
 //	$banner_crumb = false;
 }

@@ -49,7 +49,7 @@ class Gpt_Enqueue_Script {
 		wp_dequeue_style( 'e-swiper' );
 
 		// Font Include
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&display=swap', [], '1.0.0' );
+		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap', [], '1.0.0' );
 
 
 		// Main CSS
@@ -61,12 +61,6 @@ class Gpt_Enqueue_Script {
 		if ( ! empty( $custom_css ) ) {
 			wp_add_inline_style( 'gpt-style', $custom_css );
 		}
-
-		// WooCommerce CSS
-		if ( GPT_WOOCOMMERCE_IS_ACTIVE ) {
-			wp_enqueue_style( 'gpt-woocommerce', $this->gtdu . '/assets/css/woocommerce.css' );
-		}
-
 		// Preloader CSS
 		$preloader_opt       = gpt_option( 'preloader' );
 		$preloader_color_opt = gpt_option( 'preloader_color' );

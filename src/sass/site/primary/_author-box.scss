@@ -5,6 +5,12 @@
     border-bottom: 1px solid $color__border;
     align-items: center;
 
+    @media(max-width: 767px) {
+        flex-direction: column;
+        padding: 20px 0;
+        text-align: center;
+    }
+
     .author {
         color: $color__theme;
         margin-bottom: 3px;
@@ -17,6 +23,11 @@
 
 .author-info_avatar {
     margin-right: 30px;
+
+    @media(max-width: 767px) {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
 
     @media(max-width: 480px) {
         width: 80px;
@@ -41,6 +52,11 @@
 
 .author-info {
     padding-right: 65px;
+
+    @media(max-width: 767px) {
+        padding-right: 0;
+        text-align: center;
+    }
 }
 
 .author-info_name span {
@@ -54,6 +70,14 @@
     border-left: 1px solid $color__border;
     padding-left: 45px;
 
+    @media(max-width: 767px) {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid $color__border;
+    }
+
     p {
         font-size: 16px;
         font-weight: 400;
@@ -65,6 +89,10 @@
 .author-info_social-wrapper {
     line-height: 1;
     margin-top: 20px;
+
+    @media(max-width: 767px) {
+        margin-top: 0;
+    }
 }
 
 .author-info_wrapper .title_soc_share {
@@ -76,9 +104,12 @@
 
 .author-info_social-link {
     display: inline-block;
-    margin-right: 13px;
     color: #CFCFCF;
     font-size: 15px;
+
+    &:not(:last-child) {
+        margin-right: 13px;
+    }
 }
 
 .author-info_social-wrapper a {
