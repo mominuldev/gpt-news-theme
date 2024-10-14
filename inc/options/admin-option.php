@@ -697,6 +697,13 @@ if ( class_exists( 'CSF' ) ) {
 				'default' => '20',
 			),
 
+			array(
+				'id'      => 'blog_list_meta_categories',
+				'type'    => 'switcher',
+				'title'   => esc_html__( 'Hide post-meta categories?', 'gpt-news' ),
+				'default' => false,
+			),
+
 
 			array(
 				'id'      => 'blog_list_meta_author',
@@ -711,12 +718,7 @@ if ( class_exists( 'CSF' ) ) {
 				'title'   => esc_html__( 'Hide post-meta comments?', 'gpt-news' ),
 				'default' => false,
 			),
-			array(
-				'id'      => 'blog_list_meta_categories',
-				'type'    => 'switcher',
-				'title'   => esc_html__( 'Hide post-meta categories?', 'gpt-news' ),
-				'default' => false,
-			),
+
 			array(
 				'id'      => 'blog_list_meta_date',
 				'type'    => 'switcher',
@@ -724,7 +726,13 @@ if ( class_exists( 'CSF' ) ) {
 				'default' => false,
 			),
 
-
+			// View Count
+			array(
+				'id'      => 'blog_list_meta_viewcount',
+				'type'    => 'switcher',
+				'title'   => esc_html__( 'Hide post-meta view count?', 'gpt-news' ),
+				'default' => false,
+			),
 
 		)
 	) );
@@ -795,20 +803,41 @@ if ( class_exists( 'CSF' ) ) {
 				'default' => false
 			),
 
+			//
+
+
+
 			array(
-				'id'      => 'blog_list_meta_author',
+				'id'      => 'blog_single_meta_author',
 				'type'    => 'switcher',
 				'title'   => esc_html__( 'Hide post-meta author?', 'gpt-news' ),
 				'default' => false,
 			),
+
 			array(
-				'id'      => 'blog_list_meta_comments',
+				'id'      => 'blog_single_meta_date',
+				'type'    => 'switcher',
+				'title'   => esc_html__( 'Hide post-meta date?', 'gpt-news' ),
+				'default' => false,
+			),
+
+			array(
+				'id'      => 'blog_single_meta_comments',
 				'type'    => 'switcher',
 				'title'   => esc_html__( 'Hide post-meta comments?', 'gpt-news' ),
 				'default' => false,
 			),
+
+			// View Count
 			array(
-				'id'      => 'blog_list_meta_categories',
+				'id'      => 'blog_single_meta_viewcount',
+				'type'    => 'switcher',
+				'title'   => esc_html__( 'Hide post-meta view count?', 'gpt-news' ),
+				'default' => false,
+			),
+
+			array(
+				'id'      => 'blog_single_meta_categories',
 				'type'    => 'switcher',
 				'title'   => esc_html__( 'Hide post-meta categories?', 'gpt-news' ),
 				'default' => false,

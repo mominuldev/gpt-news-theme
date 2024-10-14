@@ -198,3 +198,46 @@ add_action('wp', function() {
 	}
 });
 
+
+// Ajax Search
+function ajax_search() {
+	$search_term = sanitize_text_field($_POST['search']);
+
+	// Custom query for search
+	$args = array(
+		'post_type' => 'post', // Search in posts (change if needed)
+		's' => $search_term,
+		'posts_per_page' => 5 // Limit the number of results
+	);
+
+	$query = new WP_Query($args);
+
+	if ($query->have_posts()) {
+		while ($query->have_posts()) {
+			$query->the_post();
+
+			echo '<div class="blog-search-result">';
+			if (has_post_thumbnail()) {
+				echo '<div class="blog-search-result-image">';
+				the_post_thumbnail('thumbnail');
+				echo '</div>';
+			}
+			echo '<div class="blog-search-result-content">';
+			echo '<h3><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+			echo '<div class="date-meta">';
+			echo '<i class="ri-calendar-2-line"></i>';
+			echo  Gpt_Theme_Helper::gpt_posted_on();
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+		}
+	} else {
+		echo '<p>No results found</p>';
+	}
+
+	wp_die(); // Required to terminate immediately and return the proper result
+}
+
+add_action('wp_ajax_ajax_search', 'ajax_search'); // If logged in
+add_action('wp_ajax_nopriv_ajax_search', 'ajax_search'); // If logged out
+

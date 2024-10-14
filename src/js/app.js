@@ -178,13 +178,13 @@ var MOMIN = MOMIN || {};
 
 
             /* Magnefic Popup */
-            $('.play-button').each(function () {
-                $('.play-button').magnificPopup({
-                    type: 'iframe',
-                    mainClass: 'mfp-zoom-in',
-                    removalDelay: 260,
-                });
-            });
+            // $('.play-button').each(function () {
+            //     $('.play-button').magnificPopup({
+            //         type: 'iframe',
+            //         mainClass: 'mfp-zoom-in',
+            //         removalDelay: 260,
+            //     });
+            // });
 
 
             //trending-news-slider swiper
@@ -200,6 +200,29 @@ var MOMIN = MOMIN || {};
                     delay: 2000,
                 }
             });
+
+
+
+            $('#search-input').on('keyup', function() {
+                var searchTerm = $(this).val();
+
+                if (searchTerm.length >= 1) {
+                    $.ajax({
+                        url: gpt_scripts_vars.ajaxurl, // WordPress-specific ajax URL
+                        type: 'POST',
+                        data: {
+                            action: 'ajax_search', // PHP function hook name
+                            search: searchTerm
+                        },
+                        success: function(response) {
+                            $('#search-results').html(response);
+                        }
+                    });
+                } else {
+                    $('#search-results').empty(); // Clear results if search term is too short
+                }
+            });
+
 
 
 

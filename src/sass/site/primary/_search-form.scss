@@ -62,29 +62,31 @@
     top: 0;
     left: 0;
     z-index: 999999;
-    background: #fff;
+    background: #F2F6F9;
 
     .close-search {
-        height: 60px;
-        width: 60px;
-        line-height: 60px;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
         border-radius: 50%;
         background-color: $color__theme;
         color: #fff;
         z-index: 9999999;
         opacity: 5;
         position: absolute;
-        right: 15px;
-        top: 40px;
+        right: 8px;
+        top: 17px;
         font-size: 26px;
         cursor: pointer;
         text-align: center;
 
-        @media(max-width: 576px) {
-
-            height: 50px;
-            width: 50px;
-            line-height: 50px;
+        @media(max-width: 992px) {
+            height: 40px;
+            width: 40px;
+            line-height: 40px;
+            right: 18px;
+            top: 11px;
+            font-size: 20px;
         }
     }
 
@@ -115,11 +117,23 @@
         height: 100%;
     }
 
-    .search-form {
+    .search-form, #ajax-search-form {
         width: 100%;
         display: flex;
         align-items: center;
-        border-bottom: 1px solid #b9b8b8;
+        border-bottom: 3px solid $color__theme;
+        position: relative;
+
+        //&:after {
+        //    content: '';
+        //    position: absolute;
+        //    bottom: 0;
+        //    left: 0;
+        //    width: 50%;  // Initial width is 0
+        //    height: 1px;
+        //    background: $color__theme;  // Use your theme color
+        //    transition: width 0.4s ease;  // Smooth transition
+        //}
 
         input {
             font-family: $font__heading;
@@ -139,6 +153,10 @@
                 font-size: 30px;
             }
 
+            &:focus + .search-form:after,
+            &:focus + #ajax-search-form:after {  // When input is focused, the after element expands
+                width: 100%;  // Set width to 100% on focus
+            }
             &::placeholder {
                 color: #b1b1b1;
             }
@@ -159,36 +177,6 @@
 
             &:hover {
                 color: $color__theme;
-            }
-        }
-    }
-}
-
-.sea-wrapper {
-    .search-form {
-        display: flex;
-        align-items: center;
-
-        label {
-            margin: 0;
-            width: 100%;
-        }
-
-        input {
-            margin: 0;
-        }
-
-        .search-submit {
-            background: $color__theme;
-            color: #fff;
-            border: 0;
-            height: 54px;
-            border-radius: 4px;
-            margin-left: 20px;
-
-            &:hover {
-                background: #004ce5;
-                color: #fff;
             }
         }
     }

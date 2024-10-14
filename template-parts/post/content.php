@@ -11,6 +11,13 @@ $videothumb    = ! empty( $meta['video-thumbnail'] ) ? $meta['video-thumbnail'] 
 $meta_gallery  = get_post_meta( get_the_ID(), 'gpt-post-gallery', true );
 $category_list = get_the_category_list( ' ' );
 $blog_word_limit = gpt_option('blog_word_limit');
+
+$meta_author_show = gpt_option('blog_list_meta_author');
+$meta_date_show = gpt_option('blog_list_meta_date');
+$meta_comment_show = gpt_option('blog_list_meta_comment');
+$meta_view_count_show = gpt_option('blog_list_meta_viewcount');
+$meta_comment_show = gpt_option( 'blog_list_meta_categories' );
+
 ?>
 
 
@@ -24,7 +31,7 @@ $blog_word_limit = gpt_option('blog_word_limit');
 		<?php endif; ?>
 
         <div class="gpt-blog-content">
-			<?php if ( 'post' === get_post_type() ) : ?>
+			<?php if ( 'post' === get_post_type() && $meta_comment_show ) : ?>
                 <div class="mtp-post-meta-wrapper">
 					<?php if ( $category_list ) : ?>
                         <div class="gpt-post-category">
@@ -41,13 +48,34 @@ $blog_word_limit = gpt_option('blog_word_limit');
 
                 <div class="entry-meta-wrapper">
                     <ul class="entry-meta">
-                        <li>
-							<?php Gpt_Theme_Helper::post_author_by(); ?>
-                        </li>
-                        <li>
-                            <i class="ri-calendar-2-line"></i>
-							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
-                        </li>
+
+		                <?php if ( $meta_author_show ) : ?>
+                            <li>
+				                <?php Gpt_Theme_Helper::post_author_by(); ?>
+                            </li>
+		                <?php endif; ?>
+
+		                <?php if ( $meta_date_show ) : ?>
+                            <li>
+                                <i class="ri-calendar-2-line"></i>
+				                <?php Gpt_Theme_Helper::gpt_posted_on(); ?>
+                            </li>
+		                <?php endif; ?>
+
+		                <?php if ( $meta_comment_show ) : ?>
+
+                            <li>
+                                <i class="ri-message-2-line"></i>
+				                <?php Gpt_Theme_Helper::gpt_entry_comments(get_the_ID()); ?>
+                            </li>
+		                <?php endif; ?>
+
+		                <?php if ( $meta_view_count_show ) : ?>
+                            <li>
+                                <i class="ri-eye-line"></i>
+                                <span><?php echo get_post_meta(get_the_ID(), 'post_views_count', true); ?> Views</span>
+                            </li>
+		                <?php endif; ?>
                     </ul><!-- .entry-meta -->
                 </div><!-- /.entry-meta-wrapper -->
 

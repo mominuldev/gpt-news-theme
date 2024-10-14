@@ -328,6 +328,8 @@
 /** Blog List */
 .blog-post-list {
 	overflow: hidden;
+	background: #fff;
+	border-radius: 6px;
 
 	&.tag-title {
 		&:after {
@@ -347,7 +349,21 @@
 
 	.post-thumbnail-wrapper {
 		position: relative;
-		margin-bottom: 25px;
+	}
+
+	.gpt-blog-content {
+		padding: 30px;
+	}
+
+	ul.entry-meta {
+		li {
+			color: #818181;
+
+			a {
+				color: #818181;
+			}
+
+		}
 	}
 
 	.post-thumbnail {
@@ -358,7 +374,7 @@
 
 		img {
 			border-radius: 8px;
-			transform: scale(1.014);
+			transform: scale(1.03);
 			transition: all 0.3s ease-in-out;
 		}
 
@@ -382,10 +398,10 @@
 
 
 	.entry-title {
-		font-size: 28px;
+		font-size: 30px;
 		line-height: 1.2;
 		font-weight: 700;
-		margin-bottom: 5px;
+		margin-bottom: 0;
 		word-wrap: break-word;
 		word-break: break-all;
 
@@ -415,11 +431,11 @@
 	}
 
 	.entry-meta-wrapper {
-		margin-bottom: 16px;
+		margin: 20px 0;
 	}
 
 	.read-more {
-		margin-top: 20px;
+		margin-top: 25px;
 
 		.gpt-btn.btn-sm {
 			padding: 12px 25px;

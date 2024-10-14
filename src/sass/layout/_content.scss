@@ -7,12 +7,17 @@
 	}
 }
 
-.blog-archive-wrapper {
-	padding: 80px 0;
+//.blog-archive-wrapper {
+//	padding: 80px 0;
+//
+//	@media(max-width: 991px) {
+//		padding: 80px 0;
+//	}
+//}
 
-	@media(max-width: 991px) {
-		padding: 80px 0;
-	}
+.blog-content-area {
+	background: #f9faff;
+	padding: 80px 0;
 }
 
 .sidebar_left {

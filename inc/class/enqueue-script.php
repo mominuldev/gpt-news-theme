@@ -114,7 +114,11 @@ class Gpt_Enqueue_Script {
 			'nonce'   => wp_create_nonce( '_gpt_nonce' ),
 		);
 
+
+
 		wp_localize_script( 'gpt-theme', 'gpt_scripts_vars', $gpt_scripts_vars_array );
+
+//		wp_localize_script('gpt-theme', 'ajaxurl', array('ajaxurl' => admin_url('admin-ajax.php')));
 
 		//Comment Reply
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
