@@ -113,22 +113,15 @@ if ( $header_type == true || $header_type == 1 ) {
                     </div>
                 </div>
 
-                <div class="header-middle-center">
-                <img src="https://itcroctheme.com/wp/demos/themes/benqu/wp-content/uploads/2022/07/main-add.jpg" alt="">
-                </div>
-
 				<?php if ( $header_ad ) : ?>
                     <div class="header-middle-center">
                         <div class="header-google-add">
 							<?php
-							$header_google_add = gpt_option( 'header_google_ad' );
+                                $header_google_add = gpt_option( 'header_google_ad' );
 
-							// In this field you can add your google ad code like adsense or any other ad code
-
-							if ( $header_google_add ) {
-								echo $header_google_add;
-							}
-
+                                if ( $header_google_add ) {
+                                    echo $header_google_add;
+                                }
 							?>
                         </div>
                     </div>

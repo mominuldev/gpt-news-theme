@@ -106,13 +106,6 @@ if ( class_exists( 'CSF' ) ) {
 			),
 
 			array(
-				'id'      => 'smooth_scroll',
-				'type'    => 'switcher',
-				'title'   => esc_html__( 'Enable Enable/Disable Smooth Scroll', 'gpt-news' ),
-				'default' => false
-			),
-
-			array(
 				'id'    => 'back_to_top_switch',
 				'type'  => 'switcher',
 				'title' => esc_html__( 'Show Back To Top', 'gpt-news' ),
@@ -166,6 +159,55 @@ if ( class_exists( 'CSF' ) ) {
 		)
 	) );
 
+	// Google Ads and analytics
+	CSF::createSection( $prefix, array(
+		'title'  => esc_html__( 'Google Ads', 'gpt-news' ),
+		'icon'   => 'fa fa-google',
+		'fields' => array(
+
+			// Topbar Ad
+			array(
+				'id'      => 'header_ad',
+				'type'    => 'switcher',
+				'title'   => esc_html__( 'Header Ad On/Off', 'gpt-news' ),
+				'default' => false,
+			),
+
+			// Google Add
+			array(
+				'id'       => 'header_google_ad',
+				'type'     => 'textarea',
+				'title'    => 'HTML Editor',
+				'sanitize' => false,
+				'dependency' => array( 'header_ad', '==', 'true' ),
+			),
+
+
+			// Blog Content google ad
+			array(
+				'id'       => 'google_ads_content',
+				'type'     => 'textarea',
+				'title'    => 'Blog Content Ad',
+				'sanitize' => false,
+			),
+
+//			array(
+//				'id'      => 'google_analytics',
+//				'type'    => 'switcher',
+//				'title'   => esc_html__( 'Google Analytics On/Off', 'gpt-news' ),
+//				'default' => false,
+//			),
+
+			array(
+				'id'       => 'google_analytics_code',
+				'type'     => 'TEXT',
+				'title'    => 'Google Analytics Code',
+				'sanitize' => false,
+				'default'  => 'G-XXXXXXXXXX',
+			),
+		)
+	) );
+
 	// Header Setting
 	CSF::createSection( $prefix, array(
 		'id'    => 'header_section',
@@ -185,24 +227,6 @@ if ( class_exists( 'CSF' ) ) {
 				'title'   => esc_html__( 'Enable Header Sticky', 'gpt-news' ),
 				'default' => false,
 			),
-
-			// Topbar Ad
-			array(
-				'id'      => 'header_ad',
-				'type'    => 'switcher',
-				'title'   => esc_html__( 'Header Ad On/Off', 'gpt-news' ),
-				'default' => false,
-			),
-
-			// Google Add
-			array(
-				'id'       => 'header_google_ad',
-				'type'     => 'code_editor',
-				'title'    => 'HTML Editor',
-				'sanitize' => false,
-				'dependency' => array( 'header_ad', '==', 'true' ),
-			),
-
 
 			array(
 				'type'    => 'heading',

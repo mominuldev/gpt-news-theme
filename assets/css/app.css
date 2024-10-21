@@ -133,7 +133,7 @@ a:hover {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   clear: both;
   font-family: "Encode Sans Condensed", sans-serif;
-  line-height: 1.3;
+  line-height: 1.2;
   font-weight: 700;
   color: #161616;
 }
@@ -2329,9 +2329,6 @@ span.progress-shape {
   align-items: center;
   gap: 16px;
   margin-bottom: 24px;
-}
-.blog-hero-item__small-list-three .blog-hero-item__title-three {
-  word-break: break-all;
 }
 .blog-hero-item__small-list-three:hover .blog-hero-item__image-three img {
   transform: scale(1.07);
@@ -5093,13 +5090,18 @@ h3.trending-post-title {
 }
 @media (max-width: 991px) {
   .content-area {
-    padding: 80px 0;
+    padding: 40px 0;
   }
 }
 
 .blog-content-area {
   background: #f9faff;
   padding: 80px 0;
+}
+@media (max-width: 991px) {
+  .blog-content-area {
+    padding: 40px 0;
+  }
 }
 
 .sidebar_left {
@@ -6252,13 +6254,7 @@ h3.trending-post-title {
 
 .post-wrapper .blog-post-list,
 .blog-posts .blog-post-list {
-  margin-bottom: 40px;
-}
-
-@media (min-width: 1200px) {
-  .blog-archive-wrapper .sidebar_right #main-content {
-    padding-right: 30px;
-  }
+  margin-bottom: 30px;
 }
 
 /* POst Grid */
@@ -6440,6 +6436,11 @@ h3.trending-post-title {
 .blog-post-list .gpt-blog-content {
   padding: 30px;
 }
+@media (max-width: 575px) {
+  .blog-post-list .gpt-blog-content {
+    padding: 20px;
+  }
+}
 .blog-post-list ul.entry-meta li {
   color: #818181;
 }
@@ -6527,6 +6528,15 @@ ul.entry-meta {
   list-style: none;
   display: flex;
   gap: 25px;
+  row-gap: 0;
+  flex-wrap: wrap;
+}
+@media (max-width: 575px) {
+  ul.entry-meta {
+    flex-wrap: wrap;
+    gap: 15px;
+    row-gap: 0;
+  }
 }
 ul.entry-meta li {
   font-family: "Encode Sans Condensed", sans-serif;
@@ -6832,6 +6842,11 @@ blockquote cite, .wp-block-quote cite {
 .blog-single-content-area {
   padding: 80px 0;
 }
+@media (max-width: 991px) {
+  .blog-single-content-area {
+    padding: 30px 0 50px;
+  }
+}
 
 .no-sidebar .post-single {
   max-width: 1000px;
@@ -6875,11 +6890,14 @@ blockquote cite, .wp-block-quote cite {
 }
 .post-single .single-post-title {
   font-size: 36px;
-  font-weight: 600;
   margin-bottom: 10px;
   -ms-word-wrap: break-word;
   word-wrap: break-word;
-  line-height: 1.3;
+}
+@media (max-width: 767px) {
+  .post-single .single-post-title {
+    font-size: 30px;
+  }
 }
 .post-single .entry-meta {
   margin-bottom: 30px;
@@ -6927,6 +6945,13 @@ blockquote cite, .wp-block-quote cite {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   align-items: center;
   padding: 20px 0;
+}
+@media (max-width: 767px) {
+  .post-single .entry-footer {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
 }
 .post-single .entry-footer .tag_list {
   padding-bottom: 10px;
@@ -7187,6 +7212,46 @@ blockquote cite, .wp-block-quote cite {
   border-color: #17509B;
 }
 
+.blog-posts .col-sm-6 {
+  margin-top: 0 !important;
+}
+.blog-posts .blog-post-list .entry-title {
+  font-size: 26px;
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .blog-posts .blog-post-list .entry-title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .blog-posts .blog-post-list .entry-title {
+    font-size: 22px;
+  }
+}
+.blog-posts .blog-post-list .entry-meta-wrapper {
+  margin: 10px 0 13px;
+}
+
+.blog-posts-list .blog-post-list {
+  margin-bottom: 30px;
+}
+
+aside.sidebar {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 992px) {
+  aside.sidebar {
+    position: sticky;
+    top: 80px;
+  }
+}
+
+.sidebar_right .col-md-4 .blog-post-list .entry-title, .sidebar_left .col-md-4 .blog-post-list .entry-title {
+  font-size: 22px;
+}
+
 /*--------------------------------------------------------------
 ## Pagination
 --------------------------------------------------------------*/
@@ -7216,7 +7281,7 @@ blockquote cite, .wp-block-quote cite {
   text-align: center;
   color: #7b8a9e;
   border-radius: 4px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 #post-pagination .page-numbers li a:hover,
 #post-pagination .page-numbers li a .current,

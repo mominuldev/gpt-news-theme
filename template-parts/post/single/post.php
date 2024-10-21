@@ -29,7 +29,7 @@ $meta_view_count_show = gpt_option( 'blog_single_meta_viewcount' );
     </div>
     <!-- /.meta-wrapper -->
 
-    <h2 class="single-post-title"><?php echo the_title(); ?></h2>
+    <h1 class="single-post-title"><?php echo the_title(); ?></h1>
 
     <ul class="entry-meta">
 

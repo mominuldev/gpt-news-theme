@@ -3,8 +3,8 @@
 // Render wraper
 ?>
 
-<div class="blog-posts blog-posts-list">
-    <div class="row g-4">
+<div class="blog-posts">
+    <div class="row g-5">
 		<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post();

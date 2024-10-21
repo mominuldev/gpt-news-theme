@@ -145,7 +145,8 @@
 		margin-bottom: 24px;
 
 		.blog-hero-item__title-three {
-			word-break: break-all;
+			//-ms-word-wrap: break-word;
+			//word-wrap: break-word;
 		}
 
 		&:hover {

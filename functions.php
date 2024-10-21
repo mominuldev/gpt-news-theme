@@ -241,3 +241,39 @@ function ajax_search() {
 add_action('wp_ajax_ajax_search', 'ajax_search'); // If logged in
 add_action('wp_ajax_nopriv_ajax_search', 'ajax_search'); // If logged out
 
+
+
+
+
+
+
+
+function insert_google_ads_after_paragraph($content) {
+	// Define the ad code you want to insert
+	$ad_code = '<div class="google-ad">'. gpt_option('google_ads_content') .'</div>';
+
+	// Split content into an array of paragraphs
+	$paragraphs = explode('</p>', $content);
+
+	// Loop through each paragraph and insert ad after every paragraph
+
+
+
+	foreach ($paragraphs as $index => $paragraph) {
+		// Skip empty paragraphs
+		if (trim($paragraph)) {
+			// Add the ad code after every paragraph (optional: adjust placement)
+			$paragraphs[$index] .= '</p>';
+
+			if ($index % 2 == 0) {
+				$paragraphs[$index] .= $ad_code;
+			}
+		}
+	}
+
+	// Return the content with ads inserted
+	return implode('', $paragraphs);
+}
+add_filter('the_content', 'insert_google_ads_after_paragraph');
+
+

@@ -17,8 +17,9 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		 * Constructor
 		 */
 		function __construct() {
-//			add_action( 'gpt_after_body', array( $this, 'gpt_preloader_markup' ), 1 );
+			add_action( 'gpt_after_body', array( $this, 'gpt_preloader_markup' ), 1 );
 			add_action( 'gpt_after_footer', [ $this, 'gpt_backtotop' ] );
+            add_action( 'wp_head', [ $this, 'gpt_google_analytics' ] );
 		}
 
 		public function gpt_backtotop() {
@@ -165,23 +166,28 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			}
 		}
 
-		/**
-		 * Displays navigation to next/previous pages when applicable.
-		 * @since gpt-news 1.0
-		 */
-		static function gpt_content_nav( $html_id ) {
-			global $wp_query;
-			$html_id = esc_attr( $html_id );
-			if ( $wp_query->max_num_pages > 1 ) : ?>
-                <nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation" role="navigation">
-                    <h3 class="assistive-text"><?php esc_html_e( 'Post navigation', 'gpt-news' ); ?></h3>
-                    <div class="nav-previous"><?php next_posts_link( wp_kses( __( '<span class="meta-nav">&larr;</span> Older posts', 'gpt-news' ),
-							array( 'span' => array( 'class' => array() ) ) ) ); ?></div>
-                    <div class="nav-next"><?php previous_posts_link( wp_kses( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'gpt-news' ),
-							array( 'span' => array( 'class' => array() ) ) ) ); ?></div>
-                </nav>
-			<?php endif;
-		}
+        /**
+         * Google Analytics
+         */
+        public function gpt_google_analytics() {
+	        $gpt_opt = gpt_option( 'google_analytics_code' );
+
+	        if ( $gpt_opt ) : ?>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr( $gpt_opt ); ?>"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || [];
+
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+
+                    gtag('js', new Date());
+                    gtag('config', '<?php echo esc_attr( $gpt_opt ); ?>');
+                </script>
+	        <?php endif;
+
+        }
+
 
 		/* Pagination */
 
@@ -278,40 +284,9 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			endswitch; // end comment_type check
 		}
 
-		/**
-		 * Set up post entry meta.
-		 * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
-		 * Create your own gpt_entry_meta() to override in a child theme.
-		 * @since gpt-news 1.0
-		 */
-		static function gpt_entry_meta() {
-			// Translators: used between list items, there is a space after the comma.
-			$tag_list       = get_the_tag_list( '', ', ' );
-			$num_comments   = (int) get_comments_number();
-			$write_comments = '';
-			if ( comments_open() ) {
-				if ( $num_comments == 0 ) {
-					$comments = esc_html__( '0 comments', 'gpt-news' );
-				} elseif ( $num_comments > 1 ) {
-					$comments = $num_comments . esc_html__( ' comments', 'gpt-news' );
-				} else {
-					$comments = esc_html__( '1 comment', 'gpt-news' );
-				}
-				$write_comments = '<a href="' . get_comments_link() . '">' . $comments . '</a>';
-			}
-			$utility_text = null;
-			if ( ( post_password_required() || ! comments_open() ) && ( $tag_list != false && isset( $tag_list ) ) ) {
-				$utility_text = esc_html__( 'Tags: %2$s', 'gpt-news' );
-			} elseif ( $tag_list != false && isset( $tag_list ) && $num_comments != 0 ) {
-				$utility_text = esc_html__( '%1$s / Tags: %2$s', 'gpt-news' );
-			} elseif ( ( $num_comments == 0 || ! isset( $num_comments ) ) && $tag_list == true ) {
-				$utility_text = esc_html__( 'Tags: %2$s', 'gpt-news' );
-			} else {
-				$utility_text = esc_html__( '%1$s', 'gpt-news' );
-			}
-			printf( $utility_text, $write_comments, $tag_list );
-		}
-
+        /*
+         * Post Author By
+         */
 		static function gpt_posted_author_avatar() {
 			 printf( '<div class="blog-footer-meta">%2$s<div class="blog-footer-mata-content"><a class="url fn n post-author" href="%1$s">%3$s</a>%4$s %5$s</div></div>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -323,6 +298,9 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 		}
 
+        /*
+         * Post Author By
+         */
 		static function gpt_posted_on() {
 			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -338,7 +316,13 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 		}
 
-		// Post reading time
+		/**
+         * Display the post reading time.
+         *
+         * @param string $word
+         *
+         * @return string
+         */
 		public static function gpt_content_reading_time( $word ) {
 			$strip_content = strip_tags( (string) $word );
 			$word_count    = str_word_count( $strip_content );
@@ -349,6 +333,13 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			return '<span class="reading-time">' . $label . '</span>';
 		}
 
+        /**
+         * Display the post reading time.
+         *
+         * @param string $word
+         *
+         * @return string
+         */
 		static function gpt_entry_cat() {
 			// Hide category and tag text for pages.
 			if ( 'post' === get_post_type() ) {
@@ -363,6 +354,13 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 		}
 
+        /**
+         * Display the post Tags
+         *
+         * @param string $word
+         *
+         * @return string
+         */
 		static function gpt_posted_tag() {
 			// Hide category and tag text for pages.
 			if ( 'post' === get_post_type() ) {
@@ -458,14 +456,6 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		}
 
 
-		private function post_author( $author ) {
-			if ( ! (bool) $author ) {
-				return;
-			}
-
-			return '<span class="post_author">' . esc_html__( "by",
-					'gpt-news' ) . ' <a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a></span>';
-		}
 
         // Post Author By
         public static function post_author_by( ) {

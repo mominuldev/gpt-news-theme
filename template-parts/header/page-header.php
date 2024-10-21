@@ -25,7 +25,7 @@ if ( $page_header_crumb == true ) {
 	$banner_crumb = true;
 }
 
-if ( is_404() || is_search() || is_single() ) {
+if ( is_404() || is_search() || is_single() || is_home() ) {
 	$banner_disp = false;
 //	$banner_crumb = false;
 }
@@ -152,8 +152,6 @@ if ( $banner_disp == false ) {
     <!-- /.container -->
 </section>
 <!-- /.page-banner -->
-
-
 
 
 

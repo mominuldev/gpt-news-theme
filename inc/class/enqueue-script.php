@@ -102,7 +102,8 @@ class Gpt_Enqueue_Script {
 		wp_enqueue_script( 'swiper', $this->gtdu . '/assets/js/swiper.min.js', array( 'jquery' ), '3.1.12', true );
 //		wp_enqueue_script( 'magnefic-popup', $this->gtdu . '/assets/js/jquery.magnific-popup.min.js', array( 'jquery' ), '3.1.12', true );
 		wp_enqueue_script( 'header', $this->gtdu . '/assets/js/header.js', array( 'jquery' ), '3.1.12', true );
-
+		// Isotope
+		wp_enqueue_script( 'isotope', $this->gtdu . '/assets/js/isotope.pkgd.min.js', array( 'jquery' ), '3.1.12', true );
 		wp_enqueue_script( 'gpt-theme', $this->gtdu . '/assets/js/app.js', array( 'jquery' ), false, true );
 
 		if ( $smooth_scroll ) {

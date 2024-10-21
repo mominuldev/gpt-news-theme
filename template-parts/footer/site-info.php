@@ -24,16 +24,6 @@
 					?>
                 </p>
             </div>
-
-			<?php if ( has_nav_menu( 'footer_menu' ) ) {
-				wp_nav_menu(
-					array(
-						'theme_location' => 'footer_menu',
-						'menu_class'     => 'site-footer-menu',
-						'fallback_cb'    => '',
-					)
-				);
-			} ?>
         </div>
         <!-- /.site-info-wrapper -->
     </div>

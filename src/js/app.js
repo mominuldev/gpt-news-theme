@@ -176,15 +176,12 @@ var MOMIN = MOMIN || {};
                 })
             }
 
-
-            /* Magnefic Popup */
-            // $('.play-button').each(function () {
-            //     $('.play-button').magnificPopup({
-            //         type: 'iframe',
-            //         mainClass: 'mfp-zoom-in',
-            //         removalDelay: 260,
-            //     });
-            // });
+            // BLog Layout Masonary
+            $('.blog-posts').masonry({
+                itemSelector: '.col-sm-6',
+                columnWidth: '.col-sm-6',
+                percentPosition: true
+            });
 
 
             //trending-news-slider swiper
