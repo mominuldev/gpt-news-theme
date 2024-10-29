@@ -1,10 +1,19 @@
 table {
 	width: 100%;
-	margin-bottom: 30px;
-	//border: 1px solid $color__border;
+	margin: 20px 0;
+	border: 1px solid $color__border;
 
 	thead {
 		background: transparent;
+	}
+
+	tr:nth-child(even){
+		background-color: #edf5ff;
+
+
+		td {
+			border-right-color: $color__border !important;
+		}
 	}
 
 	th {
@@ -27,15 +36,23 @@ table {
 
 	td {
 		padding: 10px 15px;
-		// border: 1px solid $color__border;
 		border-top: none;
 		border-right: none;
 		vertical-align: middle;
 
-		&:last-child {
-			border-right: 1px solid $color__border;
+		a {
+			color: $color__theme;
+			font-weight: 600;
+		}
+
+		&:not(:last-child) {
+			border-right: 1px solid $color__border !important;
 		}
 	}
+}
+
+.wp-block-table td, .wp-block-table th {
+	border: 0 !important;
 }
 
 .wp-block-calendar table th {
