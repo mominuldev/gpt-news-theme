@@ -177,7 +177,7 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'       => 'header_google_ad',
 				'type'     => 'textarea',
-				'title'    => 'HTML Editor',
+				'title'    => 'Header Ad Code',
 				'sanitize' => false,
 				'dependency' => array( 'header_ad', '==', 'true' ),
 			),
@@ -191,19 +191,30 @@ if ( class_exists( 'CSF' ) ) {
 				'sanitize' => false,
 			),
 
-//			array(
-//				'id'      => 'google_analytics',
-//				'type'    => 'switcher',
-//				'title'   => esc_html__( 'Google Analytics On/Off', 'gpt-news' ),
-//				'default' => false,
-//			),
 
+			//single_adsense
+			array(
+				'id'      => 'single_adsense',
+				'type'    => 'switcher',
+				'title'   => esc_html__( 'Single Post Footer Adsense On/Off', 'gpt-news' ),
+				'default' => false,
+			),
+
+			array(
+				'id'       => 'single_adsense_code',
+				'type'     => 'textarea',
+				'title'    => 'Single Post Footer Adsense Code',
+				'sanitize' => false,
+				'dependency' => array( 'single_adsense', '==', 'true' ),
+			),
+
+			// Google Analytics
 			array(
 				'id'       => 'google_analytics_code',
 				'type'     => 'TEXT',
 				'title'    => 'Google Analytics Code',
 				'sanitize' => false,
-				'default'  => 'G-XXXXXXXXXX',
+				'desc'     => __( 'Enter your Google Analytics code here. EX: G-XXXXXXXXXX', 'gpt-news' ),
 			),
 		)
 	) );

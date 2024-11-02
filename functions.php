@@ -249,31 +249,43 @@ add_action('wp_ajax_nopriv_ajax_search', 'ajax_search'); // If logged out
 
 
 function insert_google_ads_after_paragraph($content) {
-	// Define the ad code you want to insert
-	$ad_code = '<div class="google-ad">'. gpt_option('google_ads_content') .'</div>';
+	// Get ad code from options, or default to an empty string if not set
+	$ad_code = gpt_option('google_ads_content');
+	if (!$ad_code) {
+		return $content; // Exit if ad code is empty
+	}
 
-	// Split content into an array of paragraphs
+	// Define ad display settings
+	$ad_paragraph_interval = 3; // Interval to insert ads (e.g., every 3rd paragraph)
+	$min_word_count = 30; // Minimum words per paragraph to qualify for ad insertion
+
+	// Split content into paragraphs
 	$paragraphs = explode('</p>', $content);
+	$total_paragraphs = count($paragraphs);
 
-	// Loop through each paragraph and insert ad after every paragraph
+	// Process each paragraph if conditions are met
+	if (is_single()) {
+		for ($i = 0; $i < $total_paragraphs; $i++) {
+			$paragraph = trim($paragraphs[$i]);
 
-
-
-	foreach ($paragraphs as $index => $paragraph) {
-		// Skip empty paragraphs
-		if (trim($paragraph)) {
-			// Add the ad code after every paragraph (optional: adjust placement)
-			$paragraphs[$index] .= '</p>';
-
-			if ($index % 2 == 0) {
-				$paragraphs[$index] .= $ad_code;
+			// Continue only if paragraph is not empty and has sufficient words
+			if ($paragraph && str_word_count(strip_tags($paragraph)) >= $min_word_count) {
+				// Insert ad after every specified interval
+				if (($i + 1) % $ad_paragraph_interval === 0) {
+					$paragraphs[$i] .= '</p>' . wp_kses_post($ad_code);
+				} else {
+					$paragraphs[$i] .= '</p>'; // Close paragraph tag if no ad
+				}
+			} else {
+				$paragraphs[$i] .= '</p>'; // Close paragraph for non-qualifying sections
 			}
 		}
 	}
 
-	// Return the content with ads inserted
+	// Return content with ads included
 	return implode('', $paragraphs);
 }
+
 add_filter('the_content', 'insert_google_ads_after_paragraph');
 
 

@@ -6880,6 +6880,9 @@ blockquote cite, .wp-block-quote cite {
 .post-single {
   margin-bottom: 0;
 }
+.post-single a {
+  color: #2962ff;
+}
 .post-single .feature-image {
   margin-bottom: 45px;
 }

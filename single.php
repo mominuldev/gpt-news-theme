@@ -12,6 +12,9 @@ $row_class = $sidebar['row_class'];
 $column    = $sidebar['column'];
 $sidebar_class = $sidebar['layout'] == 'none' ? 'no-sidebar' : '';
 
+$google_adsense = gpt_option( 'single_adsense' );
+$google_adsense_code = gpt_option( 'single_adsense_code' );
+
 ?>
 
     <div class="blog-single-content-area">
@@ -24,7 +27,13 @@ $sidebar_class = $sidebar['layout'] == 'none' ? 'no-sidebar' : '';
 							get_template_part( 'template-parts/post/single/post' );
 						endwhile; // End of the loop.
 
-
+                        // Google Adsense
+                        if ( $google_adsense == true && ! empty( $google_adsense_code ) ) {
+                            echo '<div class="gpt-adsense">';
+                            echo wp_kses( $google_adsense_code, 'post' );
+                            echo '</div>';
+                        }
+                        
 						if ( gpt_option( 'single_post_nav' ) == true ) {
 							Gpt_Theme_Helper::gpt_post_nav();
 						}
