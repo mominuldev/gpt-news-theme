@@ -33,7 +33,7 @@ $google_adsense_code = gpt_option( 'single_adsense_code' );
                             echo wp_kses( $google_adsense_code, 'post' );
                             echo '</div>';
                         }
-                        
+
 						if ( gpt_option( 'single_post_nav' ) == true ) {
 							Gpt_Theme_Helper::gpt_post_nav();
 						}
