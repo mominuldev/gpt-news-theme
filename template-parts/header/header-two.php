@@ -63,7 +63,7 @@ if ( $header_type == true || $header_type == 1 ) {
 ?>
 
 <header id="masthead"
-        class="site-header header-1 header-width <?php echo esc_attr( $header_classes ); ?>" <?php if ( $is_fixed && ! empty( $logo_contrast ) ) {
+        class="site-header header-two <?php echo esc_attr( $header_classes ); ?>" <?php if ( $is_fixed && ! empty( $logo_contrast ) ) {
 	echo ' data-header-fixed="true"';
 } ?> <?php if ( $mobile_is_fixed ) {
 	echo ' data-mobile-header-fixed="true"';
@@ -75,65 +75,35 @@ if ( $header_type == true || $header_type == 1 ) {
         <div class="container">
             <div class="top-bar-inner">
                 <div class="top-bar-left">
-                    <div class="top-bar-content">
-                        <div class="top-bar-content-left">
-                            <div class="trending-text-wrapper">
-                                <span class="trending-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M13 9H21L11 24V15H4L13 0V9ZM11 11V7.22063L7.53238 13H13V17.3944L17.263 11H11Z"></path>
-                                    </svg>
-                                </span>
-
-                                <span class="trending-text">Trending</span>
-                            </div>
-
-                            <!--                            Trending News-->
-							<?php Gpt_Theme_Helper::trending_news(); ?>
-                        </div>
+                    <div class="gpt-topbar-date">
+                        <i class="ri-calendar-2-line"></i>
+                        <?php
+                        $current_date = date( 'F j, Y' );
+                        echo '<span>' . $current_date . '</span>';
+                        ?>
                     </div>
                 </div>
 
-                <div class="top-bar-right">
-                    <i class="ri-calendar-2-line"></i>
-					<?php
-					$current_date = date( 'F j, Y' );
-					echo '<span>' . $current_date . '</span>';
-					?>
+                <div class="topbar-right">
+                    <?php
+                        // Social Link
+                        Gpt_Theme_Helper::social_link();
+
+                    ?>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="header-middle-wrapper">
-        <div class="container">
-            <div class="header-middle-inner">
-                <div class="header-middle-left">
-                    <div class="site-logo">
-						<?php Gpt_Theme_Helper::branding_logo(); ?>
-                    </div>
-                </div>
-
-				<?php if ( $header_ad ) : ?>
-                    <div class="header-middle-center">
-                        <div class="header-google-add">
-							<?php
-							$header_google_add = gpt_option( 'header_google_ad' );
-
-							if ( $header_google_add ) {
-								echo $header_google_add;
-							}
-							?>
-                        </div>
-                    </div>
-				<?php endif; ?>
-            </div>
-        </div>
-    </div>
 
 
     <div class="header-menu">
         <div class="container">
             <nav id="site-navigation" class="main-nav">
+
+                <div class="site-logo">
+		            <?php Gpt_Theme_Helper::branding_logo(); ?>
+                </div>
 
                 <div class="gpt-hamburger" id="page-open-main-menu" tabindex="1">
                     <span class="bar"></span>
@@ -201,11 +171,10 @@ if ( $header_type == true || $header_type == 1 ) {
                     <div class="nav-right">
 						<?php if ( $search_btn ) : ?>
                             <span class="search-btn" id="search-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                        <path d="M15.0259 13.8473L18.5948 17.4163L17.4163 18.5948L13.8474 15.0258C12.5641 16.0525 10.9367 16.6667 9.16669 16.6667C5.02669 16.6667 1.66669 13.3067 1.66669 9.16667C1.66669 5.02667 5.02669 1.66667 9.16669 1.66667C13.3067 1.66667 16.6667 5.02667 16.6667 9.16667C16.6667 10.9367 16.0525 12.5641 15.0259 13.8473ZM13.3539 13.229C14.3729 12.1788 15 10.7463 15 9.16667C15 5.94375 12.3896 3.33334 9.16669 3.33334C5.94377 3.33334 3.33335 5.94375 3.33335 9.16667C3.33335 12.3896 5.94377 15 9.16669 15C10.7464 15 12.1789 14.3729 13.229 13.3539L13.3539 13.229Z"
-                                              fill="white"/>
-                                    </svg>
-                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="black"/>
+                                </svg>
+                            </span>
 						<?php endif; ?>
                     </div>
 				<?php endif; ?>
@@ -213,3 +182,4 @@ if ( $header_type == true || $header_type == 1 ) {
         </div><!-- /.container -->
     </div><!-- /.header-inner -->
 </header><!-- #masthead -->
+

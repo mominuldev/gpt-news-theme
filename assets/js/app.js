@@ -383,7 +383,7 @@ var MOMIN = MOMIN || {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Volumes/Development/Sites/unitrix/wp-content/themes/gpt-news/src/js/app.js */"./src/js/app.js");
+module.exports = __webpack_require__(/*! /Users/mominul/Sites/unitrix/wp-content/themes/gpt-news/src/js/app.js */"./src/js/app.js");
 
 
 /***/ })

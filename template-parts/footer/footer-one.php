@@ -74,11 +74,5 @@ if ( $meta_footer_option == true || $meta_footer_option == 1 ) {
 
 </footer><!-- #site-footer -->
 
-<?php if($grid_line): ?>
-    <div class="noxfolio-grid-lines">
-        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
-<?php endif; ?>
-
 </main><!-- /#site-main -->
 </div><!-- /#site-content -->

@@ -121,19 +121,8 @@
         width: 100%;
         display: flex;
         align-items: center;
-        border-bottom: 3px solid $color__theme;
+        border-bottom: 2px solid #ddd;
         position: relative;
-
-        //&:after {
-        //    content: '';
-        //    position: absolute;
-        //    bottom: 0;
-        //    left: 0;
-        //    width: 50%;  // Initial width is 0
-        //    height: 1px;
-        //    background: $color__theme;  // Use your theme color
-        //    transition: width 0.4s ease;  // Smooth transition
-        //}
 
         input {
             font-family: $font__heading;
@@ -148,18 +137,38 @@
             margin: 0;
             line-height: 2.5;
 
-            @media(max-width: 991px) {
+            @media (max-width: 991px) {
                 height: 50px;
                 font-size: 30px;
             }
 
-            &:focus + .search-form:after,
-            &:focus + #ajax-search-form:after {  // When input is focused, the after element expands
-                width: 100%;  // Set width to 100% on focus
-            }
             &::placeholder {
                 color: #b1b1b1;
             }
+
+            &:focus {
+                outline: none; // Optional: remove default focus outline
+            }
+
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $color__theme;
+            transition: width 0.4s ease;
+        }
+
+        //input:focus ~ &:after { // Change this line
+        //    width: 100% !important;
+        //}
+
+        &:focus-within:after { // When any child within `.search-form` is focused
+            width: 100%;
         }
 
         button {
@@ -180,4 +189,6 @@
             }
         }
     }
+
+
 }

@@ -47,53 +47,10 @@ add_filter( 'body_class', 'gpt_body_classes' );
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function mominulo_pingback_header() {
+function gpt_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
-add_action( 'wp_head', 'mominulo_pingback_header' );
+add_action( 'wp_head', 'gpt_pingback_header' );
 
-
-if ( ! function_exists( 'gpt_get_title_tag' ) ) {
-	/**
-	 * Returns array of title tags
-	 *
-	 * @param bool $first_empty
-	 * @param array $additional_elements
-	 *
-	 * @return array
-	 */
-	function gpt_get_title_tag( $first_empty = false, $additional_elements = array() ) {
-		$title_tag = array();
-
-		if ( $first_empty ) {
-			$title_tag[''] = esc_html__( 'Default', 'gpt-news' );
-		}
-
-		$title_tag['h1'] = 'h1';
-		$title_tag['h2'] = 'h2';
-		$title_tag['h3'] = 'h3';
-		$title_tag['h4'] = 'h4';
-		$title_tag['h5'] = 'h5';
-		$title_tag['h6'] = 'h6';
-
-		if ( ! empty( $additional_elements ) ) {
-			$title_tag = array_merge( $title_tag, $additional_elements );
-		}
-
-		return $title_tag;
-	}
-}
-
-function gpt_get_elementor_templates() {
-	$elementor_templates = array();
-
-	if ( in_array( 'elementor/elementor.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-		$elementor_templates = \Elementor\Plugin::instance()->templates_manager->get_source( 'local' )->get_items();
-	}
-
-	return $elementor_templates;
-}
-
-add_action('gpt_after_footer', 'gpt_get_elementor_templates');

@@ -17,7 +17,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		 * Constructor
 		 */
 		function __construct() {
-			add_action( 'gpt_after_body', array( $this, 'gpt_preloader_markup' ), 1 );
+			add_action( 'wp_body_open', array( $this, 'gpt_preloader_markup' ), 1 );
 			add_action( 'gpt_after_footer', [ $this, 'gpt_backtotop' ] );
             add_action( 'wp_head', [ $this, 'gpt_google_analytics' ] );
 		}
@@ -222,67 +222,6 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			<?php
 		}
 
-		/**
-		 * Template for comments and pingbacks.
-		 * To override this walker in a child theme without modifying the comments template
-		 * simply create your own gpt_comment(), and that function will be used instead.
-		 * Used as a callback by wp_list_comments() for displaying the comments.
-		 * @since gpt-news 1.0
-		 */
-		static function gpt_comment( $comment, $args, $depth ) {
-			$GLOBALS['comment'] = $comment;
-			switch ( $comment->comment_type ) :
-				case 'pingback' :
-				case 'trackback' :
-					// Display trackbacks differently than normal comments.
-					?>
-                    <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-                    <p><?php esc_html_e( 'Pingback:', 'gpt-news' ); ?><?php comment_author_link(); ?><?php edit_comment_link( esc_html__( '(Edit)',
-							'gpt-news' ), '<span class="edit-link">', '</span>' ); ?></p>
-					<?php
-					break;
-				default :
-					// Proceed with normal comments.
-					global $post;
-					?>
-                    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-                    <article id="comment-<?php comment_ID(); ?>" class="comment">
-                        <div class="comment-avatar">
-							<?php echo get_avatar( $comment, 50 ); ?>
-                        </div>
-                        <div class="comment-info">
-                            <header class="comment-meta comment-author vcard">
-								<?php
-								printf( '<cite><b class="fn">%1$s</b> %2$s</cite>', get_comment_author_link(),
-									// If current post author is also comment author, make it known visually.
-									( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author',
-											'gpt-news' ) . '</span>' : '' );
-								printf( '<time datetime="%1$s">%2$s</time>', get_comment_time( 'c' ),
-									/* translators: 1: date, 2: time */ sprintf( esc_html__( '%1$s at %2$s', 'gpt-news' ), get_comment_date(),
-										get_comment_time() ) );
-								?>
-                                <div class="reply">
-									<?php comment_reply_link( array_merge( $args, array(
-										'reply_text' => esc_html__( 'Reply', 'gpt-news' ),
-										'after'      => '',
-										'depth'      => $depth,
-										'max_depth'  => $args['max_depth']
-									) ) ); ?>
-                                </div><!-- .reply -->
-                            </header><!-- .comment-meta -->
-							<?php if ( '0' == $comment->comment_approved ) : ?>
-                                <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'gpt-news' ); ?></p>
-							<?php endif; ?>
-                            <section class="comment-content comment">
-								<?php comment_text(); ?>
-								<?php edit_comment_link( esc_html__( 'Edit', 'gpt-news' ), '<p class="edit-link">', '</p>' ); ?>
-                            </section><!-- .comment-content -->
-                        </div>
-                    </article><!-- #comment-## -->
-					<?php
-					break;
-			endswitch; // end comment_type check
-		}
 
         /*
          * Post Author By
@@ -555,7 +494,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			$preloader_text   = gpt_option( 'preloader_text' );
 
 			if ( $preloader_switch ) : ?>
-                <div id="preloader">
+                <div id="preloader" class="preloader">
 					<?php if ( $preloader_type == 'text' ) :
 						$preloader_text = ! empty( $preloader_text ) ? strtoupper( $preloader_text ) : strtoupper( get_bloginfo( 'name' ) );
 						$preloader_text = str_split( $preloader_text );
@@ -896,120 +835,18 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			echo '</div></div></div></div>';
 		}
 
-		static function gpt_portfolio_post_nav() {
-			// Don't print empty markup if there's nowhere to navigate.
-			$pre_post  = $next_post = '';
-			$next_post = get_next_post();
-			$pre_post  = get_previous_post();
-			if ( ! $next_post && ! $pre_post ) {
-				return;
-			}
-			if ( $pre_post ):
-				$pre_img = wp_get_attachment_url( get_post_thumbnail_id( $pre_post->ID ) );
-			endif;
-			if ( $next_post ):
-				$next_img = wp_get_attachment_url( get_post_thumbnail_id( $next_post->ID ) );
-			endif;
+        static function social_link() {
+            $social_links = gpt_option( 'social_links' );
 
+            if ( ! empty( $social_links ) ) {
+                echo '<ul class="gpt-social-link">';
+                foreach ( $social_links as $social_link ) {
+                    echo '<li><a href="' . esc_url( $social_link['url'] ) . '" target="_blank"><i class="fab fa-' . esc_attr( $social_link['icon'] ) . '"></i></a></li>';
+                }
+                echo '</ul>';
+            }
 
-			echo '<div class="product-post-navigation">
-				<div class="post-previous">';
-			if ( ! empty( $pre_post ) ):
-				?>
-                <a href="<?php echo get_the_permalink( $pre_post->ID ); ?>" class="single-post-nav">
-                    <i class="fas fa-chevron-left"></i>
-                    <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Older Post', 'gpt-news' ) ?></p>
-                        <h4 class="post-title"><?php echo get_the_title( $pre_post->ID ) ?></h4>
-                    </div>
-
-                </a>
-
-			<?php
-			endif;
-			echo '</div><i class="fas fa-th-large middle-icon"></i><div class="post-next">';
-
-			if ( ! empty( $next_post ) ):
-				?>
-                <a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="single-post-nav">
-
-                    <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Next Post', 'gpt-news' ) ?></p>
-                        <h4 class="post-title"><?php echo get_the_title( $next_post->ID ) ?></h4>
-                    </div>
-
-                    <i class="fas fa-chevron-right"></i>
-                </a>
-
-			<?php
-			endif;
-			echo '</div></div>';
-		}
-
-		/**
-		 * Returns array of title tags
-		 *
-		 * @param  bool  $first_empty
-		 * @param  array  $additional_elements
-		 *
-		 * @return array
-		 */
-		static function gpt_get_title_tag( $first_empty = false, $additional_elements = array() ) {
-			$title_tag = array();
-
-			if ( $first_empty ) {
-				$title_tag[''] = esc_html__( 'Default', 'gpt-news' );
-			}
-
-			$title_tag['h1'] = 'h1';
-			$title_tag['h2'] = 'h2';
-			$title_tag['h3'] = 'h3';
-			$title_tag['h4'] = 'h4';
-			$title_tag['h5'] = 'h5';
-			$title_tag['h6'] = 'h6';
-
-			if ( ! empty( $additional_elements ) ) {
-				$title_tag = array_merge( $title_tag, $additional_elements );
-			}
-
-			return $title_tag;
-		}
-
-		public static function get_footers_types() {
-			$footer  = [ '' => esc_html__( 'Default', 'gpt-news' ) ];
-			$footers = get_posts(
-				[
-					'posts_per_page' => - 1,
-					'post_type'      => 'gpt_footer',
-					'orderby'        => 'name',
-					'order'          => 'ASC'
-				]
-			);
-			foreach ( $footers as $value ) {
-				$footer[ $value->ID ] = $value->post_title;
-			}
-
-			return $footer;
-		}
-
-		public static function gpt_render_footer( $footer_style ) {
-			$elementor_instance = Elementor\Plugin::instance();
-
-			return $elementor_instance->frontend->get_builder_content_for_display( $footer_style );
-		}
-
-		static public function gpt_excerpt( $limit ) {
-			$excerpt = explode( ' ', get_the_excerpt(), $limit );
-			if ( count( $excerpt ) >= $limit ) {
-				array_pop( $excerpt );
-				$excerpt = implode( " ", $excerpt ) . '...';
-			} else {
-				$excerpt = implode( " ", $excerpt );
-			}
-			$excerpt = preg_replace( '`\[[^\]]*\]`', '', $excerpt );
-
-			return $excerpt;
-		}
+        }
 	}
 
 	// Instantiate theme

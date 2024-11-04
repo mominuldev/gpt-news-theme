@@ -438,14 +438,6 @@ if ( class_exists( 'CSF' ) ) {
 
 
 			array(
-				'id'         => 'meta_footer_style',
-				'type'       => 'select',
-				'title'      => __( 'Select Footer Style', 'gpt-news' ),
-				'options'    => Gpt_Theme_Helper::get_footers_types(),
-				'dependency' => array( 'meta_footer_type', '==', 'true' ),
-			),
-
-			array(
 				'id'         => 'meta_footer_color',
 				'type'       => 'button_set',
 				'title'      => __( 'Switch Footer Dark or Light', 'gpt-news' ),

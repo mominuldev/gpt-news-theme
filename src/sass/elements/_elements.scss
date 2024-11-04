@@ -292,7 +292,7 @@ figure {
 				animation: loading 3s infinite;
 			}
 
-			@for $i from 1 through 6 {
+			@for $i from 1 through 20 {
 				&:nth-child(#{$i+1})::after {
 					animation-delay: #{$i*.1}s;
 				}
@@ -376,7 +376,7 @@ figure {
 	position: fixed;
 	left: 0;
 	top: 0;
-	z-index: 99;
+	z-index: 99999;
 	transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s;
 	overflow: hidden;
 

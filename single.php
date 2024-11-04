@@ -30,7 +30,7 @@ $google_adsense_code = gpt_option( 'single_adsense_code' );
                         // Google Adsense
                         if ( $google_adsense == true && ! empty( $google_adsense_code ) ) {
                             echo '<div class="gpt-adsense">';
-                            echo wp_kses( $google_adsense_code, 'post' );
+                            echo $google_adsense_code;
                             echo '</div>';
                         }
                         
