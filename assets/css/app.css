@@ -4784,6 +4784,7 @@ a:hover, a:active {
     top: 2px;
     line-height: 1;
     color: #fff;
+    width: auto;
   }
 }
 .site-header .site-main-menu li.menu-item-has-children > a:hover:after {
@@ -4934,11 +4935,26 @@ a:hover, a:active {
     background: #fff;
   }
 }
+.site-header.header-two .site-main-menu > li.menu-item-has-children > a:after {
+  color: #505050;
+}
 .site-header.header-two .site-main-menu > li > a {
   font-weight: 600;
   color: #505050;
 }
+.site-header.header-two .site-main-menu > li > a:before {
+  display: none;
+}
 .site-header.header-two .site-main-menu > li > a:hover {
+  color: #34A533;
+}
+.site-header.header-two .site-main-menu > li > a:hover:after {
+  color: #34A533;
+}
+.site-header.header-two .site-main-menu > li.current-menu-item a {
+  color: #34A533;
+}
+.site-header.header-two .site-main-menu > li.current-menu-item a:after {
   color: #34A533;
 }
 .site-header.header-two .nav-right .search-btn {
