@@ -7,18 +7,18 @@
 
 get_header();
 
-$sidebar   = Gpt_Theme_Helper::render_sidebars( 'single' );
-$row_class = $sidebar['row_class'];
-$column    = $sidebar['column'];
+$sidebar       = Gpt_Theme_Helper::render_sidebars( 'single' );
+$row_class     = $sidebar['row_class'];
+$column        = $sidebar['column'];
 $sidebar_class = $sidebar['layout'] == 'none' ? 'no-sidebar' : '';
 
-$google_adsense = gpt_option( 'single_adsense' );
+$google_adsense      = gpt_option( 'single_adsense' );
 $google_adsense_code = gpt_option( 'single_adsense_code' );
 
 ?>
 
     <div class="blog-single-content-area">
-        <div class="container <?php echo esc_attr($sidebar_class);  ?>">
+        <div class="container <?php echo esc_attr( $sidebar_class ); ?>">
             <div class="blog-single-wrapper">
                 <div class="row <?php echo apply_filters( 'gpt_row_class', $row_class ); ?>">
                     <div class="col-lg-<?php echo apply_filters( 'gpt_column_class', $column ); ?>">
@@ -27,12 +27,12 @@ $google_adsense_code = gpt_option( 'single_adsense_code' );
 							get_template_part( 'template-parts/post/single/post' );
 						endwhile; // End of the loop.
 
-                        // Google Adsense
-                        if ( $google_adsense == true && ! empty( $google_adsense_code ) ) {
-                            echo '<div class="gpt-adsense">';
-                            echo htmlspecialchars( $google_adsense_code );
-                            echo '</div>';
-                        }
+						// Google Adsense
+						if ( $google_adsense == true && ! empty( $google_adsense_code ) ) {
+							echo '<div class="gpt-adsense">';
+							echo $google_adsense_code;
+							echo '</div>';
+						}
 
 						if ( gpt_option( 'single_post_nav' ) == true ) {
 							Gpt_Theme_Helper::gpt_post_nav();

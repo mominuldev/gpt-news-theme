@@ -62,7 +62,7 @@ class Gpt_Enqueue_Script {
 			wp_add_inline_style( 'gpt-style', $custom_css );
 		}
 		// Preloader CSS
-		$preloader_opt       = gpt_option( 'preloader' );
+		$preloader_opt       = gpt_option( 'preloader_switch' );
 		$preloader_color_opt = gpt_option( 'preloader_color' );
 
 

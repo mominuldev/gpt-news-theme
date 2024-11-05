@@ -31,7 +31,6 @@ if ( class_exists( 'CSF' ) ) {
 				'title'      => esc_html__( 'Preloader type', 'gpt-news' ),
 				'options'    => array(
 					'text'   => esc_html__( 'Animated Text', 'gpt-news' ),
-					'css'    => esc_html__( 'CSS', 'gpt-news' ),
 					'images' => esc_html__( 'Media', 'gpt-news' )
 				),
 				'dependency' => array( 'preloader_switch', '==', true ),
@@ -42,43 +41,6 @@ if ( class_exists( 'CSF' ) ) {
 				'title'      => esc_html__( 'Preloader Image', 'gpt-news' ),
 				'add_title'  => esc_html__( 'Upload Your Image', 'gpt-news' ),
 				'dependency' => array( 'preloader_switch|preloader-type', '==', 'true|images' ),
-			),
-			array(
-				'id'         => 'preloader',
-				'type'       => 'select',
-				'title'      => esc_html__( 'Preloader Style', 'gpt-news' ),
-				'class'      => 'chosen',
-				'dependency' => array( 'preloader_switch|preloader-type', '==', 'true|css' ),
-				'options'    => array(
-					'ball-pulse-3'                 => esc_html__( 'Ball Pulse', 'gpt-news' ),
-					'ball-grid-pulse-9'            => esc_html__( 'Ball Grid Pulse', 'gpt-news' ),
-					'ball-clip-rotate-1'           => esc_html__( 'Ball Clip Rotate', 'gpt-news' ),
-					'ball-clip-rotate-pulse-2'     => esc_html__( 'Ball Clip Rotate Pulse', 'gpt-news' ),
-					'ball-clip-rotate-multiple-2'  => esc_html__( 'Ball Clip Rotate Multiple', 'gpt-news' ),
-					'ball-pulse-rise-6'            => esc_html__( 'Ball Pulse Rise', 'gpt-news' ),
-					'ball-pulse-sync-3'            => esc_html__( 'Ball Pulse Sync', 'gpt-news' ),
-					'ball-beat-3'                  => esc_html__( 'Ball Beat', 'gpt-news' ),
-					'ball-grid-beat-9'             => esc_html__( 'Ball Gird Beat', 'gpt-news' ),
-					'ball-rotate-1'                => esc_html__( 'Ball Rotate', 'gpt-news' ),
-					'ball-zig-zag-2'               => esc_html__( 'Ball Zig-Zag', 'gpt-news' ),
-					'ball-zig-zag-deflect-2'       => esc_html__( 'Ball-Zig-Zag Deflect', 'gpt-news' ),
-					'ball-triangle-path-3'         => esc_html__( 'Ball Triangle Path', 'gpt-news' ),
-					'ball-scale-1'                 => esc_html__( 'Ball Scale', 'gpt-news' ),
-					'ball-scale-ripple-1'          => esc_html__( 'Ball Scale Ripple', 'gpt-news' ),
-					'ball-scale-multiple-3'        => esc_html__( 'Ball Scale Multiple', 'gpt-news' ),
-					'ball-scale-ripple-multiple-3' => esc_html__( 'Ball Scale Ripple Multiple', 'gpt-news' ),
-					'ball-spin-fade-loader-8'      => esc_html__( 'Ball Spin Fade Loader', 'gpt-news' ),
-					'square-spin-1'                => esc_html__( 'Square Spin', 'gpt-news' ),
-					'cube-transition-2'            => esc_html__( 'Cube Transition', 'gpt-news' ),
-					'line-scale-5'                 => esc_html__( 'Line Scale', 'gpt-news' ),
-					'line-scale-party-4'           => esc_html__( 'Line Scale Party', 'gpt-news' ),
-					'line-scale-pulse-out-5'       => esc_html__( 'Line Scale Pulse Out', 'gpt-news' ),
-					'line-scale-pulse-out-rapid-5' => esc_html__( 'Line Scale Pulse Out Rapid', 'gpt-news' ),
-					'line-spin-fade-loader-8'      => esc_html__( 'Line Spin Fade Loader', 'gpt-news' ),
-					'triangle-skew-spin-1'         => esc_html__( 'Triangle Skew Spin', 'gpt-news' ),
-					'pacman-5'                     => esc_html__( 'Pacman', 'gpt-news' ),
-					'semi-circle-spin-5'           => esc_html__( 'Semi Circle Spin', 'gpt-news' ),
-				),
 			),
 
 			array(
@@ -230,6 +192,20 @@ if ( class_exists( 'CSF' ) ) {
 		'parent' => 'header_section', // The slug id of the parent section
 		'title'  => __( 'Settings', 'gpt-news' ),
 		'fields' => array(
+
+			// Header Style
+			array(
+				'id'      => 'header_style',
+				'type'    => 'select',
+				'title'   => __( 'Select Header Style', 'gpt-news' ),
+				'options' => [
+					'header-one' => esc_html__( 'Header 1', 'gpt-news' ),
+					'header-two' => esc_html__( 'Header 2', 'gpt-news' ),
+				],
+				'default' => 'header-one',
+				'desc'    => esc_html__( 'Select header style for your site.', 'gpt-news' ),
+			),
+
 
 			array(
 				'id'      => 'header_sticky',
@@ -426,13 +402,6 @@ if ( class_exists( 'CSF' ) ) {
 		'title'  => esc_html__( 'Footer', 'gpt-news' ),
 		'icon'   => 'fa fa-support',
 		'fields' => array(
-
-			array(
-				'id'      => 'footer_style',
-				'type'    => 'select',
-				'title'   => __( 'Select Footer Style', 'gpt-news' ),
-				'options' => Gpt_Theme_Helper::get_footers_types(),
-			),
 
 			array(
 				'id'      => 'footer_color',

@@ -35,11 +35,13 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'      => 'meta_header_layout',
 				'type'    => 'select',
-				'title'   => esc_html__( 'Header Style', 'gpt-news' ),
+				'title'   => esc_html__( 'Select Header Style', 'gpt-news' ),
 				'desc'    => esc_html__( 'Select header style', 'gpt-news' ),
 				'options' => array(
-					'default' => __('Header Default', 'gpt-news'),
-					'canvas' => __('Header Canvas', 'gpt-news')
+					'options' => [
+						'header-one' => esc_html__( 'Header 1', 'gpt-news' ),
+						'header-two' => esc_html__( 'Header 2', 'gpt-news' ),
+					],
 				),
 				'dependency' => array( 'meta_header_type', '==', 'true' ),
 			),
@@ -52,17 +54,17 @@ if ( class_exists( 'CSF' ) ) {
 				'dependency' => array( 'meta_header_type|meta_header_layout', '==', 'true|default' ),
 			),
 
-			array(
-				'id'         => 'meta_header_color',
-				'type'       => 'button_set',
-				'title'      => __( 'Transparent Header Color', 'gpt-news' ),
-				'options'    => array(
-					'header_dark'  => __( 'Dark (For light background)', 'gpt-news' ),
-					'header_light' => __( 'Light (For dark Background)', 'gpt-news' ),
-				),
-				'default'    => 'header_dark',
-				'dependency' => array( 'meta_header_type|meta_transparent_menu', '==', 'true|true' ),
-			),
+//			array(
+//				'id'         => 'meta_header_color',
+//				'type'       => 'button_set',
+//				'title'      => __( 'Transparent Header Color', 'gpt-news' ),
+//				'options'    => array(
+//					'header_dark'  => __( 'Dark (For light background)', 'gpt-news' ),
+//					'header_light' => __( 'Light (For dark Background)', 'gpt-news' ),
+//				),
+//				'default'    => 'header_dark',
+//				'dependency' => array( 'meta_header_type|meta_transparent_menu', '==', 'true|true' ),
+//			),
 
 			array(
 				'id'         => 'meta_main_logo',
@@ -436,14 +438,6 @@ if ( class_exists( 'CSF' ) ) {
 				'default'  => false
 			),
 
-
-			array(
-				'id'         => 'meta_footer_style',
-				'type'       => 'select',
-				'title'      => __( 'Select Footer Style', 'gpt-news' ),
-				'options'    => Gpt_Theme_Helper::get_footers_types(),
-				'dependency' => array( 'meta_footer_type', '==', 'true' ),
-			),
 
 			array(
 				'id'         => 'meta_footer_color',
