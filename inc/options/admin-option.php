@@ -231,7 +231,6 @@ if ( class_exists( 'CSF' ) ) {
 		'title'  => __( 'Settings', 'gpt-news' ),
 		'fields' => array(
 
-
 			array(
 				'id'      => 'header_sticky',
 				'type'    => 'switcher',

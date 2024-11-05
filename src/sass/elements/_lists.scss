@@ -58,8 +58,8 @@ ul ul {
 
 		.gpt__list-icon {
 			margin-right: 10px;
-			font-size: 14px;
-			color: #a6afbc;
+			font-size: 16px;
+			color: $color__theme;;
 			text-align: center;
 		}
 
@@ -67,6 +67,13 @@ ul ul {
 			color: $color__heading;
 			display: flex;
 			align-items: baseline;
+
+			.ri-external-link-fill {
+				color: #6E6E6E;
+				display: inline-block;
+				margin-left: 3px;
+				font-size: 90%;
+			}
 
 			&:hover {
 				color: $color__theme;
