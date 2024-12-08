@@ -841,7 +841,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
             if ( ! empty( $social_links ) ) {
                 echo '<ul class="gpt-social-link">';
                 foreach ( $social_links as $social_link ) {
-                    echo '<li><a href="' . esc_url( $social_link['url'] ) . '" target="_blank"><i class="fab fa-' . esc_attr( $social_link['icon'] ) . '"></i></a></li>';
+                    echo '<li><a href="' . esc_url( $social_link['url'] ) . '" target="_blank" aria-label="'.esc_attr($social_link['name']) .'"><i class="fab fa-' . esc_attr( $social_link['icon'] ) . '"></i></a></li>';
                 }
                 echo '</ul>';
             }

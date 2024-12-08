@@ -50,7 +50,7 @@ if( class_exists( 'CSF' ) ) {
 					<ul class="social-links">
 						<?php foreach ( $social_links as $social_link ) : ?>
 							<li>
-								<a href="<?php echo esc_url( $social_link['url'] ); ?>" target="_blank">
+								<a href="<?php echo esc_url( $social_link['url'] ); ?>" target="_blank" aria-label="<?php echo esc_attr($social_link['name']) ?>">
 									<i class="<?php echo $social_link['icon']; ?>"></i>
 								</a>
 							</li>
