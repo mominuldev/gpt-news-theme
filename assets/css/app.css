@@ -1427,7 +1427,7 @@ a.gpt-btn-circle {
   font-size: 16px;
   font-weight: 500;
   display: block;
-  color: hsla(0, 0%, 100%, 0.65);
+  color: #17509B;
   margin-bottom: 15px;
 }
 .section-heading .section-title {
@@ -4070,6 +4070,11 @@ span.progress-shape {
   flex-wrap: wrap;
   row-gap: 10px;
 }
+@media (max-width: 576px) {
+  .widget_nav_menu ul {
+    gap: 20px;
+  }
+}
 .widget_nav_menu ul li {
   margin-bottom: 0 !important;
   position: relative;
@@ -4084,6 +4089,11 @@ span.progress-shape {
   height: 8px;
   background-color: #D0D0D0;
   border-radius: 50%;
+}
+@media (max-width: 576px) {
+  .widget_nav_menu ul li:before {
+    left: -14px;
+  }
 }
 
 .site-footer-menu {

@@ -136,6 +136,10 @@
 		flex-wrap: wrap;
 		row-gap: 10px;
 
+		@media(max-width: 576px) {
+			gap: 20px;
+		}
+
 		li {
 			margin-bottom: 0 !important;
 			position: relative;
@@ -149,7 +153,11 @@
 				width: 8px;
 				height: 8px;
 				background-color: #D0D0D0;
-				border-radius: 50%
+				border-radius: 50%;
+
+				@media(max-width: 576px) {
+					left: -14px;
+				}
 			}
 		}
 	}
