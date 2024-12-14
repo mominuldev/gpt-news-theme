@@ -201,6 +201,7 @@ if ( class_exists( 'CSF' ) ) {
 				'options' => [
 					'header-one' => esc_html__( 'Header 1', 'gpt-news' ),
 					'header-two' => esc_html__( 'Header 2', 'gpt-news' ),
+					'header-three' => esc_html__( 'Header 3', 'gpt-news' ),
 				],
 				'default' => 'header-one',
 				'desc'    => esc_html__( 'Select header style for your site.', 'gpt-news' ),

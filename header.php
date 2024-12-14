@@ -37,8 +37,12 @@ $header_style = gpt_option( 'header_style' );
 	//Site Header
     if($header_style == 'header-one') {
         get_template_part( 'template-parts/header/header', 'one' );
-    } else {
+    } elseif($header_style == 'header-two') {
         get_template_part( 'template-parts/header/header', 'two' );
+    } elseif($header_style == 'header-three') {
+        get_template_part( 'template-parts/header/header', 'three' );
+    } else {
+        get_template_part( 'template-parts/header/header', 'one' );
     }
 
 
