@@ -1177,7 +1177,6 @@ if ( class_exists( 'CSF' ) ) {
 	//Color Scheme
 	CSF::createSection( $prefix, array(
 		'title'  => esc_html__( 'Color Scheme', 'gpt-news' ),
-		'icon'   => 'fa fa-star',
 		'icon'   => 'fa fa-paint-brush',
 		'fields' => array(
 
@@ -1215,17 +1214,21 @@ if ( class_exists( 'CSF' ) ) {
 				'title'  => esc_html__( 'Primary Color', 'gpt-news' ),
 				'desc'   => esc_html__( 'Main Color Scheme', 'gpt-news' ),
 				'output' => array(
-					'color' => 'a:hover, a:focus, a:active, .section-heading .section-title span, .gpt-testimonial__designation, .gpt-testimonial__avatar:before, .gpt-scroll-top-icon,
-					.gpt-btn.btn-outline, .banner__social-links li a, .gpt-btn:hover',
+					'color' => 'a:hover, a:focus, a:active, .section-heading .section-title span, .gpt-testimonial__designation, .gpt-testimonial__avatar:before, .gpt-scroll-top-icon, .header-three ul.gpt-social-link li a:hover,
+					            .sidebar .widget ul.wp-block-categories li a:hover, .sidebar .widget ul.wp-block-archives li a:hover, .sidebar .widget ul:not(.wp-block-latest-posts) li a:hover, .sidebar .widget.widget_archive ul.wp-block-categories li a:hover, 
+					            .sidebar .widget.widget_archive ul.wp-block-archives li a:hover, .sidebar .widget.widget_archive ul:not(.wp-block-latest-posts) li a:hover, .site-footer .site-info .copyright p a:hover,
+					            ul.entry-meta li a:hover, .gpt-btn.btn-outline, .banner__social-links li a, .gpt-btn:hover, .header-three .header-menu .site-main-menu > li > a:hover, .widget .wp-block-latest-posts li > a:hover',
 
 					'background-color' => '.gpt-contact-info__icon, .gpt-service:hover .gpt-service__btn',
 
-					'border-color' => '.gpt-btn, .gpt-btn.btn-outline, .gpt-btn.btn-outline:hover, .gpt-testimonial__control--prev:hover, .gpt-testimonial__control--next:hover, .gpt-service:hover,
+					'border-color' => '.gpt-btn, .gpt-btn.btn-outline, .gpt-btn.btn-outline:hover, .gpt-testimonial__control--prev:hover, .gpt-testimonial__control--next:hover, .gpt-service:hover, .blog-post-list .read-more .gpt-btn.btn-sm:hover ,
 					.gpt-service:hover .gpt-service__btn, .gpt-skill.gpt-skill--1:hover, .gpt-btn.btn-outline, .banner__social-links li a',
 
 					'background' => '.gpt-testimonial__control--prev:hover, .gpt-testimonial__control--next:hover, .gpt-testimonial:hover .gpt-testimonial__avatar:before, .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
+									.gpt-post-category a, .wp-block-search .wp-block-search__button,
 					.gpt-skill.gpt-skill--1:hover .gpt-skill__percent, .gpt-btn:before, .banner__social-links li a:hover',
-					'stroke'            => '.gpt-scroll-top > svg.progress-circle path'
+					'stroke'            => '.gpt-scroll-top > svg.progress-circle path',
+					'fill' 			=> '.header-search-form button svg path'
 				),
 			),
 

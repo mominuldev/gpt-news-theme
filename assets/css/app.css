@@ -2970,8 +2970,9 @@ span.progress-shape {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 15px;
-  color: #A5A6AA;
+  font-size: 13px;
+  color: #979797;
+  text-transform: uppercase;
 }
 
 .gpt-blog__meta-category {
@@ -3359,7 +3360,7 @@ span.progress-shape {
   transition: all 0.3s ease-in-out;
 }
 .blog-list .blog-list__title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4043,7 +4044,7 @@ span.progress-shape {
   }
 }
 .site-footer .site-info .copyright {
-  padding: 33px 0;
+  padding: 22px 0;
   text-align: center;
 }
 @media (max-width: 767px) {
@@ -4563,9 +4564,9 @@ a:hover, a:active {
 }
 .site-header .site-logo a h3 {
   color: #17509B;
-  font-size: 25px;
+  font-size: 28px;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 0;
 }
 .site-header .site-logo .logo-sticky {
@@ -4619,6 +4620,9 @@ a:hover, a:active {
   background: #ffffff;
   height: 2px;
   display: block;
+}
+.site-header .gpt-hamburger .bar:nth-child(2) {
+  width: 17px;
 }
 .site-header .gpt-hamburger .bar:not(:last-child) {
   margin-bottom: 6px;
@@ -5438,6 +5442,111 @@ ul.gpt-social-link li a:hover {
   border-color: #000;
   color: #fff;
 }
+.header-three ul.gpt-social-link {
+  gap: 18px;
+}
+.header-three ul.gpt-social-link li a {
+  color: #161616;
+  border: 0;
+  height: auto;
+  width: auto;
+}
+.header-three ul.gpt-social-link li a:hover {
+  color: #17509B;
+  background: transparent;
+}
+.header-three ul.gpt-social-link .top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+}
+
+.header-three .top-bar {
+  background: transparent;
+  border-bottom: 1px solid #EFEFEF;
+  padding: 5px 0;
+}
+.header-three .top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+}
+.header-three .header-middle-inner {
+  padding: 0;
+}
+.header-three .site-logo a {
+  padding: 14px 0;
+}
+.header-three .header-middle-wrapper {
+  display: none;
+}
+.header-three .gpt-hamburger {
+  text-align: right;
+}
+.header-three .gpt-hamburger .bar {
+  background: #000000;
+  border-radius: 10px;
+}
+.header-three .gpt-hamburger .bar:nth-child(2) {
+  width: 17px;
+  margin-left: auto;
+}
+@media (max-width: 991px) {
+  .header-three .main-nav-container li a {
+    font-weight: 500;
+  }
+}
+@media (min-width: 992px) {
+  .header-three .header-middle-wrapper {
+    display: block;
+  }
+  .header-three .header-middle-inner, .header-three #site-navigation {
+    justify-content: center;
+  }
+  .header-three .site-main-menu > li {
+    padding: 13px 0;
+  }
+}
+.header-three .header-menu {
+  background: transparent;
+  width: 100%;
+  border-top: 1px solid var(--Border-Color, #EFEFEF);
+  border-bottom: 1px solid var(--Border-Color, #EFEFEF);
+}
+.header-three .header-menu .site-main-menu > li > a {
+  color: #6E6E6E;
+}
+.header-three .header-menu .site-main-menu > li > a:before {
+  display: none;
+}
+.header-three .header-menu .site-main-menu > li > a:hover {
+  color: #17509B;
+}
+
+form.header-search-form {
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid var(--Border-Color, #EFEFEF);
+  background: #FAFAFA;
+}
+form.header-search-form #search-input {
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px;
+  width: 100%;
+  margin-bottom: 0;
+  height: 36px;
+}
+form.header-search-form button {
+  background: transparent;
+  border: 0;
+  padding: 6px 10px;
+}
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -5559,7 +5668,6 @@ ul.gpt-social-link li a:hover {
 }
 
 .blog-content-area {
-  background: #f9faff;
   padding: 80px 0;
 }
 @media (max-width: 991px) {
@@ -5753,7 +5861,7 @@ ul.gpt-social-link li a:hover {
 # Widgets
 --------------------------------------------------------------*/
 .widget:not(:last-child) {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 .widget .widget-title {
   font-size: 26px;
@@ -5819,7 +5927,7 @@ ul.gpt-social-link li a:hover {
 }
 .sidebar .widget-title:after, .sidebar h2:after, .sidebar h3:after, .sidebar h4:after, .sidebar h5:after, .sidebar h6:after {
   content: "";
-  border: 1px solid #e5e5e5;
+  border: 1px solid #b7b7b7;
   height: 6px;
   flex-grow: 1;
   border-radius: 10px;
@@ -6449,7 +6557,7 @@ ul.gpt-social-link li a:hover {
   margin-bottom: 0;
   padding: 5px;
   border-radius: 4px;
-  border: 1px solid #e5e5e5;
+  background: #fff;
   transition: all ease 0.31s;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
@@ -6457,7 +6565,7 @@ ul.gpt-social-link li a:hover {
   margin-bottom: 0;
   padding: 5px;
   border-radius: 4px;
-  border: 1px solid #e5e5e5;
+  border: 0;
   transition: all ease 0.31s;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
@@ -6503,7 +6611,7 @@ ul.gpt-social-link li a:hover {
 
 /* Recent Post */
 .widget .wp-block-latest-posts li > a {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   line-height: 1.3;
   display: block;
@@ -6719,6 +6827,7 @@ ul.gpt-social-link li a:hover {
 .post-wrapper .blog-post-list,
 .blog-posts .blog-post-list {
   margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
 }
 
 /* POst Grid */
@@ -7699,12 +7808,13 @@ blockquote cite, .wp-block-quote cite {
 
 .blog-posts-list .blog-post-list {
   margin-bottom: 30px;
+  border: 1px solid #f1f1f1;
 }
 
-aside.sidebar {
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+aside.sidebar .widget {
+  padding: 30px;
+  background: #f1f1f1;
+  border-radius: 6px;
 }
 @media (min-width: 992px) {
   aside.sidebar {
@@ -8990,7 +9100,7 @@ pre.wp-block-preformatted {
   margin-bottom: 0;
   background: transparent;
   box-shadow: none;
-  height: 60px;
+  height: 42px;
   border: 0;
 }
 .wp-block-search input[type=search]:-webkit-autofill, .wp-block-search input[type=search]:-webkit-autofill:hover, .wp-block-search input[type=search]:-webkit-autofill:focus, .wp-block-search input[type=search]:-webkit-autofill:active {

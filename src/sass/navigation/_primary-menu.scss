@@ -133,9 +133,9 @@
 
 			h3 {
 				color: $color__theme;
-				font-size: 25px;
+				font-size: 28px;
 				text-transform: uppercase;
-				font-weight: 400;
+				font-weight: 700;
 				margin-bottom: 0;
 			}
 		}
@@ -203,6 +203,10 @@
 			background: $white;
 			height: 2px;
 			display: block;
+
+			&:nth-child(2) {
+				width: 17px;
+			}
 
 			&:not(:last-child) {
 				margin-bottom: 6px;
@@ -1368,5 +1372,140 @@ ul.gpt-social-link {
 				color: #fff;
 			}
 		}
+	}
+
+	.header-three & {
+		gap: 18px;
+		li {
+			a {
+				color: $color__heading;
+				border: 0;
+				height: auto;
+				width: auto;
+
+				&:hover {
+					color: $color__theme;
+					background: transparent;
+				}
+			}
+		}
+
+		.top-bar-left {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			font-weight: 500;
+		}
+	}
+}
+
+
+.header-three {
+	.top-bar {
+		background: transparent;
+		border-bottom: 1px solid #EFEFEF;
+		padding: 5px 0;
+	}
+
+	.top-bar-left {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		font-weight: 500;
+	}
+
+
+	.header-middle-inner {
+		padding: 0;
+	}
+
+	.site-logo a {
+		padding: 14px 0;
+	}
+
+	.header-middle-wrapper {
+		display: none;
+	}
+
+	.gpt-hamburger {
+		text-align: right;
+		.bar {
+			background: #000000;
+			border-radius: 10px;
+
+			&:nth-child(2) {
+				width: 17px;
+				margin-left: auto;
+			}
+		}
+	}
+
+	@media(max-width: 991px) {
+		.main-nav-container li a {
+			font-weight: 500;
+		}
+	}
+
+	@media  (min-width: 992px) {
+
+		.header-middle-wrapper {
+			display: block;
+		}
+
+		.header-middle-inner, #site-navigation {
+			justify-content: center;
+		}
+
+		.site-main-menu > li {
+			padding: 13px 0;
+		}
+	}
+
+	.header-menu {
+		background: transparent;
+		width: 100%;
+		border-top: 1px solid var(--Border-Color, #EFEFEF);
+		border-bottom: 1px solid var(--Border-Color, #EFEFEF);
+
+		.site-main-menu {
+			> li {
+				> a {
+					color: #6E6E6E;
+
+					&:before {
+						display: none;
+					}
+
+					&:hover {
+						color: $color__theme;
+					}
+				}
+			}
+		}
+	}
+}
+
+form.header-search-form {
+	display: flex;
+	align-items: center;
+	border-radius: 6px;
+	border: 1px solid var(--Border-Color, #EFEFEF);
+	background: #FAFAFA;
+
+	#search-input {
+		border: 0;
+		background: transparent;
+		font-size: 16px;
+		font-weight: 500;
+		padding: 10px 20px;
+		width: 100%;
+		margin-bottom: 0;
+		height: 36px;
+	}
+
+	button {
+		background: transparent;
+		border: 0;
+		padding: 6px 10px;
 	}
 }

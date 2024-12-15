@@ -100,6 +100,8 @@
 .blog-posts {
 	.blog-post-list {
 		margin-bottom: 30px;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+
 	}
 }
 
@@ -1375,13 +1377,21 @@ blockquote, .wp-block-quote {
 .blog-posts-list {
 	.blog-post-list {
 		margin-bottom: 30px;
+		//box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+		border: 1px solid #f1f1f1;
 	}
 }
 
 aside.sidebar {
-	padding: 20px;
-	background: #fff;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+	//padding: 20px;
+	//background: #fff;
+	//box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+	.widget {
+		padding: 30px;
+		background: #f1f1f1;
+		border-radius: 6px;
+	}
 
 	@media(min-width: 992px) {
 		position: sticky;

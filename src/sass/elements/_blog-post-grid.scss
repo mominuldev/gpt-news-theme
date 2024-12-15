@@ -515,8 +515,9 @@
 	display: flex;
 	align-items: center;
 	gap: 5px;
-	font-size: 15px;
-	color: #A5A6AA;
+	font-size: 13px;
+	color: #979797;
+	text-transform: uppercase;
 }
 
 .gpt-blog__meta-category {
@@ -1000,7 +1001,7 @@
 	}
 
 	.blog-list__title {
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 700;
 		overflow: hidden;
 		text-overflow: ellipsis;
