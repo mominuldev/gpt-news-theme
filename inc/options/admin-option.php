@@ -629,7 +629,7 @@ if ( class_exists( 'CSF' ) ) {
 				'options' => array(
 					'grid' => __('Grid', 'gpt-news'),
 					'list' => __('List', 'gpt-news'),
-					'masonry' => __('Masonry', 'gpt-news'),
+//					'masonry' => __('Masonry', 'gpt-news'),
 				),
 				'default' => 'grid',
 			),
@@ -699,6 +699,22 @@ if ( class_exists( 'CSF' ) ) {
 				'type'    => 'text',
 				'title'   => esc_html__( 'Word Limit', 'gpt-news' ),
 				'default' => '20',
+			),
+
+
+			array(
+				'id'      => 'blog_title_font_size',
+				'type'    => 'typography',
+				'title'   => __( 'Title Typography', 'gpt-news' ),
+//				'default' => array(
+//					'color'       => '#ffbc00',
+//					'font-family' => 'Open Sans',
+//					'font-size'   => '16',
+//					'line-height' => '20',
+//					'unit'        => 'px',
+//					'type'        => 'google',
+//				),
+				'output'  => array( '.blog-posts .blog-post-list .entry-title, .blog-post-list .entry-title'),
 			),
 
 			array(

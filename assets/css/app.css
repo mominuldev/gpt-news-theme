@@ -2959,6 +2959,32 @@ span.progress-shape {
   color: #161616;
 }
 
+.blog-hero-grid-four .blog-hero-item-grid__image {
+  min-height: 270px;
+}
+.blog-hero-grid-four .blog-hero-item-grid__image img {
+  min-height: 270px !important;
+}
+@media (max-width: 1200px) {
+  .blog-hero-grid-four .blog-hero-item-grid__image {
+    min-height: 240px;
+  }
+  .blog-hero-grid-four .blog-hero-item-grid__image img {
+    min-height: 240px !important;
+  }
+}
+.blog-hero-grid-four .blog-hero-item-grid__title {
+  font-size: clamp(20px, 2.5vw, 26px);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-hero-main-grid-four .blog-hero-item-grid__title {
+  font-size: clamp(26px, 2.5vw, 36px);
+}
+
 .blog-title-hover a {
   background-size: 0 2px;
   background-repeat: no-repeat;
