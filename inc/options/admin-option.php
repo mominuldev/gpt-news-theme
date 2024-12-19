@@ -1241,7 +1241,7 @@ if ( class_exists( 'CSF' ) ) {
 					.gpt-service:hover .gpt-service__btn, .gpt-skill.gpt-skill--1:hover, .gpt-btn.btn-outline, .banner__social-links li a',
 
 					'background' => '.gpt-testimonial__control--prev:hover, .gpt-testimonial__control--next:hover, .gpt-testimonial:hover .gpt-testimonial__avatar:before, .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
-									.gpt-post-category a, .wp-block-search .wp-block-search__button,
+									.gpt-post-category a, .wp-block-search .wp-block-search__button, .blog-grid--three a.gpt-blog__meta-category-two,
 					.gpt-skill.gpt-skill--1:hover .gpt-skill__percent, .gpt-btn:before, .banner__social-links li a:hover',
 					'stroke'            => '.gpt-scroll-top > svg.progress-circle path',
 					'fill' 			=> '.header-search-form button svg path'

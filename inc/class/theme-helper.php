@@ -227,12 +227,10 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
          * Post Author By
          */
 		static function gpt_posted_author_avatar() {
-			 printf( '<div class="blog-footer-meta">%2$s<div class="blog-footer-mata-content"><a class="url fn n post-author" href="%1$s">%3$s</a>%4$s %5$s</div></div>',
+			 printf( '<div class="author-meta"><span class="author-avatar">%2$s</span> By <a class="url fn n post-author" href="%1$s">%3$s</a></div>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				get_avatar( get_the_author_meta( 'ID' ), 45 ),
-				esc_html( get_the_author() ),
-				esc_html( get_the_date('M j Y') ),
-                '<span class="read-time">' . self::gpt_content_reading_time( get_the_content() ) . '</span>'
+				get_avatar( get_the_author_meta( 'ID' ), 24 ),
+				esc_html( get_the_author() )
 			);
 
 		}
@@ -246,8 +244,8 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 			}
 
-			$time_string = sprintf( $time_string, esc_attr( get_the_date( DATE_W3C ) ), esc_html( get_the_date() ),
-				esc_attr( get_the_modified_date( DATE_W3C ) ), esc_html( get_the_modified_date() ) );
+			$time_string = sprintf( $time_string, esc_attr( get_the_date( DATE_W3C ) ), esc_html( get_the_date('M j, Y') ),
+				esc_attr( get_the_modified_date( DATE_W3C ) ), esc_html( get_the_modified_date('M j, Y') ) );
 
 			$posted_on = $time_string;
 
