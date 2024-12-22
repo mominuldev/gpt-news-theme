@@ -55,9 +55,11 @@
 		}
 
 		@media(max-width: 420px) {
-			flex-direction: column;
-			gap: 0;
-			margin-top: 20px;
+			&:not(.meta-style-two) {
+				flex-direction: column;
+				gap: 0;
+				margin-top: 20px;
+			}
 		}
 	}
 
@@ -204,6 +206,22 @@
 		}
 	}
 
+	&.blog-grid-three {
+		min-height: 500px !important;
+
+		@media(max-width: 767px) {
+			min-height: 450px !important;
+
+			.blog-hero-item__image {
+				min-height: 450px !important;
+			}
+		}
+
+		.blog-hero-item__title {
+			font-size: clamp(20px, 2.5vw, 26px);
+		}
+	}
+
 }
 
 .blog-hero-item.blog-hero-item--large.style-three {
@@ -258,9 +276,8 @@
 	padding: 32px;
 	z-index: 2;
 
-
 	@media(max-width: 991px) {
-		padding: 40px;
+		padding: 40px 20px 30px;
 	}
 
 	@media(max-width: 575px) {
@@ -268,7 +285,6 @@
 	}
 
 	&:before {
-
 		background: -webkit-linear-gradient(bottom, #191c20 0, #191c20f2 calc(100% - 150px), #191c2000 100%);
 		background: linear-gradient(to top, #191c20 0, #191c20f2 calc(100% - 150px), #191c2000 100%);
 		width: 100%;
@@ -508,6 +524,11 @@
 }
 
 .blog-hero-grid-four {
+
+	@media(min-width: 992px) {
+		margin-bottom: 30px;
+	}
+
 	.blog-hero-item-grid__image {
 		min-height: 270px;
 		max-height: 270px;
@@ -724,6 +745,10 @@
 		.blog-grid__excerpt {
 			margin-bottom: 20px;
 		}
+	}
+
+	.blog-grid--title {
+		font-size: clamp(24px, 2.5vw, 30px);
 	}
 }
 
@@ -1194,3 +1219,49 @@
 		}
 	}
 }
+
+
+.blog-grid__list {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 24px;
+
+	.blog-grid__image {
+		min-width: 180px;
+
+		@media(max-width: 440px) {
+			min-width: 140px;
+		}
+	}
+
+	.blog-grid__title {
+		font-size: clamp(16px, 2.5vw, 22px);
+		margin-bottom: 10px;
+		overflow: hidden;
+		-o-text-overflow: ellipsis;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+
+		@media(max-width: 440px) {
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: $color__heading;
+			background-image: linear-gradient(to bottom, $color__heading 0%, $color__heading 98%);
+			background-size: 0 1px;
+			background-repeat: no-repeat;
+			background-position: left 100%;
+			transition: all 0.7s;
+
+			&:hover {
+				background-size: 100% 1px;
+			}
+
+		}
+	}
+}
+

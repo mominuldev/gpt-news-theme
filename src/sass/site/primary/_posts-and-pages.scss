@@ -485,9 +485,12 @@ ul.entry-meta {
 	flex-wrap: wrap;
 
 	@media(max-width: 575px) {
-		flex-wrap: wrap;
-		gap: 15px;
-		row-gap: 0;
+		&:not(.meta-style-two) {
+			flex-wrap: wrap;
+			gap: 15px;
+			row-gap: 0;
+		}
+
 	}
 
 	li {
