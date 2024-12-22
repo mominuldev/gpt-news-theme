@@ -2954,6 +2954,11 @@ span.progress-shape {
   object-fit: cover;
   transition: all 0.3s ease-in-out;
 }
+@media (min-width: 992px) {
+  .blog-hero-item-grid.blog-hero-main-grid-four .blog-hero-item-grid__image img {
+    min-height: 750px !important;
+  }
+}
 .blog-hero-item-grid:hover .blog-hero-item-grid__title a {
   background-size: 100% 2px;
   color: #161616;
@@ -2961,6 +2966,7 @@ span.progress-shape {
 
 .blog-hero-grid-four .blog-hero-item-grid__image {
   min-height: 270px;
+  max-height: 270px;
 }
 .blog-hero-grid-four .blog-hero-item-grid__image img {
   min-height: 270px !important;
@@ -3105,7 +3111,11 @@ span.progress-shape {
   padding: 0 16px 24px 16px;
 }
 .blog-grid--three .blog-grid__title {
-  font-size: clamp(20px, 2.5vw, 28px);
+  font-size: clamp(20px, 2.5vw, 26px);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .blog-grid--three a.gpt-blog__meta-category-two {
   font-size: 14px;
