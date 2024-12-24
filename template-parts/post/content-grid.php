@@ -15,7 +15,7 @@ $column= gpt_option('blog-masonry-column');
 ?>
 
 <div class="col-md-<?php echo esc_attr($column); ?> col-sm-6 col-xs-12">
-    <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-list entry-post' ); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-list blog-post-grid entry-post' ); ?>>
 
 		<?php if ( has_post_thumbnail() ) : ?>
             <div class="post-thumbnail-wrapper">

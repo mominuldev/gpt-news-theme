@@ -35,7 +35,7 @@ $meta_view_count_show = gpt_option( 'blog_single_meta_viewcount' );
 
         <?php if ( $meta_author_show ) : ?>
             <li>
-                <?php Gpt_Theme_Helper::post_author_by(); ?>
+                <?php Gpt_Theme_Helper::gpt_posted_author_avatar(); ?>
             </li>
         <?php endif; ?>
 

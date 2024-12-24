@@ -18,18 +18,19 @@ $column = $sidebar['column'];
 <div class="content-area search-page">
     <div class="container">
         <header class="search-header">
-            <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'gpt-news' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+           <div class="row">
+               <div class="col-md-12">
+                   <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'gpt-news' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+               </div>
+
+           </div>
         </header>
        <div class="row<?php echo apply_filters('gpt_row_class', $row_class); ?>">
             <div id='main-content' class="col-md-<?php echo apply_filters('gpt_column_class', $column); ?>">
 
-
                 <?php
-                 if ( have_posts() ) : ?>
+                 if ( have_posts() ) :
 
-
-
-                    <?php
 	                 if( gpt_option('blog_style') == 'grid' ) {
 		                 get_template_part( 'template-parts/post/posts-grid');
 	                 } else {

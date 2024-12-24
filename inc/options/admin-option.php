@@ -1232,14 +1232,14 @@ if ( class_exists( 'CSF' ) ) {
 				'output' => array(
 					'color' => 'a:hover, a:focus, a:active, .section-heading .section-title span, .gpt-testimonial__designation, .gpt-testimonial__avatar:before, .gpt-scroll-top-icon, .header-three ul.gpt-social-link li a:hover,
 					            .sidebar .widget ul.wp-block-categories li a:hover, .sidebar .widget ul.wp-block-archives li a:hover, .sidebar .widget ul:not(.wp-block-latest-posts) li a:hover, .sidebar .widget.widget_archive ul.wp-block-categories li a:hover, 
-					            .sidebar .widget.widget_archive ul.wp-block-archives li a:hover, .sidebar .widget.widget_archive ul:not(.wp-block-latest-posts) li a:hover, .site-footer .site-info .copyright p a:hover,
+					            .sidebar .widget.widget_archive ul.wp-block-archives li a:hover, .sidebar .widget.widget_archive ul:not(.wp-block-latest-posts) li a:hover, .site-footer .site-info .copyright p a:hover, .single-post-nav:hover .post-title,
 					            ul.entry-meta li a:hover, .gpt-btn.btn-outline, .banner__social-links li a, .gpt-btn:hover, .header-three .header-menu .site-main-menu > li > a:hover, .widget .wp-block-latest-posts li > a:hover, .blog-hero-item .entry-meta li a:hover',
 
-					'background-color' => '.gpt-contact-info__icon, .gpt-service:hover .gpt-service__btn',
+					'background-color' => '.gpt-contact-info__icon, .gpt-service:hover .gpt-service__btn, .comment-form #submit',
 
 					'border-color' => '.gpt-btn, .gpt-btn.btn-outline, .gpt-btn.btn-outline:hover, .gpt-testimonial__control--prev:hover, .gpt-testimonial__control--next:hover, .gpt-service:hover, .blog-post-list .read-more .gpt-btn.btn-sm:hover ,
 										.gpt-service:hover .gpt-service__btn, .gpt-skill.gpt-skill--1:hover, .gpt-btn.btn-outline, .banner__social-links li a, #post-pagination .page-numbers li a:hover, #post-pagination .page-numbers li a .current, 
-										#post-pagination .page-numbers li span:hover, #post-pagination .page-numbers li span .current, #post-pagination .page-numbers li a.current, #post-pagination .page-numbers li span.current',
+										#post-pagination .page-numbers li span:hover, #post-pagination .page-numbers li span .current, #post-pagination .page-numbers li a.current, #post-pagination .page-numbers li span.current, .comment-form #submit',
 
 					'background' => '.gpt-testimonial__control--prev:hover, .gpt-testimonial__control--next:hover, .gpt-testimonial:hover .gpt-testimonial__avatar:before, .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active,
 									.gpt-post-category a, .wp-block-search .wp-block-search__button, .blog-grid--three a.gpt-blog__meta-category-two, #post-pagination .page-numbers li a.current, #post-pagination .page-numbers li span.current,

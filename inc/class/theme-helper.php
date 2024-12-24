@@ -227,7 +227,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
          * Post Author By
          */
 		static function gpt_posted_author_avatar() {
-			 printf( '<div class="author-meta"><span class="author-avatar">%2$s</span> By <a class="url fn n post-author" href="%1$s">%3$s</a></div>',
+			 printf( '<div class="author-meta"><span class="author-avatar">%2$s</span>  <a class="url fn n post-author" href="%1$s">%3$s</a></div>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				get_avatar( get_the_author_meta( 'ID' ), 24 ),
 				esc_html( get_the_author() )
@@ -668,7 +668,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		static function related_post() { ?>
             <div class="related-post-wrapper">
                 <h2 class="related-title"><?php echo esc_html( gpt_option( 'related_title' ) ); ?></h2>
-                <div class="row">
+                <div class="row g-5">
 					<?php
 					global $post;
 					$post_id    = get_the_ID();

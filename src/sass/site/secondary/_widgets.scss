@@ -151,6 +151,29 @@
 			}
 		}
 	}
+
+	.wp-block-categories-list, .wp-block-archives-list {
+		li {
+			position: relative;
+			padding-left: 15px;
+
+			&:before {
+				content: "\ea6e";
+				font-family: remixicon !important;
+				font-style: normal;
+				-webkit-font-smoothing: antialiased;
+				position: absolute;
+				font-size: 20px;
+				left: -5px;
+				top: 50%;
+				transform: translateY(-50%);
+				//width: 5px;
+				//height: 5px;
+				border-radius: 50%;
+				//background: $color__theme;
+			}
+		}
+	}
 }
 
 .sidebar-container {
