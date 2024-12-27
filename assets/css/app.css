@@ -3137,13 +3137,12 @@ span.progress-shape {
   overflow: hidden;
 }
 .blog-grid--three a.gpt-blog__meta-category-two {
-  font-size: 14px;
-  padding: 8px 15px;
+  font-size: 12px;
+  padding: 6px 15px;
   line-height: 1;
   background: #17509B;
   color: #fff;
   display: inline-block;
-  border-radius: 5px;
   margin-bottom: 10px;
 }
 .blog-grid--three .blog-grid__excerpt {
