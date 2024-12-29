@@ -12,7 +12,7 @@
         "pot": "wp i18n make-pot . languages/gpt-news.pot",
         "zip": "wp i18n make-pot . languages/gpt-news.pot && gulp compress"
     },
-    "author": "RobustTheme",
+    "author": "GpTheme",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.2.2",
