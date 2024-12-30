@@ -80,8 +80,6 @@ var MOMIN = MOMIN || {};
             });
 
 
-
-
             // Back To Top
             var gptScrollTop = document.querySelector(".gpt-scroll-top");
             if (gptScrollTop != null) {
@@ -178,8 +176,8 @@ var MOMIN = MOMIN || {};
 
             // BLog Layout Masonary
             $('.blog-posts').masonry({
-                itemSelector: '.col-sm-6',
-                columnWidth: '.col-sm-6',
+                itemSelector: '.col-md-6',
+                columnWidth: '.col-md-6',
                 percentPosition: true
             });
 
@@ -219,10 +217,6 @@ var MOMIN = MOMIN || {};
                     $('#search-results').empty(); // Clear results if search term is too short
                 }
             });
-
-
-
-
 
         },
 

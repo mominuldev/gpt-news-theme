@@ -81,7 +81,7 @@ if ( $header_type == true || $header_type == 1 ) {
                 <div class="topbar-right">
                     <form action="<?php echo esc_url(home_url('/')); ?>" method="get" class="header-search-form">
                         <input type="text" id="search-input" name="s" placeholder="Search..." autocomplete="off">
-                        <input type="hidden" name="post_type" value="post">
+<!--                        <input type="hidden" name="post_type" value="post">-->
                         <button type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                                 <path d="M16.531 14.6168L20.8137 18.8995L19.3995 20.3137L15.1168 16.031C13.5769 17.263 11.624 18 9.5 18C4.532 18 0.5 13.968 0.5 9C0.5 4.032 4.532 0 9.5 0C14.468 0 18.5 4.032 18.5 9C18.5 11.124 17.763 13.0769 16.531 14.6168ZM14.5247 13.8748C15.7475 12.6146 16.5 10.8956 16.5 9C16.5 5.1325 13.3675 2 9.5 2C5.6325 2 2.5 5.1325 2.5 9C2.5 12.8675 5.6325 16 9.5 16C11.3956 16 13.1146 15.2475 14.3748 14.0247L14.5247 13.8748Z" fill="#DB0B69"/>
@@ -190,11 +190,13 @@ if ( $header_type == true || $header_type == 1 ) {
         <div class="header-middle-center my-5">
             <div class="header-google-add mx-auto">
 				<?php
-				$header_google_add = gpt_option( 'header_google_ad' );
+//				$header_google_add = gpt_option( 'header_google_ad' );
+//
+//				if ( $header_google_add ) {
+//					echo $header_google_add;
+//				}
 
-				if ( $header_google_add ) {
-					echo $header_google_add;
-				}
+				echo do_shortcode( '[quads id=1]' );
 				?>
             </div>
         </div>
