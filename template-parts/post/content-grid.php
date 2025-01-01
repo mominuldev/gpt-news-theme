@@ -14,7 +14,7 @@ $blog_word_limit = gpt_option('blog_word_limit');
 $column= gpt_option('blog-masonry-column');
 ?>
 
-<div class="col-lg-<?php echo esc_attr($column); ?> col-md-6">
+<div class="col-lg-<?php echo esc_attr($column); ?> col-md-6 blog-masonary-item">
     <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-list blog-post-grid entry-post' ); ?>>
 
 		<?php if ( has_post_thumbnail() ) : ?>

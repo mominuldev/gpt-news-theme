@@ -176,8 +176,8 @@ var MOMIN = MOMIN || {};
 
             // BLog Layout Masonary
             $('.blog-posts').masonry({
-                itemSelector: '.col-md-6',
-                columnWidth: '.col-md-6',
+                itemSelector: '.blog-masonary-item',
+                columnWidth: '.blog-masonary-item',
                 percentPosition: true
             });
 
