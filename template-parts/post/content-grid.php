@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Template part for displaying posts
@@ -6,71 +7,73 @@
  */
 
 $content       = apply_filters( 'the_content', get_the_content() );
-$meta          = get_post_meta( get_the_ID(), 'gpt-post-video', true );
+$meta          = get_post_meta( get_the_ID(), 'pps-post-video', true );
 $videothumb    = ! empty( $meta['video-thumbnail'] ) ? $meta['video-thumbnail'] : '';
-$meta_gallery  = get_post_meta( get_the_ID(), 'gpt-post-gallery', true );
+$meta_gallery  = get_post_meta( get_the_ID(), 'pps-post-gallery', true );
 $category_list = get_the_category_list( ' ' );
-$blog_word_limit = gpt_option('blog_word_limit');
-$column= gpt_option('blog-masonry-column');
+$blog_word_limit = pps_option('blog_word_limit');
+$column= pps_option('blog-masonry-column');
+$category = pps_option('blog_meta_categories', true);
+$date = pps_option('blog_meta_date', true);
 ?>
 
 <div class="col-lg-<?php echo esc_attr($column); ?> col-md-6 blog-masonary-item">
-    <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post-list blog-post-grid entry-post' ); ?>>
+    <div class="pps-post-item">
+        <div class="pps-post-item__content-inner">
+			<?php if ( has_post_thumbnail() ): ?>
+                <div class="pps-post-item__feature-image">
+                    <a href="<?php echo the_permalink(); ?>">
+						<?php the_post_thumbnail( 'genesis_blog_grid_410x290', array( 'class' => 'img-fluid' ) ) ?>
+                    </a>
 
-		<?php if ( has_post_thumbnail() ) : ?>
-            <div class="post-thumbnail-wrapper">
-				<?php Gpt_Theme_Helper::gpt_post_thumbnail(); ?>
-            </div>
-            <!-- /.post-thumbnail-wrapper -->
-		<?php endif; ?>
-
-        <div class="gpt-blog-content">
-			<?php if ( 'post' === get_post_type() ) : ?>
-                <div class="mtp-post-meta-wrapper">
-					<?php if ( $category_list ) : ?>
-                        <div class="gpt-post-category">
-							<?php echo wp_kses_post( $category_list ); ?>
-                        </div>
-					<?php endif; ?>
-                </div><!-- .entry-meta -->
+                </div>
 			<?php endif; ?>
 
-			<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+            <div class="pps-post-item__blog-content">
 
+                <div class="pps-post-item__meta">
+		            <?php if ( $category ) : ?>
+                        <div class="pps-post-item__category">
+				            <?php
+				            $terms = get_the_terms( get_the_ID(), 'category' );
+				            if ( $terms && ! is_wp_error( $terms ) ) :
+					            $cat_temp = '';
+					            foreach ( $terms as $term ) {
+						            $cat_temp .= '<a href="' . get_category_link( $term->term_id ) . '"   class="category" rel="category">' . esc_html( $term->name ) . '</a>';
+					            }
+				            endif;
 
-            <div class="entry-content">
+				            echo $cat_temp;
+				            ?>
+                        </div>
+		            <?php endif; ?>
 
-                <div class="entry-meta-wrapper">
-                    <ul class="entry-meta">
-                        <li>
-							<?php Gpt_Theme_Helper::post_author_by(); ?>
-                        </li>
-                        <li>
-                            <i class="ri-calendar-2-line"></i>
-							<?php Gpt_Theme_Helper::gpt_posted_on(); ?>
-                        </li>
-                    </ul><!-- .entry-meta -->
-                </div><!-- /.entry-meta-wrapper -->
+		            <?php if ( $date ) : ?>
+                        <div class="pps-post-item__date-meta">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="0.6">
+                                    <path d="M19 10.0039C19 14.9719 14.968 19.0039 10 19.0039C5.032 19.0039 1 14.9719 1 10.0039C1 5.03591 5.032 1.00391 10 1.00391C14.968 1.00391 19 5.03591 19 10.0039Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.3391 12.8659L10.5491 11.2009C10.0631 10.9129 9.66705 10.2199 9.66705 9.65289V5.96289" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
 
-				<?php
-				if ( ! is_singular() ) {
-					echo wp_kses_post( wp_trim_words( $content, $blog_word_limit, '...' ) );
-				} else {
-					the_content();
-				}
-				?>
-
-                <div class="read-more">
-                    <a href="<?php the_permalink(); ?>" class="gpt-btn btn-outline btn-sm"><?php esc_html_e( 'Read More', 'gpt-news' ); ?><i
-                                class="ri-arrow-right-line"></i></a>
+				            <?php PPS_Theme_Helper::pps_posted_on(); ?>
+                        </div>
+		            <?php endif; ?>
                 </div>
 
-            </div><!-- /.entry-content -->
+                <h3 class="pps-post-item__entry-title"><a href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
+                <p class="pps-post-item__entry-content">
+					<?php echo PPS_Theme_Helper::pps_excerpt( $blog_word_limit ); ?>
+                </p>
 
-			<?php if ( is_singular() ) {
-				wp_link_pages();
-			} ?>
-        </div><!-- /.entry-content -->
-    </article><!-- #post-<?php the_ID(); ?> -->
+                <div class="pps-post-item__read-more">
+                    <a href="<?php echo get_the_permalink(); ?>" class="pps-btn btn-outline btn-sm btn-round"><?php esc_html_e( 'Read More', 'pps' ); ?></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
+

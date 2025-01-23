@@ -18,18 +18,18 @@
 get_header();
 the_post();
 
-$sidebar = Gpt_Theme_Helper::render_sidebars('page');
+$sidebar = PPS_Theme_Helper::render_sidebars('page');
 $row_class = $sidebar['row_class'];
 $column = $sidebar['column'];
 
 ?>
 <div class="content-area">
     <div class="container">
-        <div class="row <?php echo apply_filters( 'gpt_row_class', $row_class ); ?>">
-            <div id='main-content' class="col-lg-<?php echo apply_filters('gpt_column_class', $column); ?>">
+        <div class="row <?php echo apply_filters( 'pps_row_class', $row_class ); ?>">
+            <div id='main-content' class="col-lg-<?php echo apply_filters('pps_column_class', $column); ?>">
                 <?php
-				the_content(esc_html__( 'Read more!', 'gpt-news' ));
-                wp_link_pages(array('before' => '<div class="page-links">' . esc_html__( 'Pages', 'gpt-news' ) . ': ', 'after' => '</div>'));
+				the_content(esc_html__( 'Read more!', 'pps-passport' ));
+                wp_link_pages(array('before' => '<div class="page-links">' . esc_html__( 'Pages', 'pps-passport' ) . ': ', 'after' => '</div>'));
 
                 // If comments are open or we have at least one comment, load up the comment template.
                 if ( comments_open() || get_comments_number() ) : ?>

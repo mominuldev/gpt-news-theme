@@ -12,7 +12,7 @@
 		color: #fff;
 	}
 
-	&.gpt-recent-posts {
+	&.pps-recent-posts {
 		.widget-title {
 			margin-bottom: 25px;
 		}
@@ -93,17 +93,17 @@
 		text-transform: uppercase;
 		transition: all ease 0.31s;
 		gap: 15px;
+		padding-left: 10px;
 
-		&:after {
+		&:before {
 			content: '';
-			//position: absolute;
-			//border: 1px solid #e5e5e5;
-			border: 1px solid #b7b7b7;
-			height: 6px;
-			flex-grow: 1;
-			border-radius: 10px;
+			position: absolute;
+			left: 0;
 			top: 50%;
 			transform: translateY(-50%);
+			background: $color__theme;
+			height: 16px;
+			width: 2px;
 		}
 
 		//&:before {
@@ -497,7 +497,7 @@
 /* Recent Post */
 
 // Recent Post
-.gpt-widget-recent-posts {
+.pps-widget-recent-posts {
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 20px;
@@ -571,7 +571,7 @@
 
 }
 
-.gpt-contact-widget {
+.pps-contact-widget {
 	.about_text {
 		color: rgba(255, 255, 255, 0.702);
 		margin-bottom: 20px;
@@ -808,7 +808,7 @@
 		}
 	}
 
-	.gpt-newsletter-widget {
+	.pps-passportletter-widget {
 		.newsletter-inner {
 			input {
 				border: 0;
@@ -1057,7 +1057,7 @@
 }
 
 // Social Widget
-.gpt-block-social-link {
+.pps-block-social-link {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -1100,7 +1100,7 @@
 	margin-bottom: 0 !important;
 }
 
-.gpt-block-contact-info {
+.pps-block-contact-info {
 	li {
 		display: flex;
 		align-items: baseline;
@@ -1126,14 +1126,14 @@
 	}
 }
 
-.gpt_block_contact_info_widget {
-	.gpt-block-social-title {
+.pps_block_contact_info_widget {
+	.pps-block-social-title {
 		margin-bottom: 15px;
 		font-size: 20px;
 	}
 }
 
-.site-footer .gpt_block_contact_info_widget {
+.site-footer .pps_block_contact_info_widget {
 	li {
 		&:not(:last-child) {
 			margin-right: 20px !important;
@@ -1155,7 +1155,7 @@
 }
 
 //.footer_dark {
-//	.gpt-block-social-link {
+//	.pps-block-social-link {
 //		li {
 //			a {
 //				border-color: rgba(255, 255, 255, 0.2);

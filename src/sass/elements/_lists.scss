@@ -18,7 +18,7 @@ ul ul {
 	list-style-type: disc;
 }
 
-.gpt__list {
+.pps__list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -32,7 +32,7 @@ ul ul {
 		font-size: 16px;
 
 		&.icon-shape {
-			.gpt__list-icon {
+			.pps__list-icon {
 				padding: 0.3em;
 				background-color: #F1F6FE;
 				border-radius: 50%;
@@ -56,7 +56,7 @@ ul ul {
 			margin: 0;
 		}
 
-		.gpt__list-icon {
+		.pps__list-icon {
 			margin-right: 10px;
 			font-size: 16px;
 			color: $color__theme;;

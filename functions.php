@@ -17,8 +17,8 @@ define( 'MP_THEME_URI', get_template_directory_uri() );
 define( 'GPT_WOOCOMMERCE_IS_ACTIVE', class_exists( 	'WooCommerce' ) );
 
 // A Custom function for get an option
-if ( ! function_exists( 'gpt_option' ) ) {
-	function gpt_option( $option = '', $default = null ) {
+if ( ! function_exists( 'pps_option' ) ) {
+	function pps_option( $option = '', $default = null ) {
 		$options = get_option( 'mp_theme_options' ); // Attention: Set your unique id of the framework
 
 		return ( isset( $options[ $option ] ) ) ? $options[ $option ] : $default;
@@ -55,31 +55,31 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Filter the categories archive widget to add a span around post count
  */
-function gpt_cat_count_span( $links ) {
+function pps_cat_count_span( $links ) {
 	$links = str_replace( '</a> (', ' <span class="post-count">', $links );
 	$links = str_replace( ')', '</span></a>', $links );
 
 	return $links;
 }
 
-add_filter( 'wp_list_categories', 'gpt_cat_count_span' );
+add_filter( 'wp_list_categories', 'pps_cat_count_span' );
 
 /**
  * Filter the archives widget to add a span around post count
  */
-function gpt_archive_count_span( $links ) {
+function pps_archive_count_span( $links ) {
 	$links = str_replace( '</a>&nbsp;(', '<span class="post-count">', $links );
 	$links = str_replace( ')', '</span></a>', $links );
 
 	return $links;
 }
 
-add_filter( 'get_archives_link', 'gpt_archive_count_span' );
+add_filter( 'get_archives_link', 'pps_archive_count_span' );
 
-add_filter( 'get_archives_link', 'gpt_archive_count_span' );
+add_filter( 'get_archives_link', 'pps_archive_count_span' );
 
-if ( ! function_exists( 'gpt_reorder_comment_fields' ) ) {
-	function gpt_reorder_comment_fields( $fields ) {
+if ( ! function_exists( 'pps_reorder_comment_fields' ) ) {
+	function pps_reorder_comment_fields( $fields ) {
 		$new_fields = array();
 
 		$myorder = array( 'author', 'email', 'url', 'comment' );
@@ -99,7 +99,7 @@ if ( ! function_exists( 'gpt_reorder_comment_fields' ) ) {
 	}
 }
 
-add_filter( 'comment_form_fields', 'gpt_reorder_comment_fields' );
+add_filter( 'comment_form_fields', 'pps_reorder_comment_fields' );
 
 // Codestar Framework Welcome page disable
 add_filter( 'csf_welcome_page', '__return_false' );
@@ -226,7 +226,7 @@ function ajax_search() {
 			echo '<h3><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
 			echo '<div class="date-meta">';
 			echo '<i class="ri-calendar-2-line"></i>';
-			echo  Gpt_Theme_Helper::gpt_posted_on();
+			echo  PPS_Theme_Helper::pps_posted_on();
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';
@@ -250,7 +250,7 @@ add_action('wp_ajax_nopriv_ajax_search', 'ajax_search'); // If logged out
 
 function insert_google_ads_after_paragraph($content) {
 	// Get ad code from options, or default to an empty string if not set
-	$ad_code = gpt_option('google_ads_content');
+	$ad_code = pps_option('google_ads_content');
 	if (!$ad_code) {
 		return $content; // Exit if ad code is empty
 	}

@@ -11,14 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-post' ); ?>>
 
-	<?php Gpt_Theme_Helper::gpt_post_thumbnail(); ?>
+	<?php PPS_Theme_Helper::pps_post_thumbnail(); ?>
 
 	<div class="blog-content">
 		<header class="entry-header">
 			<ul class="post-meta">
-				<li><?php Gpt_Theme_Helper::gpt_posted_on(); ?></li>
-				<li><?php Gpt_Theme_Helper::gpt_posted_by(); ?></li>
-				<li><?php Gpt_Theme_Helper::gpt_entry_cat(); ?></li>
+				<li><?php PPS_Theme_Helper::pps_posted_on(); ?></li>
+				<li><?php PPS_Theme_Helper::pps_posted_by(); ?></li>
+				<li><?php PPS_Theme_Helper::pps_entry_cat(); ?></li>
 			</ul><!-- .entry-meta -->
 		</header><!-- .entry-header -->
 
@@ -26,12 +26,12 @@
 			<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 
 			<p>
-				<?php echo Gpt_Theme_Helper::gpt_substring( get_the_content(), 25, '...' ); ?>
+				<?php echo PPS_Theme_Helper::pps_substring( get_the_content(), 25, '...' ); ?>
 			</p>
 
 			<footer class="blog-footer">
 				<a href="<?php the_permalink(); ?>" class="read-more">
-					<?php echo esc_html__( 'Read More', 'gpt-news' ); ?>
+					<?php echo esc_html__( 'Read More', 'pps-passport' ); ?>
 				</a>
 			</footer>
 

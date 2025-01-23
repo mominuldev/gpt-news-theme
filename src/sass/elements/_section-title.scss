@@ -96,7 +96,7 @@
     }
 }
 
-.gpt-title {
+.pps-title {
     font-family: $font__main;
     color: rgba(255, 247, 220, 0.3);
     font-size: 46px;
@@ -105,12 +105,12 @@
     margin-bottom: 70px;
 }
 
-.gpt-section-title-wrapper {
+.pps-section-title-wrapper {
     display: flex;
     align-items: center;
     gap: 25px;
 
-    .gpt-section-title {
+    .pps-section-title {
         font-size: 26px;
         font-weight: 700;
         color: $color__heading;
@@ -140,7 +140,7 @@
     }
 
     a {
-        .gpt-section-title {
+        .pps-section-title {
 
             &:hover {
                 color: $color__theme;

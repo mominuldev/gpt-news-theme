@@ -4,7 +4,7 @@ if( class_exists( 'CSF' ) ) {
 
 	//
 	// Set a unique slug-like ID
-	$prefix = '_gpt_menu_options';
+	$prefix = '_pps_menu_options';
 
 	//
 	// Create profile options
@@ -19,12 +19,12 @@ if( class_exists( 'CSF' ) ) {
 			array(
 				'id'          => 'class',
 				'type'        => 'select',
-				'title'       => __('Mega Menu Width', 'gpt-news'),
-				'placeholder' => __('Select an option', 'gpt-news'),
+				'title'       => __('Mega Menu Width', 'pps-passport'),
+				'placeholder' => __('Select an option', 'pps-passport'),
 				'options'     => array(
-					'single_width'  => __('Single', 'gpt-news'),
-					'menu_half_width'  => __('Half Width', 'gpt-news'),
-					'menu_full_width'  => __('Full Width', 'gpt-news'),
+					'single_width'  => __('Single', 'pps-passport'),
+					'menu_half_width'  => __('Half Width', 'pps-passport'),
+					'menu_full_width'  => __('Full Width', 'pps-passport'),
 				),
 				'default'     => 'option-2'
 			),

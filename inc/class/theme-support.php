@@ -27,14 +27,14 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 
 		public function __construct() {
 			//Register Nav Menu
-			add_action( 'init', array( $this, 'gpt_register_nav_menus' ) );
+			add_action( 'init', array( $this, 'pps_register_nav_menus' ) );
 			//Add translation file
-			add_action( 'init', array( $this, 'gpt_enqueue_translation_files' ) );
+			add_action( 'init', array( $this, 'pps_enqueue_translation_files' ) );
 			//Add widget support
-			add_action( 'widgets_init', array( $this, 'gpt_sidebar_register' ) );
+			add_action( 'widgets_init', array( $this, 'pps_sidebar_register' ) );
 
-			add_action( 'after_setup_theme', array( $this, 'gpt_setup' ) );
-			add_action( 'after_setup_theme', array( $this, 'gpt_content_width' ) );
+			add_action( 'after_setup_theme', array( $this, 'pps_setup' ) );
+			add_action( 'after_setup_theme', array( $this, 'pps_content_width' ) );
 
 			add_theme_support( 'align-wide' );
 			add_theme_support( 'wp-block-styles' );
@@ -44,7 +44,7 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 		}
 
 
-		function gpt_setup() {
+		function pps_setup() {
 
 			if ( function_exists( 'add_theme_support' ) ) {
 				add_theme_support( 'post-thumbnails' );
@@ -64,7 +64,7 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 
 
 				// Set up the WordPress core custom background feature.
-				add_theme_support( 'custom-background', apply_filters( 'gpt_custom_background_args', array(
+				add_theme_support( 'custom-background', apply_filters( 'pps_custom_background_args', array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
 				) ) );
@@ -82,44 +82,44 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 				) );
 
 				//Image Size
-                add_image_size('gpt_hero_grid_800x550', 900, 520, true);
-                add_image_size('gpt_hero_large_960x520', 960, 520, true);
-                add_image_size('gpt_hero_thumbnail_220x175', 220, 175, true);
-                add_image_size('gpt_hero_thumbnail_420x270', 420, 270, true);
-                add_image_size('gpt_hero_grid_two_436x300', 436, 300, true);
-                add_image_size('gpt-blog-list_300x185', 300, 185, true);
-                add_image_size('gpt-blog-list_180x150', 180, 120, true);
-                add_image_size('gpt-hero_four_600x750', 600, 750, true);
+                add_image_size('pps_hero_grid_800x550', 900, 520, true);
+                add_image_size('pps_hero_large_960x520', 960, 520, true);
+                add_image_size('pps_hero_thumbnail_220x175', 220, 175, true);
+                add_image_size('pps_hero_thumbnail_420x270', 420, 270, true);
+                add_image_size('pps_hero_grid_two_436x300', 436, 300, true);
+                add_image_size('pps-blog-list_300x185', 300, 185, true);
+                add_image_size('pps-blog-list_180x150', 180, 120, true);
+                add_image_size('pps-hero_four_600x750', 600, 750, true);
 
 			}
 		}
 
 
-		public function gpt_register_nav_menus() {
+		public function pps_register_nav_menus() {
 			register_nav_menus(
 				array(
-					'primary' => esc_html__( 'Primary Menu', 'gpt-news' ),
-                    'footer_menu'  => esc_html__( 'Footer Menu', 'gpt-news' ),
+					'primary' => esc_html__( 'Primary Menu', 'pps-passport' ),
+                    'footer_menu'  => esc_html__( 'Footer Menu', 'pps-passport' ),
 				)
 			);
 		}
 
-		public function gpt_enqueue_translation_files() {
-			load_theme_textdomain( 'gpt-news', get_template_directory() . '/languages/' );
+		public function pps_enqueue_translation_files() {
+			load_theme_textdomain( 'pps-passport', get_template_directory() . '/languages/' );
 		}
 
-		public function gpt_sidebar_register() {
+		public function pps_sidebar_register() {
 
 			// Default wrapper for widget and title
-			$wrapper_before = '<div id="%1$s" class="widget gpt_widget %2$s">';
+			$wrapper_before = '<div id="%1$s" class="widget pps_widget %2$s">';
 			$wrapper_after  = '</div>';
 			$title_before   = '<h3 class="widget-title">';
 			$title_after    = '</h3>';
 
 			register_sidebar( array(
-				'name'          => esc_html( 'Sidebar Main', 'gpt-news' ),
+				'name'          => esc_html( 'Sidebar Main', 'pps-passport' ),
 				'id'            => "sidebar_main-sidebar",
-				'description'   => esc_html__( 'Add widget here to appear it in sidebar.', 'gpt-news' ),
+				'description'   => esc_html__( 'Add widget here to appear it in sidebar.', 'pps-passport' ),
 				'before_widget' => $wrapper_before,
 				'after_widget'  => $wrapper_after,
 				'before_title'  => $title_before,
@@ -130,19 +130,19 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 			// Register Footer Sidebar
 			$footer_columns = array(
 				array(
-					'name' => esc_html__( 'Footer Column 1', 'gpt-news' ),
+					'name' => esc_html__( 'Footer Column 1', 'pps-passport' ),
 					'id'   => 'footer_column_1'
 				),
 				array(
-					'name' => esc_html__( 'Footer Column 2', 'gpt-news' ),
+					'name' => esc_html__( 'Footer Column 2', 'pps-passport' ),
 					'id'   => 'footer_column_2'
 				),
 				array(
-					'name' => esc_html__( 'Footer Column 3', 'gpt-news' ),
+					'name' => esc_html__( 'Footer Column 3', 'pps-passport' ),
 					'id'   => 'footer_column_3'
 				),
 				array(
-					'name' => esc_html__( 'Footer Column 4', 'gpt-news' ),
+					'name' => esc_html__( 'Footer Column 4', 'pps-passport' ),
 					'id'   => 'footer_column_4'
 				),
 			);
@@ -152,7 +152,7 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 				register_sidebar( array(
 					'name'          => $footer_column['name'],
 					'id'            => $footer_column['id'],
-					'description'   => esc_html__( 'This area will display in footer like a column. Add widget here to appear it in footer column.', 'gpt-news' ),
+					'description'   => esc_html__( 'This area will display in footer like a column. Add widget here to appear it in footer column.', 'pps-passport' ),
 					'before_widget' => $wrapper_before,
 					'after_widget'  => $wrapper_after,
 					'before_title'  => $title_before,
@@ -169,11 +169,11 @@ if ( ! class_exists( 'Gpt_Theme_Support' ) ) {
 		 *
 		 * @global int $content_width
 		 */
-		function gpt_content_width() {
+		function pps_content_width() {
 			// This variable is intended to be overruled from themes.
 			// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-			$GLOBALS['content_width'] = apply_filters( 'gpt_content_width', 1170 );
+			$GLOBALS['content_width'] = apply_filters( 'pps_content_width', 1170 );
 		}
 
 	}

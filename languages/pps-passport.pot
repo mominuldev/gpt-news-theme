@@ -1,0 +1,1254 @@
+# Copyright (C) 2025 Pixel Path Solution
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: PPS Passport 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/pps-passport\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-01-09T13:10:13+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: pps-passport\n"
+
+#. Theme Name of the theme
+#: style.css
+msgid "PPS Passport"
+msgstr ""
+
+#. Theme URI of the theme
+#. Author URI of the theme
+#: style.css
+msgid "https://pixelpathsolution.com/"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "PPS Passport is a clean, modern, user-friendly, fast-loading, customizable, flexible, functional, fully responsive and excellent for a news, newspaper, magazine, publishing, review, blog or other editorial websites. This theme is fully responsive, fits any size of display from lower to higher resolutions and supports all modern browsers. It also supports YouTube and Vimeo videos. This theme has multiple homepage and header variations and easy to use admin back-end. The flexible and powerful options allow you to customize the theme easily and the drag & drop page builder makes it easy to create unique and creative homepages. This theme is SEO-ready and provides a great platform to achieve super high search engine rankings for your website. This theme is translation ready."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "Pixel Path Solution"
+msgstr ""
+
+#: 404.php:37
+msgid "Oops, Page Not Found!"
+msgstr ""
+
+#: 404.php:43
+msgid "Sorry, We couldn't find the page that you're looking for. Please check the address and try again."
+msgstr ""
+
+#: 404.php:51
+msgid "Go Home"
+msgstr ""
+
+#. translators: %s: post title
+#: comments.php:36
+msgctxt "comments title"
+msgid "<span class=\"number-comments\">1</span> Comment"
+msgstr ""
+
+#: comments.php:40
+msgctxt "comments title"
+msgid "<span class=\"number-comments\">%1$s</span> Comments"
+msgid_plural "<span class=\"number-comments\">%1$s</span> Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:71
+msgid "Name *"
+msgstr ""
+
+#: comments.php:72
+msgid "Email *"
+msgstr ""
+
+#: comments.php:74
+msgid "Your Comment"
+msgstr ""
+
+#: header.php:33
+msgid "Skip to content"
+msgstr ""
+
+#: inc/class/theme-helper.php:97
+#: inc/class/theme-helper.php:158
+msgid "Home"
+msgstr ""
+
+#: inc/class/theme-helper.php:133
+#: inc/class/theme-helper.php:135
+#: inc/class/theme-helper.php:138
+msgid "Archive for: %s"
+msgstr ""
+
+#: inc/class/theme-helper.php:136
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/class/theme-helper.php:139
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/class/theme-helper.php:141
+msgid "Archive for"
+msgstr ""
+
+#: inc/class/theme-helper.php:144
+msgid "Blog Archives"
+msgstr ""
+
+#: inc/class/theme-helper.php:147
+msgid "Search Results"
+msgstr ""
+
+#: inc/class/theme-helper.php:150
+msgid "Events"
+msgstr ""
+
+#: inc/class/theme-helper.php:163
+#: inc/options/admin-option.php:613
+#: template-parts/header/page-header.php:46
+#: template-parts/header/page-header.php:67
+#: template-parts/header/page-header.php:109
+#: template-parts/header/page-header.php:124
+msgid "Blog"
+msgstr ""
+
+#: inc/class/theme-helper.php:269
+msgid "%1$s min read"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/class/theme-helper.php:285
+msgid " "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: inc/class/theme-helper.php:288
+msgid " %1$s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/class/theme-helper.php:307
+msgctxt "list item separator"
+msgid " "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: inc/class/theme-helper.php:310
+msgid "%1$s"
+msgstr ""
+
+#: inc/class/theme-helper.php:405
+msgid "by"
+msgstr ""
+
+#: inc/class/theme-helper.php:422
+msgid " Views"
+msgstr ""
+
+#: inc/class/theme-helper.php:475
+msgid "About Author"
+msgstr ""
+
+#: inc/class/theme-helper.php:547
+msgid "1 Comment"
+msgstr ""
+
+#: inc/class/theme-helper.php:549
+msgid " Comments"
+msgstr ""
+
+#: inc/class/theme-helper.php:642
+msgid "Share This Post:"
+msgstr ""
+
+#: inc/class/theme-helper.php:841
+msgid "Previous"
+msgstr ""
+
+#: inc/class/theme-helper.php:856
+msgid "Next"
+msgstr ""
+
+#: inc/class/theme-support.php:101
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/class/theme-support.php:102
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/class/theme-support.php:122
+msgid "Add widget here to appear it in sidebar."
+msgstr ""
+
+#: inc/class/theme-support.php:133
+msgid "Footer Column 1"
+msgstr ""
+
+#: inc/class/theme-support.php:137
+msgid "Footer Column 2"
+msgstr ""
+
+#: inc/class/theme-support.php:141
+msgid "Footer Column 3"
+msgstr ""
+
+#: inc/class/theme-support.php:145
+msgid "Footer Column 4"
+msgstr ""
+
+#: inc/class/theme-support.php:155
+msgid "This area will display in footer like a column. Add widget here to appear it in footer column."
+msgstr ""
+
+#: inc/class/walker-comment.php:42
+msgid "Pingback:"
+msgstr ""
+
+#: inc/class/walker-comment.php:42
+msgid "(Edit)"
+msgstr ""
+
+#: inc/class/walker-comment.php:61
+msgid "Edit"
+msgstr ""
+
+#: inc/class/walker-comment.php:66
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/class/walker-comment.php:69
+msgid "Reply"
+msgstr ""
+
+#: inc/customizer.php:34
+msgid "Header Settings"
+msgstr ""
+
+#: inc/customizer.php:42
+msgid "Mailchimp Settings"
+msgstr ""
+
+#: inc/customizer.php:72
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/customizer.php:73
+msgid "Manage your footer widget position sizes and Copyright information."
+msgstr ""
+
+#: inc/customizer.php:89
+msgid "Display on site"
+msgstr ""
+
+#: inc/customizer.php:99
+#: inc/options/meta-option.php:29
+msgid "Header Style"
+msgstr ""
+
+#: inc/customizer.php:110
+msgid "MailChimp API"
+msgstr ""
+
+#: inc/customizer.php:120
+msgid "API Key"
+msgstr ""
+
+#: inc/customizer.php:121
+msgid "Enter the mailchimp api key to use newsletter form. You can get the api here: http://bit.ly/2Vh4Opr"
+msgstr ""
+
+#: inc/customizer.php:131
+msgid "List ID"
+msgstr ""
+
+#: inc/customizer.php:132
+msgid "Enter the mailchimp list id. You can found list here: http://bit.ly/2GzQMa7"
+msgstr ""
+
+#: inc/customizer.php:187
+msgid "&copy; %1$s %2$s - Designed by %3$s"
+msgstr ""
+
+#: inc/customizer.php:190
+msgid "PixelSigns"
+msgstr ""
+
+#: inc/options/admin-option.php:10
+msgid "Theme Option"
+msgstr ""
+
+#: inc/options/admin-option.php:12
+msgid "Theme Settings"
+msgstr ""
+
+#: inc/options/admin-option.php:20
+msgid "General"
+msgstr ""
+
+#: inc/options/admin-option.php:26
+msgid "Enable Preloader"
+msgstr ""
+
+#: inc/options/admin-option.php:31
+msgid "Preloader type"
+msgstr ""
+
+#: inc/options/admin-option.php:33
+msgid "Animated Text"
+msgstr ""
+
+#: inc/options/admin-option.php:34
+msgid "Media"
+msgstr ""
+
+#: inc/options/admin-option.php:41
+msgid "Preloader Image"
+msgstr ""
+
+#: inc/options/admin-option.php:42
+msgid "Upload Your Image"
+msgstr ""
+
+#: inc/options/admin-option.php:49
+msgid "Preloader Text"
+msgstr ""
+
+#: inc/options/admin-option.php:50
+msgid "ALL RESULT BD"
+msgstr ""
+
+#: inc/options/admin-option.php:56
+msgid "Preloader background"
+msgstr ""
+
+#: inc/options/admin-option.php:64
+msgid "Text Color"
+msgstr ""
+
+#: inc/options/admin-option.php:73
+msgid "Show Back To Top"
+msgstr ""
+
+#: inc/options/admin-option.php:81
+msgid "Button Color"
+msgstr ""
+
+#: inc/options/admin-option.php:82
+#: inc/options/meta-option.php:208
+#: inc/options/meta-option.php:248
+#: inc/options/meta-option.php:283
+#: inc/options/meta-option.php:315
+msgid "Choose button color"
+msgstr ""
+
+#: inc/options/admin-option.php:91
+msgid "Button BG Color"
+msgstr ""
+
+#: inc/options/admin-option.php:92
+#: inc/options/meta-option.php:219
+#: inc/options/meta-option.php:259
+#: inc/options/meta-option.php:294
+#: inc/options/meta-option.php:326
+msgid "Choose button background color"
+msgstr ""
+
+#: inc/options/admin-option.php:101
+msgid "Button Hover BG Color"
+msgstr ""
+
+#: inc/options/admin-option.php:102
+msgid "Choose button hover background color"
+msgstr ""
+
+#: inc/options/admin-option.php:126
+msgid "Google Ads"
+msgstr ""
+
+#: inc/options/admin-option.php:134
+msgid "Header Ad On/Off"
+msgstr ""
+
+#: inc/options/admin-option.php:161
+msgid "Single Post Footer Adsense On/Off"
+msgstr ""
+
+#: inc/options/admin-option.php:179
+msgid "Enter your Google Analytics code here. EX: G-XXXXXXXXXX"
+msgstr ""
+
+#: inc/options/admin-option.php:187
+#: inc/options/meta-option.php:22
+msgid "Header"
+msgstr ""
+
+#: inc/options/admin-option.php:193
+msgid "Settings"
+msgstr ""
+
+#: inc/options/admin-option.php:200
+#: inc/options/meta-option.php:38
+msgid "Select Header Style"
+msgstr ""
+
+#: inc/options/admin-option.php:202
+#: inc/options/meta-option.php:42
+msgid "Header 1"
+msgstr ""
+
+#: inc/options/admin-option.php:203
+#: inc/options/meta-option.php:43
+msgid "Header 2"
+msgstr ""
+
+#: inc/options/admin-option.php:204
+msgid "Header 3"
+msgstr ""
+
+#: inc/options/admin-option.php:207
+msgid "Select header style for your site."
+msgstr ""
+
+#: inc/options/admin-option.php:214
+msgid "Enable Header Sticky"
+msgstr ""
+
+#: inc/options/admin-option.php:220
+msgid "Header Nav Right"
+msgstr ""
+
+#: inc/options/admin-option.php:226
+msgid "Search On/Off"
+msgstr ""
+
+#: inc/options/admin-option.php:233
+#: inc/options/meta-option.php:107
+msgid "Header Menu Style"
+msgstr ""
+
+#: inc/options/admin-option.php:239
+#: inc/options/admin-option.php:286
+#: inc/options/meta-option.php:114
+#: inc/options/meta-option.php:169
+msgid "Menu Text Color"
+msgstr ""
+
+#: inc/options/admin-option.php:240
+#: inc/options/admin-option.php:263
+#: inc/options/admin-option.php:287
+#: inc/options/meta-option.php:115
+#: inc/options/meta-option.php:135
+#: inc/options/meta-option.php:170
+msgid "You can change menu text color."
+msgstr ""
+
+#: inc/options/admin-option.php:251
+#: inc/options/admin-option.php:294
+#: inc/options/meta-option.php:124
+#: inc/options/meta-option.php:181
+msgid "Menu Text Hover Color"
+msgstr ""
+
+#: inc/options/admin-option.php:252
+#: inc/options/admin-option.php:271
+#: inc/options/admin-option.php:295
+#: inc/options/meta-option.php:125
+#: inc/options/meta-option.php:143
+#: inc/options/meta-option.php:182
+msgid "You can change menu text hover color."
+msgstr ""
+
+#: inc/options/admin-option.php:262
+msgid "Menu Dropdown Text Color"
+msgstr ""
+
+#: inc/options/admin-option.php:270
+msgid "Menu Dropdown Text Hover Color"
+msgstr ""
+
+#: inc/options/admin-option.php:280
+#: inc/options/meta-option.php:163
+msgid "Header Sticky Menu Style"
+msgstr ""
+
+#: inc/options/admin-option.php:296
+#: inc/options/admin-option.php:326
+#: inc/options/admin-option.php:342
+#: inc/options/admin-option.php:351
+#: inc/options/admin-option.php:358
+#: inc/options/admin-option.php:386
+#: inc/options/admin-option.php:393
+#: inc/options/admin-option.php:1034
+#: inc/options/meta-option.php:73
+#: inc/options/meta-option.php:82
+#: inc/options/meta-option.php:92
+#: inc/options/meta-option.php:101
+#: inc/options/meta-option.php:126
+#: inc/options/meta-option.php:183
+msgid "Upload"
+msgstr ""
+
+#: inc/options/admin-option.php:306
+#: inc/options/meta-option.php:207
+#: inc/options/meta-option.php:247
+#: inc/options/meta-option.php:282
+#: inc/options/meta-option.php:351
+msgid "Color"
+msgstr ""
+
+#: inc/options/admin-option.php:307
+#: inc/options/meta-option.php:352
+msgid "Choose burger menu color"
+msgstr ""
+
+#: inc/options/admin-option.php:319
+#: inc/options/admin-option.php:325
+msgid "Logo"
+msgstr ""
+
+#: inc/options/admin-option.php:327
+msgid "Upload your Logo for the header"
+msgstr ""
+
+#: inc/options/admin-option.php:341
+#: inc/options/meta-option.php:81
+msgid "Retina Logo Upload @2x"
+msgstr ""
+
+#: inc/options/admin-option.php:343
+#: inc/options/meta-option.php:83
+msgid "Upload your Retina Logo. This should be your Logo in double size (If your logo is 100 x 20px, it should be 200 x 40px)"
+msgstr ""
+
+#: inc/options/admin-option.php:349
+#: inc/options/meta-option.php:90
+msgid "Sticky Logo"
+msgstr ""
+
+#: inc/options/admin-option.php:350
+#: inc/options/meta-option.php:91
+msgid "Upload logo for Header Sticky and Inner Page."
+msgstr ""
+
+#: inc/options/admin-option.php:357
+#: inc/options/meta-option.php:99
+msgid "Sticky Retina Logo @2x"
+msgstr ""
+
+#: inc/options/admin-option.php:359
+msgid "Upload Retina logo for sticky header. This should be your Logo in double size (If your logo is 100 x 20px, it should be 200 x 40px)"
+msgstr ""
+
+#: inc/options/admin-option.php:378
+#: inc/options/admin-option.php:384
+msgid "Mobile Logo"
+msgstr ""
+
+#: inc/options/admin-option.php:385
+msgid "Upload logo for mobile menu."
+msgstr ""
+
+#: inc/options/admin-option.php:392
+msgid "Mobile Retina Logo @2x"
+msgstr ""
+
+#: inc/options/admin-option.php:394
+msgid "Upload Retina logo for  mobile menu. This should be your Logo in double size (If your logo is 100 x 20px, it should be 200 x 40px)"
+msgstr ""
+
+#: inc/options/admin-option.php:403
+#: inc/options/meta-option.php:428
+msgid "Footer"
+msgstr ""
+
+#: inc/options/admin-option.php:410
+#: inc/options/meta-option.php:445
+msgid "Switch Footer Dark or Light"
+msgstr ""
+
+#: inc/options/admin-option.php:412
+#: inc/options/meta-option.php:447
+msgid "Dark"
+msgstr ""
+
+#: inc/options/admin-option.php:413
+#: inc/options/meta-option.php:448
+msgid "Light"
+msgstr ""
+
+#: inc/options/admin-option.php:421
+msgid "Footer Social Show/Hide"
+msgstr ""
+
+#: inc/options/admin-option.php:428
+msgid "Padding Top/Bottom"
+msgstr ""
+
+#: inc/options/admin-option.php:441
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/options/admin-option.php:446
+msgid " Footer Style"
+msgstr ""
+
+#: inc/options/admin-option.php:452
+msgid "Footer Background Color"
+msgstr ""
+
+#: inc/options/admin-option.php:460
+msgid "Widget Title Color"
+msgstr ""
+
+#: inc/options/admin-option.php:467
+#: inc/options/admin-option.php:593
+#: inc/options/admin-option.php:1059
+msgid "Header Background"
+msgstr ""
+
+#: inc/options/admin-option.php:468
+#: inc/options/admin-option.php:594
+#: inc/options/admin-option.php:1060
+#: inc/options/meta-option.php:386
+msgid "Default: Featured image, if fail will get image from global settings."
+msgstr ""
+
+#: inc/options/admin-option.php:485
+msgid "Link Color"
+msgstr ""
+
+#: inc/options/admin-option.php:491
+msgid "Link Color Hover"
+msgstr ""
+
+#: inc/options/admin-option.php:500
+msgid " Social Link"
+msgstr ""
+
+#: inc/options/admin-option.php:506
+msgid "Icon Color"
+msgstr ""
+
+#: inc/options/admin-option.php:512
+#: inc/options/meta-option.php:304
+msgid "Border Color"
+msgstr ""
+
+#: inc/options/admin-option.php:520
+msgid "Hover Background Color"
+msgstr ""
+
+#: inc/options/admin-option.php:529
+msgid "Hover Icon Color"
+msgstr ""
+
+#: inc/options/admin-option.php:538
+#: inc/options/admin-option.php:919
+msgid "Page Header"
+msgstr ""
+
+#: inc/options/admin-option.php:544
+msgid " Page Header Settings"
+msgstr ""
+
+#: inc/options/admin-option.php:549
+msgid "Page Header Enable"
+msgstr ""
+
+#: inc/options/admin-option.php:565
+msgid "Banner Height"
+msgstr ""
+
+#: inc/options/admin-option.php:579
+msgid "Default Title"
+msgstr ""
+
+#: inc/options/admin-option.php:580
+msgid "Set the default title for the page header"
+msgstr ""
+
+#: inc/options/admin-option.php:585
+#: inc/options/admin-option.php:708
+#: inc/options/meta-option.php:402
+msgid "Title Typography"
+msgstr ""
+
+#: inc/options/admin-option.php:619
+msgid "Archive"
+msgstr ""
+
+#: inc/options/admin-option.php:627
+msgid "Blog Style"
+msgstr ""
+
+#: inc/options/admin-option.php:628
+msgid "Select blog style"
+msgstr ""
+
+#: inc/options/admin-option.php:630
+msgid "Grid"
+msgstr ""
+
+#: inc/options/admin-option.php:631
+msgid "List"
+msgstr ""
+
+#: inc/options/admin-option.php:640
+msgid "Columns"
+msgstr ""
+
+#: inc/options/admin-option.php:641
+msgid "Display number of post per row"
+msgstr ""
+
+#: inc/options/admin-option.php:654
+#: inc/options/admin-option.php:770
+#: inc/options/admin-option.php:899
+msgid "Layout"
+msgstr ""
+
+#: inc/options/admin-option.php:667
+msgid "Blog Archive Sidebar Width"
+msgstr ""
+
+#: inc/options/admin-option.php:679
+msgid "Blog Archive Sidebar Side Gap"
+msgstr ""
+
+#: inc/options/admin-option.php:700
+msgid "Word Limit"
+msgstr ""
+
+#: inc/options/admin-option.php:723
+#: inc/options/admin-option.php:862
+msgid "Hide post-meta categories?"
+msgstr ""
+
+#: inc/options/admin-option.php:731
+#: inc/options/admin-option.php:833
+msgid "Hide post-meta author?"
+msgstr ""
+
+#: inc/options/admin-option.php:738
+#: inc/options/admin-option.php:847
+msgid "Hide post-meta comments?"
+msgstr ""
+
+#: inc/options/admin-option.php:745
+#: inc/options/admin-option.php:840
+msgid "Hide post-meta date?"
+msgstr ""
+
+#: inc/options/admin-option.php:753
+#: inc/options/admin-option.php:855
+msgid "Hide post-meta view count?"
+msgstr ""
+
+#: inc/options/admin-option.php:762
+#: inc/options/menu.php:25
+msgid "Single"
+msgstr ""
+
+#: inc/options/admin-option.php:783
+msgid "Sidebar Width"
+msgstr ""
+
+#: inc/options/admin-option.php:795
+msgid "Blog Sidebar Side Gap"
+msgstr ""
+
+#: inc/options/admin-option.php:815
+msgid "Display Author Bio Box"
+msgstr ""
+
+#: inc/options/admin-option.php:822
+msgid "Share On Post"
+msgstr ""
+
+#: inc/options/admin-option.php:869
+msgid "Hide Post Navigation?"
+msgstr ""
+
+#: inc/options/admin-option.php:876
+msgid "Hide Related Post?"
+msgstr ""
+
+#: inc/options/admin-option.php:883
+msgid "Related Post Title"
+msgstr ""
+
+#: inc/options/admin-option.php:884
+msgid "Related Posts"
+msgstr ""
+
+#: inc/options/admin-option.php:892
+msgid "Page"
+msgstr ""
+
+#: inc/options/admin-option.php:913
+msgid "Project"
+msgstr ""
+
+#: inc/options/admin-option.php:925
+msgid "Enable Page Header"
+msgstr ""
+
+#: inc/options/admin-option.php:931
+msgid "Page Title"
+msgstr ""
+
+#: inc/options/admin-option.php:933
+msgid "Case Details"
+msgstr ""
+
+#: inc/options/admin-option.php:939
+#: inc/options/admin-option.php:945
+msgid "Page Header Background"
+msgstr ""
+
+#: inc/options/admin-option.php:964
+msgid "Social Link"
+msgstr ""
+
+#: inc/options/admin-option.php:966
+#: inc/options/admin-option.php:973
+#: inc/options/admin-option.php:1018
+msgid "This social profiles will display in your whole site."
+msgstr ""
+
+#: inc/options/admin-option.php:972
+msgid "Social links"
+msgstr ""
+
+#: inc/options/admin-option.php:974
+msgid "Add New"
+msgstr ""
+
+#: inc/options/admin-option.php:980
+msgid "Name"
+msgstr ""
+
+#: inc/options/admin-option.php:985
+msgid "Url"
+msgstr ""
+
+#: inc/options/admin-option.php:990
+msgid "Icon"
+msgstr ""
+
+#: inc/options/admin-option.php:997
+msgid "Facebook"
+msgstr ""
+
+#: inc/options/admin-option.php:1003
+msgid "Twitter"
+msgstr ""
+
+#: inc/options/admin-option.php:1009
+msgid "Dribbble"
+msgstr ""
+
+#: inc/options/admin-option.php:1026
+msgid "404 Page"
+msgstr ""
+
+#: inc/options/admin-option.php:1033
+msgid "Image"
+msgstr ""
+
+#: inc/options/admin-option.php:1039
+msgid "Error Title"
+msgstr ""
+
+#: inc/options/admin-option.php:1041
+msgid "The page you’ re looking for fly away"
+msgstr ""
+
+#: inc/options/admin-option.php:1046
+msgid "Description"
+msgstr ""
+
+#: inc/options/admin-option.php:1048
+msgid "Tell us what you are looking for:"
+msgstr ""
+
+#: inc/options/admin-option.php:1053
+msgid " Style"
+msgstr ""
+
+#: inc/options/admin-option.php:1077
+msgid "Error Text Color"
+msgstr ""
+
+#: inc/options/admin-option.php:1084
+#: inc/options/admin-option.php:1223
+msgid "Heading Color"
+msgstr ""
+
+#: inc/options/admin-option.php:1091
+msgid "Content Color"
+msgstr ""
+
+#: inc/options/admin-option.php:1100
+msgid "Typography"
+msgstr ""
+
+#: inc/options/admin-option.php:1105
+msgid "Body Font Settings"
+msgstr ""
+
+#: inc/options/admin-option.php:1111
+msgid "Body"
+msgstr ""
+
+#: inc/options/admin-option.php:1120
+msgid "Heading Font Settings"
+msgstr ""
+
+#: inc/options/admin-option.php:1125
+msgid "Heading H1"
+msgstr ""
+
+#: inc/options/admin-option.php:1136
+msgid "Heading H2"
+msgstr ""
+
+#: inc/options/admin-option.php:1147
+msgid "Heading H3"
+msgstr ""
+
+#: inc/options/admin-option.php:1158
+msgid "Heading H4"
+msgstr ""
+
+#: inc/options/admin-option.php:1169
+msgid "Heading H5"
+msgstr ""
+
+#: inc/options/admin-option.php:1181
+msgid "Heading H6"
+msgstr ""
+
+#: inc/options/admin-option.php:1195
+msgid "Color Scheme"
+msgstr ""
+
+#: inc/options/admin-option.php:1201
+msgid "General Color"
+msgstr ""
+
+#: inc/options/admin-option.php:1207
+msgid "Body Color"
+msgstr ""
+
+#: inc/options/admin-option.php:1215
+msgid "Body Background Color"
+msgstr ""
+
+#: inc/options/admin-option.php:1230
+msgid "Primary Color"
+msgstr ""
+
+#: inc/options/admin-option.php:1231
+msgid "Main Color Scheme"
+msgstr ""
+
+#: inc/options/admin-option.php:1257
+msgid "Backup"
+msgstr ""
+
+#: inc/options/icon.php:11
+msgid "Fontawesome Five (Free)"
+msgstr ""
+
+#: inc/options/menu.php:22
+msgid "Mega Menu Width"
+msgstr ""
+
+#: inc/options/menu.php:23
+msgid "Select an option"
+msgstr ""
+
+#: inc/options/menu.php:26
+msgid "Half Width"
+msgstr ""
+
+#: inc/options/menu.php:27
+msgid "Full Width"
+msgstr ""
+
+#: inc/options/meta-option.php:13
+msgid "Page Option"
+msgstr ""
+
+#: inc/options/meta-option.php:30
+#: inc/options/meta-option.php:436
+msgid "Yes"
+msgstr ""
+
+#: inc/options/meta-option.php:31
+#: inc/options/meta-option.php:437
+msgid "No"
+msgstr ""
+
+#: inc/options/meta-option.php:39
+msgid "Select header style"
+msgstr ""
+
+#: inc/options/meta-option.php:52
+msgid "Transparent Menu"
+msgstr ""
+
+#: inc/options/meta-option.php:72
+msgid "Logo Upload"
+msgstr ""
+
+#: inc/options/meta-option.php:74
+msgid "Upload logo for Header"
+msgstr ""
+
+#: inc/options/meta-option.php:100
+msgid "Upload Retina logo for Header Sticky."
+msgstr ""
+
+#: inc/options/meta-option.php:134
+msgid "Menu Dropdown Color"
+msgstr ""
+
+#: inc/options/meta-option.php:142
+msgid "Menu Dropdown Hover Color"
+msgstr ""
+
+#: inc/options/meta-option.php:153
+msgid "Menu Hover BG Color"
+msgstr ""
+
+#: inc/options/meta-option.php:154
+msgid "You can change menu background color."
+msgstr ""
+
+#: inc/options/meta-option.php:191
+msgid "Header Button Style"
+msgstr ""
+
+#: inc/options/meta-option.php:198
+msgid "Nav Button"
+msgstr ""
+
+#: inc/options/meta-option.php:218
+#: inc/options/meta-option.php:293
+msgid "BG Color"
+msgstr ""
+
+#: inc/options/meta-option.php:229
+msgid "Border"
+msgstr ""
+
+#: inc/options/meta-option.php:237
+msgid "Border Radius"
+msgstr ""
+
+#: inc/options/meta-option.php:258
+#: inc/options/meta-option.php:325
+msgid "Hover BG Color"
+msgstr ""
+
+#: inc/options/meta-option.php:269
+msgid "Hover Border"
+msgstr ""
+
+#: inc/options/meta-option.php:276
+msgid "Header Sticky Button Style"
+msgstr ""
+
+#: inc/options/meta-option.php:306
+#: inc/options/meta-option.php:338
+msgid "Choose button border color"
+msgstr ""
+
+#: inc/options/meta-option.php:314
+msgid "Hover Color"
+msgstr ""
+
+#: inc/options/meta-option.php:336
+msgid "Hover Border Color"
+msgstr ""
+
+#: inc/options/meta-option.php:345
+msgid "Burger Menu Style"
+msgstr ""
+
+#: inc/options/meta-option.php:372
+msgid "Page Header Option"
+msgstr ""
+
+#: inc/options/meta-option.php:374
+msgid "Default"
+msgstr ""
+
+#: inc/options/meta-option.php:375
+msgid "Enabled"
+msgstr ""
+
+#: inc/options/meta-option.php:376
+msgid "Disabled"
+msgstr ""
+
+#: inc/options/meta-option.php:385
+msgid "Header Image"
+msgstr ""
+
+#: inc/options/meta-option.php:395
+msgid "Custom Title"
+msgstr ""
+
+#: inc/options/meta-option.php:396
+msgid "Set custom title for the page header. Default: The post title."
+msgstr ""
+
+#: inc/options/meta-option.php:409
+msgid "Title Color"
+msgstr ""
+
+#: inc/options/meta-option.php:417
+msgid "Header Breadcrumbs"
+msgstr ""
+
+#: inc/options/meta-option.php:418
+msgid "Display breadcrumbs on the page header"
+msgstr ""
+
+#: inc/options/meta-option.php:435
+msgid "Footer Style"
+msgstr ""
+
+#: inc/options/meta-option.php:457
+msgid "Padding Top"
+msgstr ""
+
+#: inc/options/meta-option.php:468
+msgid "Footer Background"
+msgstr ""
+
+#: inc/options/meta-option.php:469
+msgid "Choose footer background color"
+msgstr ""
+
+#: inc/tgm/init.php:34
+msgid "PPS Passport Core"
+msgstr ""
+
+#: inc/tgm/init.php:42
+msgid "Elementor"
+msgstr ""
+
+#: inc/tgm/init.php:48
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/tgm/init.php:54
+msgid "Codestar Framework"
+msgstr ""
+
+#: page.php:31
+msgid "Read more!"
+msgstr ""
+
+#: page.php:32
+msgid "Pages"
+msgstr ""
+
+#: search.php:23
+#: template-parts/header/page-header.php:95
+#: template-parts/header/page-header.php:97
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:44
+#: template-parts/content-none.php:14
+#: template-parts/post/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: search.php:50
+#: template-parts/content-none.php:36
+#: template-parts/post/content-none.php:33
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: search.php:56
+#: search.php:67
+msgid "Take me home"
+msgstr ""
+
+#: search.php:60
+#: template-parts/content-none.php:44
+#: template-parts/post/content-none.php:36
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: searchform.php:12
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Account Template"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:23
+#: template-parts/post/content-none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-page.php:21
+#: template-parts/post/single/post.php:19
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-search.php:34
+#: template-parts/post/content.php:91
+msgid "Read More"
+msgstr ""
+
+#: template-parts/footer/site-info.php:21
+msgid "&copy; %1$s %2$s - All Rights Reserved. Developed By %3$s"
+msgstr ""
+
+#: template-parts/footer/site-info.php:22
+msgid "Mominul"
+msgstr ""
+
+#: template-parts/header/header-one.php:187
+#: template-parts/header/header-three.php:154
+#: template-parts/header/header-two.php:157
+msgid "Add Menu"
+msgstr ""
+
+#: template-parts/header/header-three.php:77
+msgid "Follow Us:"
+msgstr ""
+
+#: template-parts/header/page-header.php:53
+msgid "Support Details"
+msgstr ""
+
+#: template-parts/header/page-header.php:104
+msgid "All Events"
+msgstr ""
+
+#: template-parts/header/page-header.php:122
+msgid "404"
+msgstr ""

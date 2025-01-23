@@ -51,7 +51,7 @@
 		}
 	}
 
-	.gpt-hamburger {
+	.pps-hamburger {
 		width: 24px;
 		cursor: pointer;
 
@@ -112,7 +112,7 @@
 			}
 		}
 
-		.gpt-hamburger {
+		.pps-hamburger {
 			.bar {
 				background: $heading-color;
 			}
@@ -127,7 +127,7 @@
 	}
 
 	&.header_dark {
-		.gpt-hamburger {
+		.pps-hamburger {
 			.bar {
 				background: $heading-color;
 			}
@@ -218,7 +218,7 @@
 						margin-bottom: 0 !important;
 					}
 
-					.gpt-list, .elementor-icon-list-items {
+					.pps-list, .elementor-icon-list-items {
 						li {
 							display: flex !important;
 
@@ -321,7 +321,7 @@
 							}
 
 							&.current-menu-item {
-								a:not(.gpt-btn-link) {
+								a:not(.pps-btn-link) {
 									color: $primary-color;
 								}
 							}
@@ -357,7 +357,7 @@
 							margin-right: 0;
 							line-height: 36px;
 
-							a:not(.gpt-btn-link) {
+							a:not(.pps-btn-link) {
 								font-size: 14px;
 								padding: 7px 25px;
 								display: block;
@@ -439,7 +439,7 @@
 		.nav-right {
 			margin-left: 40px;
 
-			.gpt-btn {
+			.pps-btn {
 				padding: 8px 26px;
 				min-width: auto;
 			}
@@ -526,14 +526,14 @@
 		display: inline-flex;
 	}
 
-	.gpt-btn {
+	.pps-btn {
 		display: inline-block !important;
 		padding: 5px 35px;
 		font-family: $secondary-font-family;
 
 	}
 
-	.gpt__list {
+	.pps__list {
 		li {
 			margin-bottom: 0;
 
@@ -665,7 +665,7 @@
 			}
 		}
 
-		.gpt-hamburger {
+		.pps-hamburger {
 			display: block;
 		}
 
@@ -725,7 +725,7 @@
 				padding: 0 10px;
 				position: relative;
 
-				a:not(.gpt-btn-link) {
+				a:not(.pps-btn-link) {
 					font-size: 14px;
 					color: $heading-color;
 					position: relative;
@@ -751,7 +751,7 @@
 					}
 				}
 
-				.gpt-btn-link {
+				.pps-btn-link {
 					padding: 11px 35px;
 				}
 
@@ -958,7 +958,7 @@
 }
 
 
-.gpt-menu-item {
+.pps-menu-item {
 	transition: all 0.3s ease-in-out;
 	border-radius: 0.375rem;
 

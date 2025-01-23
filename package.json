@@ -1,6 +1,6 @@
 {
-    "name": "gpt-news",
-    "projectname": "gpt-news",
+    "name": "pps-passport",
+    "projectname": "pps-passport",
     "version": "1.0.0",
     "description": "Gpt News wordpress theme",
     "main": "index.js",
@@ -9,8 +9,8 @@
         "build": "gulp build --prod",
         "bundle": "gulp bundle --prod --nosours",
         "prod": "gulp prod --prod",
-        "pot": "wp i18n make-pot . languages/gpt-news.pot",
-        "zip": "wp i18n make-pot . languages/gpt-news.pot && gulp compress"
+        "pot": "wp i18n make-pot . languages/pps-passport.pot",
+        "zip": "wp i18n make-pot . languages/pps-passport.pot && gulp compress"
     },
     "author": "GpTheme",
     "license": "ISC",

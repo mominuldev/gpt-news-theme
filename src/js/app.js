@@ -81,9 +81,9 @@ var MOMIN = MOMIN || {};
 
 
             // Back To Top
-            var gptScrollTop = document.querySelector(".gpt-scroll-top");
-            if (gptScrollTop != null) {
-                var scrollProgressPatch = document.querySelector(".gpt-scroll-top path");
+            var ppsScrollTop = document.querySelector(".pps-scroll-top");
+            if (ppsScrollTop != null) {
+                var scrollProgressPatch = document.querySelector(".pps-scroll-top path");
                 var pathLength = scrollProgressPatch.getTotalLength();
                 var offset = 50;
                 scrollProgressPatch.style.transition = scrollProgressPatch.style.WebkitTransition = "none";
@@ -99,12 +99,12 @@ var MOMIN = MOMIN || {};
                     scrollProgressPatch.style.strokeDashoffset = progress;
                     var scrollElementPos = document.body.scrollTop || document.documentElement.scrollTop;
                     if (scrollElementPos >= offset) {
-                        gptScrollTop.classList.add("progress-done");
+                        ppsScrollTop.classList.add("progress-done");
                     } else {
-                        gptScrollTop.classList.remove("progress-done");
+                        ppsScrollTop.classList.remove("progress-done");
                     }
                 });
-                gptScrollTop.addEventListener("click", function (e) {
+                ppsScrollTop.addEventListener("click", function (e) {
                     e.preventDefault();
                     window.scroll({
                         top: 0,
@@ -125,7 +125,7 @@ var MOMIN = MOMIN || {};
             $("#page-open-main-menu").on('click', function (e) {
                 e.preventDefault();
                 $popup.addClass('open');
-                $(".gpt-hamburger").addClass('active');
+                $(".pps-hamburger").addClass('active');
                 $body.addClass('page-popup-open');
                 $("html").addClass("no-scroll sidebar-open").height(window.innerHeight + "px");
             });
@@ -137,7 +137,7 @@ var MOMIN = MOMIN || {};
                 $popup.removeClass('open');
                 $('.sub-menu, .sub-menu-wide').removeAttr('style');
                 $("html").removeClass("no-scroll sidebar-open").height("auto");
-                $(".gpt-hamburger").removeClass('active');
+                $(".pps-hamburger").removeClass('active');
                 $('.sub-menu, .sub-menu-wide').removeAttr('style');
                 $('.has-submenu .menu-link').removeClass('active');
             });
@@ -196,6 +196,31 @@ var MOMIN = MOMIN || {};
                 }
             });
 
+            var relatedPostSwiper = new Swiper('.related-post-slider', {
+                speed: 700,
+                // loop: true,
+                spaceBetween: 20,
+                autoplay: {
+                    delay: 2000,
+                },
+                // Pagination
+                pagination: {
+                    el: '.post-slider-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                    620: {
+                        slidesPerView: 2,
+                    },
+                    320: {
+                        slidesPerView: 1,
+                    }
+                }
+            });
+
 
 
             $('#search-input').on('keyup', function() {
@@ -203,7 +228,7 @@ var MOMIN = MOMIN || {};
 
                 if (searchTerm.length >= 1) {
                     $.ajax({
-                        url: gpt_scripts_vars.ajaxurl, // WordPress-specific ajax URL
+                        url: pps_scripts_vars.ajaxurl, // WordPress-specific ajax URL
                         type: 'POST',
                         data: {
                             action: 'ajax_search', // PHP function hook name

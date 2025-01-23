@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GPT News 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/gpt-news\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/pps-passport\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 #. Theme URI of the theme
 #. Author URI of the theme
 #: style.css
-msgid "https://gptheme.com/"
+msgid "https://ppsheme.com/"
 msgstr ""
 
 #. Description of the theme

@@ -350,7 +350,7 @@
 		position: relative;
 	}
 
-	.gpt-blog-content {
+	.pps-blog-content {
 		padding: 30px;
 
 		@media(max-width: 575px) {
@@ -439,7 +439,7 @@
 	.read-more {
 		margin-top: 25px;
 
-		.gpt-btn.btn-sm {
+		.pps-btn.btn-sm {
 			padding: 12px 25px;
 			font-size: 15px;
 			border-color: #e5e5e5;
@@ -493,11 +493,10 @@ ul.entry-meta {
 	}
 
 	li {
-		font-family: $font__heading;
-		text-transform: uppercase;
+
 		color: #666;
 		font-size: 14px;
-		font-weight: 700;
+		font-weight: 500;
 		display: inline-flex;
 		align-items: center;
 		gap: 4px;
@@ -653,6 +652,15 @@ ul.entry-meta {
 	}
 }
 
+.blog-single-header {
+	padding: 100px 0;
+	background: #ffe4e4;
+
+	.single-post-title {
+		font-weight: 700;
+	}
+}
+
 .post-single {
 	.author-meta {
 		display: flex;
@@ -734,7 +742,7 @@ h3.post-share-title {
 	}
 }
 
-.gpt-btn-link {
+.pps-btn-link {
 	display: flex;
 	align-items: center;
 	font-size: 15px;
@@ -780,7 +788,7 @@ h3.post-share-title {
 	.post-nav-thumbnail {
 		width: 70px;
 		height: 70px;
-		border-radius: 5px;
+		border-radius: 2px;
 		overflow: hidden;
 		position: relative;
 		z-index: 1;
@@ -1383,7 +1391,7 @@ blockquote, .wp-block-quote {
 
 // New Style Blog
 
-.gpt-post-category {
+.pps-post-category {
 	margin-bottom: 10px;
 
 	a {
@@ -1451,7 +1459,7 @@ aside.sidebar {
 	.widget {
 		padding: 30px;
 		background: #f1f1f1;
-		border-radius: 6px;
+		border-radius: 4px;
 	}
 
 	@media(min-width: 992px) {

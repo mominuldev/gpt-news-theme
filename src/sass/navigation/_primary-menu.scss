@@ -16,7 +16,7 @@
 
 	.top-bar {
 		background: $color__bg;
-		padding: 10px 0;
+		padding: 5px 0;
 
 		@media(max-width: 991px) {
 			display: none;
@@ -106,8 +106,6 @@
 		}
 	}
 
-
-
 	.site-logo {
 		.site-title {
 			font-size: 34px;
@@ -163,7 +161,7 @@
 
 	.add-menu {
 		margin: 0;
-		padding: 31px 0;
+		padding: 25px 0;
 		list-style: none;
 		font-weight: 500;
 
@@ -182,7 +180,7 @@
 		padding: 11px 35px;
 	}
 
-	.gpt-hamburger {
+	.pps-hamburger {
 		width: 24px;
 		cursor: pointer;
 
@@ -215,7 +213,7 @@
 	}
 
 	&.header_light {
-		.gpt-hamburger {
+		.pps-hamburger {
 			.bar {
 				background: #fff;
 			}
@@ -269,7 +267,7 @@
 			}
 		}
 
-		.gpt-hamburger {
+		.pps-hamburger {
 			.bar {
 				background: $white;
 			}
@@ -310,7 +308,7 @@
 			}
 		}
 
-		.gpt-btn {
+		.pps-btn {
 			@media(min-width: 992px) and (max-width: 1200px) {
 				font-size: 14px;
 				padding: 14px 20px;
@@ -345,7 +343,7 @@
 
 			> a {
 				font-size: 16px;
-				font-weight: 500;
+				font-weight: 400;
 				color: #fff;
 				position: relative;
 				line-height: 1;
@@ -679,17 +677,17 @@
 
 	&.header-two {
 		.top-bar {
-			background: $color__theme-secondary;
+			background: $color__theme;
 		}
 
-		.gpt-topbar-date {
+		.pps-topbar-date {
 			color: #fff;
 			font-weight: 600;
 		}
 
 		@media(min-width: 992px) {
 			.header-menu {
-				background: #fff;
+				background: #f6f6f6;
 			}
 		}
 
@@ -704,7 +702,7 @@
 			}
 
 			> a {
-				font-weight: 600;
+				font-weight: 400;
 				color: $color__body;
 
 				&:before {
@@ -1347,7 +1345,7 @@ h3.trending-post-title {
 }
 
 
-ul.gpt-social-link {
+ul.pps-social-link {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -1356,19 +1354,19 @@ ul.gpt-social-link {
 
 	li {
 		a {
-			border-radius: 8px;
+			border-radius: 2px;
 			border: 1px solid rgba(255, 255, 255, 0.36);
 			color: #fff;
-			height: 30px;
-			width: 30px;
+			height: 28px;
+			width: 28px;
 			display: inline-flex;
 			justify-content: center;
 			align-items: center;
-			font-size: 14px;
+			font-size: 13px;
 
 			&:hover {
-				background: #000;
-				border-color: #000;
+				background: $color__theme-secondary;
+				border-color: $color__theme-secondary;
 				color: #fff;
 			}
 		}
@@ -1427,7 +1425,7 @@ ul.gpt-social-link {
 		display: none;
 	}
 
-	.gpt-hamburger {
+	.pps-hamburger {
 		text-align: right;
 		.bar {
 			//background: #000000;

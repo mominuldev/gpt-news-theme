@@ -5,9 +5,9 @@ if( class_exists( 'CSF' ) ) {
 	//
 	// Create a widget 1
 	//
-	CSF::createWidget( 'gpt_social_links', array(
+	CSF::createWidget( 'pps_social_links', array(
 		'title'       => 'Gpt Social Links',
-		'classname'   => 'gpt_social_links',
+		'classname'   => 'pps_social_links',
 		'description' => 'A widget for sidebar social links.',
 		'fields'      => array(
 
@@ -32,8 +32,8 @@ if( class_exists( 'CSF' ) ) {
 	// Front-end display of widget example 1
 	// Attention: This function named considering above widget base id.
 	//
-	if( ! function_exists( 'gpt_social_links' ) ) {
-		function gpt_social_links( $args, $instance ) {
+	if( ! function_exists( 'pps_social_links' ) ) {
+		function pps_social_links( $args, $instance ) {
 
 			echo $args['before_widget'];
 
@@ -42,7 +42,7 @@ if( class_exists( 'CSF' ) ) {
 			}
 
 			// Output generated fields
-			$social_links = gpt_option( 'social_links' );
+			$social_links = pps_option( 'social_links' );
 
 			if ( $instance['show_social_links'] && ! empty( $social_links ) ) {
 				?>

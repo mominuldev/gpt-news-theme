@@ -5,25 +5,25 @@
  * @package mominul
  */
 
-$meta = get_post_meta( get_the_ID(), 'gpt_page_options', true );
+$meta = get_post_meta( get_the_ID(), 'pps_page_options', true );
 
 $container            = $transparent = '';
-$is_fixed             = gpt_option( 'header_sticky' );
-$mobile_is_fixed      = gpt_option( 'header_sticky_mobile' );
-$mobile_menu          = gpt_option( 'mobile_resolution', '992' );
-$fixed_initial_offset = gpt_option( 'sticky_offset' );
-$header_color         = gpt_option( 'header_color' );
-$transparent_menu     = gpt_option( 'transparent_menu' );
-$sticky               = gpt_option( 'sticky_logo' );
+$is_fixed             = pps_option( 'header_sticky' );
+$mobile_is_fixed      = pps_option( 'header_sticky_mobile' );
+$mobile_menu          = pps_option( 'mobile_resolution', '992' );
+$fixed_initial_offset = pps_option( 'sticky_offset' );
+$header_color         = pps_option( 'header_color' );
+$transparent_menu     = pps_option( 'transparent_menu' );
+$sticky               = pps_option( 'sticky_logo' );
 $meta_transparent     = ! empty( $meta['meta_transparent_menu'] ) ? $meta['meta_transparent_menu'] : '';
 $meta_header_color    = isset( $meta['meta_header_color'] ) ? $meta['meta_header_color'] : '';
 $logo_contrast        = ! empty( $sticky['url'] ) ? $sticky['url'] : '';
 $logo_contrast        = ! empty( $meta['meta_sticky_logo']['url'] ) ? $meta['meta_sticky_logo']['url'] : $logo_contrast;
 $header_type          = isset( $meta['meta_header_type'] ) ? $meta['meta_header_type'] : '';
-$mobile_logo          = gpt_option( 'mobile_logo' );
-$mobile_retina_logo   = gpt_option( 'mobile_retina_logo' );
-$nav_btn              = gpt_option( 'nav_btn' );
-$header_ad            = gpt_option( 'header_ad' );
+$mobile_logo          = pps_option( 'mobile_logo' );
+$mobile_retina_logo   = pps_option( 'mobile_retina_logo' );
+$nav_btn              = pps_option( 'nav_btn' );
+$header_ad            = pps_option( 'header_ad' );
 $meta_nav_btn         = isset( $meta['meta_nav_button'] ) ? $meta['meta_nav_button'] : '';
 
 if ( $meta_nav_btn == true || $meta_nav_btn == 1 ) {
@@ -33,12 +33,12 @@ if ( $meta_nav_btn == true || $meta_nav_btn == 1 ) {
 }
 
 // Top Bar Options
-$top_bar = gpt_option( 'topbar_enable' );
-$phone   = gpt_option( 'topbar_phone' );
-$email   = gpt_option( 'topbar_email' );
-$address = gpt_option( 'topbar_location' );
-$cart    = gpt_option( 'topbar_cart' );
-$login   = gpt_option( 'topbar_login' );
+$top_bar = pps_option( 'topbar_enable' );
+$phone   = pps_option( 'topbar_phone' );
+$email   = pps_option( 'topbar_email' );
+$address = pps_option( 'topbar_location' );
+$cart    = pps_option( 'topbar_cart' );
+$login   = pps_option( 'topbar_login' );
 
 $header_classes = '';
 
@@ -74,8 +74,8 @@ if ( $header_type == true || $header_type == 1 ) {
         <div class="container">
             <div class="top-bar-inner">
                 <div class="top-bar-left">
-                    <span class="follow-title"><?php echo esc_html__('Follow Us:', 'gpt-news') ?></span>
-	                <?php  Gpt_Theme_Helper::social_link(); ?>
+                    <span class="follow-title"><?php echo esc_html__('Follow Us:', 'pps-passport') ?></span>
+	                <?php  PPS_Theme_Helper::social_link(); ?>
                 </div>
 
                 <div class="topbar-right">
@@ -98,7 +98,7 @@ if ( $header_type == true || $header_type == 1 ) {
             <div class="header-middle-inner">
                 <div class="header-middle text-center">
                     <div class="site-logo">
-						<?php Gpt_Theme_Helper::branding_logo(); ?>
+						<?php PPS_Theme_Helper::branding_logo(); ?>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@ if ( $header_type == true || $header_type == 1 ) {
 							);
 						} else {
 							echo '<ul class="add-menu clearfix"><li><a target="_blank" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_html__( 'Add Menu',
-									'gpt-news' ) . '</a></li></ul>';
+									'pps-passport' ) . '</a></li></ul>';
 						}
 
 						?>
@@ -161,8 +161,8 @@ if ( $header_type == true || $header_type == 1 ) {
                     <!-- /.main-menu -->
                 </div><!-- #menu-wrapper -->
 				<?php
-				$search_btn  = gpt_option( 'header_search' );
-				$canvas_menu = gpt_option( 'canvas_menu' );
+				$search_btn  = pps_option( 'header_search' );
+				$canvas_menu = pps_option( 'canvas_menu' );
 
 				if ( $search_btn == true ): ?>
                     <div class="nav-right">
@@ -176,7 +176,7 @@ if ( $header_type == true || $header_type == 1 ) {
                     </div>
 				<?php endif; ?>
 
-                <div class="gpt-hamburger" id="page-open-main-menu" tabindex="1">
+                <div class="pps-hamburger" id="page-open-main-menu" tabindex="1">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -190,7 +190,7 @@ if ( $header_type == true || $header_type == 1 ) {
         <div class="header-middle-center my-5">
             <div class="header-google-add mx-auto">
 				<?php
-//				$header_google_add = gpt_option( 'header_google_ad' );
+//				$header_google_add = pps_option( 'header_google_ad' );
 //
 //				if ( $header_google_add ) {
 //					echo $header_google_add;

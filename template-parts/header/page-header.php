@@ -4,11 +4,11 @@
  */
 
 
-$page_header = gpt_option( 'page_header', true );
-$page_header_img = gpt_option( 'page_header_image' );
-$page_header_title = gpt_option( 'page_header_default_title' );
-$page_header_crumb = gpt_option( 'page_breadcrumbs', true );
-$support_signle_title = gpt_option( 'support_single_title', true );
+$page_header = pps_option( 'page_header', true );
+$page_header_img = pps_option( 'page_header_image' );
+$page_header_title = pps_option( 'page_header_default_title' );
+$page_header_crumb = pps_option( 'page_breadcrumbs', true );
+$support_signle_title = pps_option( 'support_single_title', true );
 
 $banner_disp = true;
 $banner_image = '';
@@ -43,20 +43,20 @@ if ( is_singular() ) {
 		if ( !empty ( $page_signle_title ) ) {
 			$banner_title = $page_signle_title;
 		} else {
-			$banner_title = esc_html__( 'Blog', 'gpt-news' );
+			$banner_title = esc_html__( 'Blog', 'pps-passport' );
 		}
 
-	} elseif ( is_singular( 'gpt_support' ) ) {
+	} elseif ( is_singular( 'pps_support' ) ) {
 		if ( !empty ( $support_signle_title ) ) {
 			$banner_title = $support_signle_title;
 		} else {
-			$banner_title = esc_html__( 'Support Details', 'gpt-news' );
+			$banner_title = esc_html__( 'Support Details', 'pps-passport' );
 		}
 	} else {
 
 		global $post;
 
-		$meta = get_post_meta( $post->ID, 'gpt_page_options', true );
+		$meta = get_post_meta( $post->ID, 'pps_page_options', true );
 
 		if ( is_array( $meta ) ) {
 
@@ -64,7 +64,7 @@ if ( is_singular() ) {
 				$banner_title = $meta['custom_title'];
 
 			} elseif ( get_post_type( get_the_ID() ) == 'post' ) {
-				$banner_title = esc_html__( 'Blog', 'gpt-news' );
+				$banner_title = esc_html__( 'Blog', 'pps-passport' );
 
 			} elseif ( is_page() ) {
 				$banner_title = get_the_title( $post->ID );
@@ -92,24 +92,24 @@ if ( is_singular() ) {
 
 } elseif ( is_search() ) {
 	if ( have_posts() ) {
-		$banner_title = sprintf( esc_html__( 'Search Results for: %s', 'gpt-news' ), '<span>' . get_search_query() . '</span>' );
+		$banner_title = sprintf( esc_html__( 'Search Results for: %s', 'pps-passport' ), '<span>' . get_search_query() . '</span>' );
 	} else {
-		$banner_title = sprintf( esc_html__( 'Search Results for: %s', 'gpt-news' ), '<span>' . get_search_query() . '</span>' );
+		$banner_title = sprintf( esc_html__( 'Search Results for: %s', 'pps-passport' ), '<span>' . get_search_query() . '</span>' );
 	}
 
 } elseif ( is_archive() ) {
 	$banner_title = get_the_archive_title();
 
 } elseif ( is_post_type_archive( 'tribe_events' ) ) {
-	$banner_title = esc_html__( 'All Events', 'gpt-news' );
+	$banner_title = esc_html__( 'All Events', 'pps-passport' );
 }
 
 elseif ( is_home() && !is_front_page() ) {
 	$postId = get_option( 'page_for_posts' );
-	$banner_title = esc_html__( 'Blog', 'gpt-news' );
+	$banner_title = esc_html__( 'Blog', 'pps-passport' );
 
 	if ( !empty( $postId ) ) {
-		$meta = get_post_meta( $postId, 'gpt_page_options', true );
+		$meta = get_post_meta( $postId, 'pps_page_options', true );
 		if ( !empty( $meta['custom_title'] ) ) {
 			$banner_title = $meta['custom_title'];
 		} else {
@@ -119,9 +119,9 @@ elseif ( is_home() && !is_front_page() ) {
 } elseif ( is_page() ) {
 	$banner_title = get_the_title();
 } elseif ( is_404() ) {
-	$banner_title = esc_html__( '404', 'gpt-news' );
+	$banner_title = esc_html__( '404', 'pps-passport' );
 } else {
-	$banner_title = esc_html__( 'Blog', 'gpt-news' );
+	$banner_title = esc_html__( 'Blog', 'pps-passport' );
 }
 
 if ( $banner_disp == false ) {

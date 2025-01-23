@@ -23,14 +23,14 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 // Get Page Title
 $page_title = get_the_title();
-$header_style = gpt_option( 'header_style' );
+$header_style = pps_option( 'header_style' );
 
 
-//do_action( 'gpt_after_body' ); ?>
+//do_action( 'pps_after_body' ); ?>
 
 <div id="site-content" class="site">
     <a class="skip-link screen-reader-text"
-       href="#content"><?php esc_html_e( 'Skip to content', 'gpt-news' ); ?></a>
+       href="#content"><?php esc_html_e( 'Skip to content', 'pps-passport' ); ?></a>
 	<?php
 
 	get_template_part( 'template-parts/popup-search' );

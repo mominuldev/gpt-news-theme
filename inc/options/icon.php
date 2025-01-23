@@ -3,12 +3,12 @@
 //
 // Add font-awesome 5.x icons array
 //
-function gpt_codstar_fontawesomefive_icons($icons)
+function pps_codstar_fontawesomefive_icons($icons)
 {
 
     // add FA 5.x icons
     $icons[] = array(
-        'title' => __('Fontawesome Five (Free)', 'gpt-news'),
+        'title' => __('Fontawesome Five (Free)', 'pps-passport'),
         'icons' => array(
             'fab fa-500px',
             'fab fa-accessible-icon',
@@ -1455,4 +1455,4 @@ function gpt_codstar_fontawesomefive_icons($icons)
 
 }
 
-add_filter('csf_field_icon_add_icons', 'gpt_codstar_fontawesomefive_icons');
+add_filter('csf_field_icon_add_icons', 'pps_codstar_fontawesomefive_icons');

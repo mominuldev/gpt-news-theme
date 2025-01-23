@@ -79,11 +79,11 @@ if ( ! function_exists( 'Gpt_Mega_Menu_walker' ) ) {
 
 add_filter( 'wp_nav_menu_args', 'Gpt_Mega_Menu_walker' );
 
-function gpt_megamenu_remove_hoverintent_delay( $array ) {
+function pps_megamenu_remove_hoverintent_delay( $array ) {
 	$array['interval'] = 0;
 	$array['timeout'] = 0;
 
 	return $array;
 }
 
-add_filter( 'megamenu_javascript_localisation', 'gpt_megamenu_remove_hoverintent_delay', 10, 1 );
+add_filter( 'megamenu_javascript_localisation', 'pps_megamenu_remove_hoverintent_delay', 10, 1 );

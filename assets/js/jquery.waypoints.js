@@ -209,10 +209,10 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
   }
 
   /* Private */
-  Context.prototype.checkEgpty = function() {
-    var horizontalEgpty = this.Adapter.isEgptyObject(this.waypoints.horizontal)
-    var verticalEgpty = this.Adapter.isEgptyObject(this.waypoints.vertical)
-    if (horizontalEgpty && verticalEgpty) {
+  Context.prototype.checkEppsy = function() {
+    var horizontalEppsy = this.Adapter.isEppsyObject(this.waypoints.horizontal)
+    var verticalEppsy = this.Adapter.isEppsyObject(this.waypoints.vertical)
+    if (horizontalEppsy && verticalEppsy) {
       this.adapter.off('.waypoints')
       delete contexts[this.key]
     }
@@ -315,7 +315,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
   /* Private */
   Context.prototype.remove = function(waypoint) {
     delete this.waypoints[waypoint.axis][waypoint.key]
-    this.checkEgpty()
+    this.checkEppsy()
   }
 
   /* Private */
@@ -599,7 +599,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
   $.each([
     'extend',
     'inArray',
-    'isEgptyObject'
+    'isEppsyObject'
   ], function(i, method) {
     JQueryAdapter[method] = $[method]
   })

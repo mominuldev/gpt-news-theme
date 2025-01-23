@@ -1261,21 +1261,21 @@ table.mce-item-table thead ~ tbody > tr > th {
 }
 
 /* Social Icons */
-.gpt-block-social-link {
+.pps-block-social-link {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.gpt-block-social-link li {
+.pps-block-social-link li {
     display: inline-block;
 }
 
-.gpt-block-social-link li:not(:last-child) {
+.pps-block-social-link li:not(:last-child) {
     margin-right: 10px;
 }
 
-.gpt-block-social-link li a {
+.pps-block-social-link li a {
     height: 40px;
     width: 40px;
     line-height: 39px;
@@ -1288,7 +1288,7 @@ table.mce-item-table thead ~ tbody > tr > th {
     transition: all 0.3s ease-in-out;
 }
 
-.gpt-block-social-link li a:hover {
+.pps-block-social-link li a:hover {
     background: #ff6344;
     border-color: #ff6344;
     box-shadow: 0 20px 30px 0 rgba(255, 99, 68, 0.34);
@@ -1402,21 +1402,21 @@ a:hover {
 
 
 
-.gpt-block-contact-info {
+.pps-block-contact-info {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.gpt-block-contact-info li {
+.pps-block-contact-info li {
     margin-bottom: 10px;
     position: relative;
 }
 
-.gpt-block-contact-info li svg {
+.pps-block-contact-info li svg {
     margin-right: 10px;
 }
 
-.gpt-block-contact-info li svg path {
+.pps-block-contact-info li svg path {
     stroke: #111921;
 }

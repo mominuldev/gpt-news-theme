@@ -133,7 +133,7 @@ p {
 }
 
 @media(max-width: 991px) {
-	.gpt-order-2 {
+	.pps-order-2 {
 		order: 2;
 	}
 }
@@ -151,11 +151,11 @@ p {
 	font-weight: 500 !important;
 }
 
-.gpt-slider-pagination {
+.pps-slider-pagination {
 	height: 40px;
 }
 
-.gpt-portfolio-pagination {
+.pps-portfolio-pagination {
 	margin: 45px auto 0;
 	width: max-content;
 }
@@ -166,7 +166,7 @@ p {
 
 @media (min-width: 1200px) {
 	.container, .container-lg, .container-md, .container-sm, .container-xl {
-	    max-width: 1310px;
+	    max-width: 1230px;
 	}
 }
 
@@ -250,7 +250,7 @@ figure {
 	height: max-content;
 }
 
-.gpt-image-order-2 {
+.pps-image-order-2 {
 	order: 2;
 }
 
@@ -325,7 +325,7 @@ figure {
 }
 
 
-.gpt-parallax-layer {
+.pps-parallax-layer {
 	width: max-content;
 }
 

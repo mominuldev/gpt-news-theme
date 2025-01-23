@@ -4,35 +4,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 /**
  * Gpt Theme Helper
- * @class        Gpt_Theme_Helper
+ * @class        PPS_Theme_Helper
  * @version      1.0
  * @category     Class
  * @author       GptIslam
  */
 
-if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
-	class Gpt_Theme_Helper {
+if ( ! class_exists( 'PPS_Theme_Helper' ) ) {
+	class PPS_Theme_Helper {
 
 		/**
 		 * Constructor
 		 */
 		function __construct() {
-			add_action( 'wp_body_open', array( $this, 'gpt_preloader_markup' ), 1 );
-			add_action( 'gpt_after_footer', [ $this, 'gpt_backtotop' ] );
-            add_action( 'wp_head', [ $this, 'gpt_google_analytics' ] );
+			add_action( 'wp_body_open', array( $this, 'pps_preloader_markup' ), 1 );
+			add_action( 'pps_after_footer', [ $this, 'pps_backtotop' ] );
+			add_action( 'wp_head', [ $this, 'pps_google_analytics' ] );
 		}
 
-		public function gpt_backtotop() {
-			$backtotop = gpt_option( 'back_to_top_switch' );
+		public function pps_backtotop() {
+			$backtotop = pps_option( 'back_to_top_switch' );
 			if ( $backtotop == '1' ) { ?>
-                <div class="gpt-scroll-top progress-done">
+                <div class="pps-scroll-top progress-done">
                     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
                               style="transition: stroke-dashoffset 10ms linear 0s;
                         stroke-dasharray: 307.919px, 307.919px;
                         stroke-dashoffset: 71.1186px;"></path>
                     </svg>
-                    <div class="gpt-scroll-top-icon">
+                    <div class="pps-scroll-top-icon">
                         <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-hidden="true"
@@ -57,14 +57,14 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		 * Settings Compare function
 		 *
 		 * @param [type] $name
-		 * @param  boolean  $check_key
-		 * @param  boolean  $check_value
+		 * @param boolean $check_key
+		 * @param boolean $check_value
 		 *
 		 * @return void
 		 */
 		public static function options_compare( $name, $check_key = false, $check_value = false ) {
-			$option = gpt_option( $name );
-			$meta   = get_post_meta( get_the_ID(), 'gpt_page_options', true );
+			$option = pps_option( $name );
+			$meta   = get_post_meta( get_the_ID(), 'pps_page_options', true );
 
 			//Check if check_key exist
 			if ( $check_key ) {
@@ -74,7 +74,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 			} else {
 				$var    = $meta[ $name ];
-				$option = ! empty( $var ) ? $meta[ $name ] : gpt_option( $name );
+				$option = ! empty( $var ) ? $meta[ $name ] : pps_option( $name );
 			}
 
 			return $option;
@@ -85,16 +85,16 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		 * ---------------
 		 */
 		//Add breadcrumbs
-		static function gpt_breadcrumb() {
+		static function pps_breadcrumb() {
 			global $post;
-			$gpt_opt = get_option( 'gpt_opt' );
+			$pps_opt     = get_option( 'pps_opt' );
 			$brseparator = '<span class="separator"></span>';
 			if ( ! is_home() ) {
 				echo '<div class="breadcrumbs">';
 				echo '<a href="';
 				echo esc_url( home_url( '/' ) );
 				echo '">';
-				echo esc_html__( 'Home', 'gpt-news' );
+				echo esc_html__( 'Home', 'pps-passport' );
 				echo '</a>' . $brseparator;
 				if ( is_category() || is_single() ) {
 					$categories = get_the_category();
@@ -130,24 +130,24 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				} elseif ( is_tag() ) {
 					single_tag_title();
 				} elseif ( is_day() ) {
-					printf( esc_html__( 'Archive for: %s', 'gpt-news' ), '<span>' . get_the_date() . '</span>' );
+					printf( esc_html__( 'Archive for: %s', 'pps-passport' ), '<span>' . get_the_date() . '</span>' );
 				} elseif ( is_month() ) {
-					printf( esc_html__( 'Archive for: %s', 'gpt-news' ),
-						'<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'gpt-news' ) ) . '</span>' );
+					printf( esc_html__( 'Archive for: %s', 'pps-passport' ),
+						'<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'pps-passport' ) ) . '</span>' );
 				} elseif ( is_year() ) {
-					printf( esc_html__( 'Archive for: %s', 'gpt-news' ),
-						'<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'gpt-news' ) ) . '</span>' );
+					printf( esc_html__( 'Archive for: %s', 'pps-passport' ),
+						'<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'pps-passport' ) ) . '</span>' );
 				} elseif ( is_author() ) {
-					echo "<span>" . esc_html__( 'Archive for', 'gpt-news' );
+					echo "<span>" . esc_html__( 'Archive for', 'pps-passport' );
 					echo '</span>';
 				} elseif ( isset( $_GET['paged'] ) && ! empty( $_GET['paged'] ) ) {
-					echo "<span>" . esc_html__( 'Blog Archives', 'gpt-news' );
+					echo "<span>" . esc_html__( 'Blog Archives', 'pps-passport' );
 					echo '</span>';
 				} elseif ( is_search() ) {
-					echo "<span>" . esc_html__( 'Search Results', 'gpt-news' );
+					echo "<span>" . esc_html__( 'Search Results', 'pps-passport' );
 					echo '</span>';
 				} elseif ( is_post_type_archive( 'tribe_events' ) ) {
-					echo "<span>" . esc_html__( 'Events', 'gpt-news' );
+					echo "<span>" . esc_html__( 'Events', 'pps-passport' );
 				}
 				echo '</div>';
 			} else {
@@ -155,25 +155,26 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				echo '<a href="';
 				echo esc_url( home_url( '/' ) );
 				echo '">';
-				echo esc_html__( 'Home', 'gpt-news' );
+				echo esc_html__( 'Home', 'pps-passport' );
 				echo '</a>' . $brseparator;
-				if ( isset( $gpt_opt['blog_header_text'] ) && $gpt_opt['blog_header_text'] != "" ) {
-					echo esc_html( $gpt_opt['blog_header_text'] );
+				if ( isset( $pps_opt['blog_header_text'] ) && $pps_opt['blog_header_text'] != "" ) {
+					echo esc_html( $pps_opt['blog_header_text'] );
 				} else {
-					echo esc_html__( 'Blog', 'gpt-news' );
+					echo esc_html__( 'Blog', 'pps-passport' );
 				}
 				echo '</div>';
 			}
 		}
 
-        /**
-         * Google Analytics
-         */
-        public function gpt_google_analytics() {
-	        $gpt_opt = gpt_option( 'google_analytics_code' );
+		/**
+		 * Google Analytics
+		 */
+		public function pps_google_analytics() {
+			$pps_opt = pps_option( 'google_analytics_code' );
 
-	        if ( $gpt_opt ) : ?>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr( $gpt_opt ); ?>"></script>
+			if ( $pps_opt ) : ?>
+                <script async
+                        src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr( $pps_opt ); ?>"></script>
                 <script>
                     window.dataLayer = window.dataLayer || [];
 
@@ -182,16 +183,16 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                     }
 
                     gtag('js', new Date());
-                    gtag('config', '<?php echo esc_attr( $gpt_opt ); ?>');
+                    gtag('config', '<?php echo esc_attr( $pps_opt ); ?>');
                 </script>
-	        <?php endif;
+			<?php endif;
 
-        }
+		}
 
 
 		/* Pagination */
 
-		static function gpt_post_pagination( $nav_query = false ) {
+		static function pps_post_pagination( $nav_query = false ) {
 
 			global $wp_query, $wp_rewrite;
 
@@ -223,11 +224,11 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		}
 
 
-        /*
-         * Post Author By
-         */
-		static function gpt_posted_author_avatar() {
-			 printf( '<div class="author-meta"><span class="author-avatar">%2$s</span>  <a class="url fn n post-author" href="%1$s">%3$s</a></div>',
+		/*
+		 * Post Author By
+		 */
+		static function pps_posted_author_avatar() {
+			printf( '<div class="author-meta"><span class="author-avatar">%2$s</span>  <a class="url fn n post-author" href="%1$s">%3$s</a></div>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				get_avatar( get_the_author_meta( 'ID' ), 24 ),
 				esc_html( get_the_author() )
@@ -235,17 +236,17 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 		}
 
-        /*
-         * Post Author By
-         */
-		static function gpt_posted_on() {
+		/*
+		 * Post Author By
+		 */
+		static function pps_posted_on() {
 			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 			if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 				$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 			}
 
-			$time_string = sprintf( $time_string, esc_attr( get_the_date( DATE_W3C ) ), esc_html( get_the_date('M j, Y') ),
-				esc_attr( get_the_modified_date( DATE_W3C ) ), esc_html( get_the_modified_date('M j, Y') ) );
+			$time_string = sprintf( $time_string, esc_attr( get_the_date( DATE_W3C ) ), esc_html( get_the_date( 'M j, Y' ) ),
+				esc_attr( get_the_modified_date( DATE_W3C ) ), esc_html( get_the_modified_date( 'M j, Y' ) ) );
 
 			$posted_on = $time_string;
 
@@ -254,60 +255,60 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		}
 
 		/**
-         * Display the post reading time.
-         *
-         * @param string $word
-         *
-         * @return string
-         */
-		public static function gpt_content_reading_time( $word ) {
+		 * Display the post reading time.
+		 *
+		 * @param string $word
+		 *
+		 * @return string
+		 */
+		public static function pps_content_reading_time( $word ) {
 			$strip_content = strip_tags( (string) $word );
 			$word_count    = str_word_count( $strip_content );
 			$reading_minit = floor( $word_count / 200 );
 			$reading_sec   = floor( $word_count % 200 / ( 200 / 60 ) );
-			$label         = sprintf( __( '%1$s min read', 'designmonks-core' ), $reading_minit, $reading_sec );
+			$label         = sprintf( __( '%1$s min read', 'pps-passport' ), $reading_minit, $reading_sec );
 
 			return '<span class="reading-time">' . $label . '</span>';
 		}
 
-        /**
-         * Display the post reading time.
-         *
-         * @param string $word
-         *
-         * @return string
-         */
-		static function gpt_entry_cat() {
+		/**
+		 * Display the post reading time.
+		 *
+		 * @param string $word
+		 *
+		 * @return string
+		 */
+		static function pps_entry_cat() {
 			// Hide category and tag text for pages.
 			if ( 'post' === get_post_type() ) {
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( esc_html__( ' ', 'gpt-news' ) );
+				$categories_list = get_the_category_list( esc_html__( ' ', 'pps-passport' ) );
 				if ( $categories_list ) {
 					/* translators: 1: list of categories. */
-					printf( esc_html__( ' %1$s', 'gpt-news' ), $categories_list ); // WPCS: XSS OK.
+					printf( esc_html__( ' %1$s', 'pps-passport' ), $categories_list ); // WPCS: XSS OK.
 				}
 
 			}
 
 		}
 
-        /**
-         * Display the post Tags
-         *
-         * @param string $word
-         *
-         * @return string
-         */
-		static function gpt_posted_tag() {
+		/**
+		 * Display the post Tags
+		 *
+		 * @param string $word
+		 *
+		 * @return string
+		 */
+		static function pps_posted_tag() {
 			// Hide category and tag text for pages.
 			if ( 'post' === get_post_type() ) {
 
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'gpt-news' ) );
+				$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'pps-passport' ) );
 				if ( $tags_list ) {
 					/* translators: 1: list of tags. */
-					printf( '<div class="single-tagcloud"><h3 class="post-share-title">' . esc_html( 'Tags:', 'gpt-news' ) . '</h3>' . esc_html__( '%1$s',
-							'gpt-news' ) . '</div>', $tags_list ); // WPCS: XSS OK.
+					printf( '<div class="single-tagcloud"><h3 class="post-share-title">' . esc_html( 'Tags:', 'pps-passport' ) . '</h3>' . esc_html__( '%1$s',
+							'pps-passport' ) . '</div>', $tags_list ); // WPCS: XSS OK.
 				}
 			}
 		}
@@ -315,7 +316,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		/**
 		 * Trim text
 		 */
-		static function gpt_substring( $string, $limit, $afterlimit = '[...]' ) {
+		static function pps_substring( $string, $limit, $afterlimit = '[...]' ) {
 			if ( empty( $string ) ) {
 				return $string;
 			}
@@ -336,17 +337,17 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		/**
 		 * Render sidebars.
 		 * All Page Sidebar Control.
-		 * @since gpt-news 1.0
+		 * @since pps-passport 1.0
 		 */
 
 		public static function render_sidebars( $args = 'blog' ) {
 			$output        = [];
 			$sidebar_style = '';
 
-			$layout        = gpt_option( $args . '_sidebar_layout' ) ? gpt_option( $args . '_sidebar_layout' ) : 'right';
+			$layout        = pps_option( $args . '_sidebar_layout' ) ? pps_option( $args . '_sidebar_layout' ) : 'right';
 			$sidebar       = 'sidebar_main-sidebar';
-			$sidebar_width = gpt_option( $args . '_sidebar_def_width', '8' );
-			$sidebar_gap   = gpt_option( $args . '_sidebar_gap', '45' );
+			$sidebar_width = pps_option( $args . '_sidebar_def_width', '8' );
+			$sidebar_gap   = pps_option( $args . '_sidebar_gap', '45' );
 			$sidebar_class = $sidebar_style = '';
 
 			if ( isset( $sidebar_gap ) && $sidebar_gap != 'def' && $layout != 'default' ) {
@@ -393,17 +394,16 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		}
 
 
+		// Post Author By
+		public static function post_author_by() {
 
-        // Post Author By
-        public static function post_author_by( ) {
-
-            $author = get_the_author();
-            $author_id = get_the_author_meta('ID');
-            $author_url = get_author_posts_url($author_id);
-            $author_name = get_the_author_meta('display_name');
-            $author_link = '<a href="' . esc_url($author_url) . '">' . esc_html($author_name) . '</a>';
-            echo '<span class="post_author">' . esc_html__( "by", 'gpt-news' ) . ' ' . $author_link . '</span>';
-        }
+			$author      = get_the_author();
+			$author_id   = get_the_author_meta( 'ID' );
+			$author_url  = get_author_posts_url( $author_id );
+			$author_name = get_the_author_meta( 'display_name' );
+			$author_link = '<a href="' . esc_url( $author_url ) . '">' . esc_html( $author_name ) . '</a>';
+			echo '<span class="post_author">' . esc_html__( "by", 'pps-passport' ) . ' ' . $author_link . '</span>';
+		}
 
 		// Post view count
 		public static function post_view_count( $id ) {
@@ -419,14 +419,14 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				update_post_meta( $post_id, $count_key, $count );
 			}
 
-			return '<p class="post_view_count">' . esc_html( $count ) . '<span>' . esc_html__( " Views", 'gpt-news' ) . '</span></p>';
+			return '<p class="post_view_count">' . esc_html( $count ) . '<span>' . esc_html__( " Views", 'pps-passport' ) . '</span></p>';
 
 		}
 
 		/**
 		 * Display Post Thumbnail.
 		 */
-		static function gpt_post_thumbnail() {
+		static function pps_post_thumbnail() {
 			if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 				return;
 			}
@@ -472,7 +472,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			$social_html = ! empty( $social_html ) ? '<div class="author-info_social-wrapper">' . $social_html . '</div>' : '';
 
 			if ( (bool) $name_html || (bool) $description || (bool) $social_html ) {
-				echo '<h3 class="author-info_title">' . esc_html__( 'About Author', 'gpt-news' ) . '</h3>';
+				echo '<h3 class="author-info_title">' . esc_html__( 'About Author', 'pps-passport' ) . '</h3>';
 				echo '<div class="author-info_wrapper">' . $avatar_html . '<div class="author-info">' . $name_html . $social_html . '</div><div class="author-info_content">' . $description . '</div></div>';
 			}
 
@@ -481,15 +481,15 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		/**
 		 * Preloader.
 		 * Preloader Init.
-		 * @since gpt-news 1.0
+		 * @since pps-passport 1.0
 		 */
 
-		public function gpt_preloader_markup() {
-			$preloader_switch = gpt_option( 'preloader_switch' );
-			$preloader_opt    = gpt_option( 'preloader' );
-			$preloader_type   = gpt_option( 'preloader-type' );
-			$preloader_img    = gpt_option( 'preloader-images' );
-			$preloader_text   = gpt_option( 'preloader_text' );
+		public function pps_preloader_markup() {
+			$preloader_switch = pps_option( 'preloader_switch' );
+			$preloader_opt    = pps_option( 'preloader' );
+			$preloader_type   = pps_option( 'preloader-type' );
+			$preloader_img    = pps_option( 'preloader-images' );
+			$preloader_text   = pps_option( 'preloader_text' );
 
 			if ( $preloader_switch ) : ?>
                 <div id="preloader" class="preloader">
@@ -526,7 +526,8 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 					<?php elseif ( $preloader_type == 'preloader-img' ) : ?>
 						<?php $img = wp_get_attachment_image_src( $preloader_img, 'full', true ); ?>
 
-                        <img class="pr" src="<?php echo esc_url( $img[0] ); ?>" width="<?php echo esc_attr( $img[1] ); ?>" height="<?php echo
+                        <img class="pr" src="<?php echo esc_url( $img[0] ); ?>"
+                             width="<?php echo esc_attr( $img[1] ); ?>" height="<?php echo
 						esc_attr( $img[2] ); ?>" alt="<?php get_bloginfo( 'name' ); ?>"/>
 					<?php endif; ?>
                 </div><!-- /#preloader -->
@@ -537,15 +538,15 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			return isset( $args ) ? $args : '';
 		}
 
-		static function gpt_entry_comments( $post_id, $no_comments = 'No Comment' ) {
+		static function pps_entry_comments( $post_id, $no_comments = 'No Comment' ) {
 
 			$comments_number = get_comments_number( $post_id );
 			if ( $comments_number == 0 ) {
 				$comment_text = $no_comments;
 			} elseif ( $comments_number == 1 ) {
-				$comment_text = esc_html__( '1 Comment', 'gpt-news' );
+				$comment_text = esc_html__( '1 Comment', 'pps-passport' );
 			} elseif ( $comments_number > 1 ) {
-				$comment_text = $comments_number . '<span class="comment-text">' . esc_html__( ' Comments', 'gpt-news' ) . '</span>';
+				$comment_text = $comments_number . '<span class="comment-text">' . esc_html__( ' Comments', 'pps-passport' ) . '</span>';
 			}
 
 			$allowed_html = array(
@@ -558,18 +559,26 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 		}
 
+		static function pps_excerpt( $limit ) {
+			$excerpt = get_the_excerpt();
+			$excerpt = wp_trim_words( $excerpt, $limit, '...' );
+
+			return $excerpt;
+
+		}
+
 		/**
 		 * Logo
 		 */
 		public static function branding_logo() {
 
-			$logo_main        = gpt_option( 'main_logo' );
-			$sticky           = gpt_option( 'sticky_logo' );
-			$retina_logo      = gpt_option( 'retina_logo' );
-			$retina_sticky    = gpt_option( 'retina_logo_sticky' );
-			$is_sticky_header = gpt_option( 'header_sticky' );
-			$transparent_logo = gpt_option( 'transparent_main_logo' );
-			$transparent_menu = gpt_option( 'transparent_menu' );
+			$logo_main        = pps_option( 'main_logo' );
+			$sticky           = pps_option( 'sticky_logo' );
+			$retina_logo      = pps_option( 'retina_logo' );
+			$retina_sticky    = pps_option( 'retina_logo_sticky' );
+			$is_sticky_header = pps_option( 'header_sticky' );
+			$transparent_logo = pps_option( 'transparent_main_logo' );
+			$transparent_menu = pps_option( 'transparent_menu' );
 
 			// Logo Callback
 			$logo               = ! empty( $logo_main['url'] ) ? $logo_main['url'] : '';
@@ -579,7 +588,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			$retina_logo_sticky = ! empty( $retina_sticky ['url'] ) ? $retina_sticky ['url'] : '';
 
 			// Logo Meta Callback
-			$meta = get_post_meta( get_the_ID(), 'gpt_page_options', true );
+			$meta = get_post_meta( get_the_ID(), 'pps_page_options', true );
 
 			$meta_true = isset( $meta['meta_header_type'] ) ? $meta['meta_header_type'] : '0';
 
@@ -596,7 +605,8 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				<?php if ( ! empty( $logo ) ) { ?>
                     <img <?php if ( ! empty( $retina_logo ) ) {
 						echo 'srcset="' . esc_attr( $retina_logo ) . ' 2x"';
-					} ?> src="<?php echo esc_url( $logo ); ?>" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>" class="main-logo"/>
+					} ?> src="<?php echo esc_url( $logo ); ?>" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>"
+                         class="main-logo"/>
 
 					<?php if ( $logo_contrast !== '' && $is_sticky_header == true ): ?>
                         <img <?php if ( ! empty( $retina_logo_sticky ) ) {
@@ -608,7 +618,8 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 				<?php } elseif ( $transparent_menu == true && $transparent_logo !== '' ) { ?>
                     <img <?php if ( ! empty( $retina_logo ) ) {
 						echo 'srcset="' . esc_attr( $retina_logo ) . ' 2x"';
-					} ?> src="<?php echo esc_url( $transparent_logo ); ?>" alt="<?php esc_attr( bloginfo( 'name' ) ); ?>"
+					} ?> src="<?php echo esc_url( $transparent_logo ); ?>"
+                         alt="<?php esc_attr( bloginfo( 'name' ) ); ?>"
                          class="main-logo transparent-logo"/>
 
 					<?php if ( $logo_contrast !== '' && $is_sticky_header == true ): ?>
@@ -628,7 +639,7 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 		static function render_post_list_share() { ?>
 
             <div class="share_social-wpapper">
-                <h3 class="post-share-title"><?php echo esc_html__('Share This Post:', 'gpt-news') ?></h3>
+                <h3 class="post-share-title"><?php echo esc_html__( 'Share This Post:', 'pps-passport' ) ?></h3>
 
                 <ul class="social-share-link">
                     <li>
@@ -667,73 +678,97 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 		static function related_post() { ?>
             <div class="related-post-wrapper">
-                <h2 class="related-title"><?php echo esc_html( gpt_option( 'related_title' ) ); ?></h2>
-                <div class="row g-5">
-					<?php
-					global $post;
-					$post_id    = get_the_ID();
-					$cat_ids    = array();
-					$categories = get_the_category( $post_id );
+                <h2 class="related-title"><?php echo esc_html( pps_option( 'related_title' ) ); ?></h2>
+                <div class="swiper-container related-post-slider">
+                    <div class="swiper-wrapper">
+						<?php
+						global $post;
+						$post_id    = get_the_ID();
+						$cat_ids    = array();
+						$categories = get_the_category( $post_id );
 
-					if ( ! empty( $categories ) && is_wp_error( $categories ) ):
-						foreach ( $categories as $category ):
-							array_push( $cat_ids, $category->term_id );
-						endforeach;
-					endif;
+						if ( ! empty( $categories ) && is_wp_error( $categories ) ):
+							foreach ( $categories as $category ):
+								array_push( $cat_ids, $category->term_id );
+							endforeach;
+						endif;
 
-					$query_args = array(
-						'category__in'   => wp_get_post_categories( $post->ID ),
-						'post_not_in'    => array( $post_id ),
-						'posts_per_page' => '2'
-					);
+						$query_args = array(
+							'category__in'   => wp_get_post_categories( $post->ID ),
+							'post_not_in'    => array( $post_id ),
+							'posts_per_page' => '2'
+						);
 
-					$related_cats_post = new WP_Query( $query_args );
-					if ( $related_cats_post->have_posts() ):
-						while ( $related_cats_post->have_posts() ): $related_cats_post->the_post(); ?>
+						$related_cats_post = new WP_Query( $query_args );
 
-                            <div class="col-md-6">
-                                <div class="related-post">
-									<?php
-									if ( has_post_thumbnail() ) : ?>
-                                        <div class="feature-image">
-                                            <a href="<?php the_permalink(); ?>"><?php
-												the_post_thumbnail( 'post-thumbnail' ); ?>
-                                            </a>
+						if ( $related_cats_post->have_posts() ):
+							while ( $related_cats_post->have_posts() ): $related_cats_post->the_post(); ?>
+
+                                <div class="swiper-slide">
+                                    <div class="pps-post-item">
+                                        <div class="pps-post-item__content-inner">
+											<?php if ( has_post_thumbnail() ): ?>
+                                                <div class="pps-post-item__feature-image">
+                                                    <a href="<?php echo the_permalink(); ?>">
+														<?php the_post_thumbnail( 'genesis_blog_grid_410x290', array( 'class' => 'img-fluid' ) ) ?>
+                                                    </a>
+
+                                                </div>
+											<?php endif; ?>
+
+                                            <div class="pps-post-item__blog-content">
+                                                <div class="pps-post-item__meta">
+                                                    <div class="pps-post-item__category">
+														<?php
+														$terms = get_the_terms( get_the_ID(), 'category' );
+														if ( $terms && ! is_wp_error( $terms ) ) :
+															$cat_temp = '';
+															foreach ( $terms as $term ) {
+																$cat_temp .= '<a href="' . get_category_link( $term->term_id ) . '"   class="category" rel="category">' . esc_html( $term->name ) . '</a>';
+															}
+														endif;
+
+														echo $cat_temp;
+														?>
+                                                    </div>
+
+                                                    <div class="pps-post-item__date-meta">
+                                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <g opacity="0.6">
+                                                                <path d="M19 10.0039C19 14.9719 14.968 19.0039 10 19.0039C5.032 19.0039 1 14.9719 1 10.0039C1 5.03591 5.032 1.00391 10 1.00391C14.968 1.00391 19 5.03591 19 10.0039Z"
+                                                                      stroke="black" stroke-width="2"
+                                                                      stroke-linecap="round" stroke-linejoin="round"/>
+                                                                <path d="M13.3391 12.8659L10.5491 11.2009C10.0631 10.9129 9.66705 10.2199 9.66705 9.65289V5.96289"
+                                                                      stroke="black" stroke-width="2"
+                                                                      stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </g>
+                                                        </svg>
+
+														<?php PPS_Theme_Helper::pps_posted_on(); ?>
+                                                    </div>
+                                                </div>
+
+                                                <h3 class="pps-post-item__entry-title"><a
+                                                            href="<?php echo get_the_permalink(); ?>"><?php the_title(); ?></a>
+                                                </h3>
+
+                                                <p class="pps-post-item__entry-content">
+													<?php echo PPS_Theme_Helper::pps_excerpt( 15 ); ?>
+                                                </p>
+                                            </div>
                                         </div>
-									<?php
-									endif; ?>
-                                    <div class="blog-content">
-                                        <div class="gpt-post-category">
-                                            <?php self::gpt_entry_cat(); ?>
-                                        </div><!-- .entry-meta -->
-
-                                        <h3 class="post-title">
-                                            <a href="<?php the_permalink(); ?>">
-												<?php the_title(); ?>
-                                            </a>
-                                        </h3>
-
-                                        <ul class="entry-meta">
-                                            <li>
-			                                    <?php Gpt_Theme_Helper::post_author_by(); ?>
-                                            </li>
-                                            <li>
-                                                <i class="ri-calendar-2-line"></i>
-			                                    <?php Gpt_Theme_Helper::gpt_posted_on(); ?>
-                                            </li>
-                                        </ul><!-- .entry-meta -->
-
                                     </div>
-                                    <!-- /.blog-content -->
                                 </div>
-                                <!-- /.related-post -->
-                            </div>
 
-						<?php endwhile;
+							<?php endwhile;
 
-						// Restore original Post Data
-						wp_reset_postdata();
-					endif; ?>
+							// Restore original Post Data
+							wp_reset_postdata();
+						endif; ?>
+                    </div>
+
+                    <div class="post-slider-pagination swiper-pagination"></div>
                 </div>
             </div>
             <!-- /.related-post-wrapper -->
@@ -741,21 +776,21 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 		/**
 		 * @return void
-         * Trending News
+		 * Trending News
 		 */
-        static function trending_news() {
-            $trending_news = new WP_Query( array(
-                'posts_per_page' => 5,
-                'meta_key'       => 'post_views_count',
-                'orderby'        => 'meta_value_num',
-                'order'          => 'DESC',
-            ) );
+		static function trending_news() {
+			$trending_news = new WP_Query( array(
+				'posts_per_page' => 5,
+				'meta_key'       => 'post_views_count',
+				'orderby'        => 'meta_value_num',
+				'order'          => 'DESC',
+			) );
 
-            if ( $trending_news->have_posts() ) : ?>
+			if ( $trending_news->have_posts() ) : ?>
                 <div class="trending-news-wrapper">
                     <div class=" swiper-container trending-news-slider">
                         <div class="swiper-wrapper">
-                            <?php while ( $trending_news->have_posts() ) : $trending_news->the_post(); ?>
+							<?php while ( $trending_news->have_posts() ) : $trending_news->the_post(); ?>
                                 <div class="swiper-slide">
                                     <div class="trending-post-item">
                                         <h3 class="trending-post-title">
@@ -763,16 +798,16 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                                         </h3>
                                     </div>
                                 </div>
-                            <?php endwhile; ?>
+							<?php endwhile; ?>
                         </div>
                     </div>
                 </div>
-            <?php endif;
-            wp_reset_postdata();
+			<?php endif;
+			wp_reset_postdata();
 
-        }
+		}
 
-		static function gpt_post_nav() {
+		static function pps_post_nav() {
 			// Don't print empty markup if there's nowhere to navigate.
 			$pre_post  = $next_post = '';
 			$next_post = get_next_post();
@@ -795,13 +830,15 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 
 					<?php if ( ! empty( $pre_img ) ): ?>
                         <div class="post-nav-thumbnail">
-                            <img src="<?php echo esc_url( $pre_img ); ?>" alt="<?php echo esc_attr( $pre_post->post_title ); ?>" width="70"
+                            <img src="<?php echo esc_url( $pre_img ); ?>"
+                                 alt="<?php echo esc_attr( $pre_post->post_title ); ?>" width="70"
                                  height="70">
                         </div>
 					<?php endif; ?>
 
                     <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><i class="ri-arrow-left-s-line"></i><?php esc_html_e( 'Previous', 'gpt-news' ) ?></p>
+                        <p class="post-nav-title"><i
+                                    class="ri-arrow-left-s-line"></i><?php esc_html_e( 'Previous', 'pps-passport' ) ?></p>
                         <h4 class="post-title"><?php echo get_the_title( $pre_post->ID ) ?></h4>
                     </div>
 
@@ -816,13 +853,15 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
                 <a href="<?php echo get_the_permalink( $next_post->ID ); ?>" class="single-post-nav">
 
                     <div class="post-nav-wrapper">
-                        <p class="post-nav-title"><?php esc_html_e( 'Next', 'gpt-news' ) ?><i class="ri-arrow-right-s-line"></i></p>
+                        <p class="post-nav-title"><?php esc_html_e( 'Next', 'pps-passport' ) ?><i
+                                    class="ri-arrow-right-s-line"></i></p>
                         <h4 class="post-title"><?php echo get_the_title( $next_post->ID ) ?></h4>
                     </div>
 
 					<?php if ( ! empty( $next_img ) ): ?>
                         <div class="post-nav-thumbnail">
-                            <img src="<?php echo esc_url( $next_img ); ?>" alt="<?php echo esc_attr( $next_img->post_title ); ?>" width="70"
+                            <img src="<?php echo esc_url( $next_img ); ?>"
+                                 alt="<?php echo esc_attr( $next_img->post_title ); ?>" width="70"
                                  height="70">
                         </div>
 					<?php endif; ?>
@@ -833,22 +872,22 @@ if ( ! class_exists( 'Gpt_Theme_Helper' ) ) {
 			echo '</div></div></div></div>';
 		}
 
-        static function social_link() {
-            $social_links = gpt_option( 'social_links' );
+		static function social_link() {
+			$social_links = pps_option( 'social_links' );
 
-            if ( ! empty( $social_links ) ) {
-                echo '<ul class="gpt-social-link">';
-                foreach ( $social_links as $social_link ) {
-                    echo '<li><a href="' . esc_url( $social_link['url'] ) . '" target="_blank" aria-label="'.esc_attr($social_link['name']) .'"><i class="fab fa-' . esc_attr( $social_link['icon'] ) . '"></i></a></li>';
-                }
-                echo '</ul>';
-            }
+			if ( ! empty( $social_links ) ) {
+				echo '<ul class="pps-social-link">';
+				foreach ( $social_links as $social_link ) {
+					echo '<li><a href="' . esc_url( $social_link['url'] ) . '" target="_blank" aria-label="' . esc_attr( $social_link['name'] ) . '"><i class="fab fa-' . esc_attr( $social_link['icon'] ) . '"></i></a></li>';
+				}
+				echo '</ul>';
+			}
 
-        }
+		}
 	}
 
 	// Instantiate theme
-	new Gpt_Theme_Helper();
+	new PPS_Theme_Helper();
 }
 
 

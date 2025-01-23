@@ -7,13 +7,13 @@
  */
 
 
-do_action( 'gpt_before_footer' );
+do_action( 'pps_before_footer' );
 
 
 
 get_template_part( 'template-parts/footer/footer-one' );
 
-do_action( 'gpt_after_footer' );
+do_action( 'pps_after_footer' );
 
 wp_footer(); ?>
 

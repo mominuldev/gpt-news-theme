@@ -17,12 +17,12 @@
 
 require get_parent_theme_file_path( '/inc/tgm/class-tgm-plugin-activation.php' );
 
-add_action( 'tgmpa_register', 'gpt_register_required_plugins' );
+add_action( 'tgmpa_register', 'pps_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
  */
-function gpt_register_required_plugins() {
+function pps_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -31,29 +31,29 @@ function gpt_register_required_plugins() {
 
 
 		array(
-			'name'     => __('GPT News Core', 'gpt-news'),
-			'slug'     => 'gpt-news-core',
-			'source'   => 'https://demo.gptheme.com/plugins/gpt-news-core.zip',
+			'name'     => __('PPS Passport Core', 'pps-passport'),
+			'slug'     => 'pps-passport-core',
+			'source'   => 'https://demo.ppsheme.com/plugins/pps-passport-core.zip',
             'version'  => '1.0.0',
 			'required' => true,
 		),
 
 		array(
-			'name'     => esc_attr__( 'Elementor', 'gpt-news' ),
+			'name'     => esc_attr__( 'Elementor', 'pps-passport' ),
 			'slug'     => 'elementor',
 			'required' => true,
 		),
 
 		array(
-			'name'     => __('Contact Form 7', 'gpt-news'),
+			'name'     => __('Contact Form 7', 'pps-passport'),
 			'slug'     => 'contact-form-7',
 			'required' => false,
 		),
 
         array(
-            'name'     => esc_attr__( 'Codestar Framework', 'gpt-news' ),
+            'name'     => esc_attr__( 'Codestar Framework', 'pps-passport' ),
             'slug'     => 'codestar-framework',
-            'source'   => ( 'https://demo.gptheme.com/plugins/codestar-framework.zip' ),
+            'source'   => ( 'https://demo.ppsheme.com/plugins/codestar-framework.zip' ),
             'required' => true,
         ),
 
@@ -63,9 +63,9 @@ function gpt_register_required_plugins() {
 	 * Config for TGMPA
 	 */
 	$config = array(
-		'id'           => 'gpt-news',
+		'id'           => 'pps-passport',
 		'default_path' => '',
-		'menu'         => 'gpt-install-plugins',
+		'menu'         => 'pps-install-plugins',
 		'has_notices'  => true,
 		'dismissable'  => true,
 		'dismiss_msg'  => '',

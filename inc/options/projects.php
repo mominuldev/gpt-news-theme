@@ -4,7 +4,7 @@ if ( class_exists( 'CSF' ) ) {
 
 	//
 	// Set a unique slug-like ID
-	$prefix = 'gpt_project_options';
+	$prefix = 'pps_project_options';
 
 	//
 	// Create a metabox

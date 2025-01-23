@@ -37,9 +37,9 @@ if (!class_exists('Gpt_Walker_Comment')) {
         protected function ping( $comment, $depth, $args ) {
             $tag = ( 'div' == $args['style'] ) ? 'div' : 'li'; ?>
 
-            <<?php echo Gpt_Theme_Helper::render_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( '', $comment ); ?>>
+            <<?php echo PPS_Theme_Helper::render_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( '', $comment ); ?>>
                 <div class="comment-body stand_comment">
-                    <?php esc_html_e( 'Pingback:', 'gpt-news' ); ?> <?php comment_author_link( $comment ); ?> <?php edit_comment_link( esc_html__( '(Edit)', 'gpt-news' ), '<span class="edit-link">', '</span>' ); ?>
+                    <?php esc_html_e( 'Pingback:', 'pps-passport' ); ?> <?php comment_author_link( $comment ); ?> <?php edit_comment_link( esc_html__( '(Edit)', 'pps-passport' ), '<span class="edit-link">', '</span>' ); ?>
                 </div>
         <?php }
 
@@ -58,15 +58,15 @@ if (!class_exists('Gpt_Walker_Comment')) {
 
                     <div class="meta-wrapper">
                         <span><?php printf('%1$s', get_comment_date()) ?></span>
-                        <?php edit_comment_link('<span>('.esc_html__('Edit', 'gpt-news').')</span>', '  ', '') ?>
+                        <?php edit_comment_link('<span>('.esc_html__('Edit', 'pps-passport').')</span>', '  ', '') ?>
                     </div>
 
                     <div class="comment_content">
                     <?php if ($comment->comment_approved == '0') : ?>
-                        <p><?php esc_html_e('Your comment is awaiting moderation.', 'gpt-news'); ?></p>
+                        <p><?php esc_html_e('Your comment is awaiting moderation.', 'pps-passport'); ?></p>
                     <?php endif; ?>
                     <?php comment_text() ?>
-	                <?php comment_reply_link(array_merge( $args, array('reply_text' =>   '<i class="fas fa-reply"></i>' . esc_html__('Reply', 'gpt-news'),  'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+	                <?php comment_reply_link(array_merge( $args, array('reply_text' =>   '<i class="fas fa-reply"></i>' . esc_html__('Reply', 'pps-passport'),  'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
                 </div>
                 </div>
             </div>

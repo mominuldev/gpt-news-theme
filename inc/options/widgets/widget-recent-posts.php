@@ -180,7 +180,7 @@ if( class_exists( 'CSF' ) ) {
 							<a href="<?php the_permalink(); ?>">
 								<?php
 								if (has_post_thumbnail()) {
-									the_post_thumbnail('gpt-blog-list_300x185', ['alt' => get_the_title()]);
+									the_post_thumbnail('pps-blog-list_300x185', ['alt' => get_the_title()]);
 								} else { ?>
 									<img src="https://via.placeholder.com/410x290" alt="Placeholder">
 								<?php } ?>
@@ -193,14 +193,14 @@ if( class_exists( 'CSF' ) ) {
 
 							<div class="meta-wrapper">
 								<?php if ($instance['show_post_date']) : ?>
-									<span class="gpt-blog__meta-date">
+									<span class="pps-blog__meta-date">
 										<i class="ri-time-line"></i>
 										<span><?php echo get_the_date('M d, Y'); ?></span>
 									</span>
 								<?php endif; ?>
 
 								<?php if( $instance['show_post_view_count']) : ?>
-									<span class="gpt-blog__meta-view-count">
+									<span class="pps-blog__meta-view-count">
 										<i class="ri-eye-line"></i>
 										<span><?php echo get_post_meta(get_the_ID(), 'post_views_count', true); ?> Views</span>
 									</span>

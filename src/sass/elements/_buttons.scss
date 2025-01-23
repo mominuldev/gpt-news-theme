@@ -1,4 +1,4 @@
-.gpt-btn {
+.pps-btn {
 	position: relative;
 	padding: 12px 35px;
 	background-color: transparent;
@@ -41,14 +41,14 @@
 	}
 
 	&.btn-round {
-		border-radius: 5px;
+		border-radius: 4px;
 	}
 
-	.gpt-btn-content-wrapper {
+	.pps-btn-content-wrapper {
 		display: flex;
 		align-items: center;
 
-		.elementor-align-icon-right, .gpt-btn__align-icon-right {
+		.elementor-align-icon-right, .pps-btn__align-icon-right {
 			order: 2;
 		}
 	}
@@ -85,8 +85,8 @@
 
 	&.btn-outline {
 		background: transparent;
-		color: $color__theme;
-		border-color: $color__theme;
+		color: $color__heading;
+		border-color: #CBCBCB;
 
 		&:before {
 			top: auto;
@@ -96,6 +96,7 @@
 
 		&:hover {
 			color: #fff;
+			border-color: $color__theme;
 
 			&:before {
 				top: 0;
@@ -156,16 +157,16 @@
 		margin-left: 5px;
 	}
 
-	.gpt-btn-icon {
+	.pps-btn-icon {
 		font-size: 14px;
 	}
 
-	.gpt-btn__icon {
+	.pps-btn__icon {
 		line-height: 1;
 	}
 }
 
-.gpt-button {
+.pps-button {
 	font-family: $font__heading;
 	color: rgba(255, 255, 255, 0.40);
 	font-size: 18px;
@@ -178,7 +179,7 @@
 	position: relative;
 	transition: all 0.3s ease-in-out;
 
-	.gpt-button--icon {
+	.pps-button--icon {
 		position: relative;
 		height: 80px;
 		width: 80px;
@@ -228,7 +229,7 @@
 
 	&:hover {
 		color: #fff;
-		.gpt-button--icon {
+		.pps-button--icon {
 			//background: $color__theme;
 			color: rgba(255, 255, 255, 0.4);
 			border-color: $color__theme;
@@ -250,7 +251,7 @@
 	}
 }
 
-.gpt-btn__icon {
+.pps-btn__icon {
 	line-height: 1;
 }
 
@@ -259,7 +260,7 @@
 	font-weight: 500;
 	position: relative;
 
-	.gpt-btn__text {
+	.pps-btn__text {
 		position: relative;
 		z-index: 1;
 
@@ -275,7 +276,7 @@
 		}
 	}
 
-	.gpt-btn__icon {
+	.pps-btn__icon {
 		height: 30px;
 		width: 30px;
 		line-height: 30px;
@@ -294,7 +295,7 @@
 }
 
 
-.gpt-scroll-top-icon {
+.pps-scroll-top-icon {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -307,18 +308,18 @@
 	color: $color__theme;
 }
 
-.gpt-scroll-top.progress-done {
+.pps-scroll-top.progress-done {
 	opacity: 1;
 }
 
-.gpt-scroll-top > svg.progress-circle path {
+.pps-scroll-top > svg.progress-circle path {
 	stroke: $color__theme;
 	stroke-width: 4;
 	box-sizing: border-box;
 	transition: all 200ms linear;
 }
 
-.gpt-scroll-top-icon {
+.pps-scroll-top-icon {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -331,16 +332,16 @@
 	color: $color__theme;
 }
 
-.gpt-scroll-top > svg path {
+.pps-scroll-top > svg path {
 	fill: none;
 }
 
-.gpt-scroll-top.progress-done {
+.pps-scroll-top.progress-done {
 	visibility: visible;
 	transform: translateY(0);
 }
 
-.gpt-scroll-top {
+.pps-scroll-top {
 	position: fixed;
 	right: 30px;
 	bottom: 25px;
@@ -398,20 +399,20 @@
 //	}
 //}
 
-.gpt-inline {
+.pps-inline {
 	> div {
 		display: inline-block;
 	}
 
 	@media(max-width: 420px) {
-		.gpt-button-primary {
+		.pps-button-primary {
 			margin-bottom: 15px;
 			margin-right: 0 !important;
 		}
 	}
 }
 
-.gpt-block {
+.pps-block {
 	> div {
 		display: block;
 	}
@@ -557,7 +558,7 @@
 //}
 
 
-.gpt-back-btn {
+.pps-back-btn {
 	position: relative;
 	font-family: $font__heading;
 	display: inline-flex;
@@ -591,7 +592,7 @@
 }
 
 
-a.gpt-btn-circle {
+a.pps-btn-circle {
 	font-family: $font__heading-3;
 	display: flex;
 	align-items: center;
