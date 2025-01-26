@@ -215,7 +215,12 @@ input[type=checkbox], input[type=radio] {
 
 	input {
 		max-width: 300px;
-		width: 100%
+		width: 100%;
+		margin-bottom: 10px !important;
+
+		@media(max-width: 600px) {
+			max-width: 100%;
+		}
 	}
 
 	label {
@@ -227,13 +232,24 @@ input[type=checkbox], input[type=radio] {
 		gap: 10px;
 		align-items: center;
 
+		@media(max-width: 600px) {
+			flex-direction: column;
+			gap: 0;
+
+			span.or {
+				margin-top: 0 !important;
+			}
+		}
+
 		.pps-form-group {
 			flex: 1;
+			width: 100%;
 		}
 
 		span.or {
 			display: block;
 			font-weight: 700;
+			margin-top: 16px;
 		}
 	}
 

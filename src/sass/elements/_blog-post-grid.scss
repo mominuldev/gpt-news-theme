@@ -30,6 +30,10 @@
 
 	&__content-inner {
 		padding: 20px;
+
+		@media(max-width: 575px) {
+			padding: 15px;
+		}
 	}
 
 	.pps-post-item__entry-content {

@@ -1258,10 +1258,10 @@ ul.transition li {
 
 .pps-scroll-top {
   position: fixed;
-  right: 30px;
-  bottom: 25px;
-  width: 45px;
-  height: 45px;
+  right: 16px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   display: block;
   border-radius: 100%;
@@ -2592,6 +2592,11 @@ span.progress-shape {
 }
 .pps-post-item__content-inner {
   padding: 20px;
+}
+@media (max-width: 575px) {
+  .pps-post-item__content-inner {
+    padding: 15px;
+  }
 }
 .pps-post-item .pps-post-item__entry-content {
   margin-bottom: 20px;
@@ -4314,7 +4319,8 @@ span.progress-shape {
 }
 @media (max-width: 576px) {
   .widget_nav_menu ul {
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 0;
   }
 }
 .widget_nav_menu ul li {
@@ -4673,6 +4679,12 @@ input[type=checkbox], input[type=radio] {
 #visa-check-form input {
   max-width: 300px;
   width: 100%;
+  margin-bottom: 10px !important;
+}
+@media (max-width: 600px) {
+  #visa-check-form input {
+    max-width: 100%;
+  }
 }
 #visa-check-form label {
   display: block;
@@ -4682,12 +4694,23 @@ input[type=checkbox], input[type=radio] {
   gap: 10px;
   align-items: center;
 }
+@media (max-width: 600px) {
+  #visa-check-form .pps-form-header {
+    flex-direction: column;
+    gap: 0;
+  }
+  #visa-check-form .pps-form-header span.or {
+    margin-top: 0 !important;
+  }
+}
 #visa-check-form .pps-form-header .pps-form-group {
   flex: 1;
+  width: 100%;
 }
 #visa-check-form .pps-form-header span.or {
   display: block;
   font-weight: 700;
+  margin-top: 16px;
 }
 #visa-check-form input#application {
   background: #eaeaea;

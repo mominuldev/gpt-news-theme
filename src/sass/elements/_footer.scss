@@ -137,7 +137,8 @@
 		row-gap: 10px;
 
 		@media(max-width: 576px) {
-			gap: 20px;
+			column-gap: 20px;
+			row-gap: 0;
 		}
 
 		li {
