@@ -489,7 +489,6 @@ ul.entry-meta {
 			gap: 15px;
 			row-gap: 0;
 		}
-
 	}
 
 	li {
@@ -512,6 +511,12 @@ ul.entry-meta {
 
 			&:hover {
 				color: $color__theme;
+			}
+		}
+
+		.author-avatar {
+			img {
+				border-radius: 50%;
 			}
 		}
 	}
@@ -556,13 +561,13 @@ ul.entry-meta {
 
 // Single Post
 
-.single-post {
-	.container {
-		&.no-sidebar {
-			max-width: 970px !important;
-		}
-	}
-}
+//.single-post {
+//	.container {
+//		&.no-sidebar {
+//			max-width: 970px !important;
+//		}
+//	}
+//}
 
 .blog-single-wrapper {
 	position: relative;
@@ -930,20 +935,20 @@ blockquote, .wp-block-quote {
 	}
 }
 
-.no-sidebar {
-	.post-single {
-		max-width: 1000px;
-		margin: 0 auto;
-	}
-
-	&.single-post {
-		#comments {
-			max-width: 1000px;
-			margin: 93px auto 0;
-		}
-	}
-
-}
+//.no-sidebar {
+//	.post-single {
+//		max-width: 1000px;
+//		margin: 0 auto;
+//	}
+//
+//	&.single-post {
+//		#comments {
+//			max-width: 1000px;
+//			margin: 93px auto 0;
+//		}
+//	}
+//
+//}
 
 
 .post-single {

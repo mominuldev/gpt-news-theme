@@ -192,3 +192,40 @@
 
 
 }
+
+
+.no-results.not-found {
+    text-align: center;
+}
+
+.sea-wrapper {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+form.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+
+    input[type=text] {
+        margin-bottom: 0 !important;
+        border: 1px solid rgba(104, 124, 151, 0.3607843137);
+        border-radius: 3px;
+    }
+
+    button.search-submit {
+        border: 0;
+        background: $color__theme;
+        color: #fff;
+        padding: 7px 15px;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background: darken($color__theme, 10%);
+        }
+    }
+}
